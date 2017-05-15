@@ -80,6 +80,10 @@ test:
 #
 production:
   <<: *default
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
   database: reedy_production
-  username: reedy
+  pool: 5
+  username: <%= ENV['REEDY_DATABASE_USER'] %>
   password: <%= ENV['REEDY_DATABASE_PASSWORD'] %>
