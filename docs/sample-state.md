@@ -36,6 +36,7 @@
   currentContent: {
     type: 'FEED',
     vendor: 'The Verge',
+    vendorId: 1
   }
 
   articles: {
