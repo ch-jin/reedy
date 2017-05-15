@@ -44,9 +44,10 @@
       id: 1,
       title: 'Elon Musk is at it Again',
       image: 'www.theverge.com/elonmusk.jpg'
-      saved: false,
-      hidden: false,
       body: 'Lorem ipsum elon musk technology fun stuff spacex. Tesla supercar big cool new.',
+      pubDate: 'Sun, 14 May 2017 03:12:19 GMT',
+      saved: false,
+      hidden: false
     }
   }
 
