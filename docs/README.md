@@ -17,9 +17,9 @@ MVP features include the following:
 - [ ] Production README
 - [ ] Hosting on DigitalOcean/Heroku
 - [ ] Able to create Collections and add RSS feeds to them
-- [ ] RSS Feeds available to users to follow / add to collections
+- [ ] RSS Feeds will be available for users to follow / add to collections
 - [ ] Able to read Articles extracted from RSS Feeds 
-- [ ] User can add articles to a 'Read Later' list
+- [ ] Users can add articles to a 'Read Later' list
 
 ## Design Documentation
 * [Wireframes][wireframes]
