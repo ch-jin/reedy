@@ -1,3 +1,33 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.reed {
+  position: fixed;
+  left: 25%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.coming-soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  left: 25%;
+  top: 10%;
+  width: 50%;
+  z-index: 1;
+  background-color: rgba( 255, 255, 255, 0.7);
+}
