@@ -63,4 +63,9 @@ id          | integer   | not null, primary key
 board_id        | integer    | not null, foreign_key (boards), indexed, unique [article_id]
 article_id        | integer    | not null, foreign_key (articles), indexed, unique [board_id]
 
-
+## user_article_hides
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id        | integer    | not null, foreign_key (users), indexed, unique [article_id]
+article_id        | integer    | not null, foreign_key (articles), indexed, unique [user_id]

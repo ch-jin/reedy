@@ -1,3 +1,5 @@
+# Sample State
+
 ```javascript
 {
   currentUser: {
