@@ -1,0 +1,1 @@
+html,body{width:100%;height:100%;padding:0;margin:0;font-family:'Roboto', sans-serif}#root img{position:fixed;left:25%;width:50%;overflow:hidden}#root .coming-soon{display:flex;justify-content:center;align-items:center;flex-direction:column;position:fixed;left:25%;top:10%;width:50%;z-index:1;background-color:rgba(255,255,255,0.7)}
