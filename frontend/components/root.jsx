@@ -1,10 +1,13 @@
 import React from "react";
 import { Provider } from "react-redux";
-import SessionForm from "./session/session_form";
+import { HashRouter } from "react-router-dom";
+import App from "./app";
 
 const Root = ({ store }) => (
   <Provider store={store}>
-    <SessionForm />
+    <HashRouter>
+      <App />
+    </HashRouter>
   </Provider>
 );
 
