@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  StyledSessionForm,
+  StyledSessionInput,
+  StyledSessionButton,
+  StyledLettering,
+} from "../../styles/session_form";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -27,37 +33,39 @@ class SessionForm extends React.Component {
 
   render() {
     const { username, password } = this.state;
-
+    const { formType } = this.props;
+    console.log(formType);
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={this.update}
-          />
-        </label>
+      <StyledSessionForm onSubmit={this.handleSubmit}>
 
-        <label>
-          Password:
-          <input
-            type="text"
-            name="password"
-            value={password}
-            onChange={this.update}
-          />
-        </label>
+        <StyledLettering>
+          {formType}
+        </StyledLettering>
 
-        <button>
+        <StyledSessionInput
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={username}
+          onChange={this.update}
+        />
+
+        <StyledSessionInput
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={password}
+          onChange={this.update}
+        />
+
+        <StyledSessionButton>
           Submit
-        </button>
+        </StyledSessionButton>
 
-        <button>
+        <StyledSessionButton>
           Guest Login
-        </button>
-      </form>
+        </StyledSessionButton>
+      </StyledSessionForm>
     );
   }
 }

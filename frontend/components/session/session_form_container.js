@@ -3,8 +3,16 @@ import { login, signup } from "../../actions/session_actions";
 import { withRouter } from "react-router-dom";
 import SessionForm from "./session_form";
 
-const mapStateToProps = (state, ownProps) => ({
-  formType: ownProps.location.pathname,
+const formType = pathname => {
+  if (pathname === "/signup") {
+    return "Sign Up";
+  } else if (pathname === "/login") {
+    return "Log In";
+  }
+};
+
+const mapStateToProps = (state, { location }) => ({
+  formType: formType(location.pathname),
   errors: state.session.errors,
 });
 
@@ -19,5 +27,5 @@ const mapDispatchToProps = (dispatch, { location }) => ({
 });
 
 export default withRouter(
-  connect(null, mapDispatchToProps)(SessionForm)
+  connect(mapStateToProps, mapDispatchToProps)(SessionForm)
 );

@@ -1,10 +1,19 @@
 import React from "react";
 import SessionFormContainer from "./session_form_container";
+import Modal from "../../utils/modal_util";
 
-const SessionModal = props => (
-  <div className="session-modal">
-    <SessionFormContainer />
-  </div>
-);
+class SessionModal extends React.Component {
+  handleClick(e) {
+    console.log(e.target);
+  }
+
+  render() {
+    return (
+      <Modal redirectPath={"/"}>
+        <SessionFormContainer />
+      </Modal>
+    );
+  }
+}
 
 export default SessionModal;
