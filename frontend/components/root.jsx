@@ -1,9 +1,10 @@
 import React from "react";
 import { Provider } from "react-redux";
+import SessionForm from "./session/session_form";
 
-const Root = props => (
-  <Provider>
-    React is working
+const Root = ({ store }) => (
+  <Provider store={store}>
+    <SessionForm />
   </Provider>
 );
 
