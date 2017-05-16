@@ -9,15 +9,25 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
-      render json: current_user
+    @user = User.find(params[:id])
+
+    if current_user == @user
+      if current_user.update(user_password_param)
+        render json: current_user
+      else
+        render json: current_user.errors.full_messages, status: 422
+      end
     else
-      render json: current_user.errors.full_messages, status: 422
+      render json: { error: 'You cannot update this user' }, status: 422
     end
   end
 
   private
   def user_params
     params.require(:user).permit(:username, :password)
+  end
+
+  def user_password_param
+    params.require(:user).permit(:password)
   end
 end
