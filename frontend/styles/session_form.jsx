@@ -1,6 +1,6 @@
-import React from "react";
 import glamorous from "glamorous";
 import { spin } from "./animations";
+import { Button } from "./theme";
 
 export const StyledSessionForm = glamorous.form({
   display: "flex",
@@ -35,22 +35,12 @@ export const StyledSessionInput = glamorous.input({
   },
 });
 
-export const StyledSessionButton = glamorous.button({
+export const StyledSessionButton = glamorous(Button)({
   height: "45px",
   width: "150px",
   fontSize: "16px",
   fontWeight: 500,
-  color: "#fff",
-  backgroundColor: "#2ecc71",
-  border: "none",
-  letterSpacing: "0.5px",
   margin: "15px 0",
-  boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-  ":hover": {
-    backgroundColor: "#27ae60",
-    cursor: "pointer",
-    boxShadow: "0 2px 14px rgba(0,0,0,0.20), 0 2px 11px rgba(0,0,0,0.40)",
-  },
 });
 
 export const StyledLettering = glamorous.div({

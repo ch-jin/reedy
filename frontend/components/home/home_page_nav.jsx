@@ -1,7 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { StyledHomeNav } from "../../styles/home";
+import {
+  StyledHomeNavWrapper,
+  StyledHomeNav,
+  StyledNavBrand,
+  StyledNavButtonContainer,
+  StyledNavButton,
+  NavBrandImage,
+  FixedNav,
+} from "../../styles/home";
+import { FullHeightLink } from "../../styles/theme";
 
 class HomePageNav extends React.Component {
   constructor(props) {
@@ -15,18 +24,31 @@ class HomePageNav extends React.Component {
 
   render() {
     return (
-      <StyledHomeNav>
-        Reedy
-        <br />
+      <FixedNav>
+        <StyledHomeNavWrapper>
+          <StyledHomeNav>
+            <FullHeightLink href="/#/">
+              <StyledNavBrand>
+                <NavBrandImage src={window.reedyLogoURL} />
+                Reedy
+              </StyledNavBrand>
+            </FullHeightLink>
 
-        <Link onClick={this.clearErrors} to="/login">Login</Link>
-        <br />
-        <Link onClick={this.clearErrors} to="/signup">Signup</Link>
-
-        <br />
-        <br />
-
-      </StyledHomeNav>
+            <StyledNavButtonContainer>
+              <Link onClick={this.clearErrors} to="/login">
+                <StyledNavButton>
+                  Log In
+                </StyledNavButton>
+              </Link>
+              <Link onClick={this.clearErrors} to="/signup">
+                <StyledNavButton>
+                  Sign Up
+                </StyledNavButton>
+              </Link>
+            </StyledNavButtonContainer>
+          </StyledHomeNav>
+        </StyledHomeNavWrapper>
+      </FixedNav>
     );
   }
 }

@@ -29,23 +29,14 @@ html, body {
 }
 
 #root {
-  img {
-    position: fixed;
-    left: 25%;
-    width: 50%;
-    overflow: hidden;
-  }
-
   .coming-soon {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: fixed;
-    left: 25%;
-    top: 10%;
-    width: 50%;
-    z-index: 1;
-    background-color: rgba( 255, 255, 255, 0.7);
+    font-size: 50px;
+    height: 100vh;
+    background: url(asset-path('logo.svg')) no-repeat center;
+    background-size: contain;
   }
 }

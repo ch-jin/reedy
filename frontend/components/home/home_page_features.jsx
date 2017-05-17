@@ -1,9 +1,10 @@
 import React from "react";
+import { Features } from "../../styles/home";
 
 const HomePageFeatures = props => (
-  <div className="home-features">
+  <Features>
     Features
-  </div>
+  </Features>
 );
 
 export default HomePageFeatures;

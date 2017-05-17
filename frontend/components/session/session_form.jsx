@@ -76,7 +76,7 @@ class SessionForm extends React.Component {
           type="button"
           onClick={this.props.loginGuest}
         >
-          Guest Login
+          Demo Login
         </StyledSessionButton>
       </StyledSessionForm>
     );

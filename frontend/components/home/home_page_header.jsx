@@ -1,9 +1,10 @@
 import React from "react";
+import { Header } from "../../styles/home";
 
 const HomePageHeader = props => (
-  <div className="home-header">
+  <Header>
     Reedy Header
-  </div>
+  </Header>
 );
 
 export default HomePageHeader;

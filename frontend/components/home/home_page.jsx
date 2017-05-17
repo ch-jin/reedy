@@ -4,6 +4,7 @@ import SessionModal from "../session/session_modal";
 import HomePageNavContainer from "./home_page_nav_container";
 import HomePageFeatures from "./home_page_features";
 import HomePageHeader from "./home_page_header";
+import { HomePageContent, Screenshot } from "../../styles/home";
 
 class HomePage extends React.Component {
   render() {
@@ -13,12 +14,15 @@ class HomePage extends React.Component {
         <Route path="/signup" component={SessionModal} />
 
         <HomePageNavContainer />
-        <div className="home-screenshot">
-          Screenshot
-        </div>
 
-        <HomePageFeatures />
-        <HomePageHeader />
+        <HomePageContent>
+          <HomePageHeader />
+          <Screenshot>
+            Screenshot
+          </Screenshot>
+
+          <HomePageFeatures />
+        </HomePageContent>
       </div>
     );
   }
