@@ -1,8 +1,14 @@
+import React from "react";
 import glamorous from "glamorous";
 import { Button } from "./theme";
 import { HOME_PAGE_NAV_HEIGHT } from "./theme";
 
-export const StyledHomeNavWrapper = glamorous.nav({
+export const FixedNav = glamorous.nav({
+  position: "fixed",
+  width: "100%",
+});
+
+export const HomeNavWrapper = glamorous.nav({
   height: HOME_PAGE_NAV_HEIGHT,
   display: "flex",
   justifyContent: "center",
@@ -12,7 +18,7 @@ export const StyledHomeNavWrapper = glamorous.nav({
   zIndex: -1,
 });
 
-export const StyledHomeNav = glamorous.nav({
+export const HomeNav = glamorous.nav({
   height: "100%",
   maxWidth: "1280px",
   width: "90%",
@@ -20,6 +26,16 @@ export const StyledHomeNav = glamorous.nav({
   justifyContent: "space-between",
   alignItems: "center",
 });
+
+export const StyledNav = ({ children }) => (
+  <FixedNav>
+    <HomeNavWrapper>
+      <HomeNav>
+        {children}
+      </HomeNav>
+    </HomeNavWrapper>
+  </FixedNav>
+);
 
 export const StyledNavBrand = glamorous.div({
   fontFamily: "Nunito",
@@ -47,11 +63,6 @@ export const StyledNavButton = glamorous(Button)({
 
 export const NavBrandImage = glamorous.img({
   height: "80%",
-});
-
-export const FixedNav = glamorous.nav({
-  position: "fixed",
-  width: "100%",
 });
 
 export const HomePageContent = glamorous.div({

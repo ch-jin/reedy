@@ -1,16 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-import {
-  StyledHomeNavWrapper,
-  StyledHomeNav,
-  StyledNavBrand,
-  StyledNavButtonContainer,
-  StyledNavButton,
-  NavBrandImage,
-  FixedNav,
-} from "../../styles/home";
-import { FullHeightLink } from "../../styles/theme";
+import HomePageNavButton from "./home_page_nav_button";
+import HomePageNavBrand from "./home_page_nav_brand";
+import { StyledNav, StyledNavButtonContainer } from "../../styles/home";
 
 class HomePageNav extends React.Component {
   constructor(props) {
@@ -24,31 +15,22 @@ class HomePageNav extends React.Component {
 
   render() {
     return (
-      <FixedNav>
-        <StyledHomeNavWrapper>
-          <StyledHomeNav>
-            <FullHeightLink href="/">
-              <StyledNavBrand>
-                <NavBrandImage src={window.reedyLogoURL} />
-                Reedy
-              </StyledNavBrand>
-            </FullHeightLink>
+      <StyledNav>
+        <HomePageNavBrand />
 
-            <StyledNavButtonContainer>
-              <Link onClick={this.clearErrors} to="/login">
-                <StyledNavButton>
-                  Log In
-                </StyledNavButton>
-              </Link>
-              <Link onClick={this.clearErrors} to="/signup">
-                <StyledNavButton>
-                  Sign Up
-                </StyledNavButton>
-              </Link>
-            </StyledNavButtonContainer>
-          </StyledHomeNav>
-        </StyledHomeNavWrapper>
-      </FixedNav>
+        <StyledNavButtonContainer>
+          <HomePageNavButton
+            value="Log In"
+            path="/login"
+            clearErrors={this.clearErrors}
+          />
+          <HomePageNavButton
+            value="Sign Up"
+            path="/signup"
+            clearErrors={this.clearErrors}
+          />
+        </StyledNavButtonContainer>
+      </StyledNav>
     );
   }
 }
