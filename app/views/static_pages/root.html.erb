@@ -3,7 +3,10 @@
     window.currentUser =
       <%= render('api/users/user.json.jbuilder', user: current_user).html_safe %>
   <% end %>
+
+  window.reedyLogoURL = '<%= asset_path 'logo.svg' %>'
 </script>
+
 
 <div id="root">
   <div class="coming-soon">

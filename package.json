@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack -w",
-    "build": "webpack"
+    "build": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors"
   },
   "repository": {
     "type": "git",
