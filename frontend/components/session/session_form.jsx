@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
   render() {
     const { username, password } = this.state;
     const { formType, loading, errors } = this.props;
-    console.log(errors);
+
     return (
       <StyledSessionForm onSubmit={this.handleSubmit}>
 

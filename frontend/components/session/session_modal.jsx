@@ -4,6 +4,7 @@ import Modal from "../../utils/modal_util";
 
 class SessionModal extends React.Component {
   render() {
+    console.log("asd");
     return (
       <Modal redirectPath={"/"}>
         <SessionFormContainer />

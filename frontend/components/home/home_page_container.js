@@ -1,9 +1,9 @@
-import { connect } from "react-redux";
-import HomePage from "./home_page";
-import { clearErrors } from "../../actions/session_actions";
+// import { connect } from "react-redux";
+// import HomePage from "./home_page";
+// import { clearErrors } from "../../actions/session_actions";
 
-const mapDispatchToProps = dispatch => ({
-  clearErrors: () => dispatch(clearErrors()),
-});
+// const mapDispatchToProps = dispatch => ({
+//   clearErrors: () => dispatch(clearErrors()),
+// });
 
-export default connect(null, mapDispatchToProps)(HomePage);
+// export default connect(null, mapDispatchToProps)(HomePage);
