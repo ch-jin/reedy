@@ -9,6 +9,7 @@ export const StyledHomeNavWrapper = glamorous.nav({
   boxShadow: "0 1px 11px rgba(0,0,0,0.10), 0 1px 1px rgba(0,0,0,0.10)",
   top: 0,
   backgroundColor: "#fff",
+  zIndex: -1,
 });
 
 export const StyledHomeNav = glamorous.nav({
@@ -56,7 +57,7 @@ export const FixedNav = glamorous.nav({
 export const HomePageContent = glamorous.div({
   position: "absolute",
   top: HOME_PAGE_NAV_HEIGHT,
-  zIndex: -1,
+  zIndex: -2,
   display: "flex",
   width: "100%",
   flexDirection: "column",

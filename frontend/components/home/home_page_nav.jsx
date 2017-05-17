@@ -27,7 +27,7 @@ class HomePageNav extends React.Component {
       <FixedNav>
         <StyledHomeNavWrapper>
           <StyledHomeNav>
-            <FullHeightLink href="/#/">
+            <FullHeightLink href="/">
               <StyledNavBrand>
                 <NavBrandImage src={window.reedyLogoURL} />
                 Reedy
