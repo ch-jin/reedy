@@ -11,11 +11,11 @@ export const Button = glamorous.button({
   backgroundColor: BASE,
   border: "none",
   letterSpacing: "0.5px",
-  transition: "all 125ms",
+  transition: "all 100ms",
   ":hover": {
     backgroundColor: DARKER,
     cursor: "pointer",
-    transition: "all 125ms",
+    transition: "all 100ms",
   },
 });
 
