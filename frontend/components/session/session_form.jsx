@@ -6,7 +6,9 @@ import {
   StyledLettering,
   SpinnerContainer,
   SessionSpinner,
+  SessionErrors,
 } from "../../styles/session_form";
+import SessionErrorList from "./session_errors_list";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -35,8 +37,8 @@ class SessionForm extends React.Component {
 
   render() {
     const { username, password } = this.state;
-    const { formType, loading } = this.props;
-
+    const { formType, loading, errors } = this.props;
+    console.log(errors);
     return (
       <StyledSessionForm onSubmit={this.handleSubmit}>
 
@@ -47,6 +49,8 @@ class SessionForm extends React.Component {
         <StyledLettering>
           {formType}
         </StyledLettering>
+
+        {!errors.length ? "" : <SessionErrorList errors={errors} />}
 
         <StyledSessionInput
           type="text"

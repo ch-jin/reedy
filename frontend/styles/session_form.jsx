@@ -80,3 +80,11 @@ export const SessionSpinner = glamorous.div(
   },
   spin
 );
+
+export const StyledErrorUl = glamorous.ul({
+  marginTop: "-10px",
+  listStyle: "none",
+  color: "#c0392b",
+});
+
+export const StyledErrorLi = glamorous.li({});

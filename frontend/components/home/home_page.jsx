@@ -4,28 +4,41 @@ import SessionModal from "../session/session_modal";
 import HomePageFeatures from "./home_page_features";
 import HomePageHeader from "./home_page_header";
 
-const HomePage = props => (
-  <div className="home-wrapper">
-    Reedy
-    <br />
+class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.clearErrors = this.clearErrors.bind(this);
+  }
 
-    <Link to="/login">Login</Link>
-    <br />
-    <Link to="/signup">Signup</Link>
+  clearErrors() {
+    this.props.clearErrors();
+  }
 
-    <br />
-    <br />
+  render() {
+    return (
+      <div className="home-wrapper">
+        Reedy
+        <br />
 
-    <Route path="/login" component={SessionModal} />
-    <Route path="/signup" component={SessionModal} />
+        <Link onClick={this.clearErrors} to="/login">Login</Link>
+        <br />
+        <Link onClick={this.clearErrors} to="/signup">Signup</Link>
 
-    <div className="home-screenshot">
-      Screenshot
-    </div>
+        <br />
+        <br />
 
-    <HomePageFeatures />
-    <HomePageHeader />
-  </div>
-);
+        <Route path="/login" component={SessionModal} />
+        <Route path="/signup" component={SessionModal} />
+
+        <div className="home-screenshot">
+          Screenshot
+        </div>
+
+        <HomePageFeatures />
+        <HomePageHeader />
+      </div>
+    );
+  }
+}
 
 export default HomePage;
