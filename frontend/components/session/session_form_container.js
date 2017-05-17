@@ -14,6 +14,7 @@ const formType = pathname => {
 const mapStateToProps = (state, { location }) => ({
   formType: formType(location.pathname),
   errors: state.session.errors,
+  loading: state.loading.loadingSession,
 });
 
 const mapDispatchToProps = (dispatch, { location }) => ({
@@ -24,6 +25,8 @@ const mapDispatchToProps = (dispatch, { location }) => ({
       return dispatch(signup(user));
     }
   },
+  loginGuest: () =>
+    dispatch(login({ username: "guest", password: "password" })),
 });
 
 export default withRouter(

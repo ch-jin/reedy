@@ -4,6 +4,8 @@ import {
   StyledSessionInput,
   StyledSessionButton,
   StyledLettering,
+  SpinnerContainer,
+  SessionSpinner,
 } from "../../styles/session_form";
 
 class SessionForm extends React.Component {
@@ -33,10 +35,14 @@ class SessionForm extends React.Component {
 
   render() {
     const { username, password } = this.state;
-    const { formType } = this.props;
-    console.log(formType);
+    const { formType, loading } = this.props;
+
     return (
       <StyledSessionForm onSubmit={this.handleSubmit}>
+
+        {loading
+          ? <SpinnerContainer> <SessionSpinner /> </SpinnerContainer>
+          : ""}
 
         <StyledLettering>
           {formType}
@@ -62,7 +68,7 @@ class SessionForm extends React.Component {
           Submit
         </StyledSessionButton>
 
-        <StyledSessionButton>
+        <StyledSessionButton onClick={this.props.loginGuest}>
           Guest Login
         </StyledSessionButton>
       </StyledSessionForm>
