@@ -1,0 +1,1 @@
+json.partial! 'api/feeds/feed.json.jbuilder', feed: @feed

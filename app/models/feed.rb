@@ -13,10 +13,7 @@
 
 class Feed < ApplicationRecord
 
-  validates :title, :last_updated,
-    presence: { message: 'Invalid RSS URL'}
-
-  validates :url, presence: true,
-    uniqueness: { message: 'This RSS feed already exists!' }
+  validates :title, :last_updated, presence: true
+  validates :url, presence: true, uniqueness: true
 
 end
