@@ -12,7 +12,6 @@
 #  updated_at   :datetime         not null
 
 class Feed < ApplicationRecord
-  after_initialize :ensure_feed_has_content
 
   validates :title, :last_updated,
     presence: { message: 'Invalid RSS URL'}
