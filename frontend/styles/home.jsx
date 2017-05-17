@@ -27,16 +27,6 @@ export const HomeNav = glamorous.nav({
   alignItems: "center",
 });
 
-export const StyledNav = ({ children }) => (
-  <FixedNav>
-    <HomeNavWrapper>
-      <HomeNav>
-        {children}
-      </HomeNav>
-    </HomeNavWrapper>
-  </FixedNav>
-);
-
 export const StyledNavBrand = glamorous.div({
   fontFamily: "Nunito",
   fontSize: "36px",

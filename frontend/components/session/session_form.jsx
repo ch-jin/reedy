@@ -4,11 +4,10 @@ import {
   StyledSessionInput,
   StyledSessionButton,
   StyledLettering,
-  SpinnerContainer,
-  SessionSpinner,
   SessionErrors,
 } from "../../styles/session_form";
 import SessionErrorList from "./session_errors_list";
+import Spinner from "../../utils/spinner_util";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -41,10 +40,7 @@ class SessionForm extends React.Component {
 
     return (
       <StyledSessionForm onSubmit={this.handleSubmit}>
-
-        {loading
-          ? <SpinnerContainer> <SessionSpinner /> </SpinnerContainer>
-          : ""}
+        <Spinner active={loading} />
 
         <StyledLettering>
           {formType}

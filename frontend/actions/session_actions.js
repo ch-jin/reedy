@@ -8,19 +8,27 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const login = user => dispatch => {
   dispatch(fetchingSession());
   return SessionAPIUtil.login(user)
-    .then(res => dispatch(receiveCurrentUser(res)))
+    .then(res => {
+      dispatch(clearErrors());
+      return dispatch(receiveCurrentUser(res));
+    })
     .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
 export const logout = () => dispatch =>
-  SessionAPIUtil.logout()
-    .then(res => dispatch(receiveCurrentUser(null)))
-    .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
+  SessionAPIUtil.logout().then(res =>
+    dispatch(receiveCurrentUser(null))
+  );
 
-export const signup = user => dispatch =>
-  SessionAPIUtil.signup(user)
-    .then(res => dispatch(receiveCurrentUser(res)))
+export const signup = user => dispatch => {
+  dispatch(fetchingSession());
+  return SessionAPIUtil.signup(user)
+    .then(res => {
+      dispatch(clearErrors());
+      return dispatch(receiveCurrentUser(res));
+    })
     .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
+};
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,

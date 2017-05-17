@@ -1,7 +1,8 @@
 import React from "react";
 import HomePageNavButton from "./home_page_nav_button";
 import HomePageNavBrand from "./home_page_nav_brand";
-import { StyledNav, StyledNavButtonContainer } from "../../styles/home";
+import HomePageNavWrapper from "./home_page_nav_wrapper";
+import { StyledNavButtonContainer } from "../../styles/home";
 
 class HomePageNav extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class HomePageNav extends React.Component {
 
   render() {
     return (
-      <StyledNav>
+      <HomePageNavWrapper>
         <HomePageNavBrand />
 
         <StyledNavButtonContainer>
@@ -30,7 +31,7 @@ class HomePageNav extends React.Component {
             clearErrors={this.clearErrors}
           />
         </StyledNavButtonContainer>
-      </StyledNav>
+      </HomePageNavWrapper>
     );
   }
 }
