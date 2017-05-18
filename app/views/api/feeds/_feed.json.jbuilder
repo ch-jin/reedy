@@ -1,1 +1,0 @@
-json.extract! feed, :id, :title, :image_url

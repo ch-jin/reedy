@@ -1,1 +1,1 @@
-json.partial! 'api/feeds/feed.json.jbuilder', feed: @feed
+json.partial! 'api/articles/all_articles', articles: @feed.articles

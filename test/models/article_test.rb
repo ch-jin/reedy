@@ -10,6 +10,7 @@
 #  url        :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  snippet    :string           not null
 #
 
 require 'test_helper'
