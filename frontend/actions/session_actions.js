@@ -15,10 +15,12 @@ export const login = user => dispatch => {
     .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const logout = () => dispatch =>
+export const logout = () => dispatch => {
+  dispatch(fetchingSession());
   SessionAPIUtil.logout().then(res =>
     dispatch(receiveCurrentUser(null))
   );
+};
 
 export const signup = user => dispatch => {
   dispatch(fetchingSession());

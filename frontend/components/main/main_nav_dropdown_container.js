@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
   username: state.session.currentUser.username,
 });
 
-const mapDispatchToProps = (dispatch, { active }) => ({
+const mapDispatchToProps = dispatch => ({
   handleLogout: () => {
     dispatch(toggleUserDropdown(false));
     return dispatch(logout());

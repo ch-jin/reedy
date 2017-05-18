@@ -2,6 +2,7 @@ import React from "react";
 import MainNavContainer from "./main_nav_container";
 import MainSideNav from "./main_side_nav";
 import ArticleList from "../articles/article_list";
+import Spinner from "../../utils/spinner_util";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -11,18 +12,20 @@ class MainPage extends React.Component {
   }
 
   handleClick() {
-    const { userDropdown, toggleUserDropdown } = this.props;
+    const { userDropdown, closeDropdown } = this.props;
     if (userDropdown) {
-      toggleUserDropdown(!userDropdown);
+      closeDropdown();
     }
   }
 
   render() {
+    const { loading } = this.props;
     return (
       <div
         className="main-wrapper"
         onClick={this.handleClick.bind(this)}
       >
+        <Spinner active={loading} />
         <MainNavContainer />
         <MainSideNav />
         <ArticleList />
