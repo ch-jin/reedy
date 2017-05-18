@@ -4,7 +4,7 @@ class Api::FeedsController < ApplicationController
   #   fetch_rss_feed, valid_feed?, construct_feed, add_articles
 
   def index
-    # Will implement when collections are done
+    @feeds = Feed.all
   end
 
   def show
@@ -18,6 +18,7 @@ class Api::FeedsController < ApplicationController
     if valid_feed?(feed)
       @feed = Feed.new(construct_feed(url, feed))
 
+      # Bonus: uniquess for .html, .rss, capitals
       if @feed.save
         render('api/feeds/feed')
         add_articles(@feed.id, feed["item"])
@@ -26,7 +27,7 @@ class Api::FeedsController < ApplicationController
       end
 
     else
-      render json: ["Cannot find RSS feed for this URL"]
+      render json: ["Cannot find RSS feed for this URL"], status: 422
     end
   end
 

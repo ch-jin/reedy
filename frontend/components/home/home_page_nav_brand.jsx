@@ -1,12 +1,12 @@
 import React from "react";
-import { StyledNavBrand, NavBrandImage } from "../../styles/home";
-import { FullHeightLink } from "../../styles/theme";
+import { StyledNavBrand } from "../../styles/home";
+import { FullHeightLink, Img } from "../../styles/theme";
 
 const HomePageNavBrand = () => {
   return (
     <FullHeightLink href="/">
       <StyledNavBrand>
-        <NavBrandImage src={window.reedyLogoURL} />
+        <Img src={window.reedyLogoURL} />
         Reedy
       </StyledNavBrand>
     </FullHeightLink>

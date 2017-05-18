@@ -2,6 +2,7 @@ import React from "react";
 import glamorous from "glamorous";
 import { Button } from "./theme";
 import { NAV_HEIGHT } from "./theme";
+import { StyledSessionButton } from "./session_form";
 
 // ---- Nav
 
@@ -55,10 +56,6 @@ export const StyledNavButton = glamorous(Button)({
   padding: "0 10px",
 });
 
-export const NavBrandImage = glamorous.img({
-  height: "80%",
-});
-
 export const HomePageContent = glamorous.div({
   position: "absolute",
   top: NAV_HEIGHT,
@@ -100,4 +97,10 @@ export const Features = glamorous.div({
   alignItems: "center",
   justifyContent: "center",
   fontSize: "30px",
+});
+
+export const DemoLoginButton = glamorous(StyledSessionButton)({
+  width: "200px",
+  height: "60px",
+  fontSize: "20px",
 });

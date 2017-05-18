@@ -1,5 +1,11 @@
 import glamorous from "glamorous";
-import { NAV_HEIGHT, SIDE_NAV_WIDTH, Button } from "./theme";
+import {
+  NAV_HEIGHT,
+  SIDE_NAV_WIDTH,
+  Button,
+  FlexedDivSpaceAround,
+  FlexedDivCenter,
+} from "./theme";
 
 // -- UPPER NAV --
 export const FixedNav = glamorous.nav({
@@ -8,7 +14,7 @@ export const FixedNav = glamorous.nav({
   left: SIDE_NAV_WIDTH,
 });
 
-export const MainNavWrapper = glamorous.nav({
+export const StyledMainNavWrapper = glamorous.nav({
   height: NAV_HEIGHT,
   display: "flex",
   justifyContent: "center",
@@ -21,10 +27,8 @@ export const MainNavWrapper = glamorous.nav({
 export const StyledMainNav = glamorous.nav({
   height: "100%",
   maxWidth: "1280px",
-  width: "90%",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
+  width: "94%",
+  position: "relative",
 });
 // -----
 
@@ -70,5 +74,18 @@ export const StyledAddContentButton = glamorous(Button)({
   alignSelf: "flex-end",
   fontWeight: 700,
   fontSize: "14px",
+  backgroundColor: "#00B04D",
+  ":hover": {
+    backgroundColor: "#019542",
+  },
 });
 //
+
+export const StyledUserSection = glamorous(FlexedDivSpaceAround)({
+  position: "absolute",
+  right: 0,
+});
+
+export const StyledMainNavHeader = glamorous(FlexedDivCenter)({
+  position: "absolute",
+});

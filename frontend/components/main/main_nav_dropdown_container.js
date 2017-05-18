@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import MainNav from "./main_nav";
+import MainNavDropdown from "./main_nav_dropdown";
 import { logout } from "../../actions/session_actions";
 import { redirectOnLogout } from "../../utils/session_route_util";
 
@@ -15,5 +15,5 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 });
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(MainNav)
+  connect(mapStateToProps, mapDispatchToProps)(MainNavDropdown)
 );

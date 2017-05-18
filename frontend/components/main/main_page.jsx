@@ -1,11 +1,13 @@
 import React from "react";
-import MainNavContainer from "./main_nav_container";
+import MainNav from "./main_nav";
 import MainSideNav from "./main_side_nav";
+import ArticleList from "../articles/article_list";
 
 const MainPage = props => (
   <div className="main-wrapper">
-    <MainNavContainer />
+    <MainNav />
     <MainSideNav />
+    <ArticleList />
   </div>
 );
 
