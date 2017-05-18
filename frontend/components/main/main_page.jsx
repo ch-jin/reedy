@@ -1,12 +1,11 @@
 import React from "react";
-import { Button } from "../../styles/theme";
+import MainNavContainer from "./main_nav_container";
+import MainSideNav from "./main_side_nav";
 
 const MainPage = props => (
   <div className="main-wrapper">
-    Hi {props.username}
-    <Button onClick={props.handleLogout}>
-      Log Out
-    </Button>
+    <MainNavContainer />
+    <MainSideNav />
   </div>
 );
 

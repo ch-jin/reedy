@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import MainPage from "./main_page";
+import MainNav from "./main_nav";
 import { logout } from "../../actions/session_actions";
 import { redirectOnLogout } from "../../utils/session_route_util";
 
@@ -15,5 +15,5 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 });
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(MainPage)
+  connect(mapStateToProps, mapDispatchToProps)(MainNav)
 );

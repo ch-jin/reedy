@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 export const BASE = "#13C962";
 export const DARKER = "#00B04D";
-export const HOME_PAGE_NAV_HEIGHT = "75px";
+export const NAV_HEIGHT = "65px";
+export const SIDE_NAV_WIDTH = "265px";
 
 export const Button = glamorous.button({
   fontFamily: "Nunito",
@@ -12,6 +13,7 @@ export const Button = glamorous.button({
   border: "none",
   letterSpacing: "0.5px",
   transition: "all 100ms",
+  outline: "none",
   ":hover": {
     backgroundColor: DARKER,
     cursor: "pointer",

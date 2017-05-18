@@ -7,3 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # http://feeds.reuters.com/reuters/technologyNews
+
+User.destroy_all
+user1 = User.create({username: 'Guest', password: 'password' })

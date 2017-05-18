@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch, { location }) => ({
     }
   },
   loginGuest: () =>
-    dispatch(login({ username: "guest", password: "password" })),
+    dispatch(login({ username: "Guest", password: "password" })),
 });
 
 export default withRouter(

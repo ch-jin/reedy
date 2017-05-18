@@ -4,7 +4,7 @@ class Api::FeedsController < ApplicationController
   #   fetch_rss_feed, valid_feed?, construct_feed, add_articles
 
   def index
-
+    # Will implement when collections are done
   end
 
   def show
