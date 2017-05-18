@@ -7,13 +7,16 @@
 #  title        :string           not null
 #  image_url    :string
 #  last_updated :datetime         not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
 
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 
 class Feed < ApplicationRecord
-
   validates :title, :last_updated, presence: true
   validates :url, presence: true, uniqueness: true
 
+  has_many :articles
 end
