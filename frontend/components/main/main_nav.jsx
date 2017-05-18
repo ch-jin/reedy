@@ -7,7 +7,7 @@ import {
   UserImg,
 } from "../../styles/main";
 
-const MainNav = ({ userDropdown, handleImgClick }) => (
+const MainNav = ({ handleImgClick }) => (
   <MainNavWrapper>
 
     <StyledMainNavHeader>
