@@ -12,5 +12,5 @@ export default glamorous.div({
   justifyContent: "center",
   alignItems: "center",
   cursor: "pointer",
-  zIndex: 1,
+  zIndex: 3,
 });

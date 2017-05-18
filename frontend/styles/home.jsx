@@ -9,6 +9,7 @@ import { StyledSessionButton } from "./session_form";
 export const FixedNav = glamorous.nav({
   position: "fixed",
   width: "100%",
+  zIndex: 2,
 });
 
 export const HomeNavWrapper = glamorous.nav({
@@ -18,7 +19,6 @@ export const HomeNavWrapper = glamorous.nav({
   boxShadow: "0 1px 11px rgba(0,0,0,0.10), 0 1px 1px rgba(0,0,0,0.10)",
   top: 0,
   backgroundColor: "#fff",
-  zIndex: -1,
 });
 
 export const HomeNav = glamorous.nav({
@@ -59,7 +59,7 @@ export const StyledNavButton = glamorous(Button)({
 export const HomePageContent = glamorous.div({
   position: "absolute",
   top: NAV_HEIGHT,
-  zIndex: -2,
+  zIndex: 1,
   display: "flex",
   width: "100%",
   flexDirection: "column",

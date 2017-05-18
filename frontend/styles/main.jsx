@@ -5,6 +5,7 @@ import {
   Button,
   FlexedDivSpaceAround,
   FlexedDivCenter,
+  Img,
 } from "./theme";
 
 // -- UPPER NAV --
@@ -88,4 +89,8 @@ export const StyledUserSection = glamorous(FlexedDivSpaceAround)({
 
 export const StyledMainNavHeader = glamorous(FlexedDivCenter)({
   position: "absolute",
+});
+
+export const UserImg = glamorous(Img)({
+  height: "70%",
 });

@@ -29,6 +29,7 @@ export const FullHeightLink = glamorous.a({
 
 export const Img = glamorous.img({
   height: "80%",
+  filter: "drop-shadow(0px 2px 4px #e7e7e7)",
   ":hover": {
     cursor: "pointer",
   },

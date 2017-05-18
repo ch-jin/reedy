@@ -1,10 +1,10 @@
 import React from "react";
 import MainNavWrapper from "./main_nav_wrapper";
 import MainNavDropdownContainer from "./main_nav_dropdown_container.js";
-import { Img } from "../../styles/theme";
 import {
   StyledUserSection,
   StyledMainNavHeader,
+  UserImg,
 } from "../../styles/main";
 
 class MainNav extends React.Component {
@@ -35,7 +35,10 @@ class MainNav extends React.Component {
         </StyledMainNavHeader>
 
         <StyledUserSection>
-          <Img src={window.guestImg} onClick={this.handleImgClick} />
+          <UserImg
+            src={window.guestImg}
+            onClick={this.handleImgClick}
+          />
           <MainNavDropdownContainer
             active={this.state.dropdownActive}
           />
