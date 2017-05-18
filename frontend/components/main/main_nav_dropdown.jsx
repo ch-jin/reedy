@@ -2,24 +2,54 @@ import React from "react";
 import { Button } from "../../styles/theme";
 import {
   StyledDropdown,
-  DropdownList,
+  DropdownContent,
   DropdownButton,
+  DropdownEmptyItem,
+  Line,
+  Bold,
 } from "../../styles/dropdown";
 
-const MainNavDropdown = ({ active, handleLogout, username }) => (
-  <StyledDropdown active={active}>
-    <DropdownList>
-      <li>
-        Signed in as {username}
-      </li>
+class MainNavDropdown extends React.Component {
+  handleClick(e) {
+    e.stopPropagation();
+  }
 
-      <li>
-        <DropdownButton onClick={handleLogout}>
-          Log Out
-        </DropdownButton>
-      </li>
-    </DropdownList>
-  </StyledDropdown>
-);
+  render() {
+    const { active, handleLogout, username } = this.props;
+
+    return (
+      <StyledDropdown active={active} onClick={this.handleClick}>
+        <DropdownContent>
+          <DropdownEmptyItem>
+            Signed in as
+            <br />
+            <Bold>
+              {username}
+            </Bold>
+          </DropdownEmptyItem>
+
+          <Line />
+
+          <DropdownButton>
+            Collections
+          </DropdownButton>
+
+          <DropdownButton>
+            Articles
+          </DropdownButton>
+
+          <DropdownButton>
+            Settings
+          </DropdownButton>
+
+          <DropdownButton onClick={handleLogout}>
+            Log Out
+          </DropdownButton>
+
+        </DropdownContent>
+      </StyledDropdown>
+    );
+  }
+}
 
 export default MainNavDropdown;

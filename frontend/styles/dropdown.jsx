@@ -1,11 +1,14 @@
 import glamorous from "glamorous";
-import { Button, NAV_HEIGHT } from "./theme";
+import { Button, NAV_HEIGHT, FlexedDivCenter } from "./theme";
+
+const DROPDOWN_HEIGHT = 241;
+const PADDING = 5;
 
 export const StyledDropdown = glamorous.div(
   {
     position: "absolute",
-    width: "200px",
-    height: "230px",
+    width: "140px",
+    height: DROPDOWN_HEIGHT,
     top: `calc(${NAV_HEIGHT} + 3px)`,
     right: 0,
     backgroundColor: "#fff",
@@ -38,15 +41,42 @@ export const StyledDropdown = glamorous.div(
   })
 );
 
-export const DropdownList = glamorous.ul({
+export const DropdownContent = glamorous.div({
   width: "100%",
   height: "100%",
-  display: "grid",
-  listStyle: "none",
 });
 
 export const DropdownButton = glamorous(Button)({
+  height: 45,
   width: "100%",
-  height: "100%",
-  fontSize: "16px",
+  color: "#111",
+  textAlign: "left",
+  fontSize: "14px",
+  paddingLeft: "10px",
+  backgroundColor: "#fff",
+  ":hover": {
+    color: "#eee",
+  },
+});
+
+export const DropdownEmptyItem = glamorous.div({
+  lineHeight: 1.4,
+  boxSizing: "border-box",
+  display: "flex",
+  paddingTop: PADDING,
+  paddingLeft: "10px",
+  flexDirection: "column",
+  justifyContent: "center",
+  fontSize: "14px",
+  height: 50,
+});
+
+export const Line = glamorous.div({
+  height: PADDING,
+  borderBottom: "1px solid #e7e7e7",
+  marginBottom: PADDING,
+});
+
+export const Bold = glamorous.p({
+  fontWeight: 700,
 });

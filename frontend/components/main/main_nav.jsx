@@ -7,46 +7,19 @@ import {
   UserImg,
 } from "../../styles/main";
 
-class MainNav extends React.Component {
-  constructor(props) {
-    super(props);
+const MainNav = ({ userDropdown, handleImgClick }) => (
+  <MainNavWrapper>
 
-    this.state = {
-      dropdownActive: false,
-    };
+    <StyledMainNavHeader>
+      New York Times
+    </StyledMainNavHeader>
 
-    this.handleImgClick = this.handleImgClick.bind(this);
-  }
+    <StyledUserSection>
+      <UserImg src={window.guestImg} onClick={handleImgClick} />
+      <MainNavDropdownContainer />
+    </StyledUserSection>
 
-  handleImgClick() {
-    this.setState({
-      dropdownActive: !this.state.dropdownActive,
-    });
-  }
-
-  render() {
-    const { username, handleLogout } = this.props;
-
-    return (
-      <MainNavWrapper>
-
-        <StyledMainNavHeader>
-          New York Times
-        </StyledMainNavHeader>
-
-        <StyledUserSection>
-          <UserImg
-            src={window.guestImg}
-            onClick={this.handleImgClick}
-          />
-          <MainNavDropdownContainer
-            active={this.state.dropdownActive}
-          />
-        </StyledUserSection>
-
-      </MainNavWrapper>
-    );
-  }
-}
+  </MainNavWrapper>
+);
 
 export default MainNav;
