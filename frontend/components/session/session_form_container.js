@@ -31,6 +31,7 @@ const mapDispatchToProps = (dispatch, { location }) => ({
   },
   loginGuest: () =>
     dispatch(login({ username: "Guest", password: "password" })),
+  clearErrors: () => dispatch(clearErrors()),
 });
 
 export default withRouter(

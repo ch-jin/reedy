@@ -7,7 +7,7 @@ import {
   SessionErrors,
 } from "../../styles/session_form";
 import SessionErrorList from "./session_errors_list";
-import Spinner from "../../utils/spinner_util";
+import Loader from "../../utils/loader_util";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -20,6 +20,12 @@ class SessionForm extends React.Component {
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    if (this.props.errors.length) {
+      this.props.clearErrors();
+    }
   }
 
   handleSubmit(e) {
@@ -40,13 +46,13 @@ class SessionForm extends React.Component {
 
     return (
       <StyledSessionForm onSubmit={this.handleSubmit}>
-        <Spinner active={loading} />
 
+        {loading && <Loader />}
         <StyledLettering>
           {formType}
         </StyledLettering>
 
-        {!errors.length ? "" : <SessionErrorList errors={errors} />}
+        {Boolean(errors.length) && <SessionErrorList errors={errors} />}
 
         <StyledSessionInput
           type="text"

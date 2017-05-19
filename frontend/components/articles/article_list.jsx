@@ -1,8 +1,12 @@
 import React from "react";
+import {
+  ArticleFeedWrapper,
+  ArticleContent,
+} from "../../styles/article";
 import * as FeedAPIUtils from "../../utils/feeds_api_util";
 import * as ArticleAPIUtils from "../../utils/articles_api_util";
 import values from "lodash/values";
-import Spinner from "../../utils/spinner_util";
+import Loader from "../../utils/loader_util";
 
 class ArticleList extends React.Component {
   constructor(props) {
@@ -23,16 +27,19 @@ class ArticleList extends React.Component {
     const { articles } = this.state;
 
     return (
-      <div>
-        <Spinner active={!articles.length} />
-        {articles.map(article => (
-          <div>
-            <h1 dangerouslySetInnerHTML={{ __html: article.title }} />
-            <h1>{article.title}</h1>
-            <p dangerouslySetInnerHTML={{ __html: article.body }} />
-          </div>
-        ))}
-      </div>
+      <ArticleFeedWrapper>
+        <ArticleContent>
+          {!articles.length && <Loader />}
+
+          {articles.map(article => (
+            <div>
+              <h1 dangerouslySetInnerHTML={{ __html: article.title }} />
+              <h1>{article.title}</h1>
+              <p dangerouslySetInnerHTML={{ __html: article.body }} />
+            </div>
+          ))}
+        </ArticleContent>
+      </ArticleFeedWrapper>
     );
   }
 }

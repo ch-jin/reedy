@@ -15,4 +15,12 @@ Article.destroy_all
 
 user1 = User.create({username: 'Guest', password: 'password' })
 
-seed_feeds("http://feeds.reuters.com/reuters/technologyNews")
+feeds = [
+  "https://venturebeat.com/feed/",
+  "http://feeds.reuters.com/reuters/technologyNews",
+  "http://feeds.arstechnica.com/arstechnica/index"
+]
+
+feeds.each do |feed|
+  seed_feed(feed)
+end

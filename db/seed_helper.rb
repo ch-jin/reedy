@@ -59,7 +59,7 @@ def construct_article(feed_id, article)
   new_article
 end
 
-def seed_feeds(url)
+def seed_feed(url)
   puts "SEEDING #{url}"
   puts "STARTING FETCH............"
   raw_feed = fetch_rss_feed(url)
