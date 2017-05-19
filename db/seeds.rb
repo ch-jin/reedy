@@ -6,7 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# http://feeds.reuters.com/reuters/technologyNews
+# "http://feeds.reuters.com/reuters/technologyNews"
+require_relative 'seed_helper'
 
 User.destroy_all
+Feed.destroy_all
+Article.destroy_all
+
 user1 = User.create({username: 'Guest', password: 'password' })
+
+seed_feeds("http://feeds.reuters.com/reuters/technologyNews")

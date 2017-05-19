@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 gem 'figaro'
 gem 'httparty'
+gem 'colorize'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
