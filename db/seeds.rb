@@ -18,7 +18,8 @@ user1 = User.create({username: 'Guest', password: 'password' })
 feeds = [
   "https://venturebeat.com/feed/",
   "http://feeds.reuters.com/reuters/technologyNews",
-  "http://feeds.arstechnica.com/arstechnica/index"
+  "http://feeds.arstechnica.com/arstechnica/index",
+  "https://www.theverge.com/rss/index.xml"
 ]
 
 feeds.each do |feed|
