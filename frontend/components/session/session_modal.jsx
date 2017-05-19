@@ -4,6 +4,7 @@ import Modal from "../../utils/modal_util";
 
 const SessionModal = () => (
   <Modal redirectPath={"/"}>
+    {console.log("adasdsads")}
     <SessionFormContainer />
   </Modal>
 );

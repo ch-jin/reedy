@@ -1,5 +1,5 @@
-import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { logout } from "../../actions/session_actions";
 import { toggleUserDropdown } from "../../actions/dropdown_actions";
 import MainNavDropdown from "./main_nav_dropdown";
@@ -9,13 +9,13 @@ const mapStateToProps = state => ({
   username: state.session.currentUser.username,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, { history }) => ({
   handleLogout: () => {
     dispatch(toggleUserDropdown(false));
-    return dispatch(logout());
+    dispatch(logout()).then(() => history.push("/"));
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  MainNavDropdown
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(MainNavDropdown)
 );

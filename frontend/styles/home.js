@@ -1,4 +1,3 @@
-import React from "react";
 import glamorous from "glamorous";
 import { Button } from "./theme";
 import { NAV_HEIGHT } from "./theme";

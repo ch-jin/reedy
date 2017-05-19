@@ -1,5 +1,4 @@
 import glamorous from "glamorous";
-import { Link } from "react-router-dom";
 
 export const BASE = "#14c862";
 export const DARKER = "#00B04D";

@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "../../styles/home";
 
-const HomePageHeader = props => (
+const HomePageHeader = () => (
   <Header>
     Reedy Header
   </Header>

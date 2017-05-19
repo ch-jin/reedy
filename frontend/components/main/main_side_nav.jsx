@@ -8,7 +8,7 @@ import {
   StyledAddContentButton,
 } from "../../styles/main";
 
-const MainSideNav = props => (
+const MainSideNav = () => (
   <FixedSideNav>
     <SideNavWrapper>
       <SideNavContent>

@@ -1,5 +1,5 @@
 import glamorous from "glamorous";
-import { Button, NAV_HEIGHT, FlexedDivCenter } from "./theme";
+import { Button, NAV_HEIGHT } from "./theme";
 
 const DROPDOWN_HEIGHT = 241;
 const PADDING = 5;

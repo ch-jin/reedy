@@ -1,6 +1,6 @@
 import React from "react";
 import { StyledNavBox } from "../../styles/main";
 
-const MainSideNavLinks = props => <StyledNavBox>{" "}</StyledNavBox>;
+const MainSideNavLinks = () => <StyledNavBox>{" "}</StyledNavBox>;
 
 export default MainSideNavLinks;

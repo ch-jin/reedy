@@ -6,7 +6,7 @@ import {
   FeedImg,
 } from "../../styles/explore";
 
-const ExploreItem = ({ feed, receiveCurrentFeed }) => (
+const ExploreItem = ({ feed }) => (
   <StyledExploreItem>
     <Link to={`/feeds/${feed.id}`}>
       <FeedImg src={feed.image} />

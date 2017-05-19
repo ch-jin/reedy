@@ -20,7 +20,7 @@ export const fetchingFeeds = () => ({
 
 export const fetchAllFeeds = () => dispatch => {
   dispatch(fetchingFeeds());
-  FeedAPIUtil.fetchAllFeeds().then(feeds =>
+  return FeedAPIUtil.fetchAllFeeds().then(feeds =>
     dispatch(receiveAllFeeds(feeds))
   );
 };

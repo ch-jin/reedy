@@ -1,17 +1,22 @@
 import React from "react";
 import Loader from "../../utils/loader_util";
-import { MainContentWrapper } from "../../styles/main";
 
 class ArticleList extends React.Component {
   componentDidMount() {
-    this.props.fetchArticles(this.props.feed.id);
+    const { fetchAllFeeds, fetchArticles, feeds, feedId } = this.props;
+
+    if (feeds.length) {
+      fetchArticles(feedId);
+    } else {
+      fetchAllFeeds().then(() => fetchArticles(feedId));
+    }
   }
 
   render() {
     const { loading, articles } = this.props;
 
     return (
-      <MainContentWrapper>
+      <div>
         {loading && <Loader />}
         {articles.map(article => (
           <div key={"article" + article.id}>
@@ -24,7 +29,7 @@ class ArticleList extends React.Component {
             <br /><br /><br />
           </div>
         ))}
-      </MainContentWrapper>
+      </div>
     );
   }
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import { toggleUserDropdown } from "../../actions/dropdown_actions";
 import MainNav from "./main_nav";

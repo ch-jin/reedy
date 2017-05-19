@@ -36,7 +36,13 @@ module.exports = {
         loader: "babel-loader",
         query: {
           presets: ["es2015", "react"],
+          plugins: ["transform-object-rest-spread"],
         },
+      },
+      {
+        test: [/\.jsx?$/],
+        exclude: /(node_modules)/,
+        loader: "eslint-loader",
       },
     ],
   },

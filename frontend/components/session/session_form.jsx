@@ -4,7 +4,6 @@ import {
   StyledSessionInput,
   StyledSessionButton,
   StyledLettering,
-  SessionErrors,
 } from "../../styles/session_form";
 import SessionErrorList from "./session_errors_list";
 import Loader from "../../utils/loader_util";

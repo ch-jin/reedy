@@ -1,5 +1,5 @@
 import glamorous from "glamorous";
-import { spin, opacityChange } from "./animations";
+import { opacityChange } from "./animations";
 
 export const LoaderContainer = glamorous.div({
   position: "absolute",

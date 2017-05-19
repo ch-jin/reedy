@@ -1,14 +1,18 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import HomePageContainer from "./home/home_page_container";
 import MainPageContainer from "./main/main_page_container";
-import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 
-const App = () => (
+const App = ({ loggedIn, location }) => (
   <div>
-    <AuthRoute path="/" component={HomePageContainer} />
-    <ProtectedRoute path="/" component={MainPageContainer} />
+    {loggedIn && <MainPageContainer path={location.pathname} />}
+    {!loggedIn && <HomePageContainer />}
   </div>
 );
 
-export default App;
+const mapStateToProps = state => ({
+  loggedIn: Boolean(state.session.currentUser),
+});
+
+export default withRouter(connect(mapStateToProps)(App));

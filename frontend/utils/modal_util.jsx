@@ -10,6 +10,7 @@ class Modal extends React.Component {
 
   handleClick(e) {
     const { history, redirectPath } = this.props;
+
     if (e.target.classList.contains("outer-modal")) {
       history.push(redirectPath);
     }
