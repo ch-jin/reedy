@@ -21,16 +21,17 @@ module Api::FeedsHelper
   end
 
   def construct_feed(url, feed)
-    {
+    new_feed = {
       url: url,
       title: feed["title"],
-      image_url: feed["image"]["url"],
       last_updated: DateTime.now
     }
+    new_feed[:image_url] = feed["image"]["url"] if feed["image"]
+    new_feed
   end
 
   def add_articles(feed_id, articles)
-    articles.each do |article|
+     articles.each do |article|
       Article.create(construct_article(feed_id, article))
     end
   end
@@ -45,12 +46,34 @@ module Api::FeedsHelper
       url: article["link"]
     }
 
-    doc = Nokogiri::HTML(new_article[:body])
+    unless valid_body?(new_article)
+      new_article[:body] = new_article[:snippet]
+    end
 
+    doc = Nokogiri::HTML(new_article[:body])
     doc.xpath('//img').each do |img|
       new_article[:image] = img['src'] if img['src']
     end
 
     new_article
+  end
+
+  def valid_body?(article)
+    article_title_words = article[:title].downcase.gsub(/[^a-z0-9\s]/i, '').split('')
+    snippet_words = article[:snippet].downcase.gsub(/[^a-z0-9\s]/i, '').split('')
+
+    valid = nil
+
+    snippet_words.each_with_index do |word, idx|
+      break if idx == snippet_words.length - 1
+      valid = Regexp.new(word) =~ article[:body]
+      if valid.nil?
+        puts word.red
+        valid = false
+        break
+      end
+    end
+
+    return valid
   end
 end

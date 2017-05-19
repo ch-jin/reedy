@@ -1,44 +1,118 @@
+# def fetch_rss_feed(url)
+#   all_content = HTTParty.get(
+#     "http://#{ENV['rss_server_ip']}/" +
+#     "makefulltextfeed.php?" +
+#     "url=#{url}" +
+#     "&max=10" +
+#     "&links=preserve" +
+#     "&exc=" +
+#     "&format=json" +
+#     "&parser=html5php"
+#   )
+
+#   feed = all_content["rss"]["channel"]
+#   feed
+# end
+
+# def valid_feed?(feed)
+#   first_item = feed["item"][0]
+#   first_item != nil
+# end
+
+# def construct_feed(url, feed)
+#   {
+#     url: url,
+#     title: feed["title"],
+#     image_url: feed["image"]["url"],
+#     last_updated: DateTime.now
+#   }
+# end
+
+# def add_articles(feed_id, articles)
+#   print "Article IDs:"
+#   articles.each do |article|
+#     new_article = Article.new(construct_article(feed_id, article))
+#     if new_article.save
+#       print "#{new_article.id} ".green
+#     else
+#       print "F ".red
+#     end
+#   end
+# end
+
+# def construct_article(feed_id, article)
+#   new_article = {
+#     feed_id: feed_id,
+#     title: article["title"],
+#     snippet: article["description"],
+#     body: article["content_encoded"],
+#     pub_date: article["pubDate"],
+#     url: article["link"]
+#   }
+
+#   doc = Nokogiri::HTML(new_article[:body])
+
+#   doc.xpath('//img').each do |img|
+#     new_article[:image] = img['src'] if img['src']
+#   end
+
+#   new_article
+# end
+
 def fetch_rss_feed(url)
-  all_content = HTTParty.get(
-    "http://#{ENV['rss_server_ip']}/" +
-    "makefulltextfeed.php?" +
-    "url=#{url}" +
-    "&max=10" +
-    "&links=preserve" +
-    "&exc=" +
-    "&format=json" +
-    "&parser=html5php"
-  )
+    puts ""
+    puts ""
+    puts "FETCHING #{url}"
+    puts "STARTING FETCH............"
 
-  feed = all_content["rss"]["channel"]
-  feed
-end
+    all_content = HTTParty.get(
+      "http://#{ENV['rss_server_ip']}/" +
+      "makefulltextfeed.php?" +
+      "url=#{url}" +
+      "&max=10" +
+      "&links=preserve" +
+      "&exc=" +
+      "&format=json" +
+      "&parser=html5php"
+    )
 
-def valid_feed?(feed)
-  first_item = feed["item"][0]
-  first_item != nil
-end
+    feed = all_content["rss"]["channel"]
+    feed
+  end
+
+  def valid_feed?(feed)
+    first_item = feed["item"][0]
+    if first_item != nil
+      puts "VALID FEED".green
+      true
+    else
+      puts "ERROR INVALID FEED: #{url}".red
+      false
+    end
+  end
 
 def construct_feed(url, feed)
-  {
+  new_feed = {
     url: url,
     title: feed["title"],
-    image_url: feed["image"]["url"],
     last_updated: DateTime.now
   }
+  new_feed[:image_url] = feed["image"]["url"] if feed["image"]
+  new_feed
 end
 
 def add_articles(feed_id, articles)
-  print "Article IDs:"
+  print
   articles.each do |article|
     new_article = Article.new(construct_article(feed_id, article))
     if new_article.save
-      print "#{new_article.id} ".green
+      puts "Article ID: #{new_article.id} ".green
     else
-      print "F ".red
+      puts "F ".red
     end
   end
 end
+
 
 def construct_article(feed_id, article)
   new_article = {
@@ -50,8 +124,12 @@ def construct_article(feed_id, article)
     url: article["link"]
   }
 
-  doc = Nokogiri::HTML(new_article[:body])
+  unless valid_body?(new_article)
+    puts "Rearranging article info".yellow
+    new_article[:body] = new_article[:snippet]
+  end
 
+  doc = Nokogiri::HTML(new_article[:body])
   doc.xpath('//img').each do |img|
     new_article[:image] = img['src'] if img['src']
   end
@@ -59,13 +137,31 @@ def construct_article(feed_id, article)
   new_article
 end
 
+
+def valid_body?(article)
+  article_title_words = article[:title].downcase.gsub(/[^a-z0-9\s]/i, '').split('')
+  snippet_words = article[:snippet].downcase.gsub(/[^a-z0-9\s]/i, '').split('')
+
+  valid = nil
+
+  snippet_words.each_with_index do |word, idx|
+    break if idx == snippet_words.length - 1
+    valid = Regexp.new(word) =~ article[:body]
+    if valid.nil?
+      puts word.red
+      valid = false
+      break
+    end
+  end
+
+  return valid
+end
+
+
 def seed_feed(url)
-  puts "SEEDING #{url}"
-  puts "STARTING FETCH............"
   raw_feed = fetch_rss_feed(url)
 
   if valid_feed?(raw_feed)
-    puts "VALID FEED".green
     new_feed = Feed.new(construct_feed(url, raw_feed))
     if new_feed.save
       puts "............"
@@ -76,7 +172,6 @@ def seed_feed(url)
     else
       puts "ERROR FEED DID NOT SAVE: #{url}".red
     end
-  else
-    puts "ERROR INVALID FEED: #{url}".red
   end
+
 end
