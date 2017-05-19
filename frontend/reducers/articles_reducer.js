@@ -1,4 +1,3 @@
-import merge from "lodash/merge";
 import {
   RECEIVE_ALL_ARTICLES,
   RECEIVE_CURRENT_ARTICLE,
@@ -14,9 +13,9 @@ const articlesReducer = (state = _initState, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_ARTICLES:
-      return merge({}, state, { all: action.articles });
+      return { ...state, all: action.articles };
     case RECEIVE_CURRENT_ARTICLE:
-      return merge({}, state, { current: action.article });
+      return { ...state, current: action.article };
     default:
       return state;
   }

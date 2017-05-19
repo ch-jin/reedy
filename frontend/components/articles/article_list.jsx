@@ -3,12 +3,31 @@ import Loader from "../../utils/loader_util";
 
 class ArticleList extends React.Component {
   componentDidMount() {
-    const { fetchAllFeeds, fetchArticles, feeds, feedId } = this.props;
-
+    const { fetchAllFeeds, feeds } = this.props;
+    console.log("mount");
     if (feeds.length) {
-      fetchArticles(feedId);
+      this.updateNewCurrentFeed();
     } else {
-      fetchAllFeeds().then(() => fetchArticles(feedId));
+      fetchAllFeeds();
+    }
+  }
+
+  componentWillReceiveProps() {
+    console.log("newpropsreceived");
+    this.updateNewCurrentFeed();
+  }
+
+  updateNewCurrentFeed() {
+    const {
+      id,
+      currentFeedId,
+      setCurrentFeed,
+      fetchArticles,
+    } = this.props;
+
+    if (id !== currentFeedId) {
+      setCurrentFeed(id);
+      fetchArticles(id);
     }
   }
 

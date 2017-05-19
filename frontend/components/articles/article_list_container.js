@@ -3,17 +3,22 @@ import ArticleList from "./article_list";
 import { fetchArticlesFromFeed } from "../../actions/article_actions";
 import { allArticles } from "../../selectors/article_selectors";
 import { allFeeds } from "../../selectors/feed_selectors";
-import { fetchAllFeeds } from "../../actions/feed_actions";
+import {
+  fetchAllFeeds,
+  receiveCurrentFeed,
+} from "../../actions/feed_actions";
 
 const mapStateToProps = (state, { match }) => ({
-  feedId: match.params.id,
+  id: match.params.id,
+  currentFeedId: state.feeds.current,
   feeds: allFeeds(state),
   articles: allArticles(state),
   loading: state.loading.loadingArticles,
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchArticles: feedId => dispatch(fetchArticlesFromFeed(feedId)),
+  setCurrentFeed: id => dispatch(receiveCurrentFeed(id)),
+  fetchArticles: id => dispatch(fetchArticlesFromFeed(id)),
   fetchAllFeeds: () => dispatch(fetchAllFeeds()),
 });
 

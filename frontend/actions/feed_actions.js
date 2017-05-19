@@ -9,9 +9,9 @@ export const receiveAllFeeds = feeds => ({
   feeds,
 });
 
-export const receiveCurrentFeed = feed => ({
+export const receiveCurrentFeed = feedId => ({
   type: RECEIVE_CURRENT_FEED,
-  feed,
+  feedId,
 });
 
 export const fetchingFeeds = () => ({
@@ -24,6 +24,3 @@ export const fetchAllFeeds = () => dispatch => {
     dispatch(receiveAllFeeds(feeds))
   );
 };
-
-export const fetchFeed = feed => dispatch =>
-  dispatch(receiveCurrentFeed(feed));

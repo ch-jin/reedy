@@ -16,7 +16,7 @@ const feedsReducer = (state = _initState, action) => {
     case RECEIVE_ALL_FEEDS:
       return merge({}, state, { all: action.feeds });
     case RECEIVE_CURRENT_FEED:
-      return merge({}, state, { current: action.feed });
+      return merge({}, state, { current: action.feedId });
     default:
       return state;
   }
