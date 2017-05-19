@@ -12,6 +12,7 @@ import {
 
 class HomePage extends React.Component {
   render() {
+    const { loginGuest } = this.props;
     return (
       <div className="home-wrapper">
         <Route path="/login" component={SessionModal} />
@@ -22,7 +23,7 @@ class HomePage extends React.Component {
         <HomePageContent>
           <HomePageHeader />
 
-          <DemoLoginButton>
+          <DemoLoginButton onClick={loginGuest}>
             Get Started
           </DemoLoginButton>
 
