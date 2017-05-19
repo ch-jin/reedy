@@ -94,3 +94,12 @@ export const StyledMainNavHeader = glamorous(FlexedDivCenter)({
 export const UserImg = glamorous(Img)({
   height: "70%",
 });
+
+export const MainContentWrapper = glamorous.div({
+  position: "absolute",
+  width: `calc(100% - ${SIDE_NAV_WIDTH})`,
+  height: `calc(100% - ${NAV_HEIGHT})`,
+  top: NAV_HEIGHT,
+  left: SIDE_NAV_WIDTH,
+  zIndex: 0,
+});

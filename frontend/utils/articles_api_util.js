@@ -3,3 +3,9 @@ export const fetchArticlesFromFeed = feedId =>
     method: "GET",
     url: `/api/feeds/${feedId}`,
   });
+
+export const fetchArticle = id =>
+  $.ajax({
+    method: "GET",
+    url: `/api/articles/${id}`,
+  });

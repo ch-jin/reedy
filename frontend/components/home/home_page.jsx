@@ -14,7 +14,7 @@ class HomePage extends React.Component {
   render() {
     const { loginGuest } = this.props;
     return (
-      <div className="home-wrapper">
+      <div>
         <Route path="/login" component={SessionModal} />
         <Route path="/signup" component={SessionModal} />
 

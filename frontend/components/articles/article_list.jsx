@@ -1,45 +1,30 @@
 import React from "react";
-import {
-  ArticleFeedWrapper,
-  ArticleContent,
-} from "../../styles/article";
-import * as FeedAPIUtils from "../../utils/feeds_api_util";
-import * as ArticleAPIUtils from "../../utils/articles_api_util";
-import values from "lodash/values";
 import Loader from "../../utils/loader_util";
+import { MainContentWrapper } from "../../styles/main";
 
 class ArticleList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { articles: [] };
-  }
-
   componentDidMount() {
-    FeedAPIUtils.fetchAllFeeds().then(feeds => {
-      const keys = Object.keys(feeds);
-      ArticleAPIUtils.fetchArticlesFromFeed(keys[0]).then(articles => {
-        this.setState({ articles: values(articles) });
-      });
-    });
+    this.props.fetchArticles(this.props.feed.id);
   }
 
   render() {
-    const { articles } = this.state;
+    const { loading, articles } = this.props;
 
     return (
-      <ArticleFeedWrapper>
-        <ArticleContent>
-          {!articles.length && <Loader />}
-
-          {articles.map(article => (
-            <div>
-              <h1 dangerouslySetInnerHTML={{ __html: article.title }} />
-              <h1>{article.title}</h1>
-              <p dangerouslySetInnerHTML={{ __html: article.body }} />
-            </div>
-          ))}
-        </ArticleContent>
-      </ArticleFeedWrapper>
+      <MainContentWrapper>
+        {loading && <Loader />}
+        {articles.map(article => (
+          <div key={"article" + article.id}>
+            <h1 dangerouslySetInnerHTML={{ __html: article.title }} />
+            <br />
+            <img src={article.image} />
+            <h5 dangerouslySetInnerHTML={{ __html: article.body }} />
+            <br />
+            {article.pubDate}
+            <br /><br /><br />
+          </div>
+        ))}
+      </MainContentWrapper>
     );
   }
 }
