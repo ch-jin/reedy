@@ -1,4 +1,6 @@
 import React from "react";
+import { RouteTransition } from "react-router-transition";
+import springs from "../../styles/springs";
 import { Redirect } from "react-router-dom";
 import { DefaultLoader } from "../../utils/loader_util";
 import { ArticleDetailWrapper } from "../../styles/article";
@@ -20,9 +22,13 @@ class ArticleDetail extends React.Component {
       currentArticle,
       id,
       toggleArticleModal,
+      active,
     } = this.props;
 
-    toggleArticleModal();
+    console.log("detail mount");
+    if (!active) {
+      toggleArticleModal();
+    }
 
     if (!currentArticle) {
       fetchArticle(id);
@@ -57,18 +63,23 @@ class ArticleDetail extends React.Component {
   }
 
   render() {
-    const { loading, currentArticle, feedId } = this.props;
-
+    const { loading, currentArticle, feedId, location } = this.props;
+    console.log(this.props);
     if (this.state.initialLoad) {
       return (
         <ArticleModal>
-          <ArticleDetailWrapper
-            onClick={this.handleClick}
-            className="article-modal-content"
+          <RouteTransition
+            pathname={location.pathname}
+            {...springs.articleSlideLeft}
           >
-            {loading && <DefaultLoader />}
-            {currentArticle && this.renderArticle()}
-          </ArticleDetailWrapper>
+            <ArticleDetailWrapper
+              onClick={this.handleClick}
+              className="article-modal-content"
+            >
+              {loading && <DefaultLoader />}
+              {currentArticle && this.renderArticle()}
+            </ArticleDetailWrapper>
+          </RouteTransition>
         </ArticleModal>
       );
     } else {

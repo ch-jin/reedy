@@ -8,8 +8,8 @@ import {
   StyledAddContentButton,
 } from "../../styles/main";
 
-const MainSideNav = () => (
-  <FixedSideNav>
+const MainSideNav = ({ articleModal }) => (
+  <FixedSideNav articleModal={articleModal}>
     <SideNavWrapper>
       <SideNavContent>
         <MainSideNavLinks />

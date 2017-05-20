@@ -9,16 +9,16 @@ import {
   ArticleSnippet,
 } from "../../styles/article";
 
-const ArticleItem = ({ article, feedId }) => (
+const ArticleItem = ({ article, feedId, hasImage }) => (
   <Link
     className="no-decoration"
     to={`/feeds/${feedId}/articles/${article.id}`}
   >
-    <StyledArticleItemWrapper>
-      <ImgWrapper hasImage={Boolean(article.image)}>
-        <ArticleSmallImg src={article.image} />
+    <StyledArticleItemWrapper hasImage={hasImage}>
+      <ImgWrapper hasImage={hasImage}>
+        {hasImage && <ArticleSmallImg src={article.image} />}
       </ImgWrapper>
-      <StyledArticleSnippetWrapper>
+      <StyledArticleSnippetWrapper hasImage={hasImage}>
         <ArticleMiniTitle
           dangerouslySetInnerHTML={{ __html: article.title }}
         />

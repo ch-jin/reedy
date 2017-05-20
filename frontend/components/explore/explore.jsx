@@ -1,4 +1,6 @@
 import React from "react";
+import { RouteTransition } from "react-router-transition";
+import springs from "../../styles/springs";
 import { DefaultLoader } from "../../utils/loader_util";
 import { StyledExploreWrapper } from "../../styles/explore";
 import ExploreItem from "./explore_item";
@@ -9,15 +11,17 @@ class Explore extends React.Component {
   }
 
   render() {
-    const { loading, feeds } = this.props;
+    const { loading, feeds, location } = this.props;
 
     return (
-      <StyledExploreWrapper>
-        {loading && <DefaultLoader />}
-        {feeds.map(feed => (
-          <ExploreItem key={"feed" + feed.id} feed={feed} />
-        ))}
-      </StyledExploreWrapper>
+      <RouteTransition pathname={location.pathname} {...springs.fade}>
+        <StyledExploreWrapper>
+          {loading && <DefaultLoader />}
+          {feeds.map(feed => (
+            <ExploreItem key={"feed" + feed.id} feed={feed} />
+          ))}
+        </StyledExploreWrapper>
+      </RouteTransition>
     );
   }
 }

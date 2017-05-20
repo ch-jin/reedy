@@ -1,4 +1,6 @@
 import React from "react";
+import { RouteTransition } from "react-router-transition";
+import springs from "../../styles/springs";
 import { ArticleLoader } from "../../utils/loader_util";
 import ArticleItem from "./article_item";
 import { StyledArticleListWrapper } from "../../styles/article";
@@ -33,19 +35,25 @@ class ArticleList extends React.Component {
   }
 
   render() {
-    const { loading, articles, id } = this.props;
+    const { loading, articles, id, location } = this.props;
+    const numImages = articles.filter(({ image }) => Boolean(image))
+      .length;
 
     return (
-      <StyledArticleListWrapper>
-        {loading && <ArticleLoader />}
-        {articles.map(article => (
-          <ArticleItem
-            key={"article" + article.id}
-            feedId={id}
-            article={article}
-          />
-        ))}
-      </StyledArticleListWrapper>
+      <RouteTransition pathname={location.pathname} {...springs.fade}>
+        <StyledArticleListWrapper hasImage={numImages > 5}>
+          {loading && <ArticleLoader />}
+          {articles.map(article => (
+            <ArticleItem
+              key={"article" + article.id}
+              feedId={id}
+              article={article}
+              hasImage={numImages > 5}
+            />
+          ))}
+        </StyledArticleListWrapper>
+
+      </RouteTransition>
     );
   }
 }

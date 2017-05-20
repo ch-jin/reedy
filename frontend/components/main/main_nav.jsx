@@ -7,8 +7,8 @@ import {
   UserImg,
 } from "../../styles/main";
 
-const MainNav = ({ handleImgClick }) => (
-  <MainNavWrapper>
+const MainNav = ({ handleImgClick, articleModal }) => (
+  <MainNavWrapper articleModal={articleModal}>
 
     <StyledMainNavHeader>
       New York Times

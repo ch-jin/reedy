@@ -6,7 +6,7 @@ export default glamorous.div({
   left: 0,
   width: "100vw",
   height: "100vh",
-  overflow: "auto",
+  overflow: "hidden",
   backgroundColor: "rgba(0, 0, 0, 0.4)",
   display: "flex",
   justifyContent: "center",

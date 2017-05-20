@@ -1,16 +1,20 @@
 import glamorous from "glamorous";
-import { NAV_HEIGHT, SIDE_NAV_WIDTH, SHADOW_BORDER } from "./theme";
+import { SHADOW_BORDER } from "./theme";
 const ARTICLE_ITEM_HEIGHT = 150;
 
-export const StyledArticleListWrapper = glamorous.div({
-  maxWidth: "740px",
-  width: "96%",
-});
+export const StyledArticleListWrapper = glamorous.div(
+  {
+    width: "96%",
+  },
+  ({ hasImage }) => ({
+    maxWidth: hasImage ? "740px" : "610px",
+  })
+);
 
 export const StyledArticleItemWrapper = glamorous.div({
   display: "flex",
   margin: 10,
-  alignItems: "flex-start",
+  justifyContent: "center",
   height: ARTICLE_ITEM_HEIGHT,
 });
 
@@ -21,23 +25,28 @@ export const ArticleSmallImg = glamorous.img({
 
 export const ImgWrapper = glamorous.div(
   {
-    height: ARTICLE_ITEM_HEIGHT,
-    width: ARTICLE_ITEM_HEIGHT,
     display: "flex",
     alignItems: "flex-start",
-    paddingTop: 5,
+    paddingTop: 15,
   },
-  props => ({
-    display: props.hasImage ? "flex" : "none",
+  ({ hasImage }) => ({
+    height: hasImage ? ARTICLE_ITEM_HEIGHT : 0,
+    width: hasImage ? ARTICLE_ITEM_HEIGHT : 0,
   })
 );
 
-export const StyledArticleSnippetWrapper = glamorous.div({
-  width: `calc(100% - ${ARTICLE_ITEM_HEIGHT}px)`,
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-});
+export const StyledArticleSnippetWrapper = glamorous.div(
+  {
+    // width: `calc(100% - ${ARTICLE_ITEM_HEIGHT}px)`,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  ({ hasImage }) => ({
+    width: hasImage ? `calc(100% - ${ARTICLE_ITEM_HEIGHT}px)` : "100%",
+  })
+);
 
 export const ArticleMiniTitle = glamorous.h4({
   fontWeight: 700,
@@ -56,7 +65,7 @@ export const StyledArticleModal = glamorous.div({
   left: 0,
   width: "100vw",
   height: "100vh",
-  overflow: "auto",
+  overflow: "hidden",
   backgroundColor: "rgba(0, 0, 0, 0.4)",
   display: "flex",
   cursor: "pointer",
@@ -64,14 +73,15 @@ export const StyledArticleModal = glamorous.div({
 });
 
 export const ArticleDetailWrapper = glamorous.div({
-  top: NAV_HEIGHT + 20,
-  left: SIDE_NAV_WIDTH + 20,
+  top: 0,
+  right: 0,
   boxSizing: "border-box",
-  padding: "35px 70px 70px 45px",
+  padding: "5% 10%",
   backgroundColor: "white",
   border: SHADOW_BORDER,
-  width: `calc(100% - ${SIDE_NAV_WIDTH}px - 40px)`,
-  height: `calc(100% - ${NAV_HEIGHT}px - 40px)`,
+  borderRadius: 5,
+  width: "70%",
+  height: "100%",
   boxShadow: "18px 18px 90px 2px rgba(0,0,0,0.5)",
   cursor: "auto",
   position: "absolute",

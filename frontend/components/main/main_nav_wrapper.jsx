@@ -5,8 +5,8 @@ import {
   StyledMainNav,
 } from "../../styles/main";
 
-const MainNavWrapper = ({ children }) => (
-  <FixedNav>
+const MainNavWrapper = ({ children, articleModal }) => (
+  <FixedNav articleModal={articleModal}>
     <StyledMainNavWrapper>
       <StyledMainNav>
         {children}

@@ -11,12 +11,16 @@ import {
 } from "./theme";
 
 // -- UPPER NAV --
-export const FixedNav = glamorous.nav({
-  position: "fixed",
-  width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
-  left: SIDE_NAV_WIDTH,
-  zIndex: 2,
-});
+export const FixedNav = glamorous.nav(
+  {
+    position: "fixed",
+    width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
+    left: SIDE_NAV_WIDTH,
+  },
+  ({ articleModal }) => ({
+    zIndex: articleModal ? 0 : 4,
+  })
+);
 
 export const StyledMainNavWrapper = glamorous.nav({
   height: NAV_HEIGHT,
@@ -38,11 +42,15 @@ export const StyledMainNav = glamorous.nav({
 // -----
 
 // -- SIDE NAV --
-export const FixedSideNav = glamorous.nav({
-  position: "fixed",
-  width: SIDE_NAV_WIDTH,
-  zIndex: 3,
-});
+export const FixedSideNav = glamorous.nav(
+  {
+    position: "fixed",
+    width: SIDE_NAV_WIDTH,
+  },
+  ({ articleModal }) => ({
+    zIndex: articleModal ? 0 : 3,
+  })
+);
 
 export const SideNavWrapper = glamorous.nav({
   height: "100vh",
@@ -110,7 +118,7 @@ export const MainContentWrapper = glamorous.div(
     top: `${NAV_HEIGHT - 40}px`,
     left: SIDE_NAV_WIDTH,
     paddingTop: 90,
-    zIndex: 0,
+    zIndex: 3,
   },
   props => ({
     overflow: props.modalOpen ? "hidden" : "inherit",

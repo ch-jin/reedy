@@ -18,11 +18,16 @@ user1 = User.create({username: 'Guest', password: 'password' })
 feeds = [
   "http://feeds2.feedburner.com/time/topstories",
   "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+  "http://www.npr.org/rss/rss.php?id=1001",
   "https://www.theguardian.com/uk/rss",
   "http://feeds.reuters.com/reuters/technologyNews",
   "http://feeds.arstechnica.com/arstechnica/index",
-  "https://www.theverge.com/rss/index.xml",
   "https://venturebeat.com/feed/",
+  "https://hackaday.com/blog/feed/",
+  "https://hackernoon.com/feed",
+  "https://dev.to/rss",
+  "https://www.behance.net/feeds/projects",
+  "https://www.producthunt.com/feed.atom"
 ]
 
 feeds.each do |feed|

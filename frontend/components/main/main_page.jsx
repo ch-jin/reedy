@@ -1,5 +1,7 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import { RouteTransition } from "react-router-transition";
+import springs from "../../styles/springs";
 import MainNavContainer from "./main_nav_container";
 import MainSideNav from "./main_side_nav";
 import ExploreContainer from "../explore/explore_container";
@@ -42,31 +44,39 @@ class MainPage extends React.Component {
         className="main-wrapper"
         onClick={this.handleClick.bind(this)}
       >
+
         {loading && <DefaultLoader />}
-        <MainNavContainer />
-        <MainSideNav />
+        <MainNavContainer articleModal={articleModal} />
+        <MainSideNav articleModal={articleModal} />
 
         <Route
-          path="/feeds/:feedId/articles/:articleId"
-          component={ArticleDetailContainer}
-        />
+          render={({ location }) => (
+            <MainContentWrapper modalOpen={articleModal}>
+              <Switch key={location.key} location={location}>
+                <Route
+                  path="/feeds/:feedId/articles/:articleId"
+                  component={ArticleDetailContainer}
+                />
 
-        <MainContentWrapper modalOpen={articleModal}>
-          <Switch>
-            <Route
-              path="/feeds/:id/articles"
-              component={ArticleListContainer}
-            />
-            <Route
-              path="/feeds/:id"
-              render={({ match }) => (
-                <Redirect to={`/feeds/${match.params.id}/articles`} />
-              )}
-            />
-            <Route path="/explore" component={ExploreContainer} />
-            <Redirect to="/explore" />
-          </Switch>
-        </MainContentWrapper>
+                <Route
+                  path="/feeds/:id/articles"
+                  component={ArticleListContainer}
+                />
+
+                <Route
+                  path="/feeds/:id"
+                  render={({ match }) => (
+                    <Redirect
+                      to={`/feeds/${match.params.id}/articles`}
+                    />
+                  )}
+                />
+                <Route path="/explore" component={ExploreContainer} />
+                <Redirect to="/explore" />
+              </Switch>
+            </MainContentWrapper>
+          )}
+        />
       </div>
     );
   }
