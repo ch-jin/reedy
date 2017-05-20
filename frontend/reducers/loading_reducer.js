@@ -1,4 +1,3 @@
-import merge from "lodash/merge";
 import {
   FETCHING_SESSION,
   RECEIVE_ERRORS,
@@ -11,12 +10,15 @@ import {
 import {
   FETCHING_ARTICLES,
   RECEIVE_ALL_ARTICLES,
+  FETCHING_CURRENT_ARTICLE,
+  RECEIVE_CURRENT_ARTICLE,
 } from "../actions/article_actions";
 
 const _initialState = {
   loadingSession: false,
   loadingExplore: false,
   loadingArticles: false,
+  loadingCurrentArticle: false,
 };
 
 const loadingReducer = (state = _initialState, { type }) => {
@@ -24,20 +26,25 @@ const loadingReducer = (state = _initialState, { type }) => {
 
   switch (type) {
     case FETCHING_SESSION:
-      return merge({}, state, { loadingSession: true });
+      return { ...state, loadingSession: true };
     case RECEIVE_ERRORS:
     case RECEIVE_CURRENT_USER:
-      return merge({}, state, { loadingSession: false });
+      return { ...state, loadingSession: false };
 
     case FETCHING_FEEDS:
-      return merge({}, state, { loadingExplore: true });
+      return { ...state, loadingExplore: true };
     case RECEIVE_ALL_FEEDS:
-      return merge({}, state, { loadingExplore: false });
+      return { ...state, loadingExplore: false };
 
     case FETCHING_ARTICLES:
-      return merge({}, state, { loadingArticles: true });
+      return { ...state, loadingArticles: true };
     case RECEIVE_ALL_ARTICLES:
-      return merge({}, state, { loadingArticles: false });
+      return { ...state, loadingArticles: false };
+
+    case FETCHING_CURRENT_ARTICLE:
+      return { ...state, loadingCurrentArticle: true };
+    case RECEIVE_CURRENT_ARTICLE:
+      return { ...state, loadingCurrentArticle: false };
     default:
       return state;
   }

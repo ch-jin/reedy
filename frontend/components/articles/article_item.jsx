@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   StyledArticleItemWrapper,
   ArticleSmallImg,
@@ -8,15 +9,19 @@ import {
   ArticleSnippet,
 } from "../../styles/article";
 
-const ArticleItem = ({ article }) => (
+const ArticleItem = ({ article, feedId, toggleArticleModal }) => (
   <StyledArticleItemWrapper>
-    <ImgWrapper>
-      <ArticleSmallImg src={article.image} />
-    </ImgWrapper>
+    <Link to={`/feeds/${feedId}/articles/${article.id}`}>
+      <ImgWrapper>
+        <ArticleSmallImg src={article.image} />
+      </ImgWrapper>
+    </Link>
     <StyledArticleSnippetWrapper>
-      <ArticleMiniTitle
-        dangerouslySetInnerHTML={{ __html: article.title }}
-      />
+      <Link to={`/feeds/${feedId}/articles/${article.id}`}>
+        <ArticleMiniTitle
+          dangerouslySetInnerHTML={{ __html: article.title }}
+        />
+      </Link>
       <ArticleSnippet
         dangerouslySetInnerHTML={{ __html: article.body }}
       />

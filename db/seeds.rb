@@ -16,11 +16,13 @@ Article.destroy_all
 user1 = User.create({username: 'Guest', password: 'password' })
 
 feeds = [
-  'https://venturebeat.com/feed/',
-  'http://feeds.reuters.com/reuters/technologyNews',
-  'http://feeds.arstechnica.com/arstechnica/index',
-  'https://www.theverge.com/rss/index.xml',
-  'http://mashable.com/rss/'
+  "http://feeds2.feedburner.com/time/topstories",
+  "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+  "https://www.theguardian.com/uk/rss",
+  "http://feeds.reuters.com/reuters/technologyNews",
+  "http://feeds.arstechnica.com/arstechnica/index",
+  "https://www.theverge.com/rss/index.xml",
+  "https://venturebeat.com/feed/",
 ]
 
 feeds.each do |feed|

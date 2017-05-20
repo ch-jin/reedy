@@ -1,5 +1,5 @@
 import glamorous from "glamorous";
-import { Img, NAV_BOX_SHADOW, SHADOW_BORDER } from "./theme";
+import { NAV_BOX_SHADOW, SHADOW_BORDER } from "./theme";
 
 export const StyledExploreItem = glamorous.div({
   height: 200,

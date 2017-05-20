@@ -99,14 +99,20 @@ export const UserImg = glamorous(Img)({
   height: "70%",
 });
 
-export const MainContentWrapper = glamorous.div({
-  position: "absolute",
-  display: "flex",
-  justifyContent: "center",
-  width: `calc(100% - ${SIDE_NAV_WIDTH})`,
-  height: `calc(100% - ${NAV_HEIGHT})`,
-  top: NAV_HEIGHT - 40,
-  left: SIDE_NAV_WIDTH,
-  paddingTop: 90,
-  zIndex: 0,
-});
+export const MainContentWrapper = glamorous.div(
+  {
+    boxSizing: "border-box",
+    position: "absolute",
+    display: "flex",
+    justifyContent: "center",
+    width: `calc(100% - ${SIDE_NAV_WIDTH})`,
+    height: `calc(100% - ${NAV_HEIGHT})`,
+    top: `${NAV_HEIGHT - 40}px`,
+    left: SIDE_NAV_WIDTH,
+    paddingTop: 90,
+    zIndex: 0,
+  },
+  props => {
+    overflow: props.modalOpen ? "hidden" : "auto";
+  }
+);

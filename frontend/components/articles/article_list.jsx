@@ -1,12 +1,12 @@
 import React from "react";
-import Loader from "../../utils/loader_util";
+import { ArticleLoader } from "../../utils/loader_util";
 import ArticleItem from "./article_item";
 import { StyledArticleListWrapper } from "../../styles/article";
 
 class ArticleList extends React.Component {
   componentDidMount() {
     const { fetchAllFeeds, feeds } = this.props;
-    console.log("mount");
+
     if (feeds.length) {
       this.updateNewCurrentFeed();
     } else {
@@ -33,13 +33,17 @@ class ArticleList extends React.Component {
   }
 
   render() {
-    const { loading, articles } = this.props;
+    const { loading, articles, id } = this.props;
 
     return (
       <StyledArticleListWrapper>
-        {loading && <Loader />}
+        {loading && <ArticleLoader />}
         {articles.map(article => (
-          <ArticleItem key={"article" + article.id} article={article} />
+          <ArticleItem
+            key={"article" + article.id}
+            feedId={id}
+            article={article}
+          />
         ))}
       </StyledArticleListWrapper>
     );

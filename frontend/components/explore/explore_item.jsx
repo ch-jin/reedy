@@ -11,16 +11,14 @@ import {
 const ExploreItem = ({ feed }) => (
   <StyledExploreItem>
     <ExploreItemWrapper>
-      <Link to={`/feeds/${feed.id}`}>
+      <Link to={`/feeds/${feed.id}/articles`}>
         <FeedImgContainer>
           <FeedImg src={feed.image} />
         </FeedImgContainer>
       </Link>
     </ExploreItemWrapper>
     <FeedTitle>
-      <h5>
-        {feed.title}
-      </h5>
+      <h5 dangerouslySetInnerHTML={{ __html: feed.title }} />
     </FeedTitle>
   </StyledExploreItem>
 );

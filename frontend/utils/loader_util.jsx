@@ -4,13 +4,23 @@ import {
   SecondDot,
   ThirdDot,
   LoaderContainer,
+  ArticleLoaderContainer,
 } from "../styles/loader";
 
-export default () => (
+export const DefaultLoader = () => (
   <LoaderContainer>
     <FirstDot />
     <SecondDot />
     <ThirdDot />
     Loading
   </LoaderContainer>
+);
+
+export const ArticleLoader = () => (
+  <ArticleLoaderContainer>
+    <FirstDot />
+    <SecondDot />
+    <ThirdDot />
+    Loading
+  </ArticleLoaderContainer>
 );

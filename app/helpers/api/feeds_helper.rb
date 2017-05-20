@@ -3,12 +3,7 @@ module Api::FeedsHelper
     all_content = HTTParty.get(
       "http://#{ENV['rss_server_ip']}/" +
       "makefulltextfeed.php?" +
-      "url=#{url}" +
-      "&max=10" +
-      "&links=preserve" +
-      "&exc=" +
-      "&format=json" +
-      "&parser=html5php"
+      "url=#{url}"
     )
 
     feed = all_content["rss"]["channel"]

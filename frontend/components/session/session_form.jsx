@@ -6,7 +6,7 @@ import {
   StyledLettering,
 } from "../../styles/session_form";
 import SessionErrorList from "./session_errors_list";
-import Loader from "../../utils/loader_util";
+import { DefaultLoader } from "../../utils/loader_util";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
     return (
       <StyledSessionForm onSubmit={this.handleSubmit}>
 
-        {loading && <Loader />}
+        {loading && <DefaultLoader />}
         <StyledLettering>
           {formType}
         </StyledLettering>

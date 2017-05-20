@@ -1,5 +1,5 @@
 import React from "react";
-import Loader from "../../utils/loader_util";
+import { DefaultLoader } from "../../utils/loader_util";
 import { StyledExploreWrapper } from "../../styles/explore";
 import ExploreItem from "./explore_item";
 
@@ -13,7 +13,7 @@ class Explore extends React.Component {
 
     return (
       <StyledExploreWrapper>
-        {loading && <Loader />}
+        {loading && <DefaultLoader />}
         {feeds.map(feed => (
           <ExploreItem key={"feed" + feed.id} feed={feed} />
         ))}

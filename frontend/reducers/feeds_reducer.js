@@ -1,4 +1,3 @@
-import merge from "lodash/merge";
 import {
   RECEIVE_ALL_FEEDS,
   RECEIVE_CURRENT_FEED,
@@ -14,9 +13,9 @@ const feedsReducer = (state = _initState, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_FEEDS:
-      return merge({}, state, { all: action.feeds });
+      return { ...state, all: action.feeds };
     case RECEIVE_CURRENT_FEED:
-      return merge({}, state, { current: action.feedId });
+      return { ...state, current: action.feedId };
     default:
       return state;
   }
