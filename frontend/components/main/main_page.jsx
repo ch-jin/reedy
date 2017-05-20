@@ -35,7 +35,7 @@ class MainPage extends React.Component {
   }
 
   render() {
-    const { loading } = this.props;
+    const { loading, articleModal } = this.props;
 
     return (
       <div
@@ -51,7 +51,7 @@ class MainPage extends React.Component {
           component={ArticleDetailContainer}
         />
 
-        <MainContentWrapper>
+        <MainContentWrapper modalOpen={articleModal}>
           <Switch>
             <Route
               path="/feeds/:id/articles"

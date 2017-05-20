@@ -14,6 +14,7 @@ const mapStateToProps = (state, { match }) => ({
   feeds: allFeeds(state),
   articles: allArticles(state),
   loading: state.loading.loadingArticles,
+  articleModal: state.modal.articleModal,
 });
 
 const mapDispatchToProps = dispatch => ({

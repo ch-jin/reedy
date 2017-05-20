@@ -112,7 +112,7 @@ export const MainContentWrapper = glamorous.div(
     paddingTop: 90,
     zIndex: 0,
   },
-  props => {
-    overflow: props.modalOpen ? "hidden" : "auto";
-  }
+  props => ({
+    overflow: props.modalOpen ? "hidden" : "inherit",
+  })
 );
