@@ -1,5 +1,7 @@
 import React from "react";
 import Loader from "../../utils/loader_util";
+import ArticleItem from "./article_item";
+import { StyledArticleListWrapper } from "../../styles/article";
 
 class ArticleList extends React.Component {
   componentDidMount() {
@@ -13,7 +15,6 @@ class ArticleList extends React.Component {
   }
 
   componentWillReceiveProps() {
-    console.log("newpropsreceived");
     this.updateNewCurrentFeed();
   }
 
@@ -35,20 +36,12 @@ class ArticleList extends React.Component {
     const { loading, articles } = this.props;
 
     return (
-      <div>
+      <StyledArticleListWrapper>
         {loading && <Loader />}
         {articles.map(article => (
-          <div key={"article" + article.id}>
-            <h1 dangerouslySetInnerHTML={{ __html: article.title }} />
-            <br />
-            <img src={article.image} />
-            <h5 dangerouslySetInnerHTML={{ __html: article.body }} />
-            <br />
-            {article.pubDate}
-            <br /><br /><br />
-          </div>
+          <ArticleItem key={"article" + article.id} article={article} />
         ))}
-      </div>
+      </StyledArticleListWrapper>
     );
   }
 }

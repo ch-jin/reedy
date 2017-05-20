@@ -3,10 +3,13 @@ import glamorous from "glamorous";
 export const BASE = "#14c862";
 export const DARKER = "#00B04D";
 export const NAV_HEIGHT = "65px";
+export const SHADOW_BORDER = "1px solid #e9e9e9";
+export const NAV_BOX_SHADOW =
+  "0 1px 3px 0 rgba(0,0,0,0.03), 0 1px 2px 0 rgba(0,0,0,0.06)";
 export const SIDE_NAV_WIDTH = "265px";
 
 export const Button = glamorous.button({
-  fontFamily: "Nunito",
+  fontFamily: "Oxygen",
   color: "#eee",
   backgroundColor: BASE,
   border: "none",

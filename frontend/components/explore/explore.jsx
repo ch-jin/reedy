@@ -1,6 +1,6 @@
 import React from "react";
 import Loader from "../../utils/loader_util";
-
+import { StyledExploreWrapper } from "../../styles/explore";
 import ExploreItem from "./explore_item";
 
 class Explore extends React.Component {
@@ -12,12 +12,12 @@ class Explore extends React.Component {
     const { loading, feeds } = this.props;
 
     return (
-      <div>
+      <StyledExploreWrapper>
         {loading && <Loader />}
         {feeds.map(feed => (
           <ExploreItem key={"feed" + feed.id} feed={feed} />
         ))}
-      </div>
+      </StyledExploreWrapper>
     );
   }
 }

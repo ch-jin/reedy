@@ -14,6 +14,7 @@ export const StyledDropdown = glamorous.div(
     backgroundColor: "#fff",
     border: "1px solid #dddede",
     borderRadius: "4px",
+    fontFamily: "Oxygen",
     boxShadow: "0 3px 12px rgba(27,31,35,0.15)",
     "&::before": {
       content: "close-quote",
@@ -53,6 +54,7 @@ export const DropdownButton = glamorous(Button)({
   textAlign: "left",
   fontSize: "14px",
   paddingLeft: "10px",
+  fontWeight: 700,
   backgroundColor: "#fff",
   ":hover": {
     color: "#eee",

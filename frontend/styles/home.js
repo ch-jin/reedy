@@ -1,6 +1,6 @@
 import glamorous from "glamorous";
 import { Button } from "./theme";
-import { NAV_HEIGHT } from "./theme";
+import { NAV_HEIGHT, NAV_BOX_SHADOW, SHADOW_BORDER } from "./theme";
 import { StyledSessionButton } from "./session_form";
 
 // ---- Nav
@@ -15,7 +15,8 @@ export const HomeNavWrapper = glamorous.nav({
   height: NAV_HEIGHT,
   display: "flex",
   justifyContent: "center",
-  boxShadow: "0 1px 11px rgba(0,0,0,0.10), 0 1px 1px rgba(0,0,0,0.10)",
+  borderBottom: SHADOW_BORDER,
+  boxShadow: NAV_BOX_SHADOW,
   top: 0,
   backgroundColor: "#fff",
 });
@@ -32,7 +33,7 @@ export const HomeNav = glamorous.nav({
 // -----
 
 export const StyledNavBrand = glamorous.div({
-  fontFamily: "Nunito",
+  fontFamily: "Oxygen",
   fontSize: "36px",
   letterSpacing: "0.5px",
   height: "100%",

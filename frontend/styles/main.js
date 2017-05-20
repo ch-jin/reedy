@@ -1,6 +1,8 @@
 import glamorous from "glamorous";
 import {
   NAV_HEIGHT,
+  NAV_BOX_SHADOW,
+  SHADOW_BORDER,
   SIDE_NAV_WIDTH,
   Button,
   FlexedDivSpaceAround,
@@ -20,7 +22,9 @@ export const StyledMainNavWrapper = glamorous.nav({
   height: NAV_HEIGHT,
   display: "flex",
   justifyContent: "center",
-  boxShadow: "0 1px 11px rgba(0,0,0,0.10), 0 1px 1px rgba(0,0,0,0.10)",
+  boxShadow: NAV_BOX_SHADOW,
+  boxSizing: "border-box",
+  borderBottom: SHADOW_BORDER,
   top: 0,
   backgroundColor: "#fff",
 });
@@ -37,6 +41,7 @@ export const StyledMainNav = glamorous.nav({
 export const FixedSideNav = glamorous.nav({
   position: "fixed",
   width: SIDE_NAV_WIDTH,
+  zIndex: 3,
 });
 
 export const SideNavWrapper = glamorous.nav({
@@ -46,7 +51,6 @@ export const SideNavWrapper = glamorous.nav({
   boxShadow: "0 1px 11px rgba(0,0,0,0.10), 0 1px 1px rgba(0,0,0,0.10)",
   top: 0,
   backgroundColor: "#1e262f",
-  zIndex: 1,
   color: "#e9e9e9",
 });
 
@@ -97,9 +101,12 @@ export const UserImg = glamorous(Img)({
 
 export const MainContentWrapper = glamorous.div({
   position: "absolute",
+  display: "flex",
+  justifyContent: "center",
   width: `calc(100% - ${SIDE_NAV_WIDTH})`,
   height: `calc(100% - ${NAV_HEIGHT})`,
-  top: NAV_HEIGHT,
+  top: NAV_HEIGHT - 40,
   left: SIDE_NAV_WIDTH,
+  paddingTop: 90,
   zIndex: 0,
 });

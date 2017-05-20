@@ -44,7 +44,7 @@ export const StyledSessionButton = glamorous(Button)({
 
 export const StyledLettering = glamorous.div({
   fontSize: "36px",
-  fontFamily: "Nunito",
+  fontFamily: "Oxygen",
   margin: "40px auto",
 });
 

@@ -4,15 +4,23 @@ import {
   StyledExploreItem,
   FeedTitle,
   FeedImg,
+  FeedImgContainer,
+  ExploreItemWrapper,
 } from "../../styles/explore";
 
 const ExploreItem = ({ feed }) => (
   <StyledExploreItem>
-    <Link to={`/feeds/${feed.id}`}>
-      <FeedImg src={feed.image} />
-    </Link>
+    <ExploreItemWrapper>
+      <Link to={`/feeds/${feed.id}`}>
+        <FeedImgContainer>
+          <FeedImg src={feed.image} />
+        </FeedImgContainer>
+      </Link>
+    </ExploreItemWrapper>
     <FeedTitle>
-      {feed.title}
+      <h5>
+        {feed.title}
+      </h5>
     </FeedTitle>
   </StyledExploreItem>
 );
