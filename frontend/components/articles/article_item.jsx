@@ -9,25 +9,25 @@ import {
   ArticleSnippet,
 } from "../../styles/article";
 
-const ArticleItem = ({ article, feedId, toggleArticleModal }) => (
-  <StyledArticleItemWrapper>
-    <Link to={`/feeds/${feedId}/articles/${article.id}`}>
-      <ImgWrapper>
+const ArticleItem = ({ article, feedId }) => (
+  <Link
+    className="no-decoration"
+    to={`/feeds/${feedId}/articles/${article.id}`}
+  >
+    <StyledArticleItemWrapper>
+      <ImgWrapper hasImage={Boolean(article.image)}>
         <ArticleSmallImg src={article.image} />
       </ImgWrapper>
-    </Link>
-    <StyledArticleSnippetWrapper>
-      <Link to={`/feeds/${feedId}/articles/${article.id}`}>
+      <StyledArticleSnippetWrapper>
         <ArticleMiniTitle
           dangerouslySetInnerHTML={{ __html: article.title }}
         />
-      </Link>
-      <ArticleSnippet
-        dangerouslySetInnerHTML={{ __html: article.body }}
-      />
-    </StyledArticleSnippetWrapper>
-
-  </StyledArticleItemWrapper>
+        <ArticleSnippet
+          dangerouslySetInnerHTML={{ __html: article.body }}
+        />
+      </StyledArticleSnippetWrapper>
+    </StyledArticleItemWrapper>
+  </Link>
 );
 
 export default ArticleItem;

@@ -41,6 +41,6 @@ export const ArticleLoaderContainer = glamorous(LoaderContainer)({
   position: "fixed",
   top: NAV_HEIGHT,
   left: SIDE_NAV_WIDTH,
-  height: `calc(100% - ${NAV_HEIGHT})`,
-  width: `calc(100% - ${SIDE_NAV_WIDTH})`,
+  height: `calc(100% - ${NAV_HEIGHT}px)`,
+  width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
 });

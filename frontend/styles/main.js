@@ -13,7 +13,7 @@ import {
 // -- UPPER NAV --
 export const FixedNav = glamorous.nav({
   position: "fixed",
-  width: `calc(100% - ${SIDE_NAV_WIDTH})`,
+  width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
   left: SIDE_NAV_WIDTH,
   zIndex: 2,
 });
@@ -65,7 +65,7 @@ export const SideNavContent = glamorous.nav({
 
 // -- SIDE NAV ITEMS --
 export const StyledNavBox = glamorous.div({
-  width: `calc(${SIDE_NAV_WIDTH} - 30px)`,
+  width: `calc(${SIDE_NAV_WIDTH}px - 30px)`,
   marginTop: "15px",
   height: "150px",
   border: "1px solid white",
@@ -105,8 +105,8 @@ export const MainContentWrapper = glamorous.div(
     position: "absolute",
     display: "flex",
     justifyContent: "center",
-    width: `calc(100% - ${SIDE_NAV_WIDTH})`,
-    height: `calc(100% - ${NAV_HEIGHT})`,
+    width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
+    height: `calc(100% - ${NAV_HEIGHT}px)`,
     top: `${NAV_HEIGHT - 40}px`,
     left: SIDE_NAV_WIDTH,
     paddingTop: 90,

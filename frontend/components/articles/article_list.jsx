@@ -33,10 +33,10 @@ class ArticleList extends React.Component {
   }
 
   render() {
-    const { loading, articles, id, articleModal } = this.props;
-    console.log(articleModal);
+    const { loading, articles, id } = this.props;
+
     return (
-      <StyledArticleListWrapper articleModal>
+      <StyledArticleListWrapper>
         {loading && <ArticleLoader />}
         {articles.map(article => (
           <ArticleItem

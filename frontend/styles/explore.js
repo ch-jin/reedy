@@ -11,6 +11,11 @@ export const StyledExploreItem = glamorous.div({
   alignItems: "center",
   flexWrap: "wrap",
   margin: 10,
+  transition: "all 0.3s cubic-bezier(.25,.8,.25,1)",
+  ":hover": {
+    boxShadow: "0 10px 28px rgba(0,0,0,0.25), 0 6px 10px rgba(0,0,0,0.22)",
+    transform: "translatey(-5px)",
+  },
 });
 
 export const FeedTitle = glamorous.div({
