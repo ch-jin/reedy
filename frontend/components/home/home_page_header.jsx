@@ -7,7 +7,11 @@ const HomePageHeader = () => (
       Everything in One Place
     </Header>
 
-    All the content you love without the distractions
+    <p style={{ textAlign: "center" }}>
+      All the content you love without the distractions
+      <br />
+      Your new one stop shop for RSS feeds
+    </p>
   </HeaderWrapper>
 );
 

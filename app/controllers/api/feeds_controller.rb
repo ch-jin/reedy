@@ -27,7 +27,7 @@ class Api::FeedsController < ApplicationController
       end
 
     else
-      render json: ["Cannot find RSS feed for this URL"], status: 422
+      render json: ["Cannot find RSS feed for this URL"], status: 404
     end
   end
 

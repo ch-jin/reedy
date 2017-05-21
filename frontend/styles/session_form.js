@@ -39,7 +39,7 @@ export const StyledSessionButton = glamorous(Button)({
   width: "150px",
   fontSize: "16px",
   fontWeight: 500,
-  margin: "10px 0",
+  margin: "20px 0",
 });
 
 export const StyledLettering = glamorous.div({
@@ -55,7 +55,7 @@ export const StyledErrorUl = glamorous.ul({
 });
 
 export const LinkWrapper = glamorous.div({
-  marginTop: 10,
+  marginTop: 20,
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-around",

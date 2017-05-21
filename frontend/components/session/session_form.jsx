@@ -74,10 +74,6 @@ class SessionForm extends React.Component {
           Submit
         </StyledSessionButton>
 
-        <StyledSessionButton type="button" onClick={loginGuest}>
-          Demo Login
-        </StyledSessionButton>
-
         <SessionFormLinks loginGuest={loginGuest} formType={formType} />
       </StyledSessionForm>
     );

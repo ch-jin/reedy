@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
     resources :feeds, only: [:show, :index, :create]
     resources :articles, only: [:index, :show]
+    resources :collections, only: [:index, :show, :create, :update, :destroy]
   end
 
   root to: 'static_pages#root'
