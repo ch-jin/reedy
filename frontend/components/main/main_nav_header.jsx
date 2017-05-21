@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { StyledMainNavHeader, MainNavLogo } from "../../styles/main";
 
 const MainNavHeader = props => {
-  console.log(props);
   const { currentFeed, pathname } = props;
   const currentTitle = () => {
     if (pathname === "/explore" || pathname === "/") {

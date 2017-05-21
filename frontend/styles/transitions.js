@@ -39,6 +39,23 @@ export const popNoFade = {
   },
 };
 
+export const gentlePop = {
+  atEnter: {
+    scale: 0.95,
+  },
+  atLeave: {
+    scale: spring(0.95, config.fade),
+  },
+  atActive: {
+    scale: spring(1, config.fade),
+  },
+  mapStyles(styles) {
+    return {
+      transform: `scale(${styles.scale})`,
+    };
+  },
+};
+
 export const popFade = {
   atEnter: {
     scale: 0.8,

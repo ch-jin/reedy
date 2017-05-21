@@ -26,8 +26,7 @@ export const ArticleSmallImg = glamorous.img({
 export const ImgWrapper = glamorous.div(
   {
     display: "flex",
-    alignItems: "flex-start",
-    paddingTop: 15,
+    alignItems: "center",
   },
   ({ hasImage }) => ({
     height: hasImage ? ARTICLE_ITEM_HEIGHT : 0,

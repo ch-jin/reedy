@@ -45,7 +45,6 @@ class Transition extends Component {
 
   getStyles() {
     if (!this.props.children) {
-      console.log("var");
       return [];
     }
 
