@@ -39,8 +39,6 @@ export const StyledArticleSnippetWrapper = glamorous.div(
   {
     display: "flex",
     flexDirection: "column",
-    flexWrap: "wrap",
-    overflow: "hidden",
   },
   ({ hasImage }) => ({
     width: hasImage ? `calc(90% - ${ARTICLE_ITEM_HEIGHT}px)` : "90%",
@@ -57,6 +55,27 @@ export const ArticleSnippet = glamorous.p({
   fontSize: 14,
   color: "#626262",
   margin: 5,
+  overflow: "hidden",
+  position: "relative",
+  maxHeight: 14 * 5,
+  textAlign: "justify",
+  marginRight: "-1em",
+  paddingPight: "1em",
+  ":before": {
+    content: "...",
+    position: "absolute",
+    right: 0,
+    bottom: 0,
+  },
+  ":after": {
+    content: "close-quote",
+    position: "absolute",
+    right: 0,
+    width: "1em",
+    height: "1em",
+    marginTop: "0.2em",
+    background: "white",
+  },
 });
 
 export const StyledArticleModal = glamorous.div({
