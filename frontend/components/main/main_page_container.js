@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { toggleUserDropdown } from "../../actions/dropdown_actions";
 import { toggleArticleModal } from "../../actions/modal_actions";
+import { fetchAllCollections } from "../../actions/collection_actions";
 import MainPage from "./main_page";
 
 const mapStateToProps = ({ dropdown, loading, modal }) => ({
@@ -13,6 +14,7 @@ const mapStateToProps = ({ dropdown, loading, modal }) => ({
 const mapDispatchToProps = dispatch => ({
   closeDropdown: () => dispatch(toggleUserDropdown(false)),
   toggleArticleModal: () => dispatch(toggleArticleModal()),
+  fetchAllCollections: () => dispatch(fetchAllCollections()),
 });
 
 export default withRouter(

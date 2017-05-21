@@ -1,5 +1,5 @@
 import React from "react";
-import { RouteTransition } from "react-router-transition";
+import Transition from "../../utils/transition_util";
 import { fade } from "../../styles/transitions";
 import { ArticleLoader } from "../../utils/loader_util";
 import { StyledExploreWrapper } from "../../styles/explore";
@@ -7,23 +7,22 @@ import ExploreItem from "./explore_item";
 
 class Explore extends React.Component {
   componentDidMount() {
-    console.log("explore mount");
     window.scrollTo(0, 0);
     this.props.fetchAllFeeds();
   }
 
   render() {
-    const { loading, feeds, location } = this.props;
+    const { loading, feeds } = this.props;
 
     return (
-      <RouteTransition pathname={location.pathname} {...fade}>
+      <Transition identifer={"explore-page"} {...fade}>
         <StyledExploreWrapper>
           {loading && <ArticleLoader />}
           {feeds.map(feed => (
             <ExploreItem key={"feed" + feed.id} feed={feed} />
           ))}
         </StyledExploreWrapper>
-      </RouteTransition>
+      </Transition>
     );
   }
 }

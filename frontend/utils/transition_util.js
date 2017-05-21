@@ -1,8 +1,5 @@
 // Modified version of RouteTransition from react-router-transition
 
-// Will be using this instead of TransitionMotion from react-motion
-// to keep transitions uniform and reusable.
-
 import React, { cloneElement, createElement, Component } from "react";
 
 import { TransitionMotion, spring } from "react-motion";

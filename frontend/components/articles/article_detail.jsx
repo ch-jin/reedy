@@ -1,5 +1,5 @@
 import React from "react";
-import { RouteTransition } from "react-router-transition";
+import Transition from "../../utils/transition_util";
 import { articleSlideLeft } from "../../styles/transitions";
 import { Redirect } from "react-router-dom";
 import { DefaultLoader } from "../../utils/loader_util";
@@ -70,8 +70,8 @@ class ArticleDetail extends React.Component {
     if (this.state.initialLoad) {
       return (
         <ArticleModal>
-          <RouteTransition
-            pathname={location.pathname}
+          <Transition
+            identifier={"article-detail"}
             {...articleSlideLeft}
           >
             <ArticleDetailWrapper
@@ -84,7 +84,7 @@ class ArticleDetail extends React.Component {
                 {currentArticle && this.renderArticle()}
               </ArticleDetailContent>
             </ArticleDetailWrapper>
-          </RouteTransition>
+          </Transition>
         </ArticleModal>
       );
     } else {

@@ -13,10 +13,14 @@ class MainPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleEventClick = this.handleEventClick.bind(this);
   }
 
-  handleClick() {
+  componentDidMount() {
+    this.props.fetchAllCollections();
+  }
+
+  handleEventClick() {
     this.toggleDropdown();
     this.toggleArticleModal();
   }
@@ -38,44 +42,37 @@ class MainPage extends React.Component {
     const { loading, articleModal } = this.props;
 
     return (
-      <div
-        className="main-wrapper"
-        onClick={this.handleClick.bind(this)}
-      >
+      <div className="main-wrapper" onClick={this.handleEventClick}>
 
         {loading && <ArticleLoader />}
 
         <MainSideNav articleModal={articleModal} />
 
-        <Route
-          render={({ location }) => (
-            <MainContentWrapper modalOpen={articleModal}>
-              <MainNavContainer articleModal={articleModal} />
-              <Route
-                path="/feeds/:feedId/articles/:articleId"
-                component={ArticleDetailContainer}
-              />
-              <Switch key={location.key} location={location}>
+        <MainContentWrapper modalOpen={articleModal}>
+          <MainNavContainer articleModal={articleModal} />
 
-                <Route
-                  path="/feeds/:id/articles"
-                  component={ArticleListContainer}
-                />
+          <Route
+            path="/feeds/:feedId/articles/:articleId"
+            component={ArticleDetailContainer}
+          />
 
-                <Route
-                  path="/feeds/:id"
-                  render={({ match }) => (
-                    <Redirect
-                      to={`/feeds/${match.params.id}/articles`}
-                    />
-                  )}
-                />
-                <Route path="/explore" component={ExploreContainer} />
-                <Redirect to="/explore" />
-              </Switch>
-            </MainContentWrapper>
-          )}
-        />
+          <Switch>
+            <Route
+              path="/feeds/:id/articles"
+              component={ArticleListContainer}
+            />
+
+            <Route
+              path="/feeds/:id"
+              render={({ match }) => (
+                <Redirect to={`/feeds/${match.params.id}/articles`} />
+              )}
+            />
+            <Route path="/explore" component={ExploreContainer} />
+            <Redirect to="/explore" />
+          </Switch>
+
+        </MainContentWrapper>
       </div>
     );
   }

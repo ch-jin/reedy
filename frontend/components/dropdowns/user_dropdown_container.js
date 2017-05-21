@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { logout } from "../../actions/session_actions";
 import { toggleUserDropdown } from "../../actions/dropdown_actions";
-import MainNavDropdown from "./main_nav_dropdown";
+import UserDropdown from "./user_dropdown";
 
 const mapStateToProps = state => ({
   active: state.dropdown.userDropdown,
@@ -17,5 +17,5 @@ const mapDispatchToProps = (dispatch, { history }) => ({
 });
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(MainNavDropdown)
+  connect(mapStateToProps, mapDispatchToProps)(UserDropdown)
 );

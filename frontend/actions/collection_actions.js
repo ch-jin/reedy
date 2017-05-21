@@ -24,3 +24,9 @@ export const createCollection = collection => dispatch => {
     collection
   ).then(collection => dispatch(receiveCollection(collection)));
 };
+
+export const updateCollection = collection => dispatch => {
+  return CollectionAPIUtil.updateCollection(
+    collection
+  ).then(collection => dispatch(receiveCollection(collection)));
+};

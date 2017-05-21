@@ -8,7 +8,7 @@ import {
   Bold,
 } from "../../styles/dropdown";
 
-class MainNavDropdown extends React.Component {
+class UserDropdown extends React.Component {
   handleClick(e) {
     e.stopPropagation();
   }
@@ -51,4 +51,4 @@ class MainNavDropdown extends React.Component {
   }
 }
 
-export default MainNavDropdown;
+export default UserDropdown;
