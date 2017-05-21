@@ -19,4 +19,6 @@ class Feed < ApplicationRecord
   validates :url, presence: true, uniqueness: true
 
   has_many :articles
+  has_many :collection_feeds
+  has_many :collections, through: :collection_feeds
 end

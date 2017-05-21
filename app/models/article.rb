@@ -11,6 +11,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  snippet    :string           not null
+#  image      :string
 #
 
 class Article < ApplicationRecord

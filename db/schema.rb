@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518051851) do
+ActiveRecord::Schema.define(version: 20170521035502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,22 @@ ActiveRecord::Schema.define(version: 20170518051851) do
     t.index ["feed_id"], name: "index_articles_on_feed_id", using: :btree
     t.index ["pub_date"], name: "index_articles_on_pub_date", using: :btree
     t.index ["url"], name: "index_articles_on_url", unique: true, using: :btree
+  end
+
+  create_table "collection_feeds", force: :cascade do |t|
+    t.integer  "collection_id", null: false
+    t.integer  "feed_id",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["collection_id", "feed_id"], name: "index_collection_feeds_on_collection_id_and_feed_id", unique: true, using: :btree
+  end
+
+  create_table "collections", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.string   "title",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "title"], name: "index_collections_on_user_id_and_title", unique: true, using: :btree
   end
 
   create_table "feeds", force: :cascade do |t|
