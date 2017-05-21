@@ -20,6 +20,9 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :collections
+  has_many :feeds, through: :collections
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil if user.nil?
