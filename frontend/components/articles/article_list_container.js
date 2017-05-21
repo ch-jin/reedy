@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import ArticleList from "./article_list";
 import { fetchArticlesFromFeed } from "../../actions/article_actions";
 import { allArticles } from "../../selectors/article_selectors";
-import { allFeeds } from "../../selectors/feed_selectors";
+import { allFeeds, currentFeed } from "../../selectors/feed_selectors";
 import {
   fetchAllFeeds,
   receiveCurrentFeed,
@@ -13,6 +13,7 @@ const mapStateToProps = (state, { match }) => ({
   currentFeedId: state.feeds.current,
   feeds: allFeeds(state),
   articles: allArticles(state),
+  currentFeed: currentFeed(state),
   loading: state.loading.loadingArticles,
   articleModal: state.modal.articleModal,
 });

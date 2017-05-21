@@ -87,3 +87,8 @@ export const ArticleDetailWrapper = glamorous.div({
   overflow: "auto",
   zIndex: 50,
 });
+
+export const StyledListHeader = glamorous.span({
+  height: 200,
+  fontSize: 40,
+});
