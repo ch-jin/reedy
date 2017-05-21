@@ -5,8 +5,8 @@ export const DARKER = "#00B04D";
 export const DARKEST = "#00873B";
 export const NAV_HEIGHT = 55;
 export const SHADOW_BORDER = "1px solid #e9e9e9";
-export const NAV_BOX_SHADOW =
-  "0 1px 3px 0 rgba(0,0,0,0.03), 0 1px 2px 0 rgba(0,0,0,0.06)";
+export const SOFT_BOX_SHADOW = "0 1px 2px rgba(0,0,0,.1)";
+// "0 1px 3px 0 rgba(0,0,0,0.03), 0 1px 2px 0 rgba(0,0,0,0.06)";
 export const SIDE_NAV_WIDTH = 265;
 
 export const Button = glamorous.button({
@@ -56,7 +56,7 @@ export const FollowButton = glamorous(Button)({
   fontFamily: "Oxygen",
   color: BASE,
   position: "absolute",
-  right: 0,
+  right: 10,
   backgroundColor: "#fff",
   border: `1px solid ${BASE}`,
   letterSpacing: "0.5px",

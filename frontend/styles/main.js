@@ -1,7 +1,6 @@
 import glamorous from "glamorous";
 import {
   NAV_HEIGHT,
-  NAV_BOX_SHADOW,
   SHADOW_BORDER,
   SIDE_NAV_WIDTH,
   Button,
@@ -26,7 +25,6 @@ export const StyledMainNavWrapper = glamorous.nav({
   height: NAV_HEIGHT,
   display: "flex",
   justifyContent: "center",
-  boxShadow: NAV_BOX_SHADOW,
   boxSizing: "border-box",
   borderBottom: SHADOW_BORDER,
   top: 0,
@@ -116,6 +114,7 @@ export const MainContentWrapper = glamorous.div(
     justifyContent: "center",
     height: `calc(100% - ${NAV_HEIGHT}px)`,
     width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
+    backgroundColor: "#fafafa",
     top: NAV_HEIGHT,
     left: SIDE_NAV_WIDTH,
     zIndex: 3,

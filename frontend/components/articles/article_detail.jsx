@@ -3,7 +3,11 @@ import { RouteTransition } from "react-router-transition";
 import { articleSlideLeft } from "../../styles/transitions";
 import { Redirect } from "react-router-dom";
 import { DefaultLoader } from "../../utils/loader_util";
-import { ArticleDetailWrapper } from "../../styles/article";
+import {
+  ArticleDetailWrapper,
+  ArticleDetailContent,
+} from "../../styles/article";
+import ArticleDetailNav from "./article_detail_nav";
 import ArticleModal from "./article_modal";
 
 class ArticleDetail extends React.Component {
@@ -74,8 +78,11 @@ class ArticleDetail extends React.Component {
               onClick={this.handleClick}
               className="article-modal-content"
             >
+              <ArticleDetailNav />
               {loading && <DefaultLoader />}
-              {currentArticle && this.renderArticle()}
+              <ArticleDetailContent>
+                {currentArticle && this.renderArticle()}
+              </ArticleDetailContent>
             </ArticleDetailWrapper>
           </RouteTransition>
         </ArticleModal>

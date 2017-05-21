@@ -1,16 +1,15 @@
 import glamorous from "glamorous";
-import { SHADOW_BORDER } from "./theme";
+import { FixedNav } from "./main";
+import { SHADOW_BORDER, SOFT_BOX_SHADOW, NAV_HEIGHT } from "./theme";
 const ARTICLE_ITEM_HEIGHT = 150;
 
-export const StyledArticleListWrapper = glamorous.div(
-  {
-    width: "96%",
-    paddingTop: 30,
-  },
-  ({ hasImage }) => ({
-    maxWidth: hasImage ? "740px" : "610px",
-  })
-);
+export const StyledArticleListWrapper = glamorous.div({
+  boxSizing: "border-box",
+  padding: 30,
+  backgroundColor: "#fff",
+  boxShadow: SOFT_BOX_SHADOW,
+  maxWidth: "740px",
+});
 
 export const StyledArticleItemWrapper = glamorous.div({
   display: "flex",
@@ -85,7 +84,7 @@ export const StyledArticleModal = glamorous.div({
   width: "100vw",
   height: "100vh",
   overflow: "hidden",
-  backgroundColor: "rgba(0, 0, 0, 0.4)",
+  backgroundColor: "rgba(0, 0, 0, 0.2)",
   display: "flex",
   cursor: "pointer",
   zIndex: 3,
@@ -95,17 +94,22 @@ export const ArticleDetailWrapper = glamorous.div({
   top: 0,
   right: 0,
   boxSizing: "border-box",
-  padding: "5% 10%",
-  backgroundColor: "white",
-  border: SHADOW_BORDER,
-  borderRadius: 5,
   width: "70%",
   height: "100%",
+  backgroundColor: "#fafafa",
   boxShadow: "18px 18px 90px 2px rgba(0,0,0,0.5)",
   cursor: "auto",
   position: "absolute",
   overflow: "auto",
-  zIndex: 50,
+  zIndex: 3,
+});
+
+export const ArticleDetailContent = glamorous.div({
+  backgroundColor: "#fff",
+  boxShadow: SOFT_BOX_SHADOW,
+  margin: "0 30px",
+  padding: 40,
+  marginTop: 55,
 });
 
 export const StyledListHeader = glamorous.div({
@@ -121,4 +125,16 @@ export const StyledTitle = glamorous.div({
   fontWeight: "bold",
   fontFamily: "oxygen",
   padding: 30,
+});
+
+export const ArticleDetailFixedNav = glamorous(FixedNav)({
+  right: 0,
+  width: "70%",
+  left: "inherit",
+});
+
+export const StyledArticleDetailNav = glamorous.div({
+  height: "100%",
+  background: "#fff",
+  zIndex: 3,
 });

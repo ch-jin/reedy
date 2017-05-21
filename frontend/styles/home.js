@@ -1,6 +1,6 @@
 import glamorous from "glamorous";
 import { Button } from "./theme";
-import { NAV_HEIGHT, NAV_BOX_SHADOW, SHADOW_BORDER } from "./theme";
+import { NAV_HEIGHT, SHADOW_BORDER } from "./theme";
 import { StyledSessionButton } from "./session_form";
 
 // ---- Nav
@@ -16,7 +16,7 @@ export const HomeNavWrapper = glamorous.nav({
   display: "flex",
   justifyContent: "center",
   borderBottom: SHADOW_BORDER,
-  boxShadow: NAV_BOX_SHADOW,
+  // boxShadow: SOFT_BOX_SHADOW,
   top: 0,
   backgroundColor: "#fff",
 });

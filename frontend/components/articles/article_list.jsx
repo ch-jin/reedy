@@ -43,7 +43,7 @@ class ArticleList extends React.Component {
 
     return (
       <Transition identifier={"article-list"} {...fade}>
-        <StyledArticleListWrapper hasImage={numImages > 5}>
+        <StyledArticleListWrapper>
 
           {currentFeed && <ArticleListHeader feed={currentFeed} />}
           {loading && <ArticleLoader />}
