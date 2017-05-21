@@ -1,6 +1,4 @@
 import React from "react";
-import Transition from "../../utils/transition_util";
-import { popNoFade } from "../../styles/transitions";
 import {
   StyledDropdown,
   DropdownContent,
@@ -19,38 +17,36 @@ class MainNavDropdown extends React.Component {
     const { active, handleLogout, username } = this.props;
 
     return (
-      <Transition identifier={"user-dropdown"} {...popNoFade}>
-        <StyledDropdown active={active} onClick={this.handleClick}>
-          <DropdownContent>
-            <DropdownEmptyItem>
-              Signed in as
-              <br />
-              <Bold>
-                {username}
-              </Bold>
-            </DropdownEmptyItem>
-            <Line />
+      <StyledDropdown active={active} onClick={this.handleClick}>
+        <DropdownContent>
+          <DropdownEmptyItem>
+            Signed in as
+            <br />
+            <Bold>
+              {username}
+            </Bold>
+          </DropdownEmptyItem>
+          <Line />
 
-            <DropdownButton>
-              Collections
-            </DropdownButton>
+          <DropdownButton>
+            Collections
+          </DropdownButton>
 
-            <DropdownButton>
-              Articles
-            </DropdownButton>
+          <DropdownButton>
+            Articles
+          </DropdownButton>
 
-            <DropdownButton>
-              Settings
-            </DropdownButton>
+          <DropdownButton>
+            Settings
+          </DropdownButton>
 
-            <DropdownButton onClick={handleLogout}>
-              Log Out
-            </DropdownButton>
+          <DropdownButton onClick={handleLogout}>
+            Log Out
+          </DropdownButton>
 
-          </DropdownContent>
+        </DropdownContent>
 
-        </StyledDropdown>
-      </Transition>
+      </StyledDropdown>
     );
   }
 }

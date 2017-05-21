@@ -9,7 +9,7 @@ export const StyledDropdown = glamorous.div(
     position: "absolute",
     width: "140px",
     height: DROPDOWN_HEIGHT,
-    top: 38,
+    top: `calc(${NAV_HEIGHT}px + 3px)`,
     right: 0,
     backgroundColor: "#fff",
     border: "1px solid #dddede",

@@ -9,7 +9,7 @@ import {
 } from "../../actions/feed_actions";
 
 const mapStateToProps = (state, { match }) => ({
-  id: match.params.id,
+  id: parseInt(match.params.id),
   currentFeedId: state.feeds.current,
   feeds: allFeeds(state),
   articles: allArticles(state),
