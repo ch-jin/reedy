@@ -114,14 +114,13 @@ export const MainContentWrapper = glamorous.div(
     display: "flex",
     justifyContent: "center",
     width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
-    height: `calc(100% - ${NAV_HEIGHT}px)`,
     top: `${NAV_HEIGHT - 40}px`,
     left: SIDE_NAV_WIDTH,
     paddingTop: 90,
     zIndex: 3,
   },
   props => ({
-    overflow: props.modalOpen ? "hidden" : "inherit",
+    overflow: props.modalOpen ? "hidden" : "auto",
   })
 );
 

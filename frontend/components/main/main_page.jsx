@@ -50,11 +50,11 @@ class MainPage extends React.Component {
         <Route
           render={({ location }) => (
             <MainContentWrapper modalOpen={articleModal}>
+              <Route
+                path="/feeds/:feedId/articles/:articleId"
+                component={ArticleDetailContainer}
+              />
               <Switch key={location.key} location={location}>
-                <Route
-                  path="/feeds/:feedId/articles/:articleId"
-                  component={ArticleDetailContainer}
-                />
 
                 <Route
                   path="/feeds/:id/articles"

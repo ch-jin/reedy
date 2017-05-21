@@ -36,7 +36,6 @@ export const ImgWrapper = glamorous.div(
 
 export const StyledArticleSnippetWrapper = glamorous.div(
   {
-    // width: `calc(100% - ${ARTICLE_ITEM_HEIGHT}px)`,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -84,8 +83,8 @@ export const ArticleDetailWrapper = glamorous.div({
   boxShadow: "18px 18px 90px 2px rgba(0,0,0,0.5)",
   cursor: "auto",
   position: "absolute",
-  overflow: "auto",
-  zIndex: 50,
+  // overflow: "auto",
+  zIndex: 5,
 });
 
 export const StyledListHeader = glamorous.span({

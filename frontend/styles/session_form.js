@@ -60,7 +60,7 @@ export const LinkWrapper = glamorous.div({
   flexDirection: "column",
   justifyContent: "space-around",
   alignItems: "center",
-  height: 60,
+  height: 75,
 });
 
 export const DemoLink = glamorous.a({

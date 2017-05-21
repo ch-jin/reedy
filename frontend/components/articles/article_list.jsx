@@ -1,5 +1,5 @@
 import React from "react";
-import { RouteTransition } from "react-router-transition";
+import Transition from "../../utils/transition_util";
 import { fade } from "../../styles/transitions";
 import { ArticleLoader } from "../../utils/loader_util";
 import ArticleItem from "./article_item";
@@ -9,7 +9,7 @@ import { StyledArticleListWrapper } from "../../styles/article";
 class ArticleList extends React.Component {
   componentDidMount() {
     const { fetchAllFeeds, feeds } = this.props;
-
+    console.log(this.props);
     if (feeds.length) {
       this.updateNewCurrentFeed();
     } else {
@@ -36,12 +36,12 @@ class ArticleList extends React.Component {
   }
 
   render() {
-    const { loading, articles, id, location, currentFeed } = this.props;
+    const { loading, articles, id, currentFeed } = this.props;
     const numImages = articles.filter(({ image }) => Boolean(image))
       .length;
 
     return (
-      <RouteTransition pathname={location.pathname} {...fade}>
+      <Transition identifier={"article-list"} {...fade}>
         <StyledArticleListWrapper hasImage={numImages > 5}>
 
           {currentFeed && <ArticleListHeader feed={currentFeed} />}
@@ -57,7 +57,7 @@ class ArticleList extends React.Component {
           ))}
 
         </StyledArticleListWrapper>
-      </RouteTransition>
+      </Transition>
     );
   }
 }
