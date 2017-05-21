@@ -39,7 +39,7 @@ export const StyledSessionButton = glamorous(Button)({
   width: "150px",
   fontSize: "16px",
   fontWeight: 500,
-  margin: "15px 0",
+  margin: "10px 0",
 });
 
 export const StyledLettering = glamorous.div({
@@ -54,4 +54,19 @@ export const StyledErrorUl = glamorous.ul({
   color: "#c0392b",
 });
 
-export const StyledErrorLi = glamorous.li({});
+export const LinkWrapper = glamorous.div({
+  marginTop: 10,
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-around",
+  alignItems: "center",
+  height: 60,
+});
+
+export const DemoLink = glamorous.a({
+  display: "block",
+  textDecoration: "underline",
+  ":hover": {
+    cursor: "pointer",
+  },
+});

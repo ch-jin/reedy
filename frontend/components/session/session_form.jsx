@@ -5,6 +5,7 @@ import {
   StyledSessionButton,
   StyledLettering,
 } from "../../styles/session_form";
+import SessionFormLinks from "./session_form_links";
 import SessionErrorList from "./session_errors_list";
 import { DefaultLoader } from "../../utils/loader_util";
 
@@ -41,7 +42,7 @@ class SessionForm extends React.Component {
 
   render() {
     const { username, password } = this.state;
-    const { formType, loading, errors } = this.props;
+    const { formType, loading, errors, loginGuest } = this.props;
 
     return (
       <StyledSessionForm onSubmit={this.handleSubmit}>
@@ -73,12 +74,11 @@ class SessionForm extends React.Component {
           Submit
         </StyledSessionButton>
 
-        <StyledSessionButton
-          type="button"
-          onClick={this.props.loginGuest}
-        >
+        <StyledSessionButton type="button" onClick={loginGuest}>
           Demo Login
         </StyledSessionButton>
+
+        <SessionFormLinks loginGuest={loginGuest} formType={formType} />
       </StyledSessionForm>
     );
   }

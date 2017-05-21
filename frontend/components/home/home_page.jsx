@@ -1,18 +1,18 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import SessionModal from "../session/session_modal";
 import HomePageNav from "./home_page_nav";
 import HomePageFeatures from "./home_page_features";
 import HomePageHeader from "./home_page_header";
+import HomePageScreenshot from "./home_page_screenshot";
 import {
   HomePageContent,
-  Screenshot,
-  DemoLoginButton,
+  GetStartedButton,
+  GetStartedImg,
 } from "../../styles/home";
 
 class HomePage extends React.Component {
   render() {
-    const { loginGuest } = this.props;
     return (
       <div>
         <Route path="/login" component={SessionModal} />
@@ -23,14 +23,14 @@ class HomePage extends React.Component {
         <HomePageContent>
           <HomePageHeader />
 
-          <DemoLoginButton onClick={loginGuest}>
-            Get Started
-          </DemoLoginButton>
+          <Link className="no-decoration" to="/signup">
+            <GetStartedButton>
+              <GetStartedImg src={window.invertLogoURL} alt="" />
+              Get Started
+            </GetStartedButton>
+          </Link>
 
-          <Screenshot>
-            Screenshot
-          </Screenshot>
-
+          <HomePageScreenshot />
           <HomePageFeatures />
         </HomePageContent>
       </div>

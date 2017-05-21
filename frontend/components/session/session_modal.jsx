@@ -1,14 +1,14 @@
 import React from "react";
-import { RouteTransition } from "react-router-transition";
+import Transition from "../../utils/transition_util";
 import { gentlePop } from "../../styles/transitions";
 import SessionFormContainer from "./session_form_container";
 import Modal from "../../utils/modal_util";
 
 const SessionModal = () => (
   <Modal redirectPath={"/"}>
-    <RouteTransition pathname="/" {...gentlePop}>
+    <Transition identifier="sessionform" {...gentlePop}>
       <SessionFormContainer />
-    </RouteTransition>
+    </Transition>
   </Modal>
 );
 

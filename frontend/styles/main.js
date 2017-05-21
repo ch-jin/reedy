@@ -129,5 +129,5 @@ export const MainNavLogo = glamorous.img({
   top: 10,
   left: 0,
   position: "absolute",
-  height: 45,
+  height: 35,
 });

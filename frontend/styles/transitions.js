@@ -22,6 +22,18 @@ export const fade = {
   },
 };
 
+export const halfFade = {
+  atEnter: {
+    opacity: 0.5,
+  },
+  atLeave: {
+    opacity: spring(0.5, config.fade),
+  },
+  atActive: {
+    opacity: spring(1, config.fade),
+  },
+};
+
 export const popNoFade = {
   atEnter: {
     scale: 0.95,

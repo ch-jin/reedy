@@ -23,7 +23,7 @@ export const HomeNavWrapper = glamorous.nav({
 
 export const HomeNav = glamorous.nav({
   height: "100%",
-  maxWidth: "1280px",
+  maxWidth: 930,
   width: "90%",
   display: "flex",
   justifyContent: "space-between",
@@ -66,26 +66,52 @@ export const HomePageContent = glamorous.div({
   alignItems: "center",
 });
 
-export const Header = glamorous.div({
-  height: "200px",
-  width: "800px",
-  border: "1px solid black",
+export const HeaderWrapper = glamorous.div({
+  height: 100,
+  width: 800,
+  fontSize: 18,
   margin: "50px auto",
   display: "flex",
+  flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
-  fontSize: "30px",
+  justifyContent: "space-around",
+});
+
+export const Header = glamorous.h1({
+  fontFamily: "Oxygen",
+  marginTop: 30,
+  marginBottom: 20,
+  fontSize: 40,
+  letterSpacing: 1,
 });
 
 export const Screenshot = glamorous.div({
-  height: "800px",
-  width: "800px",
-  border: "1px solid black",
+  maxWidth: 930,
+  width: "90%",
   margin: "50px auto",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  fontSize: "30px",
+});
+
+export const ScreenshotImg = glamorous.img({
+  boxSizing: "border-box",
+  width: "100%",
+  border: "1px solid #e0dce0",
+});
+
+export const MacWindow = glamorous.div({
+  background: "-webkit-linear-gradient(#eae6ea, #d2d0d2)",
+  borderRadius: "4px 4px 0 0",
+  padding: ".25rem .5rem",
+  ":before": {
+    background: "#ffc12e",
+    borderRadius: "50%",
+    content: "close-quote",
+    display: "inline-block",
+    height: 10,
+    left: "1.5rem",
+    position: "relative",
+    width: 10,
+    boxShadow: "-1rem 0 0 #ff6159, 1rem 0 0 #29ce42",
+  },
 });
 
 export const Features = glamorous.div({
@@ -99,8 +125,18 @@ export const Features = glamorous.div({
   fontSize: "30px",
 });
 
-export const DemoLoginButton = glamorous(StyledSessionButton)({
-  width: "200px",
-  height: "60px",
-  fontSize: "20px",
+export const GetStartedButton = glamorous(StyledSessionButton)({
+  width: 200,
+  height: 60,
+  fontSize: 20,
+  paddingRight: 20,
+  display: "flex",
+  justifyContent: "space-around",
+  alignItems: "center",
+});
+
+export const GetStartedImg = glamorous.img({
+  width: 40,
+  height: 40,
+  paddingLeft: 10,
 });
