@@ -113,6 +113,7 @@ export const MainContentWrapper = glamorous.div(
     position: "absolute",
     display: "flex",
     justifyContent: "center",
+    height: `calc(100% - ${NAV_HEIGHT}px)`,
     width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
     top: `${NAV_HEIGHT - 40}px`,
     left: SIDE_NAV_WIDTH,

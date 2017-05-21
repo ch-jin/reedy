@@ -8,8 +8,9 @@ import { StyledArticleListWrapper } from "../../styles/article";
 
 class ArticleList extends React.Component {
   componentDidMount() {
+    window.scrollTo(0, 0);
+
     const { fetchAllFeeds, feeds } = this.props;
-    console.log(this.props);
     if (feeds.length) {
       this.updateNewCurrentFeed();
     } else {
