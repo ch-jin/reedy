@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import MainNavContainer from "./main_nav_container";
 import MainSideNav from "./main_side_nav";
 import ExploreContainer from "../explore/explore_container";
-import { DefaultLoader } from "../../utils/loader_util";
+import { ArticleLoader } from "../../utils/loader_util";
 import ArticleListContainer from "../articles/article_list_container";
 import ArticleDetailContainer
   from "../articles/article_detail_container";
@@ -43,7 +43,7 @@ class MainPage extends React.Component {
         onClick={this.handleClick.bind(this)}
       >
 
-        {loading && <DefaultLoader />}
+        {loading && <ArticleLoader />}
         <MainNavContainer articleModal={articleModal} />
         <MainSideNav articleModal={articleModal} />
 

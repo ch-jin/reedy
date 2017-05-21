@@ -12,7 +12,6 @@ export const DefaultLoader = () => (
     <FirstDot />
     <SecondDot />
     <ThirdDot />
-    Loading
   </LoaderContainer>
 );
 
@@ -21,6 +20,5 @@ export const ArticleLoader = () => (
     <FirstDot />
     <SecondDot />
     <ThirdDot />
-    Loading
   </ArticleLoaderContainer>
 );

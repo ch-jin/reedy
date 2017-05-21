@@ -124,3 +124,10 @@ export const MainContentWrapper = glamorous.div(
     overflow: props.modalOpen ? "hidden" : "inherit",
   })
 );
+
+export const MainNavLogo = glamorous.img({
+  top: 10,
+  left: 0,
+  position: "absolute",
+  height: 45,
+});

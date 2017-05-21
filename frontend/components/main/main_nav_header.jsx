@@ -1,5 +1,6 @@
 import React from "react";
-import { StyledMainNavHeader } from "../../styles/main";
+import { Link } from "react-router-dom";
+import { StyledMainNavHeader, MainNavLogo } from "../../styles/main";
 
 const MainNavHeader = props => {
   console.log(props);
@@ -16,6 +17,9 @@ const MainNavHeader = props => {
 
   return (
     <StyledMainNavHeader>
+      <Link to="/explore">
+        <MainNavLogo src={window.greyLogoURL} />
+      </Link>
       <h2 dangerouslySetInnerHTML={{ __html: currentTitle() }} />
     </StyledMainNavHeader>
   );
