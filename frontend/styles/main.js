@@ -100,6 +100,7 @@ export const StyledUserSection = glamorous(FlexedDivSpaceAround)({
 });
 
 export const StyledMainNavHeader = glamorous(FlexedDivCenter)({
+  fontFamily: "oxygen",
   position: "absolute",
 });
 
@@ -115,9 +116,8 @@ export const MainContentWrapper = glamorous.div(
     justifyContent: "center",
     height: `calc(100% - ${NAV_HEIGHT}px)`,
     width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
-    top: `${NAV_HEIGHT - 40}px`,
+    top: NAV_HEIGHT,
     left: SIDE_NAV_WIDTH,
-    paddingTop: 90,
     zIndex: 3,
   },
   props => ({

@@ -2,6 +2,7 @@ import glamorous from "glamorous";
 
 export const BASE = "#14c862";
 export const DARKER = "#00B04D";
+export const DARKEST = "#00873B";
 export const NAV_HEIGHT = 55;
 export const SHADOW_BORDER = "1px solid #e9e9e9";
 export const NAV_BOX_SHADOW =
@@ -49,4 +50,29 @@ export const FlexedDivCenter = glamorous.div({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+});
+
+export const FollowButton = glamorous(Button)({
+  fontFamily: "Oxygen",
+  color: BASE,
+  position: "absolute",
+  right: 0,
+  backgroundColor: "#fff",
+  border: `1px solid ${BASE}`,
+  letterSpacing: "0.5px",
+  transition: "all 100ms",
+  outline: "none",
+  textTransform: "uppercase",
+  height: 40,
+  width: 112,
+  borderRadius: 5,
+  fontSize: 14,
+  fontWeight: "bold",
+  ":hover": {
+    backgroundColor: "#fff",
+    color: DARKEST,
+    border: `1px solid ${DARKEST}`,
+    cursor: "pointer",
+    transition: "all 100ms",
+  },
 });

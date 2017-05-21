@@ -5,6 +5,7 @@ const ARTICLE_ITEM_HEIGHT = 150;
 export const StyledArticleListWrapper = glamorous.div(
   {
     width: "96%",
+    paddingTop: 30,
   },
   ({ hasImage }) => ({
     maxWidth: hasImage ? "740px" : "610px",
@@ -14,7 +15,7 @@ export const StyledArticleListWrapper = glamorous.div(
 export const StyledArticleItemWrapper = glamorous.div({
   display: "flex",
   margin: 10,
-  justifyContent: "center",
+  justifyContent: "flex-start",
   height: ARTICLE_ITEM_HEIGHT,
 });
 
@@ -26,7 +27,7 @@ export const ArticleSmallImg = glamorous.img({
 export const ImgWrapper = glamorous.div(
   {
     display: "flex",
-    alignItems: "center",
+    alignItems: "flex-start",
   },
   ({ hasImage }) => ({
     height: hasImage ? ARTICLE_ITEM_HEIGHT : 0,
@@ -38,15 +39,16 @@ export const StyledArticleSnippetWrapper = glamorous.div(
   {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
+    flexWrap: "wrap",
+    overflow: "hidden",
   },
   ({ hasImage }) => ({
-    width: hasImage ? `calc(100% - ${ARTICLE_ITEM_HEIGHT}px)` : "100%",
+    width: hasImage ? `calc(90% - ${ARTICLE_ITEM_HEIGHT}px)` : "90%",
   })
 );
 
 export const ArticleMiniTitle = glamorous.h4({
+  width: "100%",
   fontWeight: 700,
 });
 
@@ -87,7 +89,17 @@ export const ArticleDetailWrapper = glamorous.div({
   zIndex: 50,
 });
 
-export const StyledListHeader = glamorous.span({
-  height: 200,
-  fontSize: 40,
+export const StyledListHeader = glamorous.div({
+  display: "flex",
+  alignItems: "center",
+  margin: 10,
+  position: "relative",
+  paddingBottom: 30,
+});
+
+export const StyledTitle = glamorous.div({
+  fontSize: 26,
+  fontWeight: "bold",
+  fontFamily: "oxygen",
+  padding: 30,
 });

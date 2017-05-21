@@ -1,5 +1,6 @@
 import React from "react";
-import { StyledListHeader } from "../../styles/article";
+import { FollowButton } from "../../styles/theme";
+import { StyledListHeader, StyledTitle } from "../../styles/article";
 import { FeedImgContainer, FeedImg } from "../../styles/explore";
 
 const ArticleListHeader = ({ feed }) => (
@@ -7,7 +8,8 @@ const ArticleListHeader = ({ feed }) => (
     <FeedImgContainer>
       {feed.image && <FeedImg src={feed.image} />}
     </FeedImgContainer>
-    <p dangerouslySetInnerHTML={{ __html: feed.title }} />
+    <StyledTitle dangerouslySetInnerHTML={{ __html: feed.title }} />
+    <FollowButton>follow</FollowButton>
   </StyledListHeader>
 );
 
