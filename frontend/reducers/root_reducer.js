@@ -4,6 +4,7 @@ import loadingReducer from "./loading_reducer";
 import dropdownReducer from "./dropdown_reducer";
 import articlesReducer from "./articles_reducer";
 import feedsReducer from "./feeds_reducer";
+import collectionsReducer from "./collections_reducer";
 import modalReducer from "./modal_reducer";
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   dropdown: dropdownReducer,
   articles: articlesReducer,
   feeds: feedsReducer,
+  collections: collectionsReducer,
   modal: modalReducer,
 });
 
