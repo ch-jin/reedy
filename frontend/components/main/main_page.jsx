@@ -44,12 +44,13 @@ class MainPage extends React.Component {
       >
 
         {loading && <ArticleLoader />}
-        <MainNavContainer articleModal={articleModal} />
+
         <MainSideNav articleModal={articleModal} />
 
         <Route
           render={({ location }) => (
             <MainContentWrapper modalOpen={articleModal}>
+              <MainNavContainer articleModal={articleModal} />
               <Route
                 path="/feeds/:feedId/articles/:articleId"
                 component={ArticleDetailContainer}

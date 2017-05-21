@@ -7,6 +7,7 @@ import ExploreItem from "./explore_item";
 
 class Explore extends React.Component {
   componentDidMount() {
+    console.log("explore mount");
     window.scrollTo(0, 0);
     this.props.fetchAllFeeds();
   }

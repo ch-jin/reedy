@@ -40,7 +40,7 @@ export const FeedImgContainer = glamorous.div({
 });
 
 export const StyledExploreWrapper = glamorous.div({
-  margin: 50,
+  padding: "105px 0",
   maxWidth: 960,
   display: "flex",
   flexWrap: "wrap",

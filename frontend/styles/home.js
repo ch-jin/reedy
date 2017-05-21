@@ -16,7 +16,6 @@ export const HomeNavWrapper = glamorous.nav({
   display: "flex",
   justifyContent: "center",
   borderBottom: SHADOW_BORDER,
-  // boxShadow: SOFT_BOX_SHADOW,
   top: 0,
   backgroundColor: "#fff",
 });

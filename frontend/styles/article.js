@@ -5,10 +5,10 @@ const ARTICLE_ITEM_HEIGHT = 150;
 
 export const StyledArticleListWrapper = glamorous.div({
   boxSizing: "border-box",
-  padding: 30,
+  padding: "85px 30px",
   backgroundColor: "#fff",
   boxShadow: SOFT_BOX_SHADOW,
-  maxWidth: "740px",
+  maxWidth: 740,
 });
 
 export const StyledArticleItemWrapper = glamorous.div({
