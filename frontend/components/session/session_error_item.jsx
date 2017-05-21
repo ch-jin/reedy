@@ -1,11 +1,10 @@
 import React from "react";
-import { StyledErrorLi } from "../../styles/session_form";
 
 const SessionErrorItem = ({ error }) => {
   return (
-    <StyledErrorLi>
+    <li>
       {error}
-    </StyledErrorLi>
+    </li>
   );
 };
 
