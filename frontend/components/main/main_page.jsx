@@ -1,7 +1,5 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { RouteTransition } from "react-router-transition";
-import springs from "../../styles/springs";
 import MainNavContainer from "./main_nav_container";
 import MainSideNav from "./main_side_nav";
 import ExploreContainer from "../explore/explore_container";

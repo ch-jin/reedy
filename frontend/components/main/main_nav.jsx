@@ -7,7 +7,7 @@ import {
   UserImg,
 } from "../../styles/main";
 
-const MainNav = ({ handleImgClick, articleModal }) => (
+const MainNav = ({ handleImgClick, articleModal, userDropdown }) => (
   <MainNavWrapper articleModal={articleModal}>
 
     <StyledMainNavHeader>
@@ -16,7 +16,7 @@ const MainNav = ({ handleImgClick, articleModal }) => (
 
     <StyledUserSection>
       <UserImg src={window.guestImg} onClick={handleImgClick} />
-      <MainNavDropdownContainer />
+      {userDropdown && <MainNavDropdownContainer />}
     </StyledUserSection>
 
   </MainNavWrapper>

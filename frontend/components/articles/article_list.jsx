@@ -1,6 +1,6 @@
 import React from "react";
 import { RouteTransition } from "react-router-transition";
-import springs from "../../styles/springs";
+import { fade } from "../../styles/transitions";
 import { ArticleLoader } from "../../utils/loader_util";
 import ArticleItem from "./article_item";
 import { StyledArticleListWrapper } from "../../styles/article";
@@ -40,7 +40,7 @@ class ArticleList extends React.Component {
       .length;
 
     return (
-      <RouteTransition pathname={location.pathname} {...springs.fade}>
+      <RouteTransition pathname={location.pathname} {...fade}>
         <StyledArticleListWrapper hasImage={numImages > 5}>
           {loading && <ArticleLoader />}
           {articles.map(article => (

@@ -23,6 +23,8 @@ feeds = [
   "http://feeds.reuters.com/reuters/technologyNews",
   "http://feeds.arstechnica.com/arstechnica/index",
   "https://venturebeat.com/feed/",
+  "https://www.reddit.com/r/videos.rss",
+  "https://www.reddit.com/r/bayarea.rss",
   "https://hackaday.com/blog/feed/",
   "https://hackernoon.com/feed",
   "https://dev.to/rss",

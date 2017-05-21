@@ -1,6 +1,6 @@
 import React from "react";
 import { RouteTransition } from "react-router-transition";
-import springs from "../../styles/springs";
+import { fade } from "../../styles/transitions";
 import { DefaultLoader } from "../../utils/loader_util";
 import { StyledExploreWrapper } from "../../styles/explore";
 import ExploreItem from "./explore_item";
@@ -14,7 +14,7 @@ class Explore extends React.Component {
     const { loading, feeds, location } = this.props;
 
     return (
-      <RouteTransition pathname={location.pathname} {...springs.fade}>
+      <RouteTransition pathname={location.pathname} {...fade}>
         <StyledExploreWrapper>
           {loading && <DefaultLoader />}
           {feeds.map(feed => (

@@ -1,6 +1,6 @@
 import React from "react";
 import { RouteTransition } from "react-router-transition";
-import springs from "../../styles/springs";
+import { articleSlideLeft } from "../../styles/transitions";
 import { Redirect } from "react-router-dom";
 import { DefaultLoader } from "../../utils/loader_util";
 import { ArticleDetailWrapper } from "../../styles/article";
@@ -25,7 +25,6 @@ class ArticleDetail extends React.Component {
       active,
     } = this.props;
 
-    console.log("detail mount");
     if (!active) {
       toggleArticleModal();
     }
@@ -70,7 +69,7 @@ class ArticleDetail extends React.Component {
         <ArticleModal>
           <RouteTransition
             pathname={location.pathname}
-            {...springs.articleSlideLeft}
+            {...articleSlideLeft}
           >
             <ArticleDetailWrapper
               onClick={this.handleClick}
