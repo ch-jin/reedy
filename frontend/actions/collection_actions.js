@@ -30,3 +30,9 @@ export const updateCollection = collection => dispatch => {
     collection
   ).then(collection => dispatch(receiveCollection(collection)));
 };
+
+export const createCollectionFeed = collectionFeed => dispatch => {
+  return CollectionAPIUtil.createCollectionFeed(
+    collectionFeed
+  ).then(collection => dispatch(receiveCollection(collection)));
+};

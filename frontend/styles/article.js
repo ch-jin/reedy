@@ -85,12 +85,13 @@ export const StyledArticleModal = glamorous.div(
     width: "100vw",
     height: "100vh",
     overflow: "hidden",
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
     display: "flex",
+    backgroundColor: "rgba(0, 0, 0, 0.2)",
+    zIndex: 3,
     cursor: "pointer",
   },
-  props => ({
-    zIndex: props.active ? 3 : -1,
+  ({ active }) => ({
+    display: active ? "flex" : "none",
   })
 );
 

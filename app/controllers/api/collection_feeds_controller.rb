@@ -3,7 +3,8 @@ class Api::CollectionFeedsController < ApplicationController
   def create
     @collection_feed = CollectionFeed.new(collection_feed_params)
     if @collection_feed.save
-      render json: @collection_feed
+      @collection = @collection_feed.collection
+      render 'api/collections/show'
     else
       render json: @collection_feed.errors.full_messages, status: 422
     end

@@ -1,8 +1,12 @@
 class Api::CollectionsController < ApplicationController
   before_filter :ensure_logged_in
 
+  def show
+    @collection = Collection.find(params[:id])
+  end
+
   def index
-    @collections = current_user.collections
+    @collections = current_user.collections.includes(:feeds)
   end
 
   def create

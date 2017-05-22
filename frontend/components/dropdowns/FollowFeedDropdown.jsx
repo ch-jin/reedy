@@ -2,7 +2,6 @@ import React from "react";
 import {
   StyledFeedDropdown,
   DropdownContent,
-  StyledFeedButtons,
   DropdownEmptyItem,
   Line,
   Bold,
@@ -10,29 +9,40 @@ import {
 import {
   handleClickStopPropagation,
 } from "../../utils/click_event_util";
+import FollowFeedDropdownButton from "./FollowFeedDropdownButton";
 
-const FollowFeedDropdown = ({ active, collections }) => (
-  <StyledFeedDropdown
-    active={active}
-    onClick={handleClickStopPropagation}
-  >
-    <DropdownContent>
-      <DropdownEmptyItem>
-        <Bold>
-          Add to Collections:
-        </Bold>
-      </DropdownEmptyItem>
-      <Line />
+const FollowFeedDropdown = ({
+  active,
+  collections,
+  createCollectionFeed,
+  feedId,
+}) => {
+  return (
+    <StyledFeedDropdown
+      active={active}
+      onClick={handleClickStopPropagation}
+    >
+      <DropdownContent>
+        <DropdownEmptyItem>
+          <Bold>
+            Add to Collections:
+          </Bold>
+        </DropdownEmptyItem>
+        <Line />
 
-      {collections.map(collection => (
-        <StyledFeedButtons key={"collection" + collection.id}>
-          {collection.title}
-        </StyledFeedButtons>
-      ))}
+        {collections.map(collection => (
+          <FollowFeedDropdownButton
+            key={"feedCollection" + collection.id}
+            collection={collection}
+            feedId={feedId}
+            createCollectionFeed={createCollectionFeed}
+          />
+        ))}
 
-    </DropdownContent>
+      </DropdownContent>
 
-  </StyledFeedDropdown>
-);
+    </StyledFeedDropdown>
+  );
+};
 
 export default FollowFeedDropdown;
