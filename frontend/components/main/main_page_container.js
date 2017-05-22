@@ -1,20 +1,21 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { toggleUserDropdown } from "../../actions/dropdown_actions";
+import { closeAllDropdowns } from "../../actions/dropdown_actions";
 import { toggleArticleModal } from "../../actions/modal_actions";
 import { fetchAllCollections } from "../../actions/collection_actions";
+import { anyDropdownActive } from "../../selectors/dropdown_selectors";
 import MainPage from "./main_page";
 
-const mapStateToProps = ({ dropdown, loading, modal }) => ({
-  userDropdown: dropdown.userDropdown,
-  loading: loading.loadingSession,
-  articleModal: modal.articleModal,
+const mapStateToProps = state => ({
+  anyDropdownActive: anyDropdownActive(state),
+  loading: state.loading.loadingSession,
+  articleModal: state.modal.articleModal
 });
 
 const mapDispatchToProps = dispatch => ({
-  closeDropdown: () => dispatch(toggleUserDropdown(false)),
+  closeAllDropdowns: () => dispatch(closeAllDropdowns()),
   toggleArticleModal: () => dispatch(toggleArticleModal()),
-  fetchAllCollections: () => dispatch(fetchAllCollections()),
+  fetchAllCollections: () => dispatch(fetchAllCollections())
 });
 
 export default withRouter(

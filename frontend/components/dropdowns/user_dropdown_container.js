@@ -6,14 +6,14 @@ import UserDropdown from "./user_dropdown";
 
 const mapStateToProps = state => ({
   active: state.dropdown.userDropdown,
-  username: state.session.currentUser.username,
+  username: state.session.currentUser.username
 });
 
 const mapDispatchToProps = (dispatch, { history }) => ({
   handleLogout: () => {
-    dispatch(toggleUserDropdown(false));
+    dispatch(toggleUserDropdown());
     dispatch(logout()).then(() => history.push("/"));
-  },
+  }
 });
 
 export default withRouter(

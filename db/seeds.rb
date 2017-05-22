@@ -12,6 +12,8 @@ require_relative 'seed_helper'
 User.destroy_all
 Feed.destroy_all
 Article.destroy_all
+Collection.destroy_all
+CollectionFeed.destroy_all
 
 user1 = User.create({username: 'Guest', password: 'password' })
 
@@ -34,3 +36,13 @@ feeds = [
 feeds.each do |feed|
   seed_feed(feed)
 end
+
+collection1 = Collection.create({ user_id: user1.id, title: 'Tech' })
+collection_feed1 = CollectionFeed.create({ 
+  collection_id: collection1.id, 
+  feed_id: Feed.all[5].id 
+})
+collection_feed2 = CollectionFeed.create({
+  collection_id: collection1.id, 
+  feed_id: Feed.all[9].id 
+})

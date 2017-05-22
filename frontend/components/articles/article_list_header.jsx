@@ -1,7 +1,9 @@
 import React from "react";
-import { FollowButton } from "../../styles/theme";
 import { StyledListHeader, StyledTitle } from "../../styles/article";
 import { FeedImgContainer, FeedImg } from "../../styles/explore";
+import FollowButtonContainer from "./follow_button_container";
+import FollowFeedDropdownContainer
+  from "../dropdowns/follow_feed_dropdown_container";
 
 const ArticleListHeader = ({ feed }) => (
   <StyledListHeader>
@@ -9,7 +11,8 @@ const ArticleListHeader = ({ feed }) => (
       {feed.image && <FeedImg src={feed.image} />}
     </FeedImgContainer>
     <StyledTitle dangerouslySetInnerHTML={{ __html: feed.title }} />
-    <FollowButton>follow</FollowButton>
+    <FollowButtonContainer />
+    <FollowFeedDropdownContainer />
   </StyledListHeader>
 );
 

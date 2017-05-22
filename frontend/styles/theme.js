@@ -20,28 +20,28 @@ export const Button = glamorous.button({
   ":hover": {
     backgroundColor: DARKER,
     cursor: "pointer",
-    transition: "all 100ms",
-  },
+    transition: "all 100ms"
+  }
 });
 
 export const FullHeightLink = glamorous.a({
   height: "100%",
   textDecoration: "none",
-  color: "black",
+  color: "black"
 });
 
 export const Img = glamorous.img({
   height: "80%",
   ":hover": {
-    cursor: "pointer",
-  },
+    cursor: "pointer"
+  }
 });
 
 export const FlexedDivSpaceAround = glamorous.div({
   height: "100%",
   display: "flex",
   justifyContent: "space-around",
-  alignItems: "center",
+  alignItems: "center"
 });
 
 export const FlexedDivCenter = glamorous.div({
@@ -49,10 +49,10 @@ export const FlexedDivCenter = glamorous.div({
   width: "100%",
   display: "flex",
   justifyContent: "center",
-  alignItems: "center",
+  alignItems: "center"
 });
 
-export const FollowButton = glamorous(Button)({
+export const StyledFollowButton = glamorous(Button)({
   fontFamily: "Oxygen",
   color: BASE,
   position: "absolute",
@@ -73,6 +73,6 @@ export const FollowButton = glamorous(Button)({
     color: DARKEST,
     border: `1px solid ${DARKEST}`,
     cursor: "pointer",
-    transition: "all 100ms",
-  },
+    transition: "all 100ms"
+  }
 });

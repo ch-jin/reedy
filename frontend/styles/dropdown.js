@@ -24,7 +24,7 @@ export const StyledDropdown = glamorous.div(
       right: "9px",
       left: "auto",
       border: "8px solid transparent",
-      borderBottomColor: "#dddede",
+      borderBottomColor: "#dddede"
     },
     "&::after": {
       content: "close-quote",
@@ -34,17 +34,17 @@ export const StyledDropdown = glamorous.div(
       display: "inline-block",
       top: "-14px",
       right: "10px",
-      left: "auto",
-    },
+      left: "auto"
+    }
   },
   props => ({
-    display: props.active ? "flex" : "none",
+    display: props.active ? "flex" : "none"
   })
 );
 
 export const DropdownContent = glamorous.div({
   width: "100%",
-  height: "100%",
+  height: "100%"
 });
 
 export const DropdownButton = glamorous(Button)({
@@ -57,8 +57,8 @@ export const DropdownButton = glamorous(Button)({
   fontWeight: 700,
   backgroundColor: "#fff",
   ":hover": {
-    color: "#eee",
-  },
+    color: "#eee"
+  }
 });
 
 export const DropdownEmptyItem = glamorous.div({
@@ -70,15 +70,33 @@ export const DropdownEmptyItem = glamorous.div({
   flexDirection: "column",
   justifyContent: "center",
   fontSize: "14px",
-  height: 50,
+  height: 50
 });
 
 export const Line = glamorous.div({
   height: PADDING,
   borderBottom: "1px solid #e7e7e7",
-  marginBottom: PADDING,
+  marginBottom: PADDING
 });
 
 export const Bold = glamorous.p({
-  fontWeight: 700,
+  fontWeight: 700
+});
+
+export const StyledFeedDropdown = glamorous(StyledDropdown)({
+  width: 300,
+  zIndex: 3,
+  top: 70,
+  right: 10
+});
+
+export const StyledFeedButtons = glamorous(DropdownButton)({
+  backgroundColor: "#fff",
+  color: "#454545",
+  fontWeight: 300,
+  fontFamily: "Roboto",
+  ":hover": {
+    backgroundColor: "#f3f3f3",
+    color: "#454545"
+  }
 });

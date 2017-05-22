@@ -4,11 +4,14 @@ import MainNav from "./main_nav";
 
 const mapStateToProps = state => ({
   userDropdown: state.dropdown.userDropdown,
-  title: state.feeds.current,
+  title: state.feeds.current
 });
 
-const mapDispatchToProps = (dispatch, { userDropdown }) => ({
-  handleImgClick: () => dispatch(toggleUserDropdown(!userDropdown)),
+const mapDispatchToProps = dispatch => ({
+  handleImgClick: e => {
+    e.stopPropagation();
+    return dispatch(toggleUserDropdown());
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainNav);

@@ -14,6 +14,8 @@ class MainPage extends React.Component {
     super(props);
 
     this.handleEventClick = this.handleEventClick.bind(this);
+    this.toggleArticleModal = this.toggleArticleModal.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
   componentDidMount() {
@@ -32,9 +34,10 @@ class MainPage extends React.Component {
   }
 
   toggleDropdown() {
-    const { userDropdown, closeDropdown } = this.props;
-    if (userDropdown) {
-      closeDropdown();
+    const { anyDropdownActive, closeAllDropdowns } = this.props;
+    console.log("anyDropdownActive", anyDropdownActive);
+    if (anyDropdownActive) {
+      closeAllDropdowns();
     }
   }
 
