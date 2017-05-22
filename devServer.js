@@ -8,9 +8,11 @@ var compiler = webpack(config);
 
 app.use(
   require("webpack-dev-middleware")(compiler, {
-    noInfo: true,
     publicPath: config.output.publicPath,
     hot: true,
+    stats: {
+      colors: true,
+    },
     headers: { "Access-Control-Allow-Origin": "*" },
   })
 );
