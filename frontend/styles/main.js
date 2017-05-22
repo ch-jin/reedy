@@ -85,6 +85,7 @@ export const StyledAddContentButton = glamorous(Button)({
   alignSelf: "flex-end",
   fontWeight: 700,
   fontSize: "14px",
+  fontFamily: "oxygen",
   backgroundColor: "#00B04D",
   ":hover": {
     backgroundColor: "#019542",

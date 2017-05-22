@@ -1,6 +1,6 @@
 import glamorous from "glamorous";
 import { FixedNav } from "./main";
-import { SHADOW_BORDER, SOFT_BOX_SHADOW, NAV_HEIGHT } from "./theme";
+import { SOFT_BOX_SHADOW } from "./theme";
 const ARTICLE_ITEM_HEIGHT = 150;
 
 export const StyledArticleListWrapper = glamorous.div({

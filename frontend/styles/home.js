@@ -51,6 +51,7 @@ export const StyledNavButtonContainer = glamorous.div({
 export const StyledNavButton = glamorous(Button)({
   height: "40px",
   fontSize: "18px",
+  fontFamily: "Oxygen",
   boxShadow: "none",
   padding: "0 10px",
 });
@@ -130,6 +131,7 @@ export const GetStartedButton = glamorous(StyledSessionButton)({
   fontSize: 20,
   paddingRight: 20,
   display: "flex",
+  fontFamily: "oxygen",
   justifyContent: "space-around",
   alignItems: "center",
 });

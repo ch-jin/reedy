@@ -21,7 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (module.hot) {
     module.hot.accept("./root", () => {
+      /*eslint-disable no-unused-vars*/
       const NextApp = require("./root").default;
+      /*eslint-enable no-unused-vars*/
+
       ReactDOM.render(<Root store={store} />, root);
     });
   }

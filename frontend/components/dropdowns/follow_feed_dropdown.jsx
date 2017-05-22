@@ -5,48 +5,34 @@ import {
   StyledFeedButtons,
   DropdownEmptyItem,
   Line,
-  Bold
+  Bold,
 } from "../../styles/dropdown";
+import {
+  handleClickStopPropagation,
+} from "../../utils/click_event_util";
 
-class FollowFeedDropdown extends React.Component {
-  handleClick(e) {
-    e.stopPropagation();
-  }
+const FollowFeedDropdown = ({ active, collections }) => (
+  <StyledFeedDropdown
+    active={active}
+    onClick={handleClickStopPropagation}
+  >
+    <DropdownContent>
+      <DropdownEmptyItem>
+        <Bold>
+          Add to Collections:
+        </Bold>
+      </DropdownEmptyItem>
+      <Line />
 
-  render() {
-    const { active, handleLogout } = this.props;
-    console.log(active);
-    return (
-      <StyledFeedDropdown active={active} onClick={this.handleClick}>
-        <DropdownContent>
-          <DropdownEmptyItem>
-            <Bold>
-              Add to Collections:
-            </Bold>
-          </DropdownEmptyItem>
-          <Line />
+      {collections.map(collection => (
+        <StyledFeedButtons key={"collection" + collection.id}>
+          {collection.title}
+        </StyledFeedButtons>
+      ))}
 
-          <StyledFeedButtons>
-            Collections
-          </StyledFeedButtons>
+    </DropdownContent>
 
-          <StyledFeedButtons>
-            Articles
-          </StyledFeedButtons>
-
-          <StyledFeedButtons>
-            Settings
-          </StyledFeedButtons>
-
-          <StyledFeedButtons onClick={handleLogout}>
-            Log Out
-          </StyledFeedButtons>
-
-        </DropdownContent>
-
-      </StyledFeedDropdown>
-    );
-  }
-}
+  </StyledFeedDropdown>
+);
 
 export default FollowFeedDropdown;

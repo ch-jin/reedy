@@ -2,10 +2,7 @@ import React from "react";
 import Transition from "../../utils/transition_util";
 import { fade } from "../../styles/transitions";
 import { ArticleLoader } from "../../utils/loader_util";
-import {
-  StyledExploreWrapper,
-  StyledExploreItem,
-} from "../../styles/explore";
+import { StyledExploreWrapper } from "../../styles/explore";
 import ExploreItem from "./explore_item";
 
 class Explore extends React.Component {

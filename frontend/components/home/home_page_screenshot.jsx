@@ -5,7 +5,7 @@ import {
   ScreenshotImg,
 } from "../../styles/home";
 
-const HomePageScreenshot = props => (
+const HomePageScreenshot = () => (
   <Screenshot>
     <MacWindow />
     <ScreenshotImg src={window.reedyScreenshot} />
