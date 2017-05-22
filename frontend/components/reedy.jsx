@@ -18,4 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   ReactDOM.render(<Root store={store} />, root);
+
+  if (module.hot) {
+    module.hot.accept("./root", () => {
+      const NextApp = require("./root").default;
+      ReactDOM.render(<Root store={store} />, root);
+    });
+  }
 });

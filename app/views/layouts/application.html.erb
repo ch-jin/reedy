@@ -6,6 +6,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <% if ENV["RAILS_ENV"] == "development" %>
+      <script src="http://localhost:4000/bundle1.js"></script>
+    <% end %>
+
     <link href="https://fonts.googleapis.com/css?family=Roboto|Oxygen" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path 'apple-touch-icon.png' %>">
     <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path 'favicon-32x32.png' %>">

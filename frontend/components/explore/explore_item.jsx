@@ -13,6 +13,7 @@ const ExploreItem = ({ feed }) => (
     <StyledExploreItem>
       <ExploreItemWrapper>
         <FeedImgContainer>
+
           <FeedImg src={feed.image} />
         </FeedImgContainer>
       </ExploreItemWrapper>

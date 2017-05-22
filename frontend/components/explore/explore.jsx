@@ -8,6 +8,7 @@ import ExploreItem from "./explore_item";
 class Explore extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
+
     this.props.fetchAllFeeds();
   }
 
@@ -15,7 +16,7 @@ class Explore extends React.Component {
     const { loading, feeds } = this.props;
 
     return (
-      <Transition identifer={"explore-page"} {...fade}>
+      <Transition identifier={"explore-page"} {...fade}>
         <StyledExploreWrapper>
           {loading && <ArticleLoader />}
           {feeds.map(feed => (
