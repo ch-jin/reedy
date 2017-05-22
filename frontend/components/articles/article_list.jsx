@@ -1,14 +1,17 @@
 import React from "react";
 import Transition from "../../utils/transition_util";
-import { fade } from "../../styles/transitions";
+import { Route } from "react-router-dom";
+import { fade, articleSlideLeft } from "../../styles/transitions";
 import { ArticleLoader } from "../../utils/loader_util";
 import ArticleItem from "./article_item";
 import ArticleListHeader from "./article_list_header";
+import ArticleDetailContainer from "./article_detail_container";
 import { StyledArticleListWrapper } from "../../styles/article";
+import { scrollMainContentWrapperToTop } from "../../utils/scroll_util";
 
 class ArticleList extends React.Component {
   componentDidMount() {
-    window.scrollTo(0, 0);
+    scrollMainContentWrapperToTop();
 
     const { fetchAllFeeds, feeds } = this.props;
     if (feeds.length) {
@@ -37,13 +40,20 @@ class ArticleList extends React.Component {
   }
 
   render() {
-    const { loading, articles, id, currentFeed } = this.props;
+    const { location, loading, articles, id, currentFeed } = this.props;
     const numImages = articles.filter(({ image }) => Boolean(image))
       .length;
 
     return (
       <Transition identifier={"article-list"} {...fade}>
         <StyledArticleListWrapper>
+
+          <Transition identifier={location.pathname} {...fade}>
+            <Route
+              path="/feeds/:feedId/articles/:articleId"
+              component={ArticleDetailContainer}
+            />
+          </Transition>
 
           {currentFeed && <ArticleListHeader feed={currentFeed} />}
           {loading && <ArticleLoader />}

@@ -35,7 +35,7 @@ class MainPage extends React.Component {
 
   toggleDropdown() {
     const { anyDropdownActive, closeAllDropdowns } = this.props;
-    console.log("anyDropdownActive", anyDropdownActive);
+
     if (anyDropdownActive) {
       closeAllDropdowns();
     }
@@ -45,13 +45,16 @@ class MainPage extends React.Component {
     const { loading, articleModal } = this.props;
 
     return (
-      <div className="main-wrapper" onClick={this.handleEventClick}>
+      <div id="main-wrapper" onClick={this.handleEventClick}>
 
         {loading && <ArticleLoader />}
 
         <MainSideNav articleModal={articleModal} />
 
-        <MainContentWrapper modalOpen={articleModal}>
+        <MainContentWrapper
+          id="main-content-wrapper"
+          modalOpen={articleModal}
+        >
           <MainNavContainer articleModal={articleModal} />
 
           <Route

@@ -2,10 +2,15 @@ import React from "react";
 import CollectionItem from "./collection_item";
 import { StyledCollectionWrapper } from "../../styles/collection";
 
-const CollectionList = () => (
+const CollectionList = ({ collections }) => (
   <StyledCollectionWrapper>
-    <CollectionItem />
-    <CollectionItem />
+    {collections.map(collection => (
+      <CollectionItem
+        key={"collection" + collection.id}
+        collection={collection}
+      />
+    ))}
+
   </StyledCollectionWrapper>
 );
 

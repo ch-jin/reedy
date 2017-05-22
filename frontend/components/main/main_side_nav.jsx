@@ -1,6 +1,7 @@
 import React from "react";
 import MainSideNavLinks from "./main_side_nav_links";
-import CollectionList from "../collections/collection_list";
+import CollectionListContainer
+  from "../collections/collection_list_container";
 import {
   FixedSideNav,
   SideNavWrapper,
@@ -13,7 +14,7 @@ const MainSideNav = ({ articleModal }) => (
     <SideNavWrapper>
       <SideNavContent>
         <MainSideNavLinks />
-        <CollectionList />
+        <CollectionListContainer />
         <StyledAddContentButton>
           + ADD CONTENT
         </StyledAddContentButton>

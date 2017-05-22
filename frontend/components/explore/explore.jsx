@@ -4,11 +4,11 @@ import { fade } from "../../styles/transitions";
 import { ArticleLoader } from "../../utils/loader_util";
 import { StyledExploreWrapper } from "../../styles/explore";
 import ExploreItem from "./explore_item";
+import { scrollMainContentWrapperToTop } from "../../utils/scroll_util";
 
 class Explore extends React.Component {
   componentDidMount() {
-    window.scrollTo(0, 0);
-
+    scrollMainContentWrapperToTop();
     this.props.fetchAllFeeds();
   }
 
