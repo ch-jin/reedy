@@ -1,9 +1,12 @@
 import React from "react";
 import Transition from "../../utils/transition_util";
 import { fade } from "../../styles/transitions";
+import { Route } from "react-router-dom";
 import { ArticleLoader } from "../../utils/loader_util";
-import ArticleItem from "./article_item";
-import ArticleListHeader from "./article_list_header";
+import ArticleItem from "./ArticleItem";
+import ArticleListHeader from "./ArticleListHeader";
+import ArticleDetailContainer from "./ArticleDetailContainer";
+import ArticleModal from "./ArticleModal";
 import { StyledArticleListWrapper } from "../../styles/article";
 import { scrollMainContentWrapperToTop } from "../../utils/scroll_util";
 
@@ -38,14 +41,20 @@ class ArticleList extends React.Component {
   }
 
   render() {
-    const { location, loading, articles, id, currentFeed } = this.props;
+    const {
+      loading,
+      articles,
+      id,
+      currentFeed,
+      modalOpen,
+    } = this.props;
     const numImages = articles.filter(({ image }) => Boolean(image))
       .length;
 
     return (
       <Transition identifier={"article-list"} {...fade}>
-        <StyledArticleListWrapper>
 
+        <StyledArticleListWrapper>
           {currentFeed && <ArticleListHeader feed={currentFeed} />}
           {loading && <ArticleLoader />}
 
@@ -57,7 +66,12 @@ class ArticleList extends React.Component {
               hasImage={numImages > 5}
             />
           ))}
-
+          <ArticleModal active={modalOpen}>
+            <Route
+              path="/feeds/:feedId/articles/:articleId"
+              component={ArticleDetailContainer}
+            />
+          </ArticleModal>
         </StyledArticleListWrapper>
       </Transition>
     );

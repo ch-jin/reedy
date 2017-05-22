@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import HomePage from "./home/home_page";
-import MainPageContainer from "./main/main_page_container";
+import HomePage from "./home/HomePage";
+import MainPageContainer from "./main/MainPageContainer";
 
 const App = ({ loggedIn, location }) => (
   <div>

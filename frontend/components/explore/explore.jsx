@@ -3,7 +3,7 @@ import Transition from "../../utils/transition_util";
 import { fade } from "../../styles/transitions";
 import { ArticleLoader } from "../../utils/loader_util";
 import { StyledExploreWrapper } from "../../styles/explore";
-import ExploreItem from "./explore_item";
+import ExploreItem from "./ExploreItem";
 import { scrollMainContentWrapperToTop } from "../../utils/scroll_util";
 
 class Explore extends React.Component {

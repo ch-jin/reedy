@@ -1,8 +1,7 @@
 import React from "react";
-import MainNavWrapper from "./main_nav_wrapper";
-import UserDropdownContainer
-  from "../dropdowns/user_dropdown_container";
-import MainNavHeaderContainer from "./main_nav_header_container";
+import MainNavWrapper from "./MainNavWrapper";
+import UserDropdownContainer from "../dropdowns/UserDropdownContainer";
+import MainNavHeaderContainer from "./MainNavHeaderContainer";
 import { StyledUserSection, UserImg } from "../../styles/main";
 
 const MainNav = ({ handleImgClick, articleModal, userDropdown }) => (

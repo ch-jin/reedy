@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Explore from "./explore";
+import Explore from "./Explore";
 import { fetchAllFeeds } from "../../actions/feed_actions";
 import { allFeeds } from "../../selectors/feed_selectors";
 

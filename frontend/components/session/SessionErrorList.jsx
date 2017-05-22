@@ -1,5 +1,5 @@
 import React from "react";
-import SessionErrorItem from "./session_error_item";
+import SessionErrorItem from "./SessionErrorItem";
 import { StyledErrorUl } from "../../styles/session_form";
 
 const SessionErrorWrapper = ({ errors }) => (

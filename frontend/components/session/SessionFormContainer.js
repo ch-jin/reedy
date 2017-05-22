@@ -5,7 +5,7 @@ import {
   clearErrors,
 } from "../../actions/session_actions";
 import { withRouter } from "react-router-dom";
-import SessionForm from "./session_form";
+import SessionForm from "./SessionForm";
 
 const formType = pathname => {
   if (pathname === "/signup") {

@@ -5,8 +5,8 @@ import {
   StyledSessionButton,
   StyledLettering,
 } from "../../styles/session_form";
-import SessionFormLinks from "./session_form_links";
-import SessionErrorList from "./session_errors_list";
+import SessionFormLinks from "./SessionFormLinks";
+import SessionErrorList from "./SessionErrorList";
 import { DefaultLoader } from "../../utils/loader_util";
 
 class SessionForm extends React.Component {

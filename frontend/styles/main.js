@@ -10,16 +10,12 @@ import {
 } from "./theme";
 
 // -- UPPER NAV --
-export const FixedNav = glamorous.nav(
-  {
-    position: "fixed",
-    width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
-    left: SIDE_NAV_WIDTH,
-  },
-  ({ articleModal }) => ({
-    zIndex: articleModal ? 0 : 4,
-  })
-);
+export const FixedNav = glamorous.nav({
+  position: "fixed",
+  width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
+  left: SIDE_NAV_WIDTH,
+  zIndex: 3,
+});
 
 export const StyledMainNavWrapper = glamorous.nav({
   height: NAV_HEIGHT,
@@ -46,7 +42,7 @@ export const FixedSideNav = glamorous.nav(
     width: SIDE_NAV_WIDTH,
   },
   ({ articleModal }) => ({
-    zIndex: articleModal ? 0 : 3,
+    zIndex: articleModal ? 0 : 4,
   })
 );
 

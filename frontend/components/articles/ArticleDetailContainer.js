@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { fetchArticle } from "../../actions/article_actions";
 import { toggleArticleModal } from "../../actions/modal_actions";
-import ArticleDetail from "./article_detail";
+import ArticleDetail from "./ArticleDetail";
 
 const mapStateToProps = (state, { match }) => ({
   currentArticle: state.articles.current,

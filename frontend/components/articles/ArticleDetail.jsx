@@ -7,8 +7,7 @@ import {
   ArticleDetailWrapper,
   ArticleDetailContent,
 } from "../../styles/article";
-import ArticleDetailNav from "./article_detail_nav";
-import ArticleModal from "./article_modal";
+import ArticleDetailNav from "./ArticleDetailNav";
 
 class ArticleDetail extends React.Component {
   constructor(props) {
@@ -32,6 +31,8 @@ class ArticleDetail extends React.Component {
     if (!active) {
       toggleArticleModal();
     }
+
+    console.log(this.props);
 
     if (!currentArticle) {
       fetchArticle(id);
@@ -69,23 +70,21 @@ class ArticleDetail extends React.Component {
     const { loading, currentArticle, feedId } = this.props;
     if (this.state.initialLoad) {
       return (
-        <ArticleModal>
-          <Transition
-            identifier={"article-detail"}
-            {...articleSlideLeft}
+        <Transition
+          identifier={location.pathname}
+          {...articleSlideLeft}
+        >
+          <ArticleDetailWrapper
+            onClick={this.handleClick}
+            className="article-modal-content"
           >
-            <ArticleDetailWrapper
-              onClick={this.handleClick}
-              className="article-modal-content"
-            >
-              <ArticleDetailNav />
-              {loading && <DefaultLoader />}
-              <ArticleDetailContent>
-                {currentArticle && this.renderArticle()}
-              </ArticleDetailContent>
-            </ArticleDetailWrapper>
-          </Transition>
-        </ArticleModal>
+            <ArticleDetailNav />
+            {loading && <DefaultLoader />}
+            <ArticleDetailContent>
+              {currentArticle && this.renderArticle()}
+            </ArticleDetailContent>
+          </ArticleDetailWrapper>
+        </Transition>
       );
     } else {
       return <Redirect to={`/feeds/${feedId}/articles`} />;

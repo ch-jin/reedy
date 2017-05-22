@@ -1,7 +1,7 @@
 import React from "react";
-import HomePageNavButton from "./home_page_nav_button";
-import HomePageNavBrand from "./home_page_nav_brand";
-import HomePageNavWrapper from "./home_page_nav_wrapper";
+import HomePageNavButton from "./HomePageNavButton";
+import HomePageNavBrand from "./HomePageNavBrand";
+import HomePageNavWrapper from "./HomePageNavWrapper";
 import { StyledNavButtonContainer } from "../../styles/home";
 
 const HomePageNav = () => (

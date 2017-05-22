@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import ArticleList from "./article_list";
+import ArticleList from "./ArticleList";
 import { fetchArticlesFromFeed } from "../../actions/article_actions";
 import { allArticles } from "../../selectors/article_selectors";
 import { allFeeds, currentFeed } from "../../selectors/feed_selectors";
@@ -15,7 +15,7 @@ const mapStateToProps = (state, { match }) => ({
   articles: allArticles(state),
   currentFeed: currentFeed(state),
   loading: state.loading.loadingArticles,
-  articleModal: state.modal.articleModal,
+  modalOpen: state.modal.articleModal,
 });
 
 const mapDispatchToProps = dispatch => ({

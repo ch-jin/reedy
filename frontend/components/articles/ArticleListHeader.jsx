@@ -1,9 +1,9 @@
 import React from "react";
 import { StyledListHeader, StyledTitle } from "../../styles/article";
 import { FeedImgContainer, FeedImg } from "../../styles/explore";
-import FollowButtonContainer from "./follow_button_container";
+import FollowButtonContainer from "./FollowButtonContainer";
 import FollowFeedDropdownContainer
-  from "../dropdowns/follow_feed_dropdown_container";
+  from "../dropdowns/FollowFeedDropdownContainer";
 
 const ArticleListHeader = ({ feed }) => (
   <StyledListHeader>

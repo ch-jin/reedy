@@ -38,11 +38,18 @@ feeds.each do |feed|
 end
 
 collection1 = Collection.create({ user_id: user1.id, title: 'Tech' })
-collection_feed1 = CollectionFeed.create({ 
-  collection_id: collection1.id, 
-  feed_id: Feed.all[5].id 
-})
-collection_feed2 = CollectionFeed.create({
-  collection_id: collection1.id, 
-  feed_id: Feed.all[9].id 
-})
+collection2 = Collection.create({ user_id: user1.id, title: 'News' })
+
+(5..8).to_a.each do |i|
+  CollectionFeed.create({
+    collection_id: collection1.id,
+    feed_id: Feed.all[i].id
+  })
+end
+
+(0..3).to_a.each do |i|
+  CollectionFeed.create({
+    collection_id: collection2.id,
+    feed_id: Feed.all[i].id
+  })
+end

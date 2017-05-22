@@ -1,12 +1,10 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import MainNavContainer from "./main_nav_container";
-import MainSideNav from "./main_side_nav";
-import ExploreContainer from "../explore/explore_container";
+import MainNavContainer from "./MainNavContainer";
+import MainSideNav from "./MainSideNav";
+import ExploreContainer from "../explore/ExploreContainer";
 import { ArticleLoader } from "../../utils/loader_util";
-import ArticleListContainer from "../articles/article_list_container";
-import ArticleDetailContainer
-  from "../articles/article_detail_container";
+import ArticleListContainer from "../articles/ArticleListContainer";
 import { MainContentWrapper } from "../../styles/main";
 
 class MainPage extends React.Component {
@@ -56,11 +54,6 @@ class MainPage extends React.Component {
           modalOpen={articleModal}
         >
           <MainNavContainer articleModal={articleModal} />
-
-          <Route
-            path="/feeds/:feedId/articles/:articleId"
-            component={ArticleDetailContainer}
-          />
 
           <Switch>
             <Route

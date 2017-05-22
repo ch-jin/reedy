@@ -1,7 +1,7 @@
 import React from "react";
-import MainSideNavLinks from "./main_side_nav_links";
+import MainSideNavLinks from "./MainSideNavLinks";
 import CollectionListContainer
-  from "../collections/collection_list_container";
+  from "../collections/CollectionListContainer";
 import {
   FixedSideNav,
   SideNavWrapper,

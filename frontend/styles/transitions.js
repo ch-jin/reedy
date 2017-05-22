@@ -133,21 +133,17 @@ export const slideRight = {
 
 export const articleSlideLeft = {
   atEnter: {
-    opacity: 0,
     offset: 100,
   },
   atLeave: {
-    opacity: spring(0, config.fade),
     offset: spring(-100, config.slide),
   },
   atActive: {
-    opacity: spring(1, config.slide),
     offset: spring(0, config.slide),
   },
   mapStyles(styles) {
     return {
       overflow: "hidden",
-      opacity: styles.opacity,
       transform: `translateX(${styles.offset}%)`,
       height: "100vh",
       width: "100vw",

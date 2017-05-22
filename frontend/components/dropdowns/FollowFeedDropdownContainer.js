@@ -4,7 +4,7 @@ import {
   addFeedToCollection,
   allCollections,
 } from "../../utils/collections_util";
-import FollowFeedDropdown from "./follow_feed_dropdown";
+import FollowFeedDropdown from "./FollowFeedDropdown";
 
 const mapStateToProps = state => ({
   collections: allCollections(state),

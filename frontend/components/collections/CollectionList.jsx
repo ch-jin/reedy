@@ -1,5 +1,5 @@
 import React from "react";
-import CollectionItem from "./collection_item";
+import CollectionItem from "./CollectionItem";
 import { StyledCollectionWrapper } from "../../styles/collection";
 
 const CollectionList = ({ collections }) => (

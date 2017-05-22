@@ -11,6 +11,6 @@ export default glamorous.div({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  cursor: "pointer",
+  cursor: "pointwer",
   zIndex: 3,
 });
