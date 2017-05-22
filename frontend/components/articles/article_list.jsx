@@ -1,11 +1,9 @@
 import React from "react";
 import Transition from "../../utils/transition_util";
-import { Route } from "react-router-dom";
-import { fade, articleSlideLeft } from "../../styles/transitions";
+import { fade } from "../../styles/transitions";
 import { ArticleLoader } from "../../utils/loader_util";
 import ArticleItem from "./article_item";
 import ArticleListHeader from "./article_list_header";
-import ArticleDetailContainer from "./article_detail_container";
 import { StyledArticleListWrapper } from "../../styles/article";
 import { scrollMainContentWrapperToTop } from "../../utils/scroll_util";
 
@@ -47,13 +45,6 @@ class ArticleList extends React.Component {
     return (
       <Transition identifier={"article-list"} {...fade}>
         <StyledArticleListWrapper>
-
-          <Transition identifier={location.pathname} {...fade}>
-            <Route
-              path="/feeds/:feedId/articles/:articleId"
-              component={ArticleDetailContainer}
-            />
-          </Transition>
 
           {currentFeed && <ArticleListHeader feed={currentFeed} />}
           {loading && <ArticleLoader />}
