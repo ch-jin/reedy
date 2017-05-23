@@ -1,5 +1,4 @@
 class Api::FeedsController < ApplicationController
-  include Api::FeedsHelper
   # Supplies these methods:
   #   fetch_rss_feed, valid_feed?, construct_feed, add_articles
 
@@ -13,15 +12,15 @@ class Api::FeedsController < ApplicationController
 
   def create
     url = feed_params[:url]
-    feed = fetch_rss_feed(url)
+    raw_feed = Feed.fetch_rss_feed(url)
 
-    if valid_feed?(feed)
-      @feed = Feed.new(construct_feed(url, feed))
+    if Feed.valid_feed?(raw_feed)
+      @feed = Feed.new(Feed.construct_feed(url, raw_feed))
 
       # Bonus: uniquess for .html, .rss, capitals
       if @feed.save
         render('api/feeds/feed')
-        add_articles(@feed.id, feed["item"])
+        Article.add_articles(@feed.id, feed["item"])
       else
         render json: @feed.errors.full_messages, status: 422
       end
