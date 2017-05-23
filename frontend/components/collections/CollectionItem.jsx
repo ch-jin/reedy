@@ -7,7 +7,6 @@ import {
 import CollectionFeedItem from "./CollectionFeedItem";
 
 const CollectionItem = ({ collection, feeds }) => {
-  console.log(feeds);
   return (
     <StyledItemBox>
       <div>

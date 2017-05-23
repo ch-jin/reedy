@@ -9,7 +9,6 @@ export const StyledItemBox = glamorous.div({
   boxSizing: "border-box",
   fontSize: "14px",
   padding: "10px",
-  color: "rgba( 255, 255, 255, 0.8 )",
   flexDirection: "column",
 });
 
@@ -26,6 +25,7 @@ export const StyledCollectionFeedItem = glamorous.div({
   alignItems: "center",
   boxSizing: "border-box",
   padding: "5px 0 5px 25px",
+  color: "rgba( 255, 255, 255, 0.8 )",
   ":hover": {
     cursor: "pointer",
     backgroundColor: "#343b43",
