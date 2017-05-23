@@ -1,1 +1,2 @@
-json.partial! 'api/collections/collection', collection: @collection
+json.extract! @collection, :id, :title
+json.feedIds @collection.feed_ids
