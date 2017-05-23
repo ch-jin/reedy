@@ -1,6 +1,6 @@
 class Api::ArticlesController < ApplicationController
   def index
-    # Will implement when collections are done
+    @articles = current_user.articles.order('pub_date DESC')
   end
 
   def show
