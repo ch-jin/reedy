@@ -32,6 +32,7 @@ gem 'bcrypt'
 gem 'figaro'
 gem 'httparty'
 gem 'colorize'
+gem 'whenever'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
