@@ -1,6 +1,6 @@
 class Api::ArticlesController < ApplicationController
   def index
-    @articles = current_user.articles.order('pub_date DESC')
+    @articles = current_user.most_recent_articles_limit_5_per_feed
   end
 
   def show

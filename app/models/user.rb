@@ -56,4 +56,13 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= generate_session_token
   end
+
+  def most_recent_articles_limit_5_per_feed
+    articles = []
+    feeds = self.feeds
+    feeds.each do |feed|
+      articles += feed.articles.order('pub_date DESC').limit(5)
+    end
+    articles
+  end
 end
