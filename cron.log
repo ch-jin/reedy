@@ -1,0 +1,498 @@
+
+
+FETCHING http://feeds2.feedburner.com/time/topstories
+STARTING FETCH............
+[0;32;49mArticle ID: 3461 [0m
+[0;32;49mArticle ID: 3462 [0m
+[0;32;49mArticle ID: 3463 [0m
+[0;32;49mArticle ID: 3464 [0m
+
+
+FETCHING http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+STARTING FETCH............
+[0;32;49mArticle ID: 3465 [0m
+[0;32;49mArticle ID: 3466 [0m
+
+
+FETCHING http://www.npr.org/rss/rss.php?id=1001
+STARTING FETCH............
+[0;32;49mArticle ID: 3467 [0m
+[0;32;49mArticle ID: 3468 [0m
+[0;32;49mArticle ID: 3469 [0m
+[0;32;49mArticle ID: 3470 [0m
+[0;32;49mArticle ID: 3471 [0m
+
+
+FETCHING https://www.theguardian.com/uk/rss
+STARTING FETCH............
+[0;32;49mArticle ID: 3472 [0m
+[0;32;49mArticle ID: 3473 [0m
+[0;32;49mArticle ID: 3474 [0m
+[0;32;49mArticle ID: 3475 [0m
+[0;32;49mArticle ID: 3476 [0m
+[0;32;49mArticle ID: 3477 [0m
+
+
+FETCHING http://feeds.reuters.com/reuters/technologyNews
+STARTING FETCH............
+
+
+FETCHING http://feeds.arstechnica.com/arstechnica/index
+STARTING FETCH............
+[0;32;49mArticle ID: 3478 [0m
+[0;32;49mArticle ID: 3479 [0m
+[0;32;49mArticle ID: 3480 [0m
+
+
+FETCHING https://venturebeat.com/feed/
+STARTING FETCH............
+[0;32;49mArticle ID: 3481 [0m
+[0;32;49mArticle ID: 3482 [0m
+
+
+FETCHING https://www.reddit.com/r/news.rss
+STARTING FETCH............
+[0;32;49mArticle ID: 3483 [0m
+[0;32;49mArticle ID: 3484 [0m
+[0;32;49mArticle ID: 3485 [0m
+
+
+FETCHING https://hackaday.com/blog/feed/
+STARTING FETCH............
+[0;32;49mArticle ID: 3486 [0m
+
+
+FETCHING https://hackernoon.com/feed
+STARTING FETCH............
+[0;32;49mArticle ID: 3487 [0m
+[0;32;49mArticle ID: 3488 [0m
+[0;32;49mArticle ID: 3489 [0m
+[0;32;49mArticle ID: 3490 [0m
+
+
+FETCHING https://dev.to/rss
+STARTING FETCH............
+[0;32;49mArticle ID: 3491 [0m
+[0;32;49mArticle ID: 3492 [0m
+
+
+FETCHING https://www.behance.net/feeds/projects
+STARTING FETCH............
+
+
+FETCHING https://www.producthunt.com/feed.atom
+STARTING FETCH............
+[0;32;49mArticle ID: 3493 [0m
+[0;33;49mRearranging article info[0m
+[0;31;49mF [0m
+Running via Spring preloader in process 26163
+
+
+FETCHING http://feeds2.feedburner.com/time/topstories
+STARTING FETCH............
+
+
+FETCHING http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+STARTING FETCH............
+
+
+FETCHING http://www.npr.org/rss/rss.php?id=1001
+STARTING FETCH............
+
+
+FETCHING https://www.theguardian.com/uk/rss
+STARTING FETCH............
+
+
+FETCHING http://feeds.reuters.com/reuters/technologyNews
+STARTING FETCH............
+
+
+FETCHING http://feeds.arstechnica.com/arstechnica/index
+STARTING FETCH............
+
+
+FETCHING https://venturebeat.com/feed/
+STARTING FETCH............
+
+
+FETCHING https://www.reddit.com/r/news.rss
+STARTING FETCH............
+
+
+FETCHING https://hackaday.com/blog/feed/
+STARTING FETCH............
+
+
+FETCHING https://hackernoon.com/feed
+STARTING FETCH............
+
+
+FETCHING https://dev.to/rss
+STARTING FETCH............
+
+
+FETCHING https://www.behance.net/feeds/projects
+STARTING FETCH............
+
+
+FETCHING https://www.producthunt.com/feed.atom
+STARTING FETCH............
+[0;33;49mRearranging article info[0m
+[0;31;49mF [0m
+Running via Spring preloader in process 26375
+
+
+FETCHING http://feeds2.feedburner.com/time/topstories
+STARTING FETCH............
+
+
+FETCHING http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+STARTING FETCH............
+
+
+FETCHING http://www.npr.org/rss/rss.php?id=1001
+STARTING FETCH............
+
+
+FETCHING https://www.theguardian.com/uk/rss
+STARTING FETCH............
+
+
+FETCHING http://feeds.reuters.com/reuters/technologyNews
+STARTING FETCH............
+
+
+FETCHING http://feeds.arstechnica.com/arstechnica/index
+STARTING FETCH............
+
+
+FETCHING https://venturebeat.com/feed/
+STARTING FETCH............
+
+
+FETCHING https://www.reddit.com/r/news.rss
+STARTING FETCH............
+
+
+FETCHING https://hackaday.com/blog/feed/
+STARTING FETCH............
+
+
+FETCHING https://hackernoon.com/feed
+STARTING FETCH............
+
+
+FETCHING https://dev.to/rss
+STARTING FETCH............
+
+
+FETCHING https://www.behance.net/feeds/projects
+STARTING FETCH............
+
+
+FETCHING https://www.producthunt.com/feed.atom
+STARTING FETCH............
+[0;33;49mRearranging article info[0m
+[0;31;49mF [0m
+Running via Spring preloader in process 26660
+
+
+FETCHING http://feeds2.feedburner.com/time/topstories
+STARTING FETCH............
+
+
+FETCHING http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+STARTING FETCH............
+
+
+FETCHING http://www.npr.org/rss/rss.php?id=1001
+STARTING FETCH............
+
+
+FETCHING https://www.theguardian.com/uk/rss
+STARTING FETCH............
+
+
+FETCHING http://feeds.reuters.com/reuters/technologyNews
+STARTING FETCH............
+
+
+FETCHING http://feeds.arstechnica.com/arstechnica/index
+STARTING FETCH............
+
+
+FETCHING https://venturebeat.com/feed/
+STARTING FETCH............
+
+
+FETCHING https://www.reddit.com/r/news.rss
+STARTING FETCH............
+
+
+FETCHING https://hackaday.com/blog/feed/
+STARTING FETCH............
+
+
+FETCHING https://hackernoon.com/feed
+STARTING FETCH............
+
+
+FETCHING https://dev.to/rss
+STARTING FETCH............
+
+
+FETCHING https://www.behance.net/feeds/projects
+STARTING FETCH............
+
+
+FETCHING https://www.producthunt.com/feed.atom
+STARTING FETCH............
+[0;33;49mRearranging article info[0m
+[0;31;49mF [0m
+Running via Spring preloader in process 26874
+
+
+FETCHING http://feeds2.feedburner.com/time/topstories
+STARTING FETCH............
+
+
+FETCHING http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+STARTING FETCH............
+
+
+FETCHING http://www.npr.org/rss/rss.php?id=1001
+STARTING FETCH............
+
+
+FETCHING https://www.theguardian.com/uk/rss
+STARTING FETCH............
+
+
+FETCHING http://feeds.reuters.com/reuters/technologyNews
+STARTING FETCH............
+
+
+FETCHING http://feeds.arstechnica.com/arstechnica/index
+STARTING FETCH............
+
+
+FETCHING https://venturebeat.com/feed/
+STARTING FETCH............
+
+
+FETCHING https://www.reddit.com/r/news.rss
+STARTING FETCH............
+
+
+FETCHING https://hackaday.com/blog/feed/
+STARTING FETCH............
+
+
+FETCHING https://hackernoon.com/feed
+STARTING FETCH............
+
+
+FETCHING https://dev.to/rss
+STARTING FETCH............
+
+
+FETCHING https://www.behance.net/feeds/projects
+STARTING FETCH............
+
+
+FETCHING https://www.producthunt.com/feed.atom
+STARTING FETCH............
+[0;33;49mRearranging article info[0m
+[0;31;49mF [0m
+Running via Spring preloader in process 27031
+______________________________________
+2017-05-23T11:01:01-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING http://feeds2.feedburner.com/time/topstories
+STARTING FETCH............
+______________________________________
+2017-05-23T11:01:03-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+STARTING FETCH............
+[0;32;49mArticle ID: 3494 [0m
+______________________________________
+2017-05-23T11:01:08-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING http://www.npr.org/rss/rss.php?id=1001
+STARTING FETCH............
+______________________________________
+2017-05-23T11:01:10-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://www.theguardian.com/uk/rss
+STARTING FETCH............
+______________________________________
+2017-05-23T11:01:13-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING http://feeds.reuters.com/reuters/technologyNews
+STARTING FETCH............
+______________________________________
+2017-05-23T11:01:14-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING http://feeds.arstechnica.com/arstechnica/index
+STARTING FETCH............
+______________________________________
+2017-05-23T11:01:36-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://venturebeat.com/feed/
+STARTING FETCH............
+______________________________________
+2017-05-23T11:01:37-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://www.reddit.com/r/news.rss
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:05-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://hackaday.com/blog/feed/
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:06-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://hackernoon.com/feed
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:13-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://dev.to/rss
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:15-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://www.behance.net/feeds/projects
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:16-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://www.producthunt.com/feed.atom
+STARTING FETCH............
+[0;33;49mRearranging article info[0m
+[0;31;49mF [0m
+Running via Spring preloader in process 27209
+______________________________________
+2017-05-23T11:02:01-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING http://feeds2.feedburner.com/time/topstories
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:03-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:12-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING http://www.npr.org/rss/rss.php?id=1001
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:15-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://www.theguardian.com/uk/rss
+STARTING FETCH............
+[0;32;49mArticle ID: 3495 [0m
+______________________________________
+2017-05-23T11:02:19-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING http://feeds.reuters.com/reuters/technologyNews
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:20-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING http://feeds.arstechnica.com/arstechnica/index
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:41-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://venturebeat.com/feed/
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:42-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://www.reddit.com/r/news.rss
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:54-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://hackaday.com/blog/feed/
+STARTING FETCH............
+______________________________________
+2017-05-23T11:02:55-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://hackernoon.com/feed
+STARTING FETCH............
+______________________________________
+2017-05-23T11:03:00-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://dev.to/rss
+STARTING FETCH............
+______________________________________
+2017-05-23T11:03:01-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://www.behance.net/feeds/projects
+STARTING FETCH............
+______________________________________
+2017-05-23T11:03:03-07:00 UPDATING FEED ARTICLES
+______________________________________
+
+
+FETCHING https://www.producthunt.com/feed.atom
+STARTING FETCH............
+[0;33;49mRearranging article info[0m
+[0;31;49mF [0m
+Running via Spring preloader in process 27390

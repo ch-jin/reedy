@@ -6,9 +6,7 @@ import {
   Line,
   Bold,
 } from "../../styles/dropdown";
-import {
-  handleClickStopPropagation,
-} from "../../utils/click_event_util";
+import { handleClickStopPropagation } from "../../utils/click_event_util";
 import FollowFeedDropdownButton from "./FollowFeedDropdownButton";
 
 const FollowFeedDropdown = ({
@@ -18,10 +16,7 @@ const FollowFeedDropdown = ({
   feedId,
 }) => {
   return (
-    <StyledFeedDropdown
-      active={active}
-      onClick={handleClickStopPropagation}
-    >
+    <StyledFeedDropdown active={active} onClick={handleClickStopPropagation}>
       <DropdownContent>
         <DropdownEmptyItem>
           <Bold>

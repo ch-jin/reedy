@@ -62,6 +62,9 @@ class Feed < ApplicationRecord
   end
 
   def self.update_all_feed_articles
+    puts "______________________________________"
+    puts "#{DateTime.now} UPDATING FEED ARTICLES"
+    puts "______________________________________"
     Feed.all.each do |feed|
       feed.update_feed_articles
     end
