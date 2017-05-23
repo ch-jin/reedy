@@ -1,5 +1,10 @@
 class Api::CollectionFeedsController < ApplicationController
 
+  def index
+    @feeds = current_user.feeds.includes(:collections)
+    render 'api/feeds/index'
+  end
+
   def create
     @collection_feed = CollectionFeed.new(collection_feed_params)
     if @collection_feed.save

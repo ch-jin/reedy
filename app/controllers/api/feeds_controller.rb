@@ -4,7 +4,7 @@ class Api::FeedsController < ApplicationController
   #   fetch_rss_feed, valid_feed?, construct_feed, add_articles
 
   def index
-    @feeds = current_user.feeds.includes(:collections)
+    @feeds = Feed.all.includes(:collections)
   end
 
   def show
