@@ -4,6 +4,7 @@ import {
   RECEIVE_CURRENT_USER,
 } from "../actions/session_actions";
 import {
+  RECEIVE_CURRENT_FEED,
   FETCHING_FEEDS,
   RECEIVE_ALL_FEEDS,
 } from "../actions/feed_actions";
@@ -33,6 +34,7 @@ const loadingReducer = (state = _initialState, { type }) => {
 
     case FETCHING_FEEDS:
       return { ...state, loadingFeeds: true };
+    case RECEIVE_CURRENT_FEED:
     case RECEIVE_ALL_FEEDS:
       return { ...state, loadingFeeds: false };
 

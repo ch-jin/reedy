@@ -2,29 +2,38 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { StyledMainNavHeader, MainNavLogo } from "../../styles/main";
 
-const MainNavHeader = props => {
-  const { currentFeed, pathname, homePath } = props;
+class MainNavHeader extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { currentTitle: "" };
+  }
 
-  const currentTitle = () => {
-    if (pathname === "/discover") {
-      return "Discover";
-    } else if (pathname === "/subscriptions") {
-      return "Subscriptions";
+  componentWillReceiveProps(nextProps) {
+    const { currentFeed, history, homePath } = nextProps;
+
+    if (history.location.pathname === "/discover") {
+      this.setState({ currentTitle: "Discover" });
+    } else if (history.location.pathname === "/subscriptions") {
+      this.setState({ currentTitle: "Subscriptions" });
     } else if (currentFeed) {
-      return currentFeed.title;
-    } else {
-      return null;
+      this.setState({ currentTitle: currentFeed.title });
+    } else if (homePath === "/subscriptions") {
+      this.setState({ currentTitle: "Subscriptions" });
     }
-  };
+  }
 
-  return (
-    <StyledMainNavHeader>
-      <Link to={homePath}>
-        <MainNavLogo src={window.greyLogoURL} />
-      </Link>
-      <h2 dangerouslySetInnerHTML={{ __html: currentTitle() }} />
-    </StyledMainNavHeader>
-  );
-};
+  render() {
+    const { homePath } = this.props;
+
+    return (
+      <StyledMainNavHeader>
+        <Link to={homePath}>
+          <MainNavLogo src={window.greyLogoURL} />
+        </Link>
+        <h2 dangerouslySetInnerHTML={{ __html: this.state.currentTitle }} />
+      </StyledMainNavHeader>
+    );
+  }
+}
 
 export default MainNavHeader;

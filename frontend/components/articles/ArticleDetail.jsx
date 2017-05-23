@@ -61,7 +61,7 @@ class ArticleDetail extends React.Component {
 
   render() {
     const { loading, currentArticle, redirectToParent } = this.props;
-    console.log(redirectToParent);
+
     if (this.state.initialLoad) {
       return (
         <ArticleModal active={true}>

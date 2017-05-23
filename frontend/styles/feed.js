@@ -22,4 +22,5 @@ export const StyledFeedWrapper = glamorous.div({
   backgroundColor: "#fff",
   boxShadow: SOFT_BOX_SHADOW,
   maxWidth: 740,
+  height: "100v",
 });

@@ -1,9 +1,3 @@
-export const fetchFollowedCollections = () =>
-  $.ajax({
-    method: "GET",
-    url: "/api/collection_feeds",
-  });
-
 export const fetchAllCollections = () =>
   $.ajax({
     method: "GET",

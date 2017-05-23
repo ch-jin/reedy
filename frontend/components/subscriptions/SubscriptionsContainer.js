@@ -1,7 +1,5 @@
 import { connect } from "react-redux";
-import {
-  fetchFollowedCollections,
-} from "../../actions/collection_actions";
+import { fetchAllCollections } from "../../actions/collection_actions";
 import { fetchFollowedArticles } from "../../actions/article_actions";
 import Subscriptions from "./Subscriptions";
 
@@ -10,10 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchFollowedCollections: () => dispatch(fetchFollowedCollections()),
+  fetchAllCollections: () => dispatch(fetchAllCollections()),
   fetchFollowedArticles: () => dispatch(fetchFollowedArticles()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  Subscriptions
-);
+export default connect(mapStateToProps, mapDispatchToProps)(Subscriptions);

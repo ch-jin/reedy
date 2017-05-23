@@ -17,13 +17,8 @@ class Feed extends React.Component {
     fetchArticlesFromFeed(feedId);
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-  }
-
   render() {
     const { feed, articles, match } = this.props;
-    console.log(feed);
     if (feed) {
       return (
         <Transition identifier={"article-list"} {...fade}>

@@ -19,22 +19,16 @@ export const fetchAllCollections = () => dispatch => {
   );
 };
 
-export const fetchFollowedCollections = () => dispatch => {
-  return CollectionAPIUtil.fetchFollowedCollections().then(
-    collections => dispatch(receiveAllCollections(collections))
+export const createCollection = collection => dispatch => {
+  return CollectionAPIUtil.createCollection(collection).then(collection =>
+    dispatch(receiveCollection(collection))
   );
 };
 
-export const createCollection = collection => dispatch => {
-  return CollectionAPIUtil.createCollection(
-    collection
-  ).then(collection => dispatch(receiveCollection(collection)));
-};
-
 export const updateCollection = collection => dispatch => {
-  return CollectionAPIUtil.updateCollection(
-    collection
-  ).then(collection => dispatch(receiveCollection(collection)));
+  return CollectionAPIUtil.updateCollection(collection).then(collection =>
+    dispatch(receiveCollection(collection))
+  );
 };
 
 export const addFeedToCollection = collectionFeed => dispatch => {

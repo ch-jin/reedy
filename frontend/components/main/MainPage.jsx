@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import MainNavContainer from "./MainNavContainer";
 import MainSideNav from "./MainSideNav";
 import DiscoverContainer from "../discover/DiscoverContainer";
@@ -73,4 +73,4 @@ class MainPage extends React.Component {
   }
 }
 
-export default MainPage;
+export default withRouter(MainPage);

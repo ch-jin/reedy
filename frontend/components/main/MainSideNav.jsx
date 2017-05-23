@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MainSideNavLinks from "./MainSideNavLinks";
-import CollectionListContainer
-  from "../collections/CollectionListContainer";
+import CollectionListContainer from "../collections/CollectionListContainer";
 import {
   FixedSideNav,
   SideNavWrapper,
@@ -15,9 +15,12 @@ const MainSideNav = ({ articleModal }) => (
       <SideNavContent>
         <MainSideNavLinks />
         <CollectionListContainer />
-        <StyledAddContentButton>
-          + ADD CONTENT
-        </StyledAddContentButton>
+
+        <Link to="/discover">
+          <StyledAddContentButton>
+            + ADD CONTENT
+          </StyledAddContentButton>
+        </Link>
       </SideNavContent>
     </SideNavWrapper>
   </FixedSideNav>

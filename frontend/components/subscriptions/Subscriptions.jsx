@@ -1,29 +1,31 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import Loader from "../../utils/loader_util";
+import { ArticleLoader } from "../../utils/loader_util";
 import { StyledFeedWrapper } from "../../styles/feed";
 import ArticleListContainer from "../articles/ArticleListContainer";
 import ArticleDetailContainer from "../articles/ArticleDetailContainer";
 
 class Subscriptions extends React.Component {
   componentDidMount() {
-    this.props.fetchFollowedCollections();
+    this.props.fetchAllCollections();
     this.props.fetchFollowedArticles();
   }
 
   render() {
     const { loading } = this.props;
     return (
-      <StyledFeedWrapper>
-        {loading && <Loader />}
-        <ArticleListContainer path="/subscriptions" />
+      <div>
+        {loading && <ArticleLoader />}
+        <StyledFeedWrapper>
+          <ArticleListContainer path="/subscriptions" />
+        </StyledFeedWrapper>
         <Route
           path="/subscriptions/:feedId/articles/:articleId"
           render={() => (
             <ArticleDetailContainer redirectToParent="/subscriptions" />
           )}
         />
-      </StyledFeedWrapper>
+      </div>
     );
   }
 }
