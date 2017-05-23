@@ -1,13 +1,13 @@
-export const fetchDiscoverFeeds = () =>
-  $.ajax({
-    method: "GET",
-    url: "/api/collections",
-  });
-
 export const fetchFollowedCollections = () =>
   $.ajax({
     method: "GET",
     url: "/api/collection_feeds",
+  });
+
+export const fetchAllCollections = () =>
+  $.ajax({
+    method: "GET",
+    url: "/api/collections",
   });
 
 export const createCollection = collection =>

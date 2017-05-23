@@ -9,3 +9,9 @@ export const fetchArticle = id =>
     method: "GET",
     url: `/api/articles/${id}`,
   });
+
+export const fetchFollowedArticles = () =>
+  $.ajax({
+    method: "GET",
+    url: "api/articles",
+  });
