@@ -49,12 +49,17 @@ class MainPage extends React.Component {
   render() {
     const { loading, articleModal } = this.props;
     const { pathname } = this.state;
+    const collectionsPresent = hasCollections(this.props.collections);
+
     return (
       <div id="main-wrapper" onClick={this.handleEventClick}>
 
         {!loading && <ArticleLoader />}
 
-        <MainSideNav articleModal={articleModal} />
+        <MainSideNav
+          collectionsPresent={collectionsPresent}
+          articleModal={articleModal}
+        />
         <MainContentWrapper id="main-content-wrapper" modalOpen={articleModal}>
 
           <MainNavContainer articleModal={articleModal} homePath={pathname} />

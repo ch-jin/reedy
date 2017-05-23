@@ -9,12 +9,13 @@ import {
   StyledAddContentButton,
 } from "../../styles/main";
 
-const MainSideNav = ({ articleModal }) => (
+const MainSideNav = ({ articleModal, collectionsPresent }) => (
   <FixedSideNav articleModal={articleModal}>
     <SideNavWrapper>
       <SideNavContent>
         <MainSideNavLinks />
-        <CollectionListContainer />
+
+        {collectionsPresent && <CollectionListContainer />}
       </SideNavContent>
 
       <Link to="/discover">

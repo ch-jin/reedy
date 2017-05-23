@@ -48,6 +48,7 @@ export const FixedSideNav = glamorous.nav(
 
 export const SideNavWrapper = glamorous.nav({
   height: "100vh",
+  width: "100%",
   display: "flex",
   justifyContent: "center",
   boxShadow: "0 1px 11px rgba(0,0,0,0.10), 0 1px 1px rgba(0,0,0,0.10)",
@@ -59,6 +60,7 @@ export const SideNavWrapper = glamorous.nav({
 
 export const SideNavContent = glamorous.nav({
   height: "100%",
+  width: "100%",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -67,7 +69,7 @@ export const SideNavContent = glamorous.nav({
 
 // -- SIDE NAV ITEMS --
 export const StyledNavBox = glamorous.div({
-  width: `calc(${SIDE_NAV_WIDTH}px - 30px)`,
+  width: SIDE_NAV_WIDTH,
   marginTop: "15px",
   height: "150px",
   border: "1px solid white",

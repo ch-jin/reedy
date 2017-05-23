@@ -1,10 +1,24 @@
 import React from "react";
-import { StyledItemBox } from "../../styles/collection";
+import { AngleDown } from "../../styles/theme";
+import {
+  StyledItemBox,
+  StyledCollectionFeedWrapper,
+} from "../../styles/collection";
+import CollectionFeedItem from "./CollectionFeedItem";
 
-const CollectionItem = ({ collection }) => {
+const CollectionItem = ({ collection, feeds }) => {
+  console.log(feeds);
   return (
     <StyledItemBox>
-      {collection.title}
+      <div>
+        <AngleDown className="fa fa-angle-down" ariaHidden="true" />
+        {collection.title}
+      </div>
+      <StyledCollectionFeedWrapper>
+        {feeds.map(feed => (
+          <CollectionFeedItem key={"collection-feed-" + feed.id} feed={feed} />
+        ))}
+      </StyledCollectionFeedWrapper>
     </StyledItemBox>
   );
 };

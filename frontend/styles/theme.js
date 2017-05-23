@@ -76,3 +76,8 @@ export const StyledFollowButton = glamorous(Button)({
     transition: "all 100ms",
   },
 });
+
+export const AngleDown = glamorous.i({
+  fontSize: 22,
+  color: "rgba(105, 106, 109, 0.85)",
+});
