@@ -4,8 +4,10 @@ import MainNavContainer from "./MainNavContainer";
 import MainSideNav from "./MainSideNav";
 import DiscoverContainer from "../discover/DiscoverContainer";
 import SubscriptionsContainer from "../subscriptions/SubscriptionsContainer";
+import FeedContainer from "../feeds/FeedContainer";
 import { ArticleLoader } from "../../utils/loader_util";
 import { MainContentWrapper } from "../../styles/main";
+import { hasCollections } from "../../selectors/collection_selectors";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -19,15 +21,13 @@ class MainPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllCollections();
-  }
-
-  componentWillReceiveProps({ hasCollections }) {
-    if (hasCollections) {
-      this.setState({ pathname: "/subscriptions" });
-    } else {
-      this.setState({ pathname: "/discover" });
-    }
+    this.props.fetchAllCollections().then(() => {
+      if (hasCollections(this.props.collections)) {
+        this.setState({ pathname: "/subscriptions" });
+      } else {
+        this.setState({ pathname: "/discover" });
+      }
+    });
   }
 
   handleEventClick() {
@@ -62,6 +62,7 @@ class MainPage extends React.Component {
           <Switch>
             <Route path="/subscriptions" component={SubscriptionsContainer} />
             <Route path="/discover" component={DiscoverContainer} />
+            <Route path="/feeds/:feedId" component={FeedContainer} />
             {pathname === "/subscriptions" && <Redirect to="/subscriptions" />}
             {pathname === "/discover" && <Redirect to="/discover" />}
           </Switch>

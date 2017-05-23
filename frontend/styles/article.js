@@ -117,21 +117,6 @@ export const ArticleDetailContent = glamorous.div({
   marginTop: 55,
 });
 
-export const StyledListHeader = glamorous.div({
-  display: "flex",
-  alignItems: "center",
-  margin: 10,
-  position: "relative",
-  paddingBottom: 30,
-});
-
-export const StyledTitle = glamorous.div({
-  fontSize: 26,
-  fontWeight: "bold",
-  fontFamily: "oxygen",
-  padding: 30,
-});
-
 export const ArticleDetailFixedNav = glamorous(FixedNav)({
   right: 0,
   width: "70%",

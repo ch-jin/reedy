@@ -61,7 +61,7 @@ class ArticleDetail extends React.Component {
   }
 
   render() {
-    const { loading, currentArticle, feedId } = this.props;
+    const { loading, currentArticle } = this.props;
     if (this.state.initialLoad) {
       return (
         <ArticleModal active={true}>

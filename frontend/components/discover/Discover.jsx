@@ -9,6 +9,8 @@ import { scrollMainContentWrapperToTop } from "../../utils/scroll_util";
 class Discover extends React.Component {
   componentDidMount() {
     scrollMainContentWrapperToTop();
+
+    this.props.fetchDiscoverFeeds();
   }
 
   render() {
