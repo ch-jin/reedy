@@ -23,6 +23,12 @@ const fetchingCurrentArticle = () => ({
   type: FETCHING_CURRENT_ARTICLE,
 });
 
+export const fetchFollowedArticles = () => dispatch => {
+  ArticleAPIUtil.fetchFollowedArticles().then(articles =>
+    dispatch(receiveAllArticles(articles))
+  );
+};
+
 export const fetchArticlesFromFeed = feedId => dispatch => {
   dispatch(fetchingArticles());
   return ArticleAPIUtil.fetchArticlesFromFeed(feedId).then(articles =>

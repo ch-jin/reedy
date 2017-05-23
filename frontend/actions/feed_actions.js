@@ -18,9 +18,16 @@ export const fetchingFeeds = () => ({
   type: FETCHING_FEEDS,
 });
 
-export const fetchAllFeeds = () => dispatch => {
+export const fetchDiscoverFeeds = () => dispatch => {
   dispatch(fetchingFeeds());
-  return FeedAPIUtil.fetchAllFeeds().then(feeds =>
+  return FeedAPIUtil.fetchDiscoverFeeds().then(feeds =>
+    dispatch(receiveAllFeeds(feeds))
+  );
+};
+
+export const fetchFollowedCollections = () => dispatch => {
+  dispatch(fetchingFeeds());
+  return FeedAPIUtil.fetchFollowedCollections().then(feeds =>
     dispatch(receiveAllFeeds(feeds))
   );
 };
