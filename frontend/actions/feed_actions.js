@@ -25,9 +25,9 @@ export const fetchDiscoverFeeds = () => dispatch => {
   );
 };
 
-export const fetchFollowedCollections = () => dispatch => {
+export const fetchFollowedFeeds = () => dispatch => {
   dispatch(fetchingFeeds());
-  return FeedAPIUtil.fetchFollowedCollections().then(feeds =>
+  return FeedAPIUtil.fetchFollowedFeeds().then(feeds =>
     dispatch(receiveAllFeeds(feeds))
   );
 };

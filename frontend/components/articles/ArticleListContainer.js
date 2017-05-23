@@ -1,29 +1,17 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import ArticleList from "./ArticleList";
-import { fetchArticlesFromFeed } from "../../actions/article_actions";
 import { allArticles } from "../../selectors/article_selectors";
-import { allFeeds, currentFeed } from "../../selectors/feed_selectors";
-import {
-  fetchAllFeeds,
-  receiveCurrentFeed,
-} from "../../actions/feed_actions";
+import { toggleArticleModal } from "../../actions/modal_actions";
 
-const mapStateToProps = (state, { match }) => ({
-  id: parseInt(match.params.id),
-  currentFeedId: state.feeds.current,
-  feeds: allFeeds(state),
+const mapStateToProps = state => ({
   articles: allArticles(state),
-  currentFeed: currentFeed(state),
-  loading: state.loading.loadingArticles,
-  modalOpen: state.modal.articleModal,
 });
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentFeed: id => dispatch(receiveCurrentFeed(id)),
-  fetchArticles: id => dispatch(fetchArticlesFromFeed(id)),
-  fetchAllFeeds: () => dispatch(fetchAllFeeds()),
+  toggleArticleModal: () => dispatch(toggleArticleModal()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  ArticleList
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(ArticleList)
 );

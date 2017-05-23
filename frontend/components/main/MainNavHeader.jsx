@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { StyledMainNavHeader, MainNavLogo } from "../../styles/main";
 
 const MainNavHeader = props => {
-  const { currentFeed, pathname } = props;
+  const { currentFeed, pathname, homePath } = props;
+
   const currentTitle = () => {
-    if (pathname === "/explore" || pathname === "/") {
-      return "Explore";
+    if (pathname === "/discover") {
+      return "Discover";
+    } else if (pathname === "/subscriptions") {
+      return "Subscriptions";
     } else if (currentFeed) {
       return currentFeed.title;
     } else {
@@ -16,7 +19,7 @@ const MainNavHeader = props => {
 
   return (
     <StyledMainNavHeader>
-      <Link to="/explore">
+      <Link to={homePath}>
         <MainNavLogo src={window.greyLogoURL} />
       </Link>
       <h2 dangerouslySetInnerHTML={{ __html: currentTitle() }} />

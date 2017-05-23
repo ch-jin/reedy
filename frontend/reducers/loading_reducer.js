@@ -16,7 +16,7 @@ import {
 
 const _initialState = {
   loadingSession: false,
-  loadingExplore: false,
+  loadingFeeds: false,
   loadingArticles: false,
   loadingCurrentArticle: false,
 };
@@ -32,9 +32,9 @@ const loadingReducer = (state = _initialState, { type }) => {
       return { ...state, loadingSession: false };
 
     case FETCHING_FEEDS:
-      return { ...state, loadingExplore: true };
+      return { ...state, loadingFeeds: true };
     case RECEIVE_ALL_FEEDS:
-      return { ...state, loadingExplore: false };
+      return { ...state, loadingFeeds: false };
 
     case FETCHING_ARTICLES:
       return { ...state, loadingArticles: true };

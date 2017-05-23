@@ -1,6 +1,6 @@
 import React from "react";
 import { StyledListHeader, StyledTitle } from "../../styles/article";
-import { FeedImgContainer, FeedImg } from "../../styles/explore";
+import { FeedImgContainer, FeedImg } from "../../styles/discover";
 import FollowButtonContainer from "./FollowButtonContainer";
 import FollowFeedDropdownContainer
   from "../dropdowns/FollowFeedDropdownContainer";

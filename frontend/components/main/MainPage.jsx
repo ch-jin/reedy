@@ -2,14 +2,16 @@ import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MainNavContainer from "./MainNavContainer";
 import MainSideNav from "./MainSideNav";
-import ExploreContainer from "../explore/ExploreContainer";
+import DiscoverContainer from "../discover/DiscoverContainer";
+import SubscriptionsContainer from "../subscriptions/SubscriptionsContainer";
 import { ArticleLoader } from "../../utils/loader_util";
-import ArticleListContainer from "../articles/ArticleListContainer";
 import { MainContentWrapper } from "../../styles/main";
 
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { pathname: "" };
 
     this.handleEventClick = this.handleEventClick.bind(this);
     this.toggleArticleModal = this.toggleArticleModal.bind(this);
@@ -18,6 +20,14 @@ class MainPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllCollections();
+  }
+
+  componentWillReceiveProps({ hasCollections }) {
+    if (hasCollections) {
+      this.setState({ pathname: "/subscriptions" });
+    } else {
+      this.setState({ pathname: "/discover" });
+    }
   }
 
   handleEventClick() {
@@ -33,42 +43,27 @@ class MainPage extends React.Component {
 
   toggleDropdown() {
     const { anyDropdownActive, closeAllDropdowns } = this.props;
-
-    if (anyDropdownActive) {
-      closeAllDropdowns();
-    }
+    anyDropdownActive && closeAllDropdowns();
   }
 
   render() {
     const { loading, articleModal } = this.props;
-
+    const { pathname } = this.state;
     return (
       <div id="main-wrapper" onClick={this.handleEventClick}>
 
-        {loading && <ArticleLoader />}
+        {!loading && <ArticleLoader />}
 
         <MainSideNav articleModal={articleModal} />
+        <MainContentWrapper id="main-content-wrapper" modalOpen={articleModal}>
 
-        <MainContentWrapper
-          id="main-content-wrapper"
-          modalOpen={articleModal}
-        >
-          <MainNavContainer articleModal={articleModal} />
+          <MainNavContainer articleModal={articleModal} homePath={pathname} />
 
           <Switch>
-            <Route
-              path="/feeds/:id/articles"
-              component={ArticleListContainer}
-            />
-
-            <Route
-              path="/feeds/:id"
-              render={({ match }) => (
-                <Redirect to={`/feeds/${match.params.id}/articles`} />
-              )}
-            />
-            <Route path="/explore" component={ExploreContainer} />
-            <Redirect to="/explore" />
+            <Route path="/subscriptions" component={SubscriptionsContainer} />
+            <Route path="/discover" component={DiscoverContainer} />
+            {pathname === "/subscriptions" && <Redirect to="/subscriptions" />}
+            {pathname === "/discover" && <Redirect to="/discover" />}
           </Switch>
 
         </MainContentWrapper>

@@ -14,7 +14,7 @@ import FollowFeedDropdownButton from "./FollowFeedDropdownButton";
 const FollowFeedDropdown = ({
   active,
   collections,
-  createCollectionFeed,
+  addFeedToCollection,
   feedId,
 }) => {
   return (
@@ -35,7 +35,7 @@ const FollowFeedDropdown = ({
             key={"feedCollection" + collection.id}
             collection={collection}
             feedId={feedId}
-            createCollectionFeed={createCollectionFeed}
+            addFeedToCollection={addFeedToCollection}
           />
         ))}
 

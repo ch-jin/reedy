@@ -2,14 +2,17 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { closeAllDropdowns } from "../../actions/dropdown_actions";
 import { toggleArticleModal } from "../../actions/modal_actions";
-import { fetchAllCollections } from "../../actions/collection_actions";
 import { anyDropdownActive } from "../../selectors/dropdown_selectors";
+import { fetchAllCollections } from "../../actions/collection_actions";
+import { hasCollections } from "../../selectors/collection_selectors";
+
 import MainPage from "./MainPage";
 
 const mapStateToProps = state => ({
   anyDropdownActive: anyDropdownActive(state),
   loading: state.loading.loadingSession,
   articleModal: state.modal.articleModal,
+  hasCollections: hasCollections(state),
 });
 
 const mapDispatchToProps = dispatch => ({

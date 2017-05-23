@@ -8,14 +8,14 @@ import {
   ArticleDetailContent,
 } from "../../styles/article";
 import ArticleDetailNav from "./ArticleDetailNav";
+import ArticleModal from "./ArticleModal";
 
 class ArticleDetail extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      initialLoad: true,
-    };
+    this.state = { initialLoad: true };
+
     this.renderArticle = this.renderArticle.bind(this);
   }
 
@@ -31,8 +31,6 @@ class ArticleDetail extends React.Component {
     if (!active) {
       toggleArticleModal();
     }
-
-    console.log(this.props);
 
     if (!currentArticle) {
       fetchArticle(id);
@@ -56,12 +54,8 @@ class ArticleDetail extends React.Component {
 
     return (
       <div>
-        <h1
-          dangerouslySetInnerHTML={{ __html: currentArticle.title }}
-        />
-        <div
-          dangerouslySetInnerHTML={{ __html: currentArticle.body }}
-        />
+        <h1 dangerouslySetInnerHTML={{ __html: currentArticle.title }} />
+        <div dangerouslySetInnerHTML={{ __html: currentArticle.body }} />
       </div>
     );
   }
@@ -70,24 +64,23 @@ class ArticleDetail extends React.Component {
     const { loading, currentArticle, feedId } = this.props;
     if (this.state.initialLoad) {
       return (
-        <Transition
-          identifier={location.pathname}
-          {...articleSlideLeft}
-        >
-          <ArticleDetailWrapper
-            onClick={this.handleClick}
-            className="article-modal-content"
-          >
-            <ArticleDetailNav />
-            {loading && <DefaultLoader />}
-            <ArticleDetailContent>
-              {currentArticle && this.renderArticle()}
-            </ArticleDetailContent>
-          </ArticleDetailWrapper>
-        </Transition>
+        <ArticleModal active={true}>
+          <Transition identifier={location.pathname} {...articleSlideLeft}>
+            <ArticleDetailWrapper
+              onClick={this.handleClick}
+              className="article-modal-content"
+            >
+              <ArticleDetailNav />
+              {loading && <DefaultLoader />}
+              <ArticleDetailContent>
+                {currentArticle && this.renderArticle()}
+              </ArticleDetailContent>
+            </ArticleDetailWrapper>
+          </Transition>
+        </ArticleModal>
       );
     } else {
-      return <Redirect to={`/feeds/${feedId}/articles`} />;
+      return <Redirect to="/subscriptions" />;
     }
   }
 }

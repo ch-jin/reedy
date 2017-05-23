@@ -3,11 +3,11 @@ import { StyledFeedButtons } from "../../styles/dropdown";
 
 const FollowFeedDropdownButton = ({
   collection,
-  createCollectionFeed,
+  addFeedToCollection,
   feedId,
 }) => {
   const newCollectionFeed = { collectionId: collection.id, feedId };
-  const handleClick = () => createCollectionFeed(newCollectionFeed);
+  const handleClick = () => addFeedToCollection(newCollectionFeed);
 
   return (
     <StyledFeedButtons

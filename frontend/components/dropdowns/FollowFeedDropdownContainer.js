@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { createCollectionFeed } from "../../actions/collection_actions";
+import { addFeedToCollection } from "../../actions/collection_actions";
 import { allCollections } from "../../utils/collections_util";
 import FollowFeedDropdown from "./FollowFeedDropdown";
 
@@ -11,8 +11,8 @@ const mapStateToProps = (state, { match }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createCollectionFeed: collectionFeed =>
-    dispatch(createCollectionFeed(collectionFeed)),
+  addFeedToCollection: collectionFeed =>
+    dispatch(addFeedToCollection(collectionFeed)),
 });
 
 export default withRouter(
