@@ -4,10 +4,6 @@ import { SOFT_BOX_SHADOW } from "./theme";
 const ARTICLE_ITEM_HEIGHT = 150;
 
 export const StyledArticleListWrapper = glamorous.div({
-  boxSizing: "border-box",
-  padding: "85px 30px",
-  backgroundColor: "#fff",
-  boxShadow: SOFT_BOX_SHADOW,
   maxWidth: 740,
 });
 

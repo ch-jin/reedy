@@ -15,7 +15,7 @@ const feedsReducer = (state = _initState, action) => {
     case RECEIVE_ALL_FEEDS:
       return { ...state, all: action.feeds };
     case RECEIVE_CURRENT_FEED:
-      return { ...state, current: action.feedId };
+      return { ...state, current: action.feed };
     default:
       return state;
   }

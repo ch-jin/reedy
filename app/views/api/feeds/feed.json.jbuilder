@@ -1,1 +1,2 @@
-json.extract! @feed, :id, :title, :image_url
+json.extract! @feed, :id, :title
+json.image @feed.image_url

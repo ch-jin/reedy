@@ -9,14 +9,21 @@ export const receiveAllFeeds = feeds => ({
   feeds,
 });
 
-export const receiveCurrentFeed = feedId => ({
+export const receiveCurrentFeed = feed => ({
   type: RECEIVE_CURRENT_FEED,
-  feedId,
+  feed,
 });
 
 export const fetchingFeeds = () => ({
   type: FETCHING_FEEDS,
 });
+
+export const fetchFeed = id => dispatch => {
+  dispatch(fetchingFeeds());
+  return FeedAPIUtil.fetchFeed(id).then(feed =>
+    dispatch(receiveCurrentFeed(feed))
+  );
+};
 
 export const fetchDiscoverFeeds = () => dispatch => {
   dispatch(fetchingFeeds());

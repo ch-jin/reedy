@@ -1,6 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Loader from "../../utils/loader_util";
+import { StyledFeedWrapper } from "../../styles/feed";
 import ArticleListContainer from "../articles/ArticleListContainer";
 import ArticleDetailContainer from "../articles/ArticleDetailContainer";
 
@@ -10,21 +11,19 @@ class Subscriptions extends React.Component {
     this.props.fetchFollowedArticles();
   }
 
-  componentWillUnmount() {
-    console.log("unmounting subs");
-  }
-
   render() {
     const { loading } = this.props;
     return (
-      <div>
+      <StyledFeedWrapper>
         {loading && <Loader />}
-        <ArticleListContainer path="discover" />
+        <ArticleListContainer path="/subscriptions" />
         <Route
           path="/subscriptions/:feedId/articles/:articleId"
-          component={ArticleDetailContainer}
+          render={() => (
+            <ArticleDetailContainer redirectToParent="/subscriptions" />
+          )}
         />
-      </div>
+      </StyledFeedWrapper>
     );
   }
 }

@@ -10,13 +10,13 @@ import {
 } from "../../styles/article";
 
 const ArticleItem = props => {
-  const { article, feedId, hasImage, toggleArticleModal } = props;
+  const { path, article, feedId, hasImage, toggleArticleModal } = props;
 
   return (
     <Link
       className="no-decoration"
       onClick={toggleArticleModal}
-      to={`/subscriptions/${feedId}/articles/${article.id}`}
+      to={`${path}/${feedId}/articles/${article.id}`}
     >
       <StyledArticleItemWrapper hasImage={hasImage}>
         <ImgWrapper hasImage={hasImage}>

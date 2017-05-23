@@ -31,6 +31,11 @@ class Api::FeedsController < ApplicationController
     end
   end
 
+  def show_feed_only
+    @feed = Feed.find(params[:id])
+    render('api/feeds/feed')
+  end
+
   private
 
   def feed_params

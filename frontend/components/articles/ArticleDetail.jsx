@@ -15,7 +15,6 @@ class ArticleDetail extends React.Component {
     super(props);
 
     this.state = { initialLoad: true };
-
     this.renderArticle = this.renderArticle.bind(this);
   }
 
@@ -61,7 +60,8 @@ class ArticleDetail extends React.Component {
   }
 
   render() {
-    const { loading, currentArticle } = this.props;
+    const { loading, currentArticle, redirectToParent } = this.props;
+    console.log(redirectToParent);
     if (this.state.initialLoad) {
       return (
         <ArticleModal active={true}>
@@ -80,7 +80,7 @@ class ArticleDetail extends React.Component {
         </ArticleModal>
       );
     } else {
-      return <Redirect to="/subscriptions" />;
+      return <Redirect to={redirectToParent} />;
     }
   }
 }

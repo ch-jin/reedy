@@ -9,3 +9,9 @@ export const fetchFollowedFeeds = () =>
     method: "GET",
     url: "/api/collection_feeds",
   });
+
+export const fetchFeed = feedId =>
+  $.ajax({
+    method: "GET",
+    url: `/api/feeds/feed/${feedId}`,
+  });

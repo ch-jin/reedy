@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :update]
     resource :session, only: [:create, :destroy]
 
+    get 'feeds/feed/:id', to: 'feeds#show_feed_only'
     resources :feeds, only: [:show, :index, :create]
     resources :articles, only: [:index, :show]
     resources :collections, only: [:index, :show, :create, :update, :destroy]
