@@ -15,13 +15,13 @@ const MainSideNav = ({ articleModal }) => (
       <SideNavContent>
         <MainSideNavLinks />
         <CollectionListContainer />
-
-        <Link to="/discover">
-          <StyledAddContentButton>
-            + ADD CONTENT
-          </StyledAddContentButton>
-        </Link>
       </SideNavContent>
+
+      <Link to="/discover">
+        <StyledAddContentButton>
+          + ADD CONTENT
+        </StyledAddContentButton>
+      </Link>
     </SideNavWrapper>
   </FixedSideNav>
 );

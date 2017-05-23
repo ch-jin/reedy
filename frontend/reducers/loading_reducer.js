@@ -14,6 +14,11 @@ import {
   FETCHING_CURRENT_ARTICLE,
   RECEIVE_CURRENT_ARTICLE,
 } from "../actions/article_actions";
+import {
+  RECEIVE_ALL_COLLECTIONS,
+  RECEIVE_COLLECTION,
+  FETCHING_COLLECTIONS,
+} from "../actions/collection_actions";
 
 const _initialState = {
   loadingSession: false,
@@ -32,6 +37,12 @@ const loadingReducer = (state = _initialState, { type }) => {
     case RECEIVE_CURRENT_USER:
       return { ...state, loadingSession: false };
 
+    case FETCHING_COLLECTIONS:
+      return { ...state, loadingCollections: true };
+    case RECEIVE_COLLECTION:
+    case RECEIVE_ALL_COLLECTIONS:
+      return { ...state, loadingCollections: false };
+
     case FETCHING_FEEDS:
       return { ...state, loadingFeeds: true };
     case RECEIVE_CURRENT_FEED:
@@ -47,6 +58,7 @@ const loadingReducer = (state = _initialState, { type }) => {
       return { ...state, loadingCurrentArticle: true };
     case RECEIVE_CURRENT_ARTICLE:
       return { ...state, loadingCurrentArticle: false };
+
     default:
       return state;
   }

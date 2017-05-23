@@ -54,13 +54,13 @@ export const SideNavWrapper = glamorous.nav({
   top: 0,
   backgroundColor: "#1e262f",
   color: "#e9e9e9",
+  position: "relative",
 });
 
 export const SideNavContent = glamorous.nav({
   height: "100%",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-between",
   alignItems: "center",
 });
 // -----
@@ -77,8 +77,10 @@ export const StyledNavBox = glamorous.div({
 // -- ADD CONTENT --
 export const StyledAddContentButton = glamorous(Button)({
   width: SIDE_NAV_WIDTH,
-  height: "60px",
-  alignSelf: "flex-end",
+  height: 60,
+  position: "absolute",
+  left: 0,
+  bottom: 0,
   fontWeight: 700,
   fontSize: "14px",
   fontFamily: "oxygen",
