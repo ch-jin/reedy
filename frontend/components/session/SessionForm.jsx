@@ -22,6 +22,10 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.usernameInput.focus();
+  }
+
   componentWillUnmount() {
     if (this.props.errors.length) {
       this.props.clearErrors();
@@ -60,6 +64,7 @@ class SessionForm extends React.Component {
           placeholder="Username"
           value={username}
           onChange={this.update}
+          innerRef={usernameInput => (this.usernameInput = usernameInput)}
         />
 
         <StyledSessionInput

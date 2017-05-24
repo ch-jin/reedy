@@ -18,7 +18,11 @@ class FollowFeedCreateCollection extends React.Component {
     this.handleCancelClick = this.handleCancelClick.bind(this);
   }
 
-  handleCancelClick(e) {
+  componentDidMount() {
+    this.input.focus();
+  }
+
+  handleCancelClick() {
     const { cancelClick } = this.props;
     this.setState({ inputVal: "" });
     cancelClick();
@@ -45,7 +49,11 @@ class FollowFeedCreateCollection extends React.Component {
       <DropdownContent>
         <form onSubmit={this.handleSubmit}>
           <DropdownEmptyItem>
-            <StyledCreateInput value={inputVal} onChange={this.update} />
+            <StyledCreateInput
+              innerRef={input => (this.input = input)}
+              value={inputVal}
+              onChange={this.update}
+            />
           </DropdownEmptyItem>
           <ButtonContainer>
             <StyledDropdownSubmitButton type="submit">

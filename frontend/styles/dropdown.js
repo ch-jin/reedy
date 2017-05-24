@@ -140,9 +140,10 @@ export const StyledCreateCollectionButton = glamorous(Button)({
   height: 45,
   display: "flex",
   alignItems: "center",
+  justifyContent: "center",
   position: "relative",
   fontSize: 12,
-  padding: "0 0 0 11px",
+  padding: 0,
   backgroundColor: BASE,
   color: "#f3f3f3",
 });
