@@ -20,7 +20,7 @@ const MainSideNav = ({ articleModal, collectionsPresent }) => (
 
       <Link to="/discover">
         <StyledAddContentButton>
-          + ADD CONTENT
+          <i className="fa fa-plus" /> ADD CONTENT
         </StyledAddContentButton>
       </Link>
     </SideNavWrapper>

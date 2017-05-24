@@ -5,6 +5,7 @@ import {
   DropdownEmptyItem,
   Line,
   Bold,
+  StyledCreateCollectionButton,
 } from "../../styles/dropdown";
 import { handleClickStopPropagation } from "../../utils/click_event_util";
 import FollowFeedDropdownButton from "./FollowFeedDropdownButton";
@@ -21,7 +22,7 @@ const FollowFeedDropdown = ({
       <DropdownContent>
         <DropdownEmptyItem>
           <Bold>
-            Add to Collections:
+            Collections:
           </Bold>
         </DropdownEmptyItem>
         <Line />
@@ -36,8 +37,11 @@ const FollowFeedDropdown = ({
           />
         ))}
 
-      </DropdownContent>
+        <StyledCreateCollectionButton>
+          <i className="fa fa-plus" /> CREATE A COLLECTION
+        </StyledCreateCollectionButton>
 
+      </DropdownContent>
     </StyledFeedDropdown>
   );
 };

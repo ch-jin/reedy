@@ -1,5 +1,5 @@
 import glamorous from "glamorous";
-import { RED, DARKER, Button, NAV_HEIGHT } from "./theme";
+import { RED, BASE, DARKER, Button, NAV_HEIGHT } from "./theme";
 
 const DROPDOWN_HEIGHT = 241;
 const PADDING = 5;
@@ -88,6 +88,7 @@ export const StyledFeedDropdown = glamorous(StyledDropdown)({
   zIndex: 3,
   top: 70,
   right: 10,
+  width: 200,
 });
 
 export const StyledFeedButtons = glamorous(DropdownButton)(
@@ -126,3 +127,18 @@ export const IndicatorIcons = glamorous(RSSSquare)(
     color: props.delete ? RED : "auto",
   })
 );
+
+export const StyledCreateCollectionButton = glamorous(Button)({
+  backgroundColor: "#fff",
+  fontWeight: 300,
+  fontFamily: "Roboto",
+  width: "100%",
+  height: 45,
+  display: "flex",
+  alignItems: "center",
+  position: "relative",
+  fontSize: 12,
+  padding: "0 0 0 11px",
+  backgroundColor: BASE,
+  color: "#f3f3f3",
+});

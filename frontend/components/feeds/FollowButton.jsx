@@ -1,10 +1,28 @@
 import React from "react";
 import { StyledFollowButton } from "../../styles/theme";
 
-const FollowButton = ({ handleClick, followed }) => (
-  <StyledFollowButton followed={followed} onClick={handleClick}>
-    {followed ? "Unfollow" : "Follow"}
-  </StyledFollowButton>
-);
+class FollowButton extends React.Component {
+  constructor(props) {
+    super(props);
+    const { followed } = props;
+    this.state = {
+      content: followed ? "following" : "follow",
+    };
+  }
+
+  render() {
+    const { handleClick, followed } = this.props;
+    return (
+      <StyledFollowButton
+        onMouseEnter={() => followed && this.setState({ content: "edit" })}
+        onMouseLeave={() => followed && this.setState({ content: "following" })}
+        followed={followed}
+        onClick={handleClick}
+      >
+        {this.state.content}
+      </StyledFollowButton>
+    );
+  }
+}
 
 export default FollowButton;

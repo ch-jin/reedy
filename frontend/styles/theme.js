@@ -79,6 +79,7 @@ export const StyledFollowButton = glamorous(Button)(
     border: props.followed ? "1px solid #454545" : `1px solid ${BASE}`,
     color: props.followed ? "#454545" : BASE,
     ":hover": {
+      content: "edit",
       border: props.followed ? `1px solid ${RED}` : `1px solid ${DARKER}`,
       color: props.followed ? RED : BASE,
     },

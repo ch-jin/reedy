@@ -8,6 +8,7 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
+cron.log
 /log/*
 /tmp/*
 !/log/.keep
