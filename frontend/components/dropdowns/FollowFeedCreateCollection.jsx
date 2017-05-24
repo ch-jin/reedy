@@ -6,6 +6,9 @@ import {
   StyledDropdownCancelButton,
   ButtonContainer,
   DropdownEmptyItem,
+  CloseButton,
+  StyledCreateForm,
+  Bold,
 } from "../../styles/dropdown";
 
 class FollowFeedCreateCollection extends React.Component {
@@ -44,17 +47,24 @@ class FollowFeedCreateCollection extends React.Component {
 
   render() {
     const { inputVal } = this.state;
+    const { handleCloseClick } = this.props;
 
     return (
       <DropdownContent>
-        <form onSubmit={this.handleSubmit}>
-          <DropdownEmptyItem>
-            <StyledCreateInput
-              innerRef={input => (this.input = input)}
-              value={inputVal}
-              onChange={this.update}
-            />
-          </DropdownEmptyItem>
+        <CloseButton onClick={handleCloseClick} className="fa fa-times" />
+        <DropdownEmptyItem>
+          <Bold>
+            Create Collection
+          </Bold>
+        </DropdownEmptyItem>
+        <StyledCreateForm onSubmit={this.handleSubmit}>
+
+          <StyledCreateInput
+            innerRef={input => (this.input = input)}
+            value={inputVal}
+            onChange={this.update}
+          />
+
           <ButtonContainer>
             <StyledDropdownSubmitButton type="submit">
               CREATE
@@ -66,7 +76,7 @@ class FollowFeedCreateCollection extends React.Component {
               CANCEL
             </StyledDropdownCancelButton>
           </ButtonContainer>
-        </form>
+        </StyledCreateForm>
       </DropdownContent>
     );
   }

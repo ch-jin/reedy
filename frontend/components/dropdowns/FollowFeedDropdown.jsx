@@ -6,6 +6,7 @@ import {
   Line,
   Bold,
   StyledCreateCollectionButton,
+  CloseButton,
 } from "../../styles/dropdown";
 import { handleClickStopPropagation } from "../../utils/click_event_util";
 import FollowFeedDropdownButton from "./FollowFeedDropdownButton";
@@ -15,14 +16,19 @@ class FollowFeedDropdown extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleCreateClick = this.handleCreateClick.bind(this);
     this.state = { createDropdown: false };
+    this.handleCreateClick = this.handleCreateClick.bind(this);
+    this.handleCloseClick = this.handleCloseClick.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if (!nextProps.active) {
       this.setState({ createDropdown: false });
     }
+  }
+
+  handleCloseClick() {
+    this.props.toggleFollowFeedDropdown();
   }
 
   render() {
@@ -37,6 +43,7 @@ class FollowFeedDropdown extends React.Component {
             feedId={feedId}
             createCollection={createCollection}
             cancelClick={() => this.setState({ createDropdown: false })}
+            handleCloseClick={this.handleCloseClick}
           />
         </StyledFeedDropdown>
       );
@@ -61,6 +68,7 @@ class FollowFeedDropdown extends React.Component {
     } = this.props;
     return (
       <DropdownContent>
+        <CloseButton onClick={this.handleCloseClick} className="fa fa-times" />
         <DropdownEmptyItem>
           <Bold>
             Collections:
@@ -79,7 +87,7 @@ class FollowFeedDropdown extends React.Component {
         ))}
 
         <StyledCreateCollectionButton onClick={this.handleCreateClick}>
-          <i className="fa fa-plus" /> CREATE A COLLECTION
+          <i className="fa fa-plus" /> CREATE COLLECTION
         </StyledCreateCollectionButton>
 
       </DropdownContent>

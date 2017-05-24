@@ -1,6 +1,6 @@
 import glamorous from "glamorous";
 import { FeedImgContainer } from "./discover";
-import { SIDE_NAV_WIDTH } from "./theme";
+import { HALF_TRANSPARENT, SLIGHT_WHITE, SIDE_NAV_WIDTH } from "./theme";
 
 export const StyledCollectionWrapper = glamorous.div({});
 
@@ -27,9 +27,11 @@ export const StyledCollectionFeedItem = glamorous.div(
     boxSizing: "border-box",
     padding: "5px 0 5px 35px",
     fontSize: 13,
-    color: "rgba( 255, 255, 255, 0.8 )",
+    color: HALF_TRANSPARENT,
+    transition: "all 100ms",
     ":hover": {
       cursor: "pointer",
+      transition: "all 100ms",
       backgroundColor: "#343b43",
     },
   },
@@ -54,7 +56,19 @@ export const CollectionFeedImg = glamorous.img({
 });
 
 export const StyledCollectionListItemTitle = glamorous.div({
-  padding: "10px 10px 0px 10px",
+  padding: "5px 10px",
   display: "flex",
   alignItems: "center",
+  fontSize: 14,
+  color: SLIGHT_WHITE,
+  height: 20,
+  transition: "all 100ms",
+  ":hover": {
+    cursor: "pointer",
+    transition: "all 100ms",
+    backgroundColor: "#343b43",
+  },
+  ":first-child": {
+    marginTop: 10,
+  },
 });

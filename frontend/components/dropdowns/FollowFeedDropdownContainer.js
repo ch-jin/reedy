@@ -6,6 +6,7 @@ import {
   deleteFeedFromCollection,
   createCollection,
 } from "../../actions/collection_actions";
+import { toggleFollowFeedDropdown } from "../../actions/dropdown_actions";
 import FollowFeedDropdown from "./FollowFeedDropdown";
 
 const mapStateToProps = (state, { match }) => ({
@@ -23,6 +24,8 @@ const mapDispatchToProps = dispatch => ({
 
   createCollection: (title, feedId) =>
     dispatch(createCollection(title, feedId)),
+
+  toggleFollowFeedDropdown: () => dispatch(toggleFollowFeedDropdown()),
 });
 
 export default withRouter(

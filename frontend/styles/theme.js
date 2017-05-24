@@ -7,6 +7,9 @@ export const NAV_HEIGHT = 55;
 export const SHADOW_BORDER = "1px solid #e9e9e9";
 export const SOFT_BOX_SHADOW = "0 1px 2px rgba(0,0,0,.1)";
 export const RED = "#c0392b";
+export const SLIGHT_WHITE = "rgb(210, 212, 213)";
+export const SLIGHT_TRANSPARENT = "rgba(105, 106, 109, 0.85)";
+export const HALF_TRANSPARENT = "rgba( 255, 255, 255, 0.6 )";
 // "0 1px 3px 0 rgba(0,0,0,0.03), 0 1px 2px 0 rgba(0,0,0,0.06)";
 export const SIDE_NAV_WIDTH = 265;
 
@@ -78,7 +81,9 @@ export const StyledFollowButton = glamorous(Button)(
   props => ({
     border: props.followed ? "1px solid #454545" : `1px solid ${BASE}`,
     color: props.followed ? "#454545" : BASE,
+    transition: "all 100ms",
     ":hover": {
+      transition: "all 100ms",
       content: "edit",
       border: props.followed ? `1px solid ${RED}` : `1px solid ${DARKER}`,
       color: props.followed ? RED : BASE,
@@ -86,7 +91,12 @@ export const StyledFollowButton = glamorous(Button)(
   })
 );
 
-export const AngleDown = glamorous.i({
+export const CollectionTitleIcon = glamorous.i({
   fontSize: 22,
-  color: "rgba(105, 106, 109, 0.85)",
+  color: SLIGHT_WHITE,
+});
+
+export const ListIcon = glamorous(CollectionTitleIcon)({
+  fontSize: 14,
+  marginRight: 10,
 });
