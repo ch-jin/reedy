@@ -1,5 +1,6 @@
 import React from "react";
-import { AngleDown } from "../../styles/theme";
+import { Link } from "react-router-dom";
+import { CollectionTitleIcon } from "../../styles/theme";
 import {
   StyledItemBox,
   StyledCollectionFeedWrapper,
@@ -10,10 +11,15 @@ import CollectionFeedItem from "./CollectionFeedItem";
 const CollectionListItem = ({ currentFeedId, collection, feeds }) => {
   return (
     <StyledItemBox>
-      <StyledCollectionListItemTitle>
-        <AngleDown className="fa fa-angle-down" ariaHidden="true" />
-        {collection.title}
-      </StyledCollectionListItemTitle>
+      <Link
+        className="no-decoration-color"
+        to={`/collections/${collection.id}/articles`}
+      >
+        <StyledCollectionListItemTitle>
+          <CollectionTitleIcon className="fa fa-angle-down" ariaHidden="true" />
+          {collection.title}
+        </StyledCollectionListItemTitle>
+      </Link>
       <StyledCollectionFeedWrapper>
         {feeds.map(feed => (
           <CollectionFeedItem

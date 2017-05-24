@@ -8,26 +8,10 @@ class MainNavHeader extends React.Component {
     this.state = { currentTitle: "" };
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { currentFeed, history, homePath } = nextProps;
-
-    if (history.location.pathname === "/discover") {
-      this.setState({ currentTitle: "Discover" });
-    } else if (history.location.pathname === "/subscriptions") {
-      this.setState({ currentTitle: "Subscriptions" });
-    } else if (currentFeed) {
-      this.setState({ currentTitle: currentFeed.title });
-    } else if (homePath === "/subscriptions") {
-      this.setState({ currentTitle: "Subscriptions" });
-    }
-  }
-
   render() {
-    const { homePath } = this.props;
-
     return (
       <StyledMainNavHeader>
-        <Link to={homePath}>
+        <Link to="/discover">
           <MainNavLogo src={window.greyLogoURL} />
         </Link>
         <h2 dangerouslySetInnerHTML={{ __html: this.state.currentTitle }} />

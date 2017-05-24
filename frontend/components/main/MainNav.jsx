@@ -4,10 +4,10 @@ import UserDropdownContainer from "../dropdowns/UserDropdownContainer";
 import MainNavHeaderContainer from "./MainNavHeaderContainer";
 import { StyledUserSection, UserImg } from "../../styles/main";
 
-const MainNav = ({ handleImgClick, articleModal, userDropdown, homePath }) => (
+const MainNav = ({ handleImgClick, articleModal, userDropdown }) => (
   <MainNavWrapper articleModal={articleModal}>
 
-    <MainNavHeaderContainer homePath={homePath} />
+    <MainNavHeaderContainer />
 
     <StyledUserSection>
       <UserImg src={window.guestImg} onClick={handleImgClick} />
