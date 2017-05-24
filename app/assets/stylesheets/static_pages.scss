@@ -27,22 +27,27 @@ html, body {
 
 h1 {
   font-size: 1.5em;
+  font-weight: 600;
 }
 
 h2 {
   font-size: 1.4em;
+  font-weight: 600;
 }
 
 h3 {
   font-size: 1.3em;
+  font-weight: 600;
 }
 
 h4 {
   font-size: 1.2em;
+  font-weight: 600;
 }
 
 h5 {
   font-size: 1.1em;
+  font-weight: 600;
 }
 
 #root {
@@ -62,6 +67,9 @@ a {
   color: #717171;
   &:visited {
    color: #717171;
+  }
+  &:hover {
+    color: black;
   }
 }
 
@@ -98,6 +106,7 @@ a {
   menu, output, ruby, section, summary,
   time, mark, audio, video, span {
     padding: 10px;
+    word-wrap: break-word;
   }
   span {
     display: block;
