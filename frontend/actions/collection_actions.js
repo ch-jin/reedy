@@ -2,6 +2,7 @@ import * as CollectionAPIUtil from "../utils/collections_api_util";
 
 export const RECEIVE_ALL_COLLECTIONS = "RECEIVE_ALL_COLLECTIONS";
 export const RECEIVE_COLLECTION = "RECEIVE_COLLECTION";
+export const REMOVE_COLLECTION = "REMOVE_COLLECTION";
 export const FETCHING_COLLECTIONS = "FETCHING_COLLECTIONS";
 export const DELETING_COLLECTION = "DELETING_COLLECTION";
 
@@ -13,6 +14,11 @@ export const receiveAllCollections = collections => ({
 export const receiveCollection = collection => ({
   type: RECEIVE_COLLECTION,
   collection,
+});
+
+export const removeCollection = collectionId => ({
+  type: REMOVE_COLLECTION,
+  collectionId,
 });
 
 export const fetchingCollections = () => ({
@@ -37,6 +43,13 @@ export const createCollection = (title, feedId) => dispatch => {
   );
 };
 
+export const deleteCollection = collectionId => dispatch => {
+  dispatch(deletingCollection());
+  return CollectionAPIUtil.deleteCollection(collectionId).then(collection =>
+    dispatch(removeCollection(collection.id))
+  );
+};
+
 export const updateCollection = collection => dispatch => {
   dispatch(fetchingCollections());
   return CollectionAPIUtil.updateCollection(collection).then(collection =>
@@ -55,5 +68,11 @@ export const deleteFeedFromCollection = collectionFeed => dispatch => {
   dispatch(deletingCollection());
   return CollectionAPIUtil.deleteFeedFromCollection(
     collectionFeed
-  ).then(collection => dispatch(receiveCollection(collection)));
+  ).then(collection => {
+    if (collection.feedIds.length) {
+      return dispatch(receiveCollection(collection));
+    } else {
+      return dispatch(deleteCollection(collection.id));
+    }
+  });
 };
