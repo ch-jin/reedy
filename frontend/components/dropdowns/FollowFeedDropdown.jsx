@@ -10,15 +10,30 @@ import {
 import { handleClickStopPropagation } from "../../utils/click_event_util";
 import FollowFeedDropdownButton from "./FollowFeedDropdownButton";
 
-const FollowFeedDropdown = ({
-  feedId,
-  active,
-  collections,
-  addFeedToCollection,
-  deleteFeedFromCollection,
-}) => {
-  return (
-    <StyledFeedDropdown active={active} onClick={handleClickStopPropagation}>
+class FollowFeedDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { createDropdown: false };
+  }
+
+  render() {
+    const { active } = this.props;
+    return (
+      <StyledFeedDropdown active={active} onClick={handleClickStopPropagation}>
+        {this.renderEditDropdown()}
+      </StyledFeedDropdown>
+    );
+  }
+
+  renderEditDropdown() {
+    const {
+      feedId,
+      collections,
+      addFeedToCollection,
+      deleteFeedFromCollection,
+    } = this.props;
+    return (
       <DropdownContent>
         <DropdownEmptyItem>
           <Bold>
@@ -42,8 +57,8 @@ const FollowFeedDropdown = ({
         </StyledCreateCollectionButton>
 
       </DropdownContent>
-    </StyledFeedDropdown>
-  );
-};
+    );
+  }
+}
 
 export default FollowFeedDropdown;
