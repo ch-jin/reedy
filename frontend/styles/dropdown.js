@@ -45,6 +45,10 @@ export const StyledDropdown = glamorous.div(
 export const DropdownContent = glamorous.div({
   width: "100%",
   height: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
 });
 
 export const DropdownButton = glamorous(Button)({
@@ -141,4 +145,54 @@ export const StyledCreateCollectionButton = glamorous(Button)({
   padding: "0 0 0 11px",
   backgroundColor: BASE,
   color: "#f3f3f3",
+});
+
+export const StyledCreateInput = glamorous.input({
+  boxSizing: "border-box",
+  width: "94%",
+  height: 40,
+  marginTop: 5,
+  borderRadius: 5,
+  outline: "none",
+  border: `1px solid ${BASE}`,
+  fontSize: 14,
+  paddingLeft: 10,
+});
+
+export const DropdownActionButton = glamorous(StyledCreateCollectionButton)({
+  height: 40,
+  width: "40%",
+  borderRadius: 5,
+  margin: 7.5,
+  marginBottom: 10,
+  padding: 0,
+  backgroundColor: "#fff",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
+export const StyledDropdownSubmitButton = glamorous(DropdownActionButton)({
+  border: `1px solid ${BASE}`,
+  color: BASE,
+  ":hover": {
+    backgroundColor: BASE,
+    color: "#f3f3f3",
+  },
+});
+
+export const StyledDropdownCancelButton = glamorous(DropdownActionButton)({
+  border: `1px solid ${RED}`,
+  color: RED,
+  ":hover": {
+    backgroundColor: RED,
+    color: "#f3f3f3",
+  },
+});
+
+export const ButtonContainer = glamorous.div({
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 });
