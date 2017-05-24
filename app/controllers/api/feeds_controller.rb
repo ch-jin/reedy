@@ -7,7 +7,9 @@ class Api::FeedsController < ApplicationController
   end
 
   def show
-    @feed = Feed.find(params[:id])
+    feed = Feed.find(params[:id])
+    @articles = feed.articles
+    render('api/articles/index')
   end
 
   def create
