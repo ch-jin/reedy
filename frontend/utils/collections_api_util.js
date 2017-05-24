@@ -4,11 +4,13 @@ export const fetchAllCollections = () =>
     url: "/api/collections",
   });
 
-export const createCollection = collection =>
+export const createCollection = (title, feedId) =>
   $.ajax({
     method: "POST",
     url: "/api/collections",
-    data: { collection },
+    data: {
+      collection: { title, feed_id: feedId },
+    },
   });
 
 export const addFeedToCollection = ({ collectionId, feedId }) =>

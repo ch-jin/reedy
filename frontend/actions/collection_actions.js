@@ -30,9 +30,9 @@ export const fetchAllCollections = () => dispatch => {
   );
 };
 
-export const createCollection = collection => dispatch => {
+export const createCollection = (title, feedId) => dispatch => {
   dispatch(fetchingCollections());
-  return CollectionAPIUtil.createCollection(collection).then(collection =>
+  return CollectionAPIUtil.createCollection(title, feedId).then(collection =>
     dispatch(receiveCollection(collection))
   );
 };

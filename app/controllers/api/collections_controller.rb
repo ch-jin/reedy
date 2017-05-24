@@ -16,7 +16,8 @@ class Api::CollectionsController < ApplicationController
     )
 
     if @collection.save
-      render :show, @collection
+      CollectionFeed.create(collection_id: @collection.id, feed_id: collection_params[:feed_id])
+      render :show
     else
       render json: @collection.errors.full_messages, status: 422
     end
@@ -26,7 +27,7 @@ class Api::CollectionsController < ApplicationController
     @collection = Collection.find(params[:id])
     if @collection
       @collection.destroy
-      render :show, @collection
+      render :show
     else
       render json: ["Collection does not exist"], status: 404
     end
@@ -46,6 +47,6 @@ class Api::CollectionsController < ApplicationController
 
   private
   def collection_params
-    params.require(:collection).permit(:title)
+    params.require(:collection).permit(:title, :feed_id)
   end
 end

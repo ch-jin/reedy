@@ -25,10 +25,12 @@ class FollowFeedCreateCollection extends React.Component {
   }
 
   handleSubmit(e) {
-    const { feedId, createCollection } = this.props;
+    const { feedId, createCollection, cancelClick } = this.props;
     const { inputVal } = this.state;
     e.preventDefault();
     createCollection(inputVal, feedId);
+    this.setState({ inputVal: "" });
+    cancelClick();
   }
 
   update(e) {

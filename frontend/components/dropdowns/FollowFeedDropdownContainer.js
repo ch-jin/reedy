@@ -4,6 +4,7 @@ import { allCollections } from "../../selectors/collection_selectors";
 import {
   addFeedToCollection,
   deleteFeedFromCollection,
+  createCollection,
 } from "../../actions/collection_actions";
 import FollowFeedDropdown from "./FollowFeedDropdown";
 
@@ -19,6 +20,9 @@ const mapDispatchToProps = dispatch => ({
 
   deleteFeedFromCollection: collectionFeed =>
     dispatch(deleteFeedFromCollection(collectionFeed)),
+
+  createCollection: (title, feedId) =>
+    dispatch(createCollection(title, feedId)),
 });
 
 export default withRouter(

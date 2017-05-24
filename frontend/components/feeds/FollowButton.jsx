@@ -10,6 +10,10 @@ class FollowButton extends React.Component {
     };
   }
 
+  componentWillReceiveProps({ followed }) {
+    this.setState({ content: followed ? "following" : "follow" });
+  }
+
   render() {
     const { handleClick, followed } = this.props;
     return (
