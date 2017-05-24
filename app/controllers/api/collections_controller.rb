@@ -5,6 +5,12 @@ class Api::CollectionsController < ApplicationController
     @collection = Collection.find(params[:id])
   end
 
+  def articles
+    collection = Collection.find(params[:id])
+    @articles = collection.articles
+    render('api/articles/index')
+  end
+
   def index
     @collections = current_user.collections.includes(:feeds)
   end
