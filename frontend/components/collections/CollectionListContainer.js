@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { allCollections } from "../../selectors/collection_selectors";
 import CollectionList from "./CollectionList";
 import { allFeeds, currentFeedId } from "../../selectors/feed_selectors";
@@ -10,4 +11,4 @@ const mapStateToProps = state => ({
   currentFeedId: currentFeedId(state),
 });
 
-export default connect(mapStateToProps)(CollectionList);
+export default withRouter(connect(mapStateToProps)(CollectionList));

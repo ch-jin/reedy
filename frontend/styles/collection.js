@@ -55,20 +55,25 @@ export const CollectionFeedImg = glamorous.img({
   borderRadius: "50%",
 });
 
-export const StyledCollectionListItemTitle = glamorous.div({
-  padding: "5px 10px",
-  display: "flex",
-  alignItems: "center",
-  fontSize: 14,
-  color: SLIGHT_WHITE,
-  height: 20,
-  transition: "all 100ms",
-  ":hover": {
-    cursor: "pointer",
+export const StyledCollectionListItemTitle = glamorous.div(
+  {
+    padding: "5px 10px",
+    display: "flex",
+    alignItems: "center",
+    fontSize: 14,
+    color: SLIGHT_WHITE,
+    height: 20,
     transition: "all 100ms",
-    backgroundColor: "#343b43",
+    ":hover": {
+      cursor: "pointer",
+      transition: "all 100ms",
+      backgroundColor: "#343b43",
+    },
+    ":first-child": {
+      marginTop: 10,
+    },
   },
-  ":first-child": {
-    marginTop: 10,
-  },
-});
+  props => ({
+    backgroundColor: props.active ? "#343b43" : "auto",
+  })
+);

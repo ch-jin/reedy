@@ -4,11 +4,11 @@ import { articleSlideLeft } from "../../styles/transitions";
 import { Redirect } from "react-router-dom";
 import { DefaultLoader } from "../../utils/loader_util";
 import {
+  StyledArticleModal,
   ArticleDetailWrapper,
   ArticleDetailContent,
 } from "../../styles/article";
 import ArticleDetailNav from "./ArticleDetailNav";
-import ArticleModal from "./ArticleModal";
 
 class ArticleDetail extends React.Component {
   constructor(props) {
@@ -64,7 +64,7 @@ class ArticleDetail extends React.Component {
 
     if (this.state.initialLoad) {
       return (
-        <ArticleModal active={true}>
+        <StyledArticleModal>
           <Transition identifier={location.pathname} {...articleSlideLeft}>
             <ArticleDetailWrapper
               onClick={this.handleClick}
@@ -77,7 +77,7 @@ class ArticleDetail extends React.Component {
               </ArticleDetailContent>
             </ArticleDetailWrapper>
           </Transition>
-        </ArticleModal>
+        </StyledArticleModal>
       );
     } else {
       return <Redirect to={redirectToParent} />;

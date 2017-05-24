@@ -7,7 +7,7 @@ export const config = {
   stiff: { stiffness: 210, damping: 20 },
   fade: { stiffness: 200, damping: 22 },
   pop: { stiffness: 360, damping: 25 },
-  slide: { stiffness: 330, damping: 30 },
+  slide: { stiffness: 180, damping: 22 },
 };
 
 export const fade = {

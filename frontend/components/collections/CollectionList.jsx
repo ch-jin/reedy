@@ -22,7 +22,9 @@ const CollectionList = props => {
 
   const renderAllSubs = () => (
     <Link className="no-decoration-color" to="/subscriptions">
-      <StyledCollectionListItemTitle>
+      <StyledCollectionListItemTitle
+        active={props.location.pathname === "/subscriptions"}
+      >
         <ListIcon className="fa fa-list-ul" />
         All
       </StyledCollectionListItemTitle>
