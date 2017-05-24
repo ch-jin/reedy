@@ -213,3 +213,14 @@ Please specify a valid ruby command or the path of a script to run.
 Run 'bin/rails runner -h' for help.
 
 uninitialized constant Feed
+/Users/jinchen/Documents/Programming/reedy/config/application.rb:5:in `<top (required)>': undefined local variable or method `config' for main:Object (NameError)
+	from /Users/jinchen/.rvm/gems/ruby-2.3.1/gems/spring-2.0.1/lib/spring/application.rb:82:in `require'
+	from /Users/jinchen/.rvm/gems/ruby-2.3.1/gems/spring-2.0.1/lib/spring/application.rb:82:in `preload'
+	from /Users/jinchen/.rvm/gems/ruby-2.3.1/gems/spring-2.0.1/lib/spring/application.rb:143:in `serve'
+	from /Users/jinchen/.rvm/gems/ruby-2.3.1/gems/spring-2.0.1/lib/spring/application.rb:131:in `block in run'
+	from /Users/jinchen/.rvm/gems/ruby-2.3.1/gems/spring-2.0.1/lib/spring/application.rb:125:in `loop'
+	from /Users/jinchen/.rvm/gems/ruby-2.3.1/gems/spring-2.0.1/lib/spring/application.rb:125:in `run'
+	from /Users/jinchen/.rvm/gems/ruby-2.3.1/gems/spring-2.0.1/lib/spring/application/boot.rb:19:in `<top (required)>'
+	from /Users/jinchen/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/jinchen/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'
