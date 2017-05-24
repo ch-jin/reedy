@@ -10,10 +10,11 @@ import { handleClickStopPropagation } from "../../utils/click_event_util";
 import FollowFeedDropdownButton from "./FollowFeedDropdownButton";
 
 const FollowFeedDropdown = ({
+  feedId,
   active,
   collections,
   addFeedToCollection,
-  feedId,
+  deleteFeedFromCollection,
 }) => {
   return (
     <StyledFeedDropdown active={active} onClick={handleClickStopPropagation}>
@@ -31,6 +32,7 @@ const FollowFeedDropdown = ({
             collection={collection}
             feedId={feedId}
             addFeedToCollection={addFeedToCollection}
+            deleteFeedFromCollection={deleteFeedFromCollection}
           />
         ))}
 

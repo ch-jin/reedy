@@ -32,3 +32,19 @@ export const updateCollectionTitle = collection =>
     url: `/api/collections/${collection.id}`,
     data: { collection: { title: collection.title } },
   });
+
+export const deleteFeedFromCollection = ({ collectionId, feedId }) => {
+  console.log(
+    $.param({
+      collection_feed: { collection_id: collectionId, feed_id: feedId },
+    })
+  );
+
+  return $.ajax({
+    method: "DELETE",
+    url: "/api/collection_feeds/",
+    data: {
+      collection_feed: { collection_id: collectionId, feed_id: feedId },
+    },
+  });
+};

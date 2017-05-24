@@ -1,18 +1,24 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { addFeedToCollection } from "../../actions/collection_actions";
 import { allCollections } from "../../utils/collections_util";
+import {
+  addFeedToCollection,
+  deleteFeedFromCollection,
+} from "../../actions/collection_actions";
 import FollowFeedDropdown from "./FollowFeedDropdown";
 
 const mapStateToProps = (state, { match }) => ({
   collections: allCollections(state),
-  feedId: match.params.id,
+  feedId: parseInt(match.params.feedId),
   active: state.dropdown.followFeedDropdown,
 });
 
 const mapDispatchToProps = dispatch => ({
   addFeedToCollection: collectionFeed =>
     dispatch(addFeedToCollection(collectionFeed)),
+
+  deleteFeedFromCollection: collectionFeed =>
+    dispatch(deleteFeedFromCollection(collectionFeed)),
 });
 
 export default withRouter(

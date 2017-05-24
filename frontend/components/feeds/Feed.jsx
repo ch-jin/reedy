@@ -11,14 +11,32 @@ import ArticleDetailContainer from "../articles/ArticleDetailContainer";
 class Feed extends React.Component {
   componentDidMount() {
     scrollMainContentWrapperToTop();
-    const { feedId, fetchArticlesFromFeed, fetchFeed } = this.props;
+    const {
+      feedId,
+      feeds,
+      fetchFollowedFeeds,
+      fetchArticlesFromFeed,
+      fetchFeed,
+    } = this.props;
 
+    if (!feeds.length) {
+      fetchFollowedFeeds();
+    }
     fetchFeed(feedId);
     fetchArticlesFromFeed(feedId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.feedId !== this.props.feedId) {
+      this.props.fetchFeed(nextProps.feedId);
+      this.props.fetchArticlesFromFeed(nextProps.feedId);
+    }
+  }
+
   render() {
     const { feed, articles, match } = this.props;
+
+    console.log(articles);
     if (feed) {
       return (
         <Transition identifier={"article-list"} {...fade}>

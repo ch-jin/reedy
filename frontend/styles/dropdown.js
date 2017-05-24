@@ -1,5 +1,5 @@
 import glamorous from "glamorous";
-import { Button, NAV_HEIGHT } from "./theme";
+import { DARKER, Button, NAV_HEIGHT } from "./theme";
 
 const DROPDOWN_HEIGHT = 241;
 const PADDING = 5;
@@ -90,13 +90,34 @@ export const StyledFeedDropdown = glamorous(StyledDropdown)({
   right: 10,
 });
 
-export const StyledFeedButtons = glamorous(DropdownButton)({
-  backgroundColor: "#fff",
-  color: "#454545",
-  fontWeight: 300,
-  fontFamily: "Roboto",
-  ":hover": {
-    backgroundColor: "#f3f3f3",
-    color: "#454545",
+export const StyledFeedButtons = glamorous(DropdownButton)(
+  {
+    backgroundColor: "#fff",
+    fontWeight: 300,
+    fontFamily: "Roboto",
+    display: "flex",
+    alignItems: "center",
+    position: "relative",
+    ":hover": {
+      backgroundColor: "#f3f3f3",
+      color: "#454545",
+    },
   },
+  props => ({
+    color: props.followed ? DARKER : "#454545",
+    ":hover": {
+      color: props.followed ? DARKER : "#454545",
+    },
+  })
+);
+
+export const RSSSquare = glamorous.i({
+  fontSize: 16,
+  marginRight: 5,
+});
+
+export const IndicatorIcons = glamorous(RSSSquare)({
+  position: "absolute",
+  right: 10,
+  top: "30%",
 });

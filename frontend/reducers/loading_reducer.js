@@ -6,6 +6,7 @@ import {
 import {
   RECEIVE_CURRENT_FEED,
   FETCHING_FEEDS,
+  FETCHING_FEED,
   RECEIVE_ALL_FEEDS,
 } from "../actions/feed_actions";
 import {
@@ -43,6 +44,7 @@ const loadingReducer = (state = _initialState, { type }) => {
     case RECEIVE_ALL_COLLECTIONS:
       return { ...state, loadingCollections: false };
 
+    case FETCHING_FEED:
     case FETCHING_FEEDS:
       return { ...state, loadingFeeds: true };
     case RECEIVE_CURRENT_FEED:

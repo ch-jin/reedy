@@ -108,3 +108,18 @@ a {
   font-size: 14px;
   padding-right: 10px;
 }
+
+#ff-delete-icon {
+  display: none;
+  visibility: hidden;
+}
+
+.feed-button:hover  {
+  #ff-add-icon {
+    display: none;
+  }
+  #ff-delete-icon {
+    display: block;
+    visibility: initial;
+  }
+}
