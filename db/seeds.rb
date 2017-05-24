@@ -14,6 +14,7 @@ Feed.destroy_all
 Article.destroy_all
 Collection.destroy_all
 CollectionFeed.destroy_all
+UserSavedArticle.destroy_all
 
 user1 = User.create({username: 'Guest', password: 'password' })
 
@@ -52,4 +53,8 @@ end
     collection_id: collection2.id,
     feed_id: Feed.all[i].id
   })
+end
+
+Article.all[20...30].each do |article|
+  UserSavedArticle.create({ user_id: user1.id, article_id: article.id })
 end

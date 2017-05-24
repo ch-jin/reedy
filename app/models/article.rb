@@ -19,7 +19,8 @@ class Article < ApplicationRecord
   validates :url, presence: true, uniqueness: true
 
   belongs_to :feed
-
+  has_many :user_saves, foreign_key: :article_id, class_name: :UserSavedArticle
+  has_many :saved_users, through: :user_saves, source: :user
 
   def self.construct_article(feed_id, raw_article)
     new_article = {
