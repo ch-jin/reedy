@@ -1,5 +1,5 @@
 import glamorous from "glamorous";
-import { Button } from "./theme";
+import { RED, Button } from "./theme";
 
 export const StyledSessionForm = glamorous.form({
   display: "flex",
@@ -51,7 +51,7 @@ export const StyledLettering = glamorous.div({
 export const StyledErrorUl = glamorous.ul({
   marginTop: "-10px",
   listStyle: "none",
-  color: "#c0392b",
+  color: RED,
 });
 
 export const LinkWrapper = glamorous.div({

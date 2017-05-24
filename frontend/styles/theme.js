@@ -6,6 +6,7 @@ export const DARKEST = "#00873B";
 export const NAV_HEIGHT = 55;
 export const SHADOW_BORDER = "1px solid #e9e9e9";
 export const SOFT_BOX_SHADOW = "0 1px 2px rgba(0,0,0,.1)";
+export const RED = "#c0392b";
 // "0 1px 3px 0 rgba(0,0,0,0.03), 0 1px 2px 0 rgba(0,0,0,0.06)";
 export const SIDE_NAV_WIDTH = 265;
 
@@ -52,30 +53,37 @@ export const FlexedDivCenter = glamorous.div({
   alignItems: "center",
 });
 
-export const StyledFollowButton = glamorous(Button)({
-  fontFamily: "Oxygen",
-  color: BASE,
-  position: "absolute",
-  right: 10,
-  backgroundColor: "#fff",
-  border: `1px solid ${BASE}`,
-  letterSpacing: "0.5px",
-  transition: "all 100ms",
-  outline: "none",
-  textTransform: "uppercase",
-  height: 40,
-  width: 112,
-  borderRadius: 5,
-  fontSize: 14,
-  fontWeight: "bold",
-  ":hover": {
+export const StyledFollowButton = glamorous(Button)(
+  {
+    fontFamily: "Oxygen",
+    color: BASE,
+    position: "absolute",
+    right: 10,
     backgroundColor: "#fff",
-    color: DARKEST,
-    border: `1px solid ${DARKEST}`,
-    cursor: "pointer",
+    letterSpacing: "0.5px",
     transition: "all 100ms",
+    outline: "none",
+    textTransform: "uppercase",
+    height: 40,
+    width: 112,
+    borderRadius: 5,
+    fontSize: 14,
+    fontWeight: "bold",
+    ":hover": {
+      backgroundColor: "#fff",
+      cursor: "pointer",
+      transition: "all 100ms",
+    },
   },
-});
+  props => ({
+    border: props.followed ? "1px solid #454545" : `1px solid ${BASE}`,
+    color: props.followed ? "#454545" : BASE,
+    ":hover": {
+      border: props.followed ? `1px solid ${RED}` : `1px solid ${DARKER}`,
+      color: props.followed ? RED : BASE,
+    },
+  })
+);
 
 export const AngleDown = glamorous.i({
   fontSize: 22,

@@ -1,16 +1,17 @@
 import React from "react";
-import CollectionItem from "./CollectionItem";
+import CollectionListItem from "./CollectionListItem";
 import { StyledCollectionWrapper } from "../../styles/collection";
 import { feedsBelongingToCollection } from "../../selectors/feed_selectors";
 
-const CollectionList = ({ hasFeeds, feeds, collections }) => (
+const CollectionList = ({ currentFeedId, hasFeeds, feeds, collections }) => (
   <StyledCollectionWrapper>
     {hasFeeds &&
       collections.map(collection => (
-        <CollectionItem
+        <CollectionListItem
           key={"collection" + collection.id}
           collection={collection}
           feeds={feedsBelongingToCollection(feeds, collection.feedIds)}
+          currentFeedId={currentFeedId}
         />
       ))}
 

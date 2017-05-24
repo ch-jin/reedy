@@ -1,5 +1,5 @@
 import glamorous from "glamorous";
-import { DARKER, Button, NAV_HEIGHT } from "./theme";
+import { RED, DARKER, Button, NAV_HEIGHT } from "./theme";
 
 const DROPDOWN_HEIGHT = 241;
 const PADDING = 5;
@@ -116,8 +116,13 @@ export const RSSSquare = glamorous.i({
   marginRight: 5,
 });
 
-export const IndicatorIcons = glamorous(RSSSquare)({
-  position: "absolute",
-  right: 10,
-  top: "30%",
-});
+export const IndicatorIcons = glamorous(RSSSquare)(
+  {
+    position: "absolute",
+    right: 10,
+    top: "30%",
+  },
+  props => ({
+    color: props.delete ? RED : "auto",
+  })
+);

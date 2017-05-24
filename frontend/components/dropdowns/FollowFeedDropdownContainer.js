@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { allCollections } from "../../utils/collections_util";
+import { allCollections } from "../../selectors/collection_selectors";
 import {
   addFeedToCollection,
   deleteFeedFromCollection,

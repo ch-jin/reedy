@@ -3,23 +3,28 @@ import { AngleDown } from "../../styles/theme";
 import {
   StyledItemBox,
   StyledCollectionFeedWrapper,
+  StyledCollectionListItemTitle,
 } from "../../styles/collection";
 import CollectionFeedItem from "./CollectionFeedItem";
 
-const CollectionItem = ({ collection, feeds }) => {
+const CollectionListItem = ({ currentFeedId, collection, feeds }) => {
   return (
     <StyledItemBox>
-      <div>
+      <StyledCollectionListItemTitle>
         <AngleDown className="fa fa-angle-down" ariaHidden="true" />
         {collection.title}
-      </div>
+      </StyledCollectionListItemTitle>
       <StyledCollectionFeedWrapper>
         {feeds.map(feed => (
-          <CollectionFeedItem key={"collection-feed-" + feed.id} feed={feed} />
+          <CollectionFeedItem
+            active={currentFeedId === feed.id}
+            key={"collection-feed-" + feed.id}
+            feed={feed}
+          />
         ))}
       </StyledCollectionFeedWrapper>
     </StyledItemBox>
   );
 };
 
-export default CollectionItem;
+export default CollectionListItem;

@@ -6,13 +6,13 @@ import {
   CollectionFeedImg,
 } from "../../styles/collection";
 
-const CollectionFeedItem = ({ feed }) => (
+const CollectionFeedItem = ({ feed, active }) => (
   <Link className="no-decoration" to={`/feeds/${feed.id}/articles`}>
-    <StyledCollectionFeedItem>
+    <StyledCollectionFeedItem active={active}>
       <CollectionFeedImgWrapper>
         <CollectionFeedImg src={feed.image} />
       </CollectionFeedImgWrapper>
-      {feed.title}
+      <p dangerouslySetInnerHTML={{ __html: feed.title }} />
     </StyledCollectionFeedItem>
   </Link>
 );

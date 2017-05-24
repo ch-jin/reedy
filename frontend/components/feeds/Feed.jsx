@@ -34,14 +34,13 @@ class Feed extends React.Component {
   }
 
   render() {
-    const { feed, articles, match } = this.props;
+    const { feed, articles, match, followed } = this.props;
 
-    console.log(articles);
     if (feed) {
       return (
         <Transition identifier={"article-list"} {...fade}>
           <StyledFeedWrapper>
-            <FeedHeader feed={feed} />
+            <FeedHeader feed={feed} followed={followed} />
             <ArticleList path="/feeds" articles={articles} />
           </StyledFeedWrapper>
           <Route

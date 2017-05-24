@@ -5,13 +5,13 @@ import FollowButtonContainer from "./FollowButtonContainer";
 import FollowFeedDropdownContainer
   from "../dropdowns/FollowFeedDropdownContainer";
 
-const FeedHeader = ({ feed }) => (
+const FeedHeader = ({ feed, followed }) => (
   <StyledListHeader>
     <FeedImgContainer>
       {feed.image && <FeedImg src={feed.image} />}
     </FeedImgContainer>
     <StyledTitle dangerouslySetInnerHTML={{ __html: feed.title }} />
-    <FollowButtonContainer />
+    <FollowButtonContainer followed={followed} />
     <FollowFeedDropdownContainer />
   </StyledListHeader>
 );

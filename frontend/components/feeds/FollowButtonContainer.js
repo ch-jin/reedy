@@ -1,8 +1,11 @@
 import { connect } from "react-redux";
-import {
-  toggleFollowFeedDropdown,
-} from "../../actions/dropdown_actions";
+import { toggleFollowFeedDropdown } from "../../actions/dropdown_actions";
 import FollowButton from "./FollowButton";
+import { isFeedFollowed } from "../../selectors/feed_selectors";
+
+const mapStateToProps = state => ({
+  followed: isFeedFollowed(state),
+});
 
 const mapDispatchToProps = dispatch => ({
   handleClick: e => {
@@ -11,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(null, mapDispatchToProps)(FollowButton);
+export default connect(mapStateToProps, mapDispatchToProps)(FollowButton);

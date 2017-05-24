@@ -29,6 +29,7 @@ const FollowFeedDropdownButton = ({
       onClick={handleClick}
       key={"collection" + collection.id}
     >
+
       <RSSSquare className="fa fa-rss-square" ariaHidden="true" />
       {collection.title}
 
@@ -37,11 +38,12 @@ const FollowFeedDropdownButton = ({
 
       {followed &&
         <IndicatorIcons
-          style={{ color: "#c0392b" }}
           className="fa fa-times-circle"
           id="ff-delete-icon"
           followed={followed}
+          delete={true}
         />}
+
     </StyledFeedButtons>
   );
 };

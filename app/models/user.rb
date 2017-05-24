@@ -21,6 +21,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :collections
+  has_many :collection_feeds, through: :collections
   has_many :feeds, through: :collections
   has_many :articles, through: :feeds
 
