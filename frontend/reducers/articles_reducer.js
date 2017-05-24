@@ -6,6 +6,7 @@ import {
 const _initState = {
   all: null,
   current: null,
+  feedIds: null,
 };
 
 const articlesReducer = (state = _initState, action) => {
@@ -13,7 +14,7 @@ const articlesReducer = (state = _initState, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_ARTICLES:
-      return { ...state, all: action.articles };
+      return { ...state, all: action.all, feedIds: action.feedIds };
     case RECEIVE_CURRENT_ARTICLE:
       return { ...state, current: action.article };
     default:

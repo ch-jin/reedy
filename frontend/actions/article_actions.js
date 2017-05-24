@@ -7,7 +7,8 @@ export const FETCHING_CURRENT_ARTICLE = "FETCHING_CURRENT_ARTICLE";
 
 export const receiveAllArticles = articles => ({
   type: RECEIVE_ALL_ARTICLES,
-  articles,
+  all: articles.all,
+  feedIds: articles.feedIds,
 });
 
 export const receiveCurrentArticle = article => ({
