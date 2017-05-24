@@ -4,7 +4,7 @@ import {
 } from "../actions/feed_actions";
 
 const _initState = {
-  all: {},
+  all: null,
   current: null,
 };
 

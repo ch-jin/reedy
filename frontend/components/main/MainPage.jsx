@@ -5,6 +5,8 @@ import MainSideNav from "./MainSideNav";
 import DiscoverContainer from "../discover/DiscoverContainer";
 import SubscriptionsContainer from "../subscriptions/SubscriptionsContainer";
 import FeedContainer from "../feeds/FeedContainer";
+import CollectionShowArticlesContainer
+  from "../collections/CollectionShowArticlesContainer";
 import { ArticleLoader } from "../../utils/loader_util";
 import { MainContentWrapper } from "../../styles/main";
 import { hasCollections } from "../../selectors/collection_selectors";
@@ -62,12 +64,16 @@ class MainPage extends React.Component {
         />
         <MainContentWrapper id="main-content-wrapper" modalOpen={articleModal}>
 
-          <MainNavContainer articleModal={articleModal} homePath={pathname} />
+          <MainNavContainer articleModal={articleModal} />
 
           <Switch>
             <Route path="/subscriptions" component={SubscriptionsContainer} />
             <Route path="/discover" component={DiscoverContainer} />
             <Route path="/feeds/:feedId" component={FeedContainer} />
+            <Route
+              path="/collections/:collectionId/articles"
+              component={CollectionShowArticlesContainer}
+            />
             {pathname === "/subscriptions" && <Redirect to="/subscriptions" />}
             {pathname === "/discover" && <Redirect to="/discover" />}
           </Switch>
