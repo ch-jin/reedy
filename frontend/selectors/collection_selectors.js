@@ -7,6 +7,8 @@ export const hasCollections = collections =>
 
 export const allCollectionFeedIds = state => {
   let feedIds = [];
-  allCollections(state).forEach(collection => (feedIds += collection.feedIds));
+  allCollections(state).forEach(
+    collection => (feedIds = feedIds.concat(collection.feedIds))
+  );
   return feedIds;
 };

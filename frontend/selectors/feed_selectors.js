@@ -14,5 +14,8 @@ export const feedsBelongingToCollection = (allFeeds, feedIds) => {
   return feeds;
 };
 
-export const isFeedFollowed = state =>
-  allCollectionFeedIds(state).includes(state.feeds.current.id);
+export const isFeedFollowed = state => {
+  const followedFeedIds = allCollectionFeedIds(state);
+
+  return followedFeedIds.includes(state.feeds.current.id);
+};
