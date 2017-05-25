@@ -5,10 +5,16 @@ export const RECEIVE_COLLECTION = "RECEIVE_COLLECTION";
 export const REMOVE_COLLECTION = "REMOVE_COLLECTION";
 export const FETCHING_COLLECTIONS = "FETCHING_COLLECTIONS";
 export const DELETING_COLLECTION = "DELETING_COLLECTION";
+export const RECEIVE_CURRENT_COLLECTION = "RECEIVE_CURRENT_COLLECTION";
 
 export const receiveAllCollections = collections => ({
   type: RECEIVE_ALL_COLLECTIONS,
   collections,
+});
+
+export const receiveCurrentCollection = collection => ({
+  type: RECEIVE_CURRENT_COLLECTION,
+  collection,
 });
 
 export const receiveCollection = collection => ({
@@ -33,6 +39,13 @@ export const fetchAllCollections = () => dispatch => {
   dispatch(fetchingCollections());
   return CollectionAPIUtil.fetchAllCollections().then(collections =>
     dispatch(receiveAllCollections(collections))
+  );
+};
+
+export const fetchCollection = collectionId => dispatch => {
+  dispatch(fetchingCollections());
+  return CollectionAPIUtil.fetchCollection(collectionId).then(collection =>
+    dispatch(receiveCurrentCollection(collection))
   );
 };
 

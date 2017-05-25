@@ -9,10 +9,17 @@ import { ListIcon } from "../../styles/theme";
 import { feedsBelongingToCollection } from "../../selectors/feed_selectors";
 
 const CollectionList = props => {
-  const { currentFeedId, hasFeeds, feeds, collections } = props;
-  const renderColletionItems = () =>
+  const {
+    currentCollectionId,
+    currentFeedId,
+    hasFeeds,
+    feeds,
+    collections,
+  } = props;
+  const renderCollectionItems = () =>
     collections.map(collection => (
       <CollectionListItem
+        currentCollectionId={currentCollectionId}
         key={"collection" + collection.id}
         collection={collection}
         feeds={feedsBelongingToCollection(feeds, collection.feedIds)}
@@ -34,7 +41,7 @@ const CollectionList = props => {
   return (
     <StyledCollectionWrapper>
       {hasFeeds && renderAllSubs()}
-      {hasFeeds && renderColletionItems()}
+      {hasFeeds && renderCollectionItems()}
     </StyledCollectionWrapper>
   );
 };

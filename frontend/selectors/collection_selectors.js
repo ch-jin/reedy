@@ -12,3 +12,8 @@ export const allCollectionFeedIds = state => {
   );
   return feedIds;
 };
+
+export const currentCollection = state => state.collections.current;
+
+export const currentCollectionId = state =>
+  state.collections.current && state.collections.current.id;

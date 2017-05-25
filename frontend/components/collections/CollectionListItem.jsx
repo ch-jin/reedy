@@ -8,14 +8,21 @@ import {
 } from "../../styles/collection";
 import CollectionFeedItem from "./CollectionFeedItem";
 
-const CollectionListItem = ({ currentFeedId, collection, feeds }) => {
+const CollectionListItem = ({
+  currentCollectionId,
+  currentFeedId,
+  collection,
+  feeds,
+}) => {
   return (
     <StyledItemBox>
       <Link
         className="no-decoration-color"
         to={`/collections/${collection.id}/articles`}
       >
-        <StyledCollectionListItemTitle>
+        <StyledCollectionListItemTitle
+          active={currentCollectionId === collection.id}
+        >
           <CollectionTitleIcon className="fa fa-angle-down" ariaHidden="true" />
           {collection.title}
         </StyledCollectionListItemTitle>

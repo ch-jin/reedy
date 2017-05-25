@@ -4,6 +4,12 @@ export const fetchAllCollections = () =>
     url: "/api/collections",
   });
 
+export const fetchCollection = collectionId =>
+  $.ajax({
+    method: "GET",
+    url: `/api/collections/${collectionId}`,
+  });
+
 export const createCollection = (title, feedId) =>
   $.ajax({
     method: "POST",

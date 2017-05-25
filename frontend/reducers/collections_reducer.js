@@ -3,6 +3,7 @@ import {
   RECEIVE_ALL_COLLECTIONS,
   RECEIVE_COLLECTION,
   REMOVE_COLLECTION,
+  RECEIVE_CURRENT_COLLECTION,
 } from "../actions/collection_actions";
 
 const _initState = {
@@ -18,6 +19,8 @@ const collectionsReducer = (state = _initState, action) => {
     case RECEIVE_COLLECTION:
       const { collection } = action;
       return { ...state, all: { ...state.all, [collection.id]: collection } };
+    case RECEIVE_CURRENT_COLLECTION:
+      return { ...state, current: action.collection };
     case REMOVE_COLLECTION:
       const newState = merge({}, state);
       delete newState.all[action.collectionId];

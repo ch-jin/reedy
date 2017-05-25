@@ -51,11 +51,11 @@ class Subscriptions extends React.Component {
   }
 
   renderSubArticles() {
-    return this.props.feedsWithArticles.map(articles => {
+    return this.props.feedsWithArticles.map((articles, idx) => {
       const feed = this.props.feeds[articles[0].feedId];
 
       return (
-        <ShortFeedWrapper>
+        <ShortFeedWrapper key={`sub-article-group-${idx}`}>
           <ShortFeed>
             <FeedHeader feed={feed} notFeed />
             <ShortLine />

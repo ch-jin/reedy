@@ -8,13 +8,13 @@ import {
 } from "../../actions/feed_actions";
 import { toggleArticleModal } from "../../actions/modal_actions";
 import { feedsWithArticles } from "../../selectors/feed_selectors";
-import { loadingSubscriptions } from "../../selectors/loading_selectors";
+import { loadingAllStates } from "../../selectors/loading_selectors";
 import Subscriptions from "./Subscriptions";
 
 const mapStateToProps = state => ({
   feeds: state.feeds.all,
   feedsWithArticles: feedsWithArticles(state),
-  loading: loadingSubscriptions(state),
+  loading: loadingAllStates(state),
 });
 
 const mapDispatchToProps = dispatch => ({
