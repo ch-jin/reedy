@@ -134,3 +134,28 @@ export const ErrorDiscoverIcon = glamorous.i({
     border: "1px solid #F2784B",
   },
 });
+
+export const SmallCloseButton = glamorous.i({
+  fontSize: 14,
+  position: "absolute",
+  top: 7,
+  right: 7,
+  padding: "5px 8px",
+  borderRadius: 3,
+  color: "#797979",
+  border: "1px solid #e7e7e7",
+  transition: "all 100ms",
+  ":hover": {
+    transition: "all 100ms",
+    color: RED,
+    cursor: "pointer",
+    border: `1px solid ${RED}`,
+  },
+});
+
+export const BigCloseButton = glamorous(SmallCloseButton)({
+  fontSize: 18,
+  right: 20,
+  width: 20,
+  textAlign: "center",
+});

@@ -1,4 +1,5 @@
 import React from "react";
+import { SmallCloseButton } from "../../styles/theme";
 import {
   DropdownContent,
   StyledCreateInput,
@@ -6,7 +7,6 @@ import {
   StyledDropdownCancelButton,
   ButtonContainer,
   DropdownEmptyItem,
-  CloseButton,
   StyledCreateForm,
   Bold,
 } from "../../styles/dropdown";
@@ -51,7 +51,7 @@ class FollowFeedCreateCollection extends React.Component {
 
     return (
       <DropdownContent>
-        <CloseButton onClick={handleCloseClick} className="fa fa-times" />
+        <SmallCloseButton onClick={handleCloseClick} className="fa fa-times" />
         <DropdownEmptyItem>
           <Bold>
             Create Collection

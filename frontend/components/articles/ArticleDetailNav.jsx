@@ -1,15 +1,16 @@
 import React from "react";
 import { StyledMainNavWrapper } from "../../styles/main";
+import { BigCloseButton } from "../../styles/theme";
 import {
   ArticleDetailFixedNav,
   StyledArticleDetailNav,
 } from "../../styles/article";
 
-const ArticleDetailNav = () => (
+const ArticleDetailNav = ({ handleCloseClick }) => (
   <ArticleDetailFixedNav>
     <StyledArticleDetailNav>
       <StyledMainNavWrapper>
-        Reedy
+        <BigCloseButton onClick={handleCloseClick} className="fa fa-times" />
       </StyledMainNavWrapper>
     </StyledArticleDetailNav>
   </ArticleDetailFixedNav>

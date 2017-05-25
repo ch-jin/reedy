@@ -48,7 +48,6 @@ class Feed extends React.Component {
             path="/feeds/:feedId/articles/:articleId"
             render={({ match: { params: { feedId } } }) => (
               <Transition identifier={"feed-show-" + feedId} {...fade}>
-                {console.log(feedId)}
                 <ArticleDetailContainer redirectToParent={match.url} />
               </Transition>
             )}

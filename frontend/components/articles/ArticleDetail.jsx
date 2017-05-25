@@ -16,6 +16,7 @@ class ArticleDetail extends React.Component {
 
     this.state = { initialLoad: true };
     this.renderArticle = this.renderArticle.bind(this);
+    this.handleCloseClick = this.handleCloseClick.bind(this);
   }
 
   componentDidMount() {
@@ -48,6 +49,11 @@ class ArticleDetail extends React.Component {
     e.stopPropagation();
   }
 
+  handleCloseClick(e) {
+    e.stopPropagation();
+    this.props.toggleArticleModal();
+  }
+
   renderArticle() {
     const { currentArticle } = this.props;
 
@@ -70,7 +76,7 @@ class ArticleDetail extends React.Component {
               onClick={this.handleClick}
               className="article-modal-content"
             >
-              <ArticleDetailNav />
+              <ArticleDetailNav handleCloseClick={this.handleCloseClick} />
               {loading && <DefaultLoader />}
               <ArticleDetailContent>
                 {currentArticle && this.renderArticle()}

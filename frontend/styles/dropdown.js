@@ -193,24 +193,6 @@ export const ButtonContainer = glamorous.div({
   justifyContent: "space-between",
 });
 
-export const CloseButton = glamorous.i({
-  fontSize: 14,
-  position: "absolute",
-  top: 7,
-  right: 7,
-  padding: "5px 8px",
-  borderRadius: 3,
-  color: "#797979",
-  border: "1px solid #e7e7e7",
-  transition: "all 100ms",
-  ":hover": {
-    transition: "all 100ms",
-    color: RED,
-    cursor: "pointer",
-    border: `1px solid ${RED}`,
-  },
-});
-
 export const StyledCreateForm = glamorous.form({
   paddingBottom: 10,
   width: "90%",

@@ -1,4 +1,5 @@
 import React from "react";
+import { SmallCloseButton } from "../../styles/theme";
 import {
   StyledFeedDropdown,
   DropdownContent,
@@ -6,7 +7,6 @@ import {
   Line,
   Bold,
   StyledCreateCollectionButton,
-  CloseButton,
 } from "../../styles/dropdown";
 import { handleClickStopPropagation } from "../../utils/click_event_util";
 import FollowFeedDropdownButton from "./FollowFeedDropdownButton";
@@ -68,7 +68,10 @@ class FollowFeedDropdown extends React.Component {
     } = this.props;
     return (
       <DropdownContent>
-        <CloseButton onClick={this.handleCloseClick} className="fa fa-times" />
+        <SmallCloseButton
+          onClick={this.handleCloseClick}
+          className="fa fa-times"
+        />
         <DropdownEmptyItem>
           <Bold>
             Collections:
