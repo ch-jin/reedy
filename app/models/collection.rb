@@ -16,4 +16,5 @@ class Collection < ApplicationRecord
   belongs_to :user
   has_many :collection_feeds
   has_many :feeds, through: :collection_feeds
+  has_many :articles, through: :feeds
 end

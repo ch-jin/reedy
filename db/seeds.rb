@@ -56,5 +56,5 @@ end
 end
 
 Article.all[20...30].each do |article|
-  UserSavedArticle.create({ user_id: user1.id, article_id: article.id })
+  UserArticleSave.create({ user_id: user1.id, article_id: article.id })
 end

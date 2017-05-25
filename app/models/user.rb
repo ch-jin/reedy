@@ -25,7 +25,7 @@ class User < ApplicationRecord
   has_many :feeds, through: :collections
   has_many :articles, through: :feeds
 
-  has_many :article_saves, foreign_key: :user_id, class_name: :UserSavedArticle
+  has_many :article_saves, foreign_key: :user_id, class_name: :UserArticleSave
   has_many :saved_articles, through: :article_saves, source: :article
 
   def self.find_by_credentials(username, password)
