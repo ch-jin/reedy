@@ -51,7 +51,7 @@ export const ShortLine = glamorous.div({
 });
 
 export const SubscribeHeader = glamorous(StyledFeedWrapper)({
-  fontSize: 30,
+  fontSize: 24,
   height: 60,
   display: "flex",
   justifyContent: "center",

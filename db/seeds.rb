@@ -14,7 +14,7 @@ Feed.destroy_all
 Article.destroy_all
 Collection.destroy_all
 CollectionFeed.destroy_all
-UserSavedArticle.destroy_all
+UserArticleSave.destroy_all
 
 user1 = User.create({username: 'Guest', password: 'password' })
 
@@ -22,16 +22,18 @@ feeds = [
   "http://feeds2.feedburner.com/time/topstories",
   "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
   "http://www.npr.org/rss/rss.php?id=1001",
+  "http://www.espn.com/rss",
+  "http://www.businessinsider.com/rss",
   "https://www.theguardian.com/uk/rss",
+  "http://www.nbcbayarea.com/news/local/?rss=y&embedThumb=y&summary=y",
+  "http://www.nbcbayarea.com/news/top-stories/?rss=y&embedThumb=y&summary=y",
   "http://feeds.reuters.com/reuters/technologyNews",
   "http://feeds.arstechnica.com/arstechnica/index",
+  "http://www.dailymail.co.uk/articles.rss",
   "https://venturebeat.com/feed/",
-  "https://www.reddit.com/r/news.rss",
-  "https://hackaday.com/blog/feed/",
   "https://hackernoon.com/feed",
-  "https://dev.to/rss",
-  "https://www.behance.net/feeds/projects",
-  "https://www.producthunt.com/feed.atom"
+  "https://hackaday.com/blog/feed/",
+  "https://www.reddit.com/r/news.rss",
 ]
 
 feeds.each do |feed|
@@ -55,6 +57,18 @@ end
   })
 end
 
-Article.all[20...30].each do |article|
+Article.all[3..6].each do |article|
+  UserArticleSave.create({ user_id: user1.id, article_id: article.id })
+end
+
+Article.all[10..12].each do |article|
+  UserArticleSave.create({ user_id: user1.id, article_id: article.id })
+end
+
+Article.all[20..22].each do |article|
+  UserArticleSave.create({ user_id: user1.id, article_id: article.id })
+end
+
+Article.all[33..35].each do |article|
   UserArticleSave.create({ user_id: user1.id, article_id: article.id })
 end

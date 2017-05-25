@@ -1,11 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CollectionListItem from "./CollectionListItem";
-import {
-  StyledCollectionWrapper,
-  StyledCollectionListItemTitle,
-} from "../../styles/collection";
-import { ListIcon } from "../../styles/theme";
+import CollectionNavItem from "./CollectionNavItem";
+import { StyledCollectionWrapper } from "../../styles/collection";
 import { feedsBelongingToCollection } from "../../selectors/feed_selectors";
 
 const CollectionList = props => {
@@ -15,6 +12,7 @@ const CollectionList = props => {
     hasFeeds,
     feeds,
     collections,
+    location: { pathname },
   } = props;
   const renderCollectionItems = () =>
     collections.map(collection => (
@@ -27,20 +25,27 @@ const CollectionList = props => {
       />
     ));
 
-  const renderAllSubs = () => (
-    <Link className="no-decoration-color" to="/subscriptions">
-      <StyledCollectionListItemTitle
-        active={props.location.pathname === "/subscriptions"}
-      >
-        <ListIcon className="fa fa-list-ul" />
-        All
-      </StyledCollectionListItemTitle>
-    </Link>
-  );
-
   return (
     <StyledCollectionWrapper>
-      {hasFeeds && renderAllSubs()}
+      <CollectionNavItem
+        activePath={pathname}
+        path="/discover"
+        icon="fa-feed"
+        name="Discover"
+      />
+      <CollectionNavItem
+        activePath={pathname}
+        path="/saved"
+        icon="fa-bookmark"
+        name="Saved"
+      />
+
+      <CollectionNavItem
+        activePath={pathname}
+        path="/subscriptions"
+        icon="fa-list-ul"
+        name="All Subscriptions"
+      />
       {hasFeeds && renderCollectionItems()}
     </StyledCollectionWrapper>
   );

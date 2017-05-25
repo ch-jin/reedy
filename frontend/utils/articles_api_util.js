@@ -35,3 +35,9 @@ export const fetchCollectionArticles = collectionId =>
     method: "GET",
     url: `api/collections/${collectionId}/articles`,
   });
+
+export const fetchSavedArticles = () =>
+  $.ajax({
+    method: "GET",
+    url: "api/articles/saved",
+  });

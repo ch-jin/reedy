@@ -97,6 +97,40 @@ export const CollectionTitleIcon = glamorous.i({
 });
 
 export const ListIcon = glamorous(CollectionTitleIcon)({
+  width: 10,
   fontSize: 14,
-  marginRight: 10,
+  marginRight: 14,
+  marginLeft: 3,
+  display: "flex",
+  justifyContent: "center",
+});
+
+export const ErrorDiv = glamorous.div({
+  position: "absolute",
+  top: 120,
+  width: "40%",
+  textAlign: "center",
+  color: "#454545",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  height: "80%",
+  fontSize: 30,
+});
+
+export const ErrorDiscoverIcon = glamorous.i({
+  display: "block",
+  marginTop: 40,
+  width: 60,
+  fontSize: 60,
+  borderRadius: 10,
+  border: "1px solid black",
+  transition: "all 200ms",
+  ":hover": {
+    cursor: "pointer",
+    transform: "scale(1.05)",
+    transition: "all 200ms",
+    color: "#F2784B",
+    border: "1px solid #F2784B",
+  },
 });

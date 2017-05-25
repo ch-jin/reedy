@@ -30,6 +30,7 @@ class Feed extends React.Component {
     if (nextProps.feedId !== this.props.feedId) {
       this.props.fetchFeed(nextProps.feedId);
       this.props.fetchArticlesFromFeed(nextProps.feedId);
+      scrollMainContentWrapperToTop();
     }
   }
 
@@ -45,8 +46,11 @@ class Feed extends React.Component {
           </StyledFeedWrapper>
           <Route
             path="/feeds/:feedId/articles/:articleId"
-            render={() => (
-              <ArticleDetailContainer redirectToParent={match.url} />
+            render={({ match: { params: { feedId } } }) => (
+              <Transition identifier={"feed-show-" + feedId} {...fade}>
+                {console.log(feedId)}
+                <ArticleDetailContainer redirectToParent={match.url} />
+              </Transition>
             )}
           />
         </Transition>

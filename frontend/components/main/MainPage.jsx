@@ -5,6 +5,7 @@ import MainSideNav from "./MainSideNav";
 import DiscoverContainer from "../discover/DiscoverContainer";
 import SubscriptionsContainer from "../subscriptions/SubscriptionsContainer";
 import FeedContainer from "../feeds/FeedContainer";
+import SavedArticlesContainer from "../articles/SavedArticlesContainer";
 import CollectionShowArticlesContainer
   from "../collections/CollectionShowArticlesContainer";
 import { ArticleLoader } from "../../utils/loader_util";
@@ -69,6 +70,7 @@ class MainPage extends React.Component {
           <Switch>
             <Route path="/subscriptions" component={SubscriptionsContainer} />
             <Route path="/discover" component={DiscoverContainer} />
+            <Route path="/saved" component={SavedArticlesContainer} />
             <Route path="/feeds/:feedId" component={FeedContainer} />
             <Route
               path="/collections/:collectionId/articles"

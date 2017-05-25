@@ -37,11 +37,11 @@ export const halfFade = {
 export const pop = {
   atEnter: {
     opacity: 0,
-    scale: 0.85,
+    scale: 0.80,
   },
   atLeave: {
     opacity: spring(0, config.pop),
-    scale: spring(0.85, config.pop),
+    scale: spring(0.80, config.pop),
   },
   atActive: {
     opacity: spring(1, config.pop),

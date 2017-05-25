@@ -6,4 +6,9 @@ class Api::ArticlesController < ApplicationController
   def show
     @article = Article.find_by(id: params[:id])
   end
+
+  def saved
+    @articles = current_user.saved_articles
+    render :index
+  end
 end

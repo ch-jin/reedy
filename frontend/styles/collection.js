@@ -2,7 +2,13 @@ import glamorous from "glamorous";
 import { FeedImgContainer } from "./discover";
 import { HALF_TRANSPARENT, SLIGHT_WHITE, SIDE_NAV_WIDTH } from "./theme";
 
-export const StyledCollectionWrapper = glamorous.div({});
+export const StyledCollectionWrapper = glamorous.div({
+  width: SIDE_NAV_WIDTH,
+  boxSizing: "border-box",
+  height: "calc(100% - 60px)",
+  overflow: "auto",
+  paddingTop: 20,
+});
 
 export const StyledItemBox = glamorous.div({
   width: SIDE_NAV_WIDTH,
@@ -32,11 +38,11 @@ export const StyledCollectionFeedItem = glamorous.div(
     ":hover": {
       cursor: "pointer",
       transition: "all 100ms",
-      backgroundColor: "#343b43",
+      backgroundColor: "#303944",
     },
   },
   props => ({
-    backgroundColor: props.active ? "#343b43" : "auto",
+    backgroundColor: props.active ? "#303944" : "auto",
   })
 );
 
@@ -57,7 +63,7 @@ export const CollectionFeedImg = glamorous.img({
 
 export const StyledCollectionListItemTitle = glamorous.div(
   {
-    padding: "5px 10px",
+    padding: "5px 15px",
     display: "flex",
     alignItems: "center",
     fontSize: 14,
@@ -67,13 +73,10 @@ export const StyledCollectionListItemTitle = glamorous.div(
     ":hover": {
       cursor: "pointer",
       transition: "all 100ms",
-      backgroundColor: "#343b43",
-    },
-    ":first-child": {
-      marginTop: 10,
+      backgroundColor: "#303944",
     },
   },
   props => ({
-    backgroundColor: props.active ? "#343b43" : "auto",
+    backgroundColor: props.active ? "#303944" : "auto",
   })
 );

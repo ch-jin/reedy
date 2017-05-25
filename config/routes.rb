@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'feeds/feed/:id', to: 'feeds#show_feed_only'
     resources :feeds, only: [:show, :index, :create]
 
+    get 'articles/saved', to: 'articles#saved'
     resources :articles, only: [:index, :show]
 
     get 'collections/:id/articles', to: 'collections#articles'
