@@ -6,6 +6,7 @@ import HomePageNav from "./HomePageNav";
 import HomePageFeatures from "./HomePageFeatures";
 import HomePageHeader from "./HomePageHeader";
 import HomePageScreenshot from "./HomePageScreenshot";
+import HomePageFooter from "./HomePageFooter";
 import {
   HomePageContent,
   GetStartedButton,
@@ -35,6 +36,16 @@ class HomePage extends React.Component {
 
           <HomePageScreenshot />
           <HomePageFeatures />
+
+          <Link className="no-decoration" to="/signup">
+            <GetStartedButton>
+              <GetStartedImg src={window.invertLogoURL} alt="" />
+              <glamorous.Span position="relative" bottom="23px">
+                {" "}Get Started{" "}
+              </glamorous.Span>
+            </GetStartedButton>
+          </Link>
+          <HomePageFooter />
         </HomePageContent>
       </div>
     );

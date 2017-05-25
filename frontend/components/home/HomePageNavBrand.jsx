@@ -4,7 +4,7 @@ import { FullHeightLink, Img } from "../../styles/theme";
 
 const HomePageNavBrand = () => {
   return (
-    <FullHeightLink href="/">
+    <FullHeightLink href="/" className="no-decoration">
       <StyledNavBrand>
         <Img src={window.reedyLogoURL} />
         Reedy

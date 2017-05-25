@@ -1,6 +1,6 @@
 import glamorous from "glamorous";
 import { Button } from "./theme";
-import { NAV_HEIGHT, SHADOW_BORDER } from "./theme";
+import { DARKER, NAV_HEIGHT, SHADOW_BORDER, SOFT_BOX_SHADOW } from "./theme";
 import { StyledSessionButton } from "./session_form";
 
 // ---- Nav
@@ -67,8 +67,9 @@ export const HomePageContent = glamorous.div({
 });
 
 export const HeaderWrapper = glamorous.div({
-  height: 100,
-  width: 800,
+  height: 150,
+  maxWidth: 930,
+  width: "90%",
   fontSize: 18,
   margin: "50px auto",
   display: "flex",
@@ -114,18 +115,8 @@ export const MacWindow = glamorous.div({
   },
 });
 
-export const Features = glamorous.div({
-  height: "400px",
-  width: "800px",
-  border: "1px solid black",
-  margin: "50px auto",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  fontSize: "30px",
-});
-
 export const GetStartedButton = glamorous(StyledSessionButton)({
+  marginTop: 15,
   width: 200,
   height: 60,
   fontSize: 20,
@@ -140,4 +131,95 @@ export const GetStartedImg = glamorous.img({
   height: 40,
   position: "relative",
   bottom: 10,
+});
+
+export const Features = glamorous.div({
+  height: 500,
+  width: "90%",
+  maxWidth: 930,
+  margin: "50px auto",
+  display: "flex",
+  paddingLeft: 15,
+  // alignItems: "space-around",
+  // justifyContent: "space-around",
+  fontSize: "30px",
+});
+
+export const StyledFeature = glamorous.div({
+  display: "flex",
+  width: "100%",
+  flexDirection: "column",
+  justifyContent: "center",
+  padding: 30,
+  position: "relative",
+  marginTop: 70,
+  boxSizing: "border-box",
+  // border: "1px solid rgba(255, 0, 0, 0.1)",
+});
+
+export const FeatureIcon = glamorous.i({
+  fontSize: 60,
+  fontWeight: 100,
+  color: DARKER,
+  marginBottom: 30,
+  // border: "1px solid rgba(255, 0, 0, 0.1)",
+});
+
+export const FeatureText = glamorous.div({
+  color: "#454545",
+  fontSize: 18,
+  height: 100,
+  // border: "1px solid rgba(255, 0, 0, 0.1)",
+});
+
+export const Tagline = glamorous.div({
+  fontSize: 22,
+  fontWeight: 700,
+  marginBottom: 10,
+  // border: "1px solid rgba(255, 0, 0, 0.1)",
+  // margin: "20px 0",
+  alignSelf: "flex-start",
+});
+
+export const GreyWrapper = glamorous.div({
+  margin: "20px 0 70px 0",
+  width: "100%",
+  backgroundColor: "#fafafa",
+});
+
+export const FeaturesTitle = glamorous.div({
+  position: "absolute",
+  fontSize: 40,
+  top: 0,
+});
+
+export const StyledFooterWrapper = glamorous.div({
+  width: "100%",
+  marginTop: 65,
+  height: 50,
+  backgroundColor: DARKER,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "rgba(255, 255, 255, 0.8)",
+});
+
+export const FooterIcon = glamorous.i({
+  fontSize: 30,
+  margin: "2px 10px",
+  color: "rgba(255, 255, 255, 0.9)",
+  transition: "all 100ms",
+  ":visited": {
+    color: "rgba(255, 255, 255, 0.9)",
+  },
+  ":hover": {
+    transition: "all 100ms",
+    color: "rgba(255, 255, 255, 0.7)",
+  },
+});
+
+export const SmallGreaterThan = glamorous.i({
+  // marginTop: 4,
+  fontSize: 20,
+  color: "rgba(255, 255, 255, 0.3)",
 });
