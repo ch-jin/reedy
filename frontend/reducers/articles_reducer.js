@@ -1,12 +1,14 @@
 import {
   RECEIVE_ALL_ARTICLES,
   RECEIVE_CURRENT_ARTICLE,
+  RECEIVE_ARTICLE,
 } from "../actions/article_actions";
 
 const _initState = {
   all: null,
   current: null,
   feedIds: null,
+  savedArticleIds: null,
 };
 
 const articlesReducer = (state = _initState, action) => {
@@ -14,9 +16,19 @@ const articlesReducer = (state = _initState, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_ARTICLES:
-      return { ...state, all: action.all, feedIds: action.feedIds };
+      return {
+        ...state,
+        all: action.all,
+        feedIds: action.feedIds,
+        savedArticleIds: action.savedArticleIds,
+      };
     case RECEIVE_CURRENT_ARTICLE:
       return { ...state, current: action.article };
+    case RECEIVE_ARTICLE:
+      return {
+        ...state,
+        all: { ...state.all, [action.article.id]: action.article },
+      };
     default:
       return state;
   }
