@@ -35,6 +35,8 @@ class Subscriptions extends React.Component {
       return (
         <ErrorPage>
           Oops! Looks like you have no subscriptions!
+          <br /><br />
+          Click below to add feeds:
         </ErrorPage>
       );
     } else {

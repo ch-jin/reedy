@@ -131,8 +131,8 @@ export const ErrorDiscoverIcon = glamorous.i({
     cursor: "pointer",
     transform: "scale(1.05)",
     transition: "all 200ms",
-    color: "#F2784B",
-    border: "1px solid #F2784B",
+    color: DARKER,
+    border: "1px solid" + DARKER,
   },
 });
 

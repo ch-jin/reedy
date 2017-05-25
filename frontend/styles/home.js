@@ -90,18 +90,23 @@ export const Screenshot = glamorous.div({
   maxWidth: 930,
   width: "90%",
   margin: "50px auto",
+  backgroundColor: "#fff",
 });
 
 export const ScreenshotImg = glamorous.img({
   boxSizing: "border-box",
   width: "100%",
-  border: "1px solid #e0dce0",
+  boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
+  borderRight: "1px solid #eee",
+  borderBottom: "1px solid #eee",
+  borderLeft: "1px solid #eee",
 });
 
 export const MacWindow = glamorous.div({
-  background: "-webkit-linear-gradient(#eae6ea, #d2d0d2)",
+  backgroundColor: "#d2d0d2",
   borderRadius: "4px 4px 0 0",
   padding: ".25rem .5rem",
+  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
   ":before": {
     background: "#ffc12e",
     borderRadius: "50%",
