@@ -6,7 +6,10 @@ import {
   fetchSavedArticles,
   resetArticles,
 } from "../../actions/article_actions";
-import { fetchFollowedFeeds } from "../../actions/feed_actions";
+import {
+  fetchFollowedFeeds,
+  receiveCurrentFeed,
+} from "../../actions/feed_actions";
 import { fetchAllCollections } from "../../actions/collection_actions";
 
 const mapStateToProps = state => ({
@@ -19,6 +22,7 @@ const mapDispatchToProps = dispatch => ({
   fetchAllCollections: () => dispatch(fetchAllCollections()),
   fetchFollowedFeeds: () => dispatch(fetchFollowedFeeds()),
   resetArticles: () => dispatch(resetArticles()),
+  resetCurrentFeed: () => dispatch(receiveCurrentFeed(null)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SavedArticles);

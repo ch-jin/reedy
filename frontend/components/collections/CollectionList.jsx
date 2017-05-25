@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import CollectionListItem from "./CollectionListItem";
 import CollectionNavItem from "./CollectionNavItem";
 import { StyledCollectionWrapper } from "../../styles/collection";

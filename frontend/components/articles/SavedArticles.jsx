@@ -14,6 +14,7 @@ import {
 
 class SavedArticles extends React.Component {
   componentDidMount() {
+    this.props.resetCurrentFeed();
     this.props.fetchAllCollections();
     this.props.fetchFollowedFeeds();
     this.props.fetchSavedArticles();

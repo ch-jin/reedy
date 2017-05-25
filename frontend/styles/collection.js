@@ -42,7 +42,7 @@ export const StyledCollectionFeedItem = glamorous.div(
     },
   },
   props => ({
-    backgroundColor: props.active ? "#303944" : "auto",
+    backgroundColor: props.active ? "#303944" : "#1e262f",
   })
 );
 
