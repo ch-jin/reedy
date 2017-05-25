@@ -1,6 +1,6 @@
 import glamorous from "glamorous";
 import { FixedNav } from "./main";
-import { SOFT_BOX_SHADOW } from "./theme";
+import { SOFT_BOX_SHADOW, DARKER } from "./theme";
 const ARTICLE_ITEM_HEIGHT = 150;
 
 export const StyledArticleListWrapper = glamorous.div({
@@ -12,6 +12,7 @@ export const StyledArticleItemWrapper = glamorous.div({
   margin: 10,
   justifyContent: "flex-start",
   height: ARTICLE_ITEM_HEIGHT,
+  position: "relative",
 });
 
 export const ArticleSmallImg = glamorous.img({
@@ -118,4 +119,18 @@ export const StyledArticleDetailNav = glamorous.div({
   height: "100%",
   background: "#fff",
   zIndex: 3,
+});
+
+export const StyledActionBar = glamorous.div({
+  height: 50,
+  width: 50,
+  position: "absolute",
+  right: 0,
+  display: "flex",
+  justifyContent: "center",
+});
+
+export const StyledBookmark = glamorous.i({
+  fontSize: 20,
+  color: DARKER,
 });

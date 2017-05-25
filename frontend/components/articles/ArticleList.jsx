@@ -3,7 +3,13 @@ import ArticleItem from "./ArticleItem";
 import { StyledArticleListWrapper } from "../../styles/article";
 
 const ArticleList = props => {
-  const { path, articles, toggleArticleModal, imageOverride } = props;
+  const {
+    path,
+    collectionId,
+    articles,
+    toggleArticleModal,
+    imageOverride,
+  } = props;
   const numImages = articles.filter(({ image }) => Boolean(image)).length;
 
   return (
@@ -11,7 +17,7 @@ const ArticleList = props => {
       {articles.map(article => (
         <ArticleItem
           key={"article" + article.id}
-          feedId={article.feedId}
+          feedId={collectionId ? collectionId : article.feedId}
           article={article}
           hasImage={numImages > 5 || imageOverride}
           toggleArticleModal={toggleArticleModal}
