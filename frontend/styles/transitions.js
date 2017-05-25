@@ -7,7 +7,7 @@ export const config = {
   stiff: { stiffness: 210, damping: 20 },
   fade: { stiffness: 200, damping: 22 },
   pop: { stiffness: 360, damping: 25 },
-  slide: { stiffness: 180, damping: 22 },
+  slide: { stiffness: 180, damping: 21 },
 };
 
 export const fade = {
@@ -31,6 +31,28 @@ export const halfFade = {
   },
   atActive: {
     opacity: spring(1, config.fade),
+  },
+};
+
+export const pop = {
+  atEnter: {
+    opacity: 0,
+    scale: 0.85,
+  },
+  atLeave: {
+    opacity: spring(0, config.pop),
+    scale: spring(0.85, config.pop),
+  },
+  atActive: {
+    opacity: spring(1, config.pop),
+    scale: spring(1, config.pop),
+  },
+  mapStyles(styles) {
+    return {
+      top: "0px",
+      opacity: styles.opacity,
+      transform: `scale(${styles.scale})`,
+    };
   },
 };
 
