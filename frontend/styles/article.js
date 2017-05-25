@@ -43,7 +43,7 @@ export const StyledArticleSnippetWrapper = glamorous.div(
 
 export const ArticleMiniTitle = glamorous.h4({
   width: "100%",
-  fontWeight: 700,
+  fontWeight: 500,
 });
 
 export const ArticleSnippet = glamorous.p({

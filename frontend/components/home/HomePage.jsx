@@ -1,4 +1,5 @@
 import React from "react";
+import glamorous from "glamorous";
 import { Route, Link } from "react-router-dom";
 import SessionModal from "../session/SessionModal";
 import HomePageNav from "./HomePageNav";
@@ -26,7 +27,9 @@ class HomePage extends React.Component {
           <Link className="no-decoration" to="/signup">
             <GetStartedButton>
               <GetStartedImg src={window.invertLogoURL} alt="" />
-              Get Started
+              <glamorous.Span position="relative" bottom="23px">
+                {" "}Get Started{" "}
+              </glamorous.Span>
             </GetStartedButton>
           </Link>
 

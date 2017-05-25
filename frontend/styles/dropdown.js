@@ -58,7 +58,7 @@ export const DropdownButton = glamorous(Button)({
   textAlign: "left",
   fontSize: "14px",
   paddingLeft: "10px",
-  fontWeight: 700,
+  fontWeight: 500,
   backgroundColor: "#fff",
   ":hover": {
     color: "#eee",
@@ -84,7 +84,7 @@ export const Line = glamorous.div({
 });
 
 export const Bold = glamorous.p({
-  fontWeight: 700,
+  fontWeight: 500,
 });
 
 export const StyledFeedDropdown = glamorous(StyledDropdown)({
@@ -102,6 +102,7 @@ export const StyledFeedButtons = glamorous(DropdownButton)(
     fontFamily: "Roboto",
     display: "flex",
     alignItems: "center",
+    textAlign: "center",
     position: "relative",
     ":hover": {
       backgroundColor: "#f3f3f3",
@@ -133,18 +134,15 @@ export const IndicatorIcons = glamorous(RSSSquare)(
 );
 
 export const StyledCreateCollectionButton = glamorous(Button)({
-  backgroundColor: "#fff",
   fontWeight: 300,
   fontFamily: "Roboto",
   width: "100%",
   height: 45,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
   position: "relative",
   fontSize: 12,
   padding: 0,
   backgroundColor: BASE,
+  textAlign: "center",
   color: "#f3f3f3",
 });
 
@@ -166,9 +164,7 @@ export const DropdownActionButton = glamorous(StyledCreateCollectionButton)({
   borderRadius: 5,
   padding: 0,
   backgroundColor: "#fff",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  textAlign: "center",
 });
 
 export const StyledDropdownSubmitButton = glamorous(DropdownActionButton)({

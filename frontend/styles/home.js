@@ -130,14 +130,14 @@ export const GetStartedButton = glamorous(StyledSessionButton)({
   height: 60,
   fontSize: 20,
   paddingRight: 20,
-  display: "flex",
+  padding: 20,
   fontFamily: "oxygen",
-  justifyContent: "space-around",
-  alignItems: "center",
+  verticalAlign: "middle",
 });
 
 export const GetStartedImg = glamorous.img({
   width: 40,
   height: 40,
-  paddingLeft: 10,
+  position: "relative",
+  bottom: 10,
 });

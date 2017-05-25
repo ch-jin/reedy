@@ -60,5 +60,5 @@ export const SubscribeHeader = glamorous(StyledFeedWrapper)({
   position: "relative",
   top: 20,
   fontFamily: "Oxygen",
-  fontWeight: 700,
+  fontWeight: 500,
 });
