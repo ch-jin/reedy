@@ -6,8 +6,12 @@ class Api::CollectionsController < ApplicationController
   end
 
   def articles
-    collection = Collection.find(params[:id])
-    @articles = collection.articles
+    @articles = []
+
+    feeds = Collection.find(params[:id]).feeds.includes(:articles)
+    feeds.each do |feed|
+      @articles += feed.articles.order('pub_date DESC').limit(5)
+    end
     render('api/articles/index')
   end
 
