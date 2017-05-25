@@ -1,17 +1,21 @@
 import glamorous from "glamorous";
 import { RED, Button } from "./theme";
 
-export const StyledSessionForm = glamorous.form({
-  display: "flex",
-  alignItems: "center",
-  flexDirection: "column",
-  backgroundColor: "white",
-  width: "500px",
-  height: "500px",
-  boxShadow: "0 4px 38px rgba(0,0,0,0.25), 0 6px 20px rgba(0,0,0,0.22)",
-  cursor: "auto",
-  position: "relative",
-});
+export const StyledSessionForm = glamorous.form(
+  {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "white",
+    width: 500,
+    boxShadow: "0 4px 38px rgba(0,0,0,0.25), 0 6px 20px rgba(0,0,0,0.22)",
+    cursor: "auto",
+    position: "relative",
+  },
+  props => ({
+    height: props.signup ? 575 : 500,
+  })
+);
 
 export const StyledSessionInput = glamorous.input({
   boxSizing: "border-box",
@@ -52,6 +56,7 @@ export const StyledErrorUl = glamorous.ul({
   marginTop: "-10px",
   listStyle: "none",
   color: RED,
+  marginBottom: 10,
 });
 
 export const LinkWrapper = glamorous.div({

@@ -1,4 +1,5 @@
 import React from "react";
+import merge from "lodash/merge";
 import {
   StyledSessionForm,
   StyledSessionInput,
@@ -16,6 +17,7 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
+      confirmPassword: "",
     };
 
     this.update = this.update.bind(this);
@@ -34,8 +36,13 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    const user = merge({}, this.state);
+    const { formType, processForm, passwordError } = this.props;
+    if (formType === "Sign Up" && user.password !== user.confirmPassword) {
+      passwordError();
+    } else {
+      processForm(user);
+    }
   }
 
   update(e) {
@@ -45,11 +52,14 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const { username, password } = this.state;
+    const { username, password, confirmPassword } = this.state;
     const { formType, loading, errors, loginGuest } = this.props;
 
     return (
-      <StyledSessionForm onSubmit={this.handleSubmit}>
+      <StyledSessionForm
+        signup={formType === "Sign Up"}
+        onSubmit={this.handleSubmit}
+      >
 
         {loading && <DefaultLoader />}
         <StyledLettering>
@@ -70,10 +80,19 @@ class SessionForm extends React.Component {
         <StyledSessionInput
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder={`Password ${formType === "Sign Up" ? "(at least 6 characters)" : ""}`}
           value={password}
           onChange={this.update}
         />
+
+        {formType === "Sign Up" &&
+          <StyledSessionInput
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm password"
+            value={confirmPassword}
+            onChange={this.update}
+          />}
 
         <StyledSessionButton>
           Submit

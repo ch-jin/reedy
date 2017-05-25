@@ -3,6 +3,7 @@ import {
   login,
   signup,
   clearErrors,
+  receiveErrors,
 } from "../../actions/session_actions";
 import { withRouter } from "react-router-dom";
 import SessionForm from "./SessionForm";
@@ -32,6 +33,7 @@ const mapDispatchToProps = (dispatch, { location }) => ({
   loginGuest: () =>
     dispatch(login({ username: "Guest", password: "password" })),
   clearErrors: () => dispatch(clearErrors()),
+  passwordError: () => dispatch(receiveErrors(["Passwords do not match"])),
 });
 
 export default withRouter(
