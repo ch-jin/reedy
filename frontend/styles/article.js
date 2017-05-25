@@ -110,8 +110,9 @@ export const ArticleDetailContent = glamorous.div({
 });
 
 export const ArticleDetailFixedNav = glamorous(FixedNav)({
-  right: 0,
-  width: "70%",
+  left: 0,
+  position: "absolute",
+  width: "100%",
   left: "inherit",
 });
 

@@ -8,6 +8,7 @@ export const config = {
   fade: { stiffness: 200, damping: 22 },
   pop: { stiffness: 360, damping: 25 },
   slide: { stiffness: 180, damping: 21 },
+  slow: { stiffness: 8, damping: 15 }
 };
 
 export const fade = {
@@ -155,18 +156,23 @@ export const slideRight = {
 
 export const articleSlideLeft = {
   atEnter: {
-    offset: 100,
+    opacity: 0,
+    offset: -500,
   },
   atLeave: {
-    offset: spring(-100, config.slide),
+    opacity: spring(0, config.slide),
+    offset: spring(500, config.slide),
   },
   atActive: {
+    opacity: spring(1, config.slide),
     offset: spring(0, config.slide),
   },
   mapStyles(styles) {
     return {
+      opacity: styles.opacity,
       overflow: "hidden",
-      transform: `translateX(${styles.offset}%)`,
+      right: styles.offset,
+      position: "absolute",
       height: "100vh",
       width: "100vw",
     };
