@@ -16,7 +16,7 @@ class Api::FeedsController < ApplicationController
     url = feed_params[:url]
     raw_feed = Feed.fetch_rss_feed(url)
 
-    if Feed.valid_feed?(raw_feed)
+    if Feed.valid_feed?(raw_feed, url)
       @feed = Feed.new(Feed.construct_feed(url, raw_feed))
 
       # Bonus: uniquess for .html, .rss, capitals

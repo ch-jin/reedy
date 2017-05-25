@@ -40,7 +40,7 @@ class Feed < ApplicationRecord
     feed
   end
 
-  def self.valid_feed?(raw_feed)
+  def self.valid_feed?(raw_feed, url)
     first_item = raw_feed["item"][0]
     if first_item != nil
       puts "VALID FEED".green
