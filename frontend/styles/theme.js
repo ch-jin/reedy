@@ -108,6 +108,7 @@ export const ListIcon = glamorous(CollectionTitleIcon)({
 export const ErrorDiv = glamorous.div({
   position: "absolute",
   top: 120,
+  right: "30%",
   width: "40%",
   textAlign: "center",
   color: "#454545",

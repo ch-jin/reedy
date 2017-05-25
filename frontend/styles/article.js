@@ -134,3 +134,7 @@ export const StyledBookmark = glamorous.i({
   fontSize: 20,
   color: DARKER,
 });
+
+export const StyledNavActionBar = glamorous.div({
+  height: 100,
+});

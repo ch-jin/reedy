@@ -14,6 +14,7 @@ import ArticleList from "../articles/ArticleList";
 import ArticleDetailContainer from "../articles/ArticleDetailContainer";
 import FeedHeader from "../feeds/FeedHeader";
 import { initializeComponent } from "../../utils/initialize_util";
+import ErrorPage from "../misc/ErrorPage";
 
 class Subscriptions extends React.Component {
   constructor(props) {
@@ -30,6 +31,12 @@ class Subscriptions extends React.Component {
     const { loading } = this.props;
     if (loading) {
       return <ArticleLoader />;
+    } else if (!this.props.feedsWithArticles.length) {
+      return (
+        <ErrorPage>
+          Oops! Looks like you have no subscriptions!
+        </ErrorPage>
+      );
     } else {
       return (
         <Transition identifier={"subscriptions"} {...fade}>

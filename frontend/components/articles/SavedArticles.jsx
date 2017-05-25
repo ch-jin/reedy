@@ -1,11 +1,11 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { ArticleLoader } from "../../utils/loader_util";
 import Transition from "../../utils/transition_util";
 import { fade } from "../../styles/transitions";
-import { ErrorDiv, ErrorDiscoverIcon } from "../../styles/theme";
 import ArticleList from "../articles/ArticleList";
 import ArticleDetailContainer from "../articles/ArticleDetailContainer";
+import ErrorPage from "../misc/ErrorPage";
 import {
   SubscribeHeader,
   SubscribeWrapper,
@@ -50,12 +50,9 @@ class SavedArticles extends React.Component {
       );
     } else {
       return (
-        <ErrorDiv>
+        <ErrorPage>
           Oops! Looks like you have no saved articles!
-          <Link className="no-decoration-color" to="/discover">
-            <ErrorDiscoverIcon className="fa fa-feed" />
-          </Link>
-        </ErrorDiv>
+        </ErrorPage>
       );
     }
   }
