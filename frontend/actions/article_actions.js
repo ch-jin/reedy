@@ -4,15 +4,22 @@ export const RECEIVE_ALL_ARTICLES = "RECEIVE_ALL_ARTICLES";
 export const RECEIVE_CURRENT_ARTICLE = "RECEIVE_CURRENT_ARTICLE";
 export const FETCHING_ARTICLES = "FETCHING_ARTICLES";
 export const FETCHING_CURRENT_ARTICLE = "FETCHING_CURRENT_ARTICLE";
+export const RECEIVE_ARTICLE = "RECEIVE_ARTICLE";
 
 export const receiveAllArticles = articles => ({
   type: RECEIVE_ALL_ARTICLES,
   all: articles.all,
   feedIds: articles.feedIds,
+  savedArticleIds: articles.savedArticleIds,
 });
 
 export const receiveCurrentArticle = article => ({
   type: RECEIVE_CURRENT_ARTICLE,
+  article,
+});
+
+export const receiveArticle = article => ({
+  type: RECEIVE_ARTICLE,
   article,
 });
 
@@ -41,5 +48,23 @@ export const fetchArticle = id => dispatch => {
   dispatch(fetchingCurrentArticle());
   return ArticleAPIUtil.fetchArticle(id).then(article =>
     dispatch(receiveCurrentArticle(article))
+  );
+};
+
+export const saveArticle = articleId => dispatch => {
+  return ArticleAPIUtil.saveArticle(articleId).then(article =>
+    dispatch(receiveArticle(article))
+  );
+};
+
+export const unsaveArticle = articleId => dispatch => {
+  return ArticleAPIUtil.unsaveArticle(articleId).then(article =>
+    dispatch(receiveArticle(article))
+  );
+};
+
+export const fetchCollectionArticles = collectionId => dispatch => {
+  return ArticleAPIUtil.fetchCollectionArticles(collectionId).then(articles =>
+    dispatch(receiveAllArticles(articles))
   );
 };
