@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Transition from "../../utils/transition_util";
 import { ArticleLoader } from "../../utils/loader_util";
+import { PageHeaderIcon } from "../../styles/theme";
 import {
   ShortFeed,
   ShortFeedWrapper,
@@ -54,6 +55,7 @@ class CollectionShowArticles extends React.Component {
         <Transition identifier={"collections"} {...enterFade}>
           <SubscribeWrapper>
             <SubscribeHeader>
+              <PageHeaderIcon className="fa fa-folder-open-o" />
               {collection.title}
             </SubscribeHeader>
             {this.renderCollectionArticles()}

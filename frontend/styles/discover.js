@@ -1,6 +1,6 @@
 import glamorous from "glamorous";
 import { StyledSessionInput } from "./session_form";
-import { DARKER, SOFT_BOX_SHADOW, SHADOW_BORDER } from "./theme";
+import { SOFT_BOX_SHADOW, SHADOW_BORDER } from "./theme";
 
 export const StyledDiscoverItem = glamorous.div({
   height: 200,

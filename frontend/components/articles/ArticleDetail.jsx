@@ -4,7 +4,6 @@ import { articleSlideLeft } from "../../styles/transitions";
 import { Redirect } from "react-router-dom";
 import { DefaultLoader } from "../../utils/loader_util";
 import {
-  StyledArticleModal,
   ArticleDetailWrapper,
   ArticleDetailContent,
 } from "../../styles/article";

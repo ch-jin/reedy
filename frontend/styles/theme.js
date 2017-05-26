@@ -96,6 +96,15 @@ export const CollectionTitleIcon = glamorous.i({
   color: SLIGHT_WHITE,
 });
 
+export const CollectionTitleIconWrapper = glamorous.div({
+  fontSize: 22,
+  color: SLIGHT_WHITE,
+  display: "flex",
+  justifyContent: "center",
+  width: 16,
+  paddingRight: 10,
+});
+
 export const ListIcon = glamorous(CollectionTitleIcon)({
   width: 10,
   fontSize: 14,

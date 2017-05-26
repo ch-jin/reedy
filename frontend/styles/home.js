@@ -1,6 +1,6 @@
 import glamorous from "glamorous";
 import { Button } from "./theme";
-import { DARKER, NAV_HEIGHT, SHADOW_BORDER, SOFT_BOX_SHADOW } from "./theme";
+import { DARKER, NAV_HEIGHT, SHADOW_BORDER } from "./theme";
 import { StyledSessionButton } from "./session_form";
 
 // ---- Nav
