@@ -11,6 +11,8 @@ import ArticleDetail from "./ArticleDetail";
 const mapStateToProps = (state, { match }) => ({
   currentArticle: state.articles.current,
   saved: state.articles.current &&
+    state.articles.all &&
+    state.articles.all[state.articles.current.id] &&
     state.articles.all[state.articles.current.id].saved,
   id: match.params.articleId,
   feedId: match.params.feedId,
