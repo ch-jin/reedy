@@ -137,3 +137,34 @@ export const StyledBookmark = glamorous.i({
 export const StyledNavActionBar = glamorous.div({
   height: 100,
 });
+
+export const DetailNavLeftWrapper = glamorous.div({
+  position: "absolute",
+  height: "100%",
+  display: "flex",
+  justifyContent: "space-between",
+  top: 7,
+  width: 100,
+  left: 50,
+});
+
+export const DetailNavIcon = glamorous.i(
+  {
+    textAlign: "center",
+    fontSize: 20,
+    width: 20,
+    height: 20,
+    borderRadius: 3,
+    transition: "all 100ms",
+    ":hover": {
+      transition: "all 100ms",
+      color: DARKER,
+      cursor: "pointer",
+      border: `1px solid ${DARKER}`,
+    },
+  },
+  props => ({
+    color: props.saved ? DARKER : "#797979",
+    border: props.saved ? `1px solid ${DARKER}` : "1px solid #e7e7e7",
+  })
+);

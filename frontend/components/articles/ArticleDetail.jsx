@@ -13,9 +13,10 @@ class ArticleDetail extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { initialLoad: true };
+    this.state = { initialLoad: true, saved: false };
     this.renderArticle = this.renderArticle.bind(this);
     this.handleCloseClick = this.handleCloseClick.bind(this);
+    this.handleSaveClick = this.handleSaveClick.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +40,9 @@ class ArticleDetail extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (this.state.saved !== nextProps.saved) {
+      this.setState({ saved: nextProps.saved });
+    }
     if (!nextProps.active) {
       this.setState({ initialLoad: false });
     }
@@ -53,12 +57,26 @@ class ArticleDetail extends React.Component {
     this.props.toggleArticleModal();
   }
 
+  handleSaveClick(e) {
+    const { currentArticle: { id }, saveArticle, unsaveArticle } = this.props;
+    const { saved } = this.state;
+
+    e.stopPropagation();
+    saved
+      ? unsaveArticle(id).then(this.setState({ saved: !this.state.saved }))
+      : saveArticle(id).then(this.setState({ saved: !this.state.saved }));
+  }
+
   renderArticle() {
     const { currentArticle } = this.props;
 
     return (
       <div>
         <h1 dangerouslySetInnerHTML={{ __html: currentArticle.title }} />
+        <p>
+          {currentArticle.author && `By ${currentArticle.author} - `}
+          {new Date(currentArticle.pubDate).toDateString()}
+        </p>
         <div dangerouslySetInnerHTML={{ __html: currentArticle.body }} />
       </div>
     );
@@ -74,7 +92,12 @@ class ArticleDetail extends React.Component {
             onClick={this.handleClick}
             className="article-modal-content"
           >
-            <ArticleDetailNav handleCloseClick={this.handleCloseClick} />
+            <ArticleDetailNav
+              handleSaveClick={this.handleSaveClick}
+              saved={this.state.saved}
+              url={currentArticle && currentArticle.url}
+              handleCloseClick={this.handleCloseClick}
+            />
             {loading && <DefaultLoader />}
             <ArticleDetailContent>
               {currentArticle && this.renderArticle()}

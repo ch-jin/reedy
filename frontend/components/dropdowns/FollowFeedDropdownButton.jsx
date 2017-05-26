@@ -30,7 +30,7 @@ const FollowFeedDropdownButton = ({
       key={"collection" + collection.id}
     >
 
-      <RSSSquare className="fa fa-rss-square" ariaHidden="true" />
+      <RSSSquare className="fa fa-rss-square" />
       {collection.title}
 
       {followed &&

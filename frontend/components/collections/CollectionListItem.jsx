@@ -67,13 +67,13 @@ class CollectionListItem extends React.Component {
     if (collapsed)
       return (
         <CollectionTitleIconWrapper onClick={this.handleCollapseClick}>
-          <i className="fa fa-angle-right" ariaHidden="true" />
+          <i className="fa fa-angle-right" />
         </CollectionTitleIconWrapper>
       );
     else {
       return (
         <CollectionTitleIconWrapper onClick={this.handleCollapseClick}>
-          <i className="fa fa-angle-down" ariaHidden="true" />
+          <i className="fa fa-angle-down" />
         </CollectionTitleIconWrapper>
       );
     }

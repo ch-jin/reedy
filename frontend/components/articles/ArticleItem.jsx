@@ -19,6 +19,10 @@ class ArticleItem extends React.Component {
     this.isNotHover = this.isNotHover.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ hovered: nextProps.article.saved });
+  }
+
   isHover() {
     !this.props.article.saved && this.setState({ hovered: true });
   }

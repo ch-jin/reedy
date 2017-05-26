@@ -10,7 +10,6 @@ export const RED = "#c0392b";
 export const SLIGHT_WHITE = "rgb(210, 212, 213)";
 export const SLIGHT_TRANSPARENT = "rgba(105, 106, 109, 0.85)";
 export const HALF_TRANSPARENT = "rgba( 255, 255, 255, 0.6 )";
-// "0 1px 3px 0 rgba(0,0,0,0.03), 0 1px 2px 0 rgba(0,0,0,0.06)";
 export const SIDE_NAV_WIDTH = 265;
 
 export const Button = glamorous.button({
