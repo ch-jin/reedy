@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'static_pages#root'
-  get *, to: 'static_pages#root'
+  match "*path", to: 'static_pages#root', via: :all
 end

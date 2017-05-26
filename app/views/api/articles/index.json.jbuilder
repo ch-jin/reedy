@@ -1,5 +1,8 @@
+feed_ids = []
 json.all do
-  @articles.each do |article|
+  @articles.each do |raw_article|
+    article = Article.find(raw_article['id'])
+    feed_ids << article.feed_id unless feed_ids.include?(article.feed_id)
     json.set! article.id do
       json.extract! article, :id, :title
       json.pubDate article.pub_date
@@ -12,9 +15,4 @@ json.all do
   end
 end
 
-feedIds = []
-@articles.each do |article|
-  feedIds << article.feed_id unless feedIds.include?(article.feed_id)
-end
-
-json.feedIds feedIds
+json.feedIds feed_ids
