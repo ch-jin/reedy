@@ -62,11 +62,6 @@ class User < ApplicationRecord
   end
 
   def most_recent_articles_limit_5_per_feed
-    # articles = []
-    # feeds = self.feeds
-    # feeds.each do |feed|
-    #   articles += feed.articles.order('pub_date DESC').limit(5)
-    # end
     query = "SELECT * FROM feeds
     INNER JOIN collection_feeds ON collection_feeds.feed_id = feeds.id
     INNER JOIN collections ON collections.id = collection_feeds.collection_id
