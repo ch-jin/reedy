@@ -48,9 +48,13 @@ export const centerFlexFade = {
   },
   mapStyles(styles) {
     return {
+      position: "absolute",
+      left: 66,
       opacity: styles.opacity,
+      width: "calc(100% - 132px)",
       display: "flex",
-      justifyContent: "space-around",
+      justifyContent: "center",
+      alignItems: "center",
     };
   },
 };
