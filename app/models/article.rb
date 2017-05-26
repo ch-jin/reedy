@@ -23,13 +23,24 @@ class Article < ApplicationRecord
   has_many :saved_users, through: :user_saves, source: :user
 
   def self.construct_article(feed_id, raw_article)
+    article_author = nil
+    raw_author_data = raw_article["dc_creator"]
+    if raw_author_data
+      if raw_author_data.is_a?(Array)
+        article_author = raw_author_data[0].titleize
+      else
+        article_author = raw_author_data.titleize
+      end
+    end
+
     new_article = {
       feed_id: feed_id,
       title: raw_article["title"],
       snippet: raw_article["description"],
       body: raw_article["content_encoded"],
       pub_date: raw_article["pubDate"],
-      url: raw_article["link"]
+      url: raw_article["link"],
+      author: article_author
     }
 
     unless valid_body?(new_article)

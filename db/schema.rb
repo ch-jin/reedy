@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525000642) do
+ActiveRecord::Schema.define(version: 20170526172319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170525000642) do
     t.datetime "updated_at", null: false
     t.string   "snippet",    null: false
     t.string   "image"
+    t.string   "author"
     t.index ["feed_id"], name: "index_articles_on_feed_id", using: :btree
     t.index ["pub_date"], name: "index_articles_on_pub_date", using: :btree
     t.index ["url"], name: "index_articles_on_url", unique: true, using: :btree
