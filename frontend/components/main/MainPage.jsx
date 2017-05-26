@@ -1,5 +1,7 @@
 import React from "react";
 import { withRouter, Route, Switch, Redirect } from "react-router-dom";
+import Transition from "../../utils/transition_util";
+import { modalFade } from "../../styles/transitions";
 import MainNavContainer from "./MainNavContainer";
 import MainSideNav from "./MainSideNav";
 import DiscoverContainer from "../discover/DiscoverContainer";
@@ -10,6 +12,7 @@ import CollectionShowArticlesContainer
   from "../collections/CollectionShowArticlesContainer";
 import { ArticleLoader } from "../../utils/loader_util";
 import { MainContentWrapper } from "../../styles/main";
+import { StyledArticleModal } from "../../styles/article";
 import { hasCollections } from "../../selectors/collection_selectors";
 
 class MainPage extends React.Component {
@@ -57,14 +60,21 @@ class MainPage extends React.Component {
     return (
       <div id="main-wrapper" onClick={this.handleEventClick}>
 
-        {!loading && <ArticleLoader />}
+        {loading && <ArticleLoader />}
 
         <MainSideNav
           collectionsPresent={collectionsPresent}
           articleModal={articleModal}
         />
+
         <MainContentWrapper id="main-content-wrapper" modalOpen={articleModal}>
 
+          <Transition
+            identifier={"modal" + articleModal.toString()}
+            {...modalFade}
+          >
+            {articleModal && <StyledArticleModal articleModal={articleModal} />}
+          </Transition>
           <MainNavContainer articleModal={articleModal} />
 
           <Switch>
@@ -79,7 +89,6 @@ class MainPage extends React.Component {
             {pathname === "/subscriptions" && <Redirect to="/subscriptions" />}
             {pathname === "/discover" && <Redirect to="/discover" />}
           </Switch>
-
         </MainContentWrapper>
       </div>
     );

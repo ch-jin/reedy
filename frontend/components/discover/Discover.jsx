@@ -1,6 +1,6 @@
 import React from "react";
 import Transition from "../../utils/transition_util";
-import { fade } from "../../styles/transitions";
+import { enterFade } from "../../styles/transitions";
 import { ArticleLoader } from "../../utils/loader_util";
 import { StyledDiscoverWrapper } from "../../styles/discover";
 import DiscoverItem from "./DiscoverItem";
@@ -17,7 +17,7 @@ class Discover extends React.Component {
     const { loading, feeds } = this.props;
 
     return (
-      <Transition identifier={"discover-page"} {...fade}>
+      <Transition identifier={"discover-page"} {...enterFade}>
         <StyledDiscoverWrapper>
           {loading && <ArticleLoader />}
           {feeds.map(feed => (

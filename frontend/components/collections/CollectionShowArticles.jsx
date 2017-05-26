@@ -9,7 +9,7 @@ import {
   ShortLine,
   SubscribeHeader,
 } from "../../styles/feed";
-import { fade } from "../../styles/transitions";
+import { enterFade } from "../../styles/transitions";
 import ArticleList from "../articles/ArticleList";
 import ArticleDetailContainer from "../articles/ArticleDetailContainer";
 import FeedHeader from "../feeds/FeedHeader";
@@ -50,7 +50,7 @@ class CollectionShowArticles extends React.Component {
       return <ArticleLoader />;
     } else {
       return (
-        <Transition identifier={"collections"} {...fade}>
+        <Transition identifier={"collections"} {...enterFade}>
           <SubscribeWrapper>
             <SubscribeHeader>
               {collection.title}

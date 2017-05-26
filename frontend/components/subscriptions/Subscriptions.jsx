@@ -9,7 +9,7 @@ import {
   ShortLine,
   SubscribeHeader,
 } from "../../styles/feed";
-import { fade } from "../../styles/transitions";
+import { enterFade } from "../../styles/transitions";
 import ArticleList from "../articles/ArticleList";
 import ArticleDetailContainer from "../articles/ArticleDetailContainer";
 import FeedHeader from "../feeds/FeedHeader";
@@ -41,7 +41,7 @@ class Subscriptions extends React.Component {
       );
     } else {
       return (
-        <Transition identifier={"subscriptions"} {...fade}>
+        <Transition identifier={"subscriptions"} {...enterFade}>
           <SubscribeWrapper>
             <SubscribeHeader>
               Subscriptions

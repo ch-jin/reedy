@@ -12,7 +12,7 @@ export const LoaderContainer = glamorous.div({
   width: "100%",
   height: "100%",
   backgroundColor: "rgba(255 ,255 ,255 ,0.8)",
-  zIndex: 3,
+  zIndex: 2,
 });
 
 export const Dot = glamorous.div({

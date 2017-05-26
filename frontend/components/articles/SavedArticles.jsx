@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { ArticleLoader } from "../../utils/loader_util";
 import Transition from "../../utils/transition_util";
-import { fade } from "../../styles/transitions";
+import { enterFade } from "../../styles/transitions";
 import ArticleList from "../articles/ArticleList";
 import ArticleDetailContainer from "../articles/ArticleDetailContainer";
 import ErrorPage from "../misc/ErrorPage";
@@ -31,7 +31,7 @@ class SavedArticles extends React.Component {
       return <ArticleLoader />;
     } else if (articles.length) {
       return (
-        <Transition identifier="saved-articles" {...fade}>
+        <Transition identifier="saved-articles" {...enterFade}>
           <SubscribeWrapper>
             <SubscribeHeader>
               Saved

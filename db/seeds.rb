@@ -22,7 +22,6 @@ feeds = [
   "http://feeds2.feedburner.com/time/topstories",
   "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
   "http://www.npr.org/rss/rss.php?id=1001",
-  "http://www.espn.com/rss",
   "http://www.businessinsider.com/rss",
   "https://www.theguardian.com/uk/rss",
   "http://www.nbcbayarea.com/news/local/?rss=y&embedThumb=y&summary=y",

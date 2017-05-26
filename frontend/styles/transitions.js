@@ -1,14 +1,15 @@
 import { spring } from "react-motion";
 
 export const config = {
-  noWobble: { stiffness: 170, damping: 26 },
+  noWobble: { stiffness: 200, damping: 20 },
   gentle: { stiffness: 120, damping: 14 },
   wobbly: { stiffness: 180, damping: 12 },
   stiff: { stiffness: 210, damping: 20 },
   fade: { stiffness: 200, damping: 22 },
+  slowFade: { stiffness: 200, damping: 15 },
   pop: { stiffness: 360, damping: 25 },
   slide: { stiffness: 180, damping: 21 },
-  slow: { stiffness: 8, damping: 15 },
+  slow: { stiffness: 20, damping: 15 },
 };
 
 export const fade = {
@@ -20,6 +21,41 @@ export const fade = {
   },
   atActive: {
     opacity: spring(1, config.fade),
+  },
+};
+
+export const enterFade = {
+  atEnter: {
+    opacity: 0,
+  },
+  atLeave: {
+    opacity: spring(1, config.fade),
+  },
+  atActive: {
+    opacity: spring(1, config.fade),
+  },
+};
+
+export const modalFade = {
+  atEnter: {
+    opacity: 0,
+  },
+  atLeave: {
+    opacity: spring(0, config.noWobble),
+  },
+  atActive: {
+    opacity: spring(1, config.noWobble),
+  },
+  mapStyles(styles) {
+    return {
+      top: 0,
+      zIndex: 2,
+      display: "block",
+      width: "100vw",
+      height: "100vh",
+      position: "fixed",
+      opacity: styles.opacity,
+    };
   },
 };
 
@@ -156,19 +192,25 @@ export const slideRight = {
 
 export const articleSlideLeft = {
   atEnter: {
-    offset: -500,
+    opacity: 0.5,
+    offset: -150,
   },
   atLeave: {
-    offset: spring(500, config.slide),
+    opacity: spring(1, config.fade),
+    offset: spring(-150, config.noWobble),
   },
   atActive: {
-    offset: spring(0, config.slide),
+    opacity: spring(1, config.fade),
+    offset: spring(0, config.noWobble),
   },
   mapStyles(styles) {
     return {
-      overflow: "hidden",
+      opacity: styles.opacity,
+      top: 0,
+      zIndex: 3,
       right: styles.offset,
-      position: "absolute",
+      position: "fixed",
+      cursor: "pointer",
       height: "100vh",
       width: "100vw",
     };

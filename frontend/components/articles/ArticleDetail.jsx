@@ -70,20 +70,18 @@ class ArticleDetail extends React.Component {
 
     if (this.state.initialLoad) {
       return (
-        <StyledArticleModal>
-          <Transition identifier={location.pathname} {...articleSlideLeft}>
-            <ArticleDetailWrapper
-              onClick={this.handleClick}
-              className="article-modal-content"
-            >
-              <ArticleDetailNav handleCloseClick={this.handleCloseClick} />
-              {loading && <DefaultLoader />}
-              <ArticleDetailContent>
-                {currentArticle && this.renderArticle()}
-              </ArticleDetailContent>
-            </ArticleDetailWrapper>
-          </Transition>
-        </StyledArticleModal>
+        <Transition identifier={location.pathname} {...articleSlideLeft}>
+          <ArticleDetailWrapper
+            onClick={this.handleClick}
+            className="article-modal-content"
+          >
+            <ArticleDetailNav handleCloseClick={this.handleCloseClick} />
+            {loading && <DefaultLoader />}
+            <ArticleDetailContent>
+              {currentArticle && this.renderArticle()}
+            </ArticleDetailContent>
+          </ArticleDetailWrapper>
+        </Transition>
       );
     } else {
       return <Redirect to={redirectToParent} />;
