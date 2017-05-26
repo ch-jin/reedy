@@ -5,6 +5,8 @@
 This web app uses Ruby on Rails, React, Redux, and PostgreSQL.
 
 ## Features & Implementation
+<img src="https://raw.githubusercontent.com/jinchen93/reedy/master/docs/media/collection-example.png" height="400" width="400">
+
 
 
 ## Development Design
