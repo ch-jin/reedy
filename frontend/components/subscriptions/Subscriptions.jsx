@@ -29,6 +29,10 @@ class Subscriptions extends React.Component {
     initializeComponent(this.props);
   }
 
+  componentWillReceiveProps() {
+    this.timeoutSubs();
+  }
+
   render() {
     const { loading } = this.props;
     if (this.props.feedsWithArticles.length) {
@@ -50,7 +54,7 @@ class Subscriptions extends React.Component {
       );
     } else if (loading || this.state.initialLoad) {
       return <ArticleLoader />;
-    } else if (!this.props.feedsWithArticles.length) {
+    } else {
       return (
         <ErrorPage>
           Oops! Looks like you have no subscriptions!
@@ -58,14 +62,12 @@ class Subscriptions extends React.Component {
           Click below to add feeds:
         </ErrorPage>
       );
-    } else {
     }
   }
 
   renderSubArticles() {
     return this.props.feedsWithArticles.map((articles, idx) => {
       const feed = this.props.feeds[articles[0].feedId];
-
       return (
         <ShortFeedWrapper key={`sub-article-group-${idx}`}>
           <ShortFeed>
@@ -80,6 +82,10 @@ class Subscriptions extends React.Component {
         </ShortFeedWrapper>
       );
     });
+  }
+
+  timeoutSubs() {
+    setTimeout(() => this.setState({ initialLoad: false }), 1000);
   }
 }
 

@@ -1,8 +1,8 @@
 @feeds.each do |feed|
   json.set! feed.id do
     feed_title = ''
-    if feed.title.length > 40
-      feed_title = feed.title[0..39] + '...'
+    if feed.title.length > 50
+      feed_title = feed.title[0..49] + '...'
     else
       feed_title = feed.title
     end

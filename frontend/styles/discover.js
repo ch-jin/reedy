@@ -24,6 +24,8 @@ export const StyledDiscoverItem = glamorous.div({
 export const FeedTitle = glamorous.div(
   {
     width: "100%",
+    boxSizing: "border-box",
+    padding: "0px 10px",
     textAlign: "center",
   },
   ({ length }) => {
