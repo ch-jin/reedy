@@ -19,6 +19,7 @@ import ErrorPage from "../misc/ErrorPage";
 class Subscriptions extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { initialLoad: true };
     this.renderSubArticles = this.renderSubArticles.bind(this);
   }
 
@@ -29,17 +30,7 @@ class Subscriptions extends React.Component {
 
   render() {
     const { loading } = this.props;
-    if (loading) {
-      return <ArticleLoader />;
-    } else if (!this.props.feedsWithArticles.length) {
-      return (
-        <ErrorPage>
-          Oops! Looks like you have no subscriptions!
-          <br /><br />
-          Click below to add feeds:
-        </ErrorPage>
-      );
-    } else {
+    if (this.props.feedsWithArticles.length) {
       return (
         <Transition identifier={"subscriptions"} {...enterFade}>
           <SubscribeWrapper>
@@ -56,6 +47,17 @@ class Subscriptions extends React.Component {
           </SubscribeWrapper>
         </Transition>
       );
+    } else if (loading || this.state.initialLoad) {
+      return <ArticleLoader />;
+    } else if (!this.props.feedsWithArticles.length) {
+      return (
+        <ErrorPage>
+          Oops! Looks like you have no subscriptions!
+          <br /><br />
+          Click below to add feeds:
+        </ErrorPage>
+      );
+    } else {
     }
   }
 

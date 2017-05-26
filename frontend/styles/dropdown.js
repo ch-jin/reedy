@@ -1,7 +1,7 @@
 import glamorous from "glamorous";
 import { RED, BASE, DARKER, Button, NAV_HEIGHT } from "./theme";
 
-const DROPDOWN_HEIGHT = 241;
+const DROPDOWN_HEIGHT = 100;
 const PADDING = 5;
 
 export const StyledDropdown = glamorous.div(
@@ -80,7 +80,6 @@ export const DropdownEmptyItem = glamorous.div({
 export const Line = glamorous.div({
   height: PADDING,
   borderBottom: "1px solid #e7e7e7",
-  marginBottom: PADDING,
 });
 
 export const Bold = glamorous.p({

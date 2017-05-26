@@ -1,7 +1,7 @@
-export const fetchDiscoverFeeds = () =>
+export const fetchDiscoverFeeds = query =>
   $.ajax({
     method: "GET",
-    url: "/api/feeds",
+    url: `/api/feeds/?q=${query}`,
   });
 
 export const fetchFollowedFeeds = () =>

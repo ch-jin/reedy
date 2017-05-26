@@ -26,6 +26,10 @@ class Feed extends React.Component {
     fetchArticlesFromFeed(feedId);
   }
 
+  componentWillUnmount() {
+    this.props.resetArticles();
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.feedId !== this.props.feedId) {
       this.props.fetchFeed(nextProps.feedId);

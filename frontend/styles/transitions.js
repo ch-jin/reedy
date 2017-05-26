@@ -44,7 +44,7 @@ export const modalFade = {
     opacity: spring(0, config.noWobble),
   },
   atActive: {
-    opacity: spring(1, config.noWobble),
+    opacity: spring(0.5, config.noWobble),
   },
   mapStyles(styles) {
     return {
@@ -87,6 +87,34 @@ export const pop = {
   mapStyles(styles) {
     return {
       top: "0px",
+      opacity: styles.opacity,
+      transform: `scale(${styles.scale})`,
+    };
+  },
+};
+
+export const popFadeOut = {
+  atEnter: {
+    opacity: 0,
+    scale: 0.90,
+  },
+  atLeave: {
+    opacity: spring(0, config.fade),
+    // scale: spring(0, config.slowFade),
+  },
+  atActive: {
+    opacity: spring(1, config.gentle),
+    scale: spring(1, config.gentle),
+  },
+  mapStyles(styles) {
+    return {
+      left: 0,
+      top: 300,
+      position: "absolute",
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "space-around",
+      maxWidth: 960,
       opacity: styles.opacity,
       transform: `scale(${styles.scale})`,
     };
@@ -213,6 +241,34 @@ export const articleSlideLeft = {
       cursor: "pointer",
       height: "100vh",
       width: "100vw",
+    };
+  },
+};
+
+export const discoverSlideLeft = {
+  atEnter: {
+    opacity: 0,
+    offset: -1000,
+  },
+  atLeave: {
+    opacity: spring(1, config.fade),
+    offset: spring(1300, config.noWobble),
+  },
+  atActive: {
+    opacity: spring(1, config.fade),
+    offset: spring(0, config.noWobble),
+  },
+  mapStyles(styles) {
+    return {
+      overflow: "hidden",
+      left: styles.offset,
+      // top: 300,
+      // width: 960,
+      position: "relative",
+      // display: "flex",
+      // flexWrap: "wrap",
+      // justifyContent: "space-around",
+      opacity: styles.opacity,
     };
   },
 };

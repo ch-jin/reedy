@@ -28,18 +28,6 @@ class UserDropdown extends React.Component {
           </DropdownEmptyItem>
           <Line />
 
-          <DropdownButton>
-            Collections
-          </DropdownButton>
-
-          <DropdownButton>
-            Articles
-          </DropdownButton>
-
-          <DropdownButton>
-            Settings
-          </DropdownButton>
-
           <DropdownButton onClick={handleLogout}>
             Log Out
           </DropdownButton>

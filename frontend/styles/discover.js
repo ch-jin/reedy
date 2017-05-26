@@ -1,9 +1,11 @@
 import glamorous from "glamorous";
-import { SOFT_BOX_SHADOW, SHADOW_BORDER } from "./theme";
+import { StyledSessionInput } from "./session_form";
+import { DARKER, SOFT_BOX_SHADOW, SHADOW_BORDER } from "./theme";
 
 export const StyledDiscoverItem = glamorous.div({
   height: 200,
   width: 200,
+  fontSize: 18,
   boxShadow: SOFT_BOX_SHADOW,
   border: SHADOW_BORDER,
   display: "flex",
@@ -41,11 +43,14 @@ export const FeedImgContainer = glamorous.div({
 
 export const StyledDiscoverWrapper = glamorous.div({
   padding: "105px 0",
-  maxWidth: 960,
+  color: "#454545",
+  width: 960,
   display: "flex",
+  fontSize: 30,
   flexWrap: "wrap",
   justifyContent: "center",
   alignContent: "flex-start",
+  position: "relative",
 });
 
 export const DiscoverItemWrapper = glamorous.div({
@@ -55,4 +60,27 @@ export const DiscoverItemWrapper = glamorous.div({
   flexDirection: "column",
   justifyContent: "space-around",
   alignItems: "center",
+});
+
+export const StyledSearchBar = glamorous(StyledSessionInput)({
+  fontSize: 20,
+});
+
+export const SearchBarContainer = glamorous.div({
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+  margin: "30px 0",
+});
+
+export const DiscoverHeader = glamorous.div({
+  color: "#454545",
+  display: "flex",
+  alignItems: "center",
+  fontSize: 50,
+});
+
+export const DiscoverIcon = glamorous.i({
+  color: DARKER,
+  marginRight: 10,
 });

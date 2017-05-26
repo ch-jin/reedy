@@ -2,7 +2,10 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { currentFeed, allFeeds } from "../../selectors/feed_selectors";
 import { allArticles } from "../../selectors/article_selectors";
-import { fetchArticlesFromFeed } from "../../actions/article_actions";
+import {
+  fetchArticlesFromFeed,
+  resetArticles,
+} from "../../actions/article_actions";
 import { fetchFeed, fetchFollowedFeeds } from "../../actions/feed_actions";
 import Feed from "./Feed";
 
@@ -17,6 +20,8 @@ const mapDispatchToProps = dispatch => ({
   fetchArticlesFromFeed: feedId => dispatch(fetchArticlesFromFeed(feedId)),
   fetchFeed: feedId => dispatch(fetchFeed(feedId)),
   fetchFollowedFeeds: () => dispatch(fetchFollowedFeeds()),
+  resetCurrentFeed: () => dispatch(receiveCurrentFeed(null)),
+  resetArticles: () => dispatch(resetArticles()),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Feed));

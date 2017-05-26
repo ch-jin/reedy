@@ -29,7 +29,7 @@ export const StyledSessionInput = glamorous.input({
   border: "2px solid #e7e7e7",
   paddingLeft: "15px",
   "::placeholder": {
-    color: "#d7d7d7",
+    color: "#c7c7c7",
   },
   ":focus": {
     paddingLeft: "16px",

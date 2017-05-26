@@ -41,6 +41,7 @@ class CollectionShowArticles extends React.Component {
 
   componentWillUnmount() {
     this.props.resetCurrentCollection();
+    this.props.resetArticles();
   }
 
   render() {

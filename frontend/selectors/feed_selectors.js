@@ -4,6 +4,8 @@ import { allArticles } from "./article_selectors";
 
 export const allFeeds = state => values(state.feeds.all);
 
+export const discoverFeeds = state => values(state.feeds.discover);
+
 export const currentFeed = state => state.feeds.current;
 
 export const currentFeedId = state =>

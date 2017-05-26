@@ -3,7 +3,16 @@ class Api::FeedsController < ApplicationController
   #   fetch_rss_feed, valid_feed?, construct_feed, add_articles
 
   def index
-    @feeds = Feed.all.includes(:collections)
+    if params[:q]
+      user_query = URI.decode(params[:q])
+      user_query.gsub(" ", "%")
+      user_query = "%" + user_query + "%"
+      @feeds = []
+      @feeds.concat(Feed.where("title LIKE ?", user_query))
+      @feeds.concat(Feed.where("url LIKE ?", user_query))
+    else
+      @feeds = Feed.all.includes(:collections)
+    end
   end
 
   def show
@@ -40,6 +49,6 @@ class Api::FeedsController < ApplicationController
   private
 
   def feed_params
-    params.require(:feed).permit(:url)
+    params.require(:feed).permit(:url, :q)
   end
 end

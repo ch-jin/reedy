@@ -5,7 +5,10 @@ import {
   fetchCollection,
   receiveCurrentCollection,
 } from "../../actions/collection_actions";
-import { fetchCollectionArticles } from "../../actions/article_actions";
+import {
+  fetchCollectionArticles,
+  resetArticles,
+} from "../../actions/article_actions";
 import { receiveCurrentFeed } from "../../actions/feed_actions";
 import { toggleArticleModal } from "../../actions/modal_actions";
 import { feedsWithArticles } from "../../selectors/feed_selectors";
@@ -31,6 +34,7 @@ const mapDispatchToProps = dispatch => ({
   toggleArticleModal: () => dispatch(toggleArticleModal()),
   resetCurrentFeed: () => dispatch(receiveCurrentFeed(null)),
   resetCurrentCollection: () => dispatch(receiveCurrentCollection(null)),
+  resetArticles: () => dispatch(resetArticles()),
 });
 
 export default withRouter(

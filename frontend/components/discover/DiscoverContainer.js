@@ -1,18 +1,18 @@
 import { connect } from "react-redux";
 import Discover from "./Discover";
-import { allFeeds } from "../../selectors/feed_selectors";
+import { discoverFeeds } from "../../selectors/feed_selectors";
 import {
   fetchDiscoverFeeds,
   receiveCurrentFeed,
 } from "../../actions/feed_actions";
 
 const mapStateToProps = state => ({
-  feeds: allFeeds(state),
+  feeds: discoverFeeds(state),
   loading: state.loading.loadingFeeds,
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchDiscoverFeeds: () => dispatch(fetchDiscoverFeeds()),
+  fetchDiscoverFeeds: query => dispatch(fetchDiscoverFeeds(query)),
   resetCurrentFeed: () => dispatch(receiveCurrentFeed(null)),
 });
 
