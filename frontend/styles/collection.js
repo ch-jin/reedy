@@ -31,7 +31,7 @@ export const StyledCollectionFeedItem = glamorous.div(
     display: "flex",
     alignItems: "center",
     boxSizing: "border-box",
-    padding: "5px 0 5px 35px",
+    padding: "5px 20px 5px 35px",
     fontSize: 13,
     color: HALF_TRANSPARENT,
     transition: "all 100ms",

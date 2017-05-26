@@ -1,4 +1,5 @@
 import values from "lodash/values";
+import merge from "lodash/merge";
 import { allCollectionFeedIds } from "./collection_selectors";
 import { allArticles } from "./article_selectors";
 
@@ -38,4 +39,14 @@ export const feedsWithArticles = state => {
 
   Object.keys(feeds).forEach(feedId => feedsArr.push(feeds[feedId]));
   return feedsArr;
+};
+
+export const allFeedsNormalized = state => {
+  if (state.feeds.all || state.feeds.current) {
+    const feeds = {};
+    state.feeds.all && merge(feeds, state.feeds.all);
+    state.feeds.current &&
+      merge(feeds, { [state.feeds.current.id]: state.feeds.current });
+    return feeds;
+  }
 };

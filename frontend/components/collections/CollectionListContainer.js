@@ -4,11 +4,12 @@ import {
   allCollections,
   currentCollectionId,
 } from "../../selectors/collection_selectors";
+import { allFeedsNormalized } from "../../selectors/feed_selectors";
 import CollectionList from "./CollectionList";
 import { allFeeds, currentFeedId } from "../../selectors/feed_selectors";
 
 const mapStateToProps = state => ({
-  feeds: state.feeds.all,
+  feeds: allFeedsNormalized(state),
   collections: allCollections(state),
   currentCollectionId: currentCollectionId(state),
   hasFeeds: allFeeds(state).length > 0,

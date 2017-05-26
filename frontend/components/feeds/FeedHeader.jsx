@@ -6,19 +6,31 @@ import FollowButtonContainer from "./FollowButtonContainer";
 import FollowFeedDropdownContainer
   from "../dropdowns/FollowFeedDropdownContainer";
 
-const FeedHeader = ({ feed, followed, notFeed }) => (
-  <StyledListHeader>
-    <Link className="no-decoration-color" to={`/feeds/${feed.id}/articles`}>
-      <FeedImgContainer>
-        {feed.image && <FeedImg src={feed.image} />}
-      </FeedImgContainer>
-    </Link>
-    <Link className="no-decoration-color" to={`/feeds/${feed.id}/articles`}>
-      <StyledTitle dangerouslySetInnerHTML={{ __html: feed.title }} />
-    </Link>
-    {!notFeed && <FollowButtonContainer followed={followed} />}
-    <FollowFeedDropdownContainer />
-  </StyledListHeader>
-);
+const FeedHeader = ({ feed, followed, notFeed }) => {
+  const renderTitle = () => {
+    if (notFeed) {
+      return (
+        <Link className="no-decoration-color" to={`/feeds/${feed.id}/articles`}>
+          <StyledTitle dangerouslySetInnerHTML={{ __html: feed.title }} />
+        </Link>
+      );
+    } else {
+      return <StyledTitle dangerouslySetInnerHTML={{ __html: feed.title }} />;
+    }
+  };
+
+  return (
+    <StyledListHeader>
+      <Link className="no-decoration-color" to={`/feeds/${feed.id}/articles`}>
+        <FeedImgContainer>
+          {feed.image && <FeedImg src={feed.image} />}
+        </FeedImgContainer>
+      </Link>
+      {renderTitle()}
+      {!notFeed && <FollowButtonContainer followed={followed} />}
+      <FollowFeedDropdownContainer />
+    </StyledListHeader>
+  );
+};
 
 export default FeedHeader;

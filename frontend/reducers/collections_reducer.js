@@ -18,7 +18,11 @@ const collectionsReducer = (state = _initState, action) => {
       return { ...state, all: action.collections };
     case RECEIVE_COLLECTION:
       const { collection } = action;
-      return { ...state, all: { ...state.all, [collection.id]: collection } };
+      const newCollectionState = {
+        ...state,
+        all: { ...state.all, [collection.id]: collection },
+      };
+      return newCollectionState;
     case RECEIVE_CURRENT_COLLECTION:
       return { ...state, current: action.collection };
     case REMOVE_COLLECTION:

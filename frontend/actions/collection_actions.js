@@ -74,7 +74,9 @@ export const addFeedToCollection = collectionFeed => dispatch => {
   dispatch(fetchingCollections());
   return CollectionAPIUtil.addFeedToCollection(
     collectionFeed
-  ).then(collection => dispatch(receiveCollection(collection)));
+  ).then(collection => {
+    return dispatch(receiveCollection(collection));
+  });
 };
 
 export const deleteFeedFromCollection = collectionFeed => dispatch => {
