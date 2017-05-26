@@ -12,7 +12,7 @@ const CollectionFeedItem = ({ feed, active }) => (
       <CollectionFeedImgWrapper>
         <CollectionFeedImg src={feed.image} />
       </CollectionFeedImgWrapper>
-      <p dangerouslySetInnerHTML={{ __html: feed.title }} />
+      <p style={{ flex: 9 }} dangerouslySetInnerHTML={{ __html: feed.title }} />
     </StyledCollectionFeedItem>
   </Link>
 );

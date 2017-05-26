@@ -48,6 +48,7 @@ export const StyledCollectionFeedItem = glamorous.div(
 
 export const CollectionFeedImgWrapper = glamorous(FeedImgContainer)({
   marginRight: 10,
+  flex: 1,
   width: 20,
   height: 20,
   border: "none",

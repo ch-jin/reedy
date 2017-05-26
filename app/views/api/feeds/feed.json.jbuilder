@@ -1,6 +1,6 @@
 feed_title = ''
-if @feed.title.length > 45
-  feed_title = @feed.title[0..44] + '...'
+if @feed.title.length > 40
+  feed_title = @feed.title[0..39] + '...'
 else
   feed_title = @feed.title
 end

@@ -15,6 +15,7 @@ export const StyledTitle = glamorous.div({
   fontFamily: "oxygen",
   padding: 30,
   color: "#454545",
+  width: 450,
   ":hover": {
     color: "black",
   },
