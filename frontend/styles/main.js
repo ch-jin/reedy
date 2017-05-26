@@ -17,7 +17,7 @@ export const FixedNav = glamorous.nav(
     left: SIDE_NAV_WIDTH,
   },
   ({ articleModal }) => ({
-    zIndex: articleModal ? -1 : 1,
+    zIndex: articleModal ? 1 : 1,
   })
 );
 
@@ -46,7 +46,7 @@ export const FixedSideNav = glamorous.nav(
     width: SIDE_NAV_WIDTH,
   },
   ({ articleModal }) => ({
-    zIndex: articleModal ? 0 : 1,
+    zIndex: articleModal ? -2 : 1,
   })
 );
 
@@ -121,10 +121,10 @@ export const MainContentWrapper = glamorous.div(
     width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
     backgroundColor: "#fafafa",
     left: SIDE_NAV_WIDTH,
-    zIndex: 1,
   },
   props => ({
     overflow: props.modalOpen ? "hidden" : "auto",
+    zIndex: props.modalOpen ? 0 : 1,
   })
 );
 

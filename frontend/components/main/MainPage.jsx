@@ -69,13 +69,13 @@ class MainPage extends React.Component {
 
         <MainContentWrapper id="main-content-wrapper" modalOpen={articleModal}>
 
+          <MainNavContainer articleModal={articleModal} />
           <Transition
             identifier={"modal" + articleModal.toString()}
             {...modalFade}
           >
-            {articleModal && <StyledArticleModal articleModal={articleModal} />}
+            {articleModal && <StyledArticleModal />}
           </Transition>
-          <MainNavContainer articleModal={articleModal} />
 
           <Switch>
             <Route path="/subscriptions" component={SubscriptionsContainer} />

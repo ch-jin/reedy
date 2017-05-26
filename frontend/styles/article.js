@@ -74,22 +74,16 @@ export const ArticleSnippet = glamorous.p({
   },
 });
 
-export const StyledArticleModal = glamorous.div(
-  {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100vw",
-    height: "100vh",
-    overflow: "hidden",
-    display: "flex",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    cursor: "pointer",
-  },
-  props => ({
-    zIndex: props.articleModal ? 5 : 0,
-  })
-);
+export const StyledArticleModal = glamorous.div({
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100vw",
+  height: "100vh",
+  backgroundColor: "rgba(0, 0, 0, 0.5)",
+  cursor: "pointer",
+  zIndex: 5,
+});
 
 export const ArticleDetailWrapper = glamorous.div({
   top: 0,

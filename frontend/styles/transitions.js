@@ -192,7 +192,7 @@ export const slideRight = {
 
 export const articleSlideLeft = {
   atEnter: {
-    opacity: 0.5,
+    opacity: 0.8,
     offset: -150,
   },
   atLeave: {
