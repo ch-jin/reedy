@@ -21,10 +21,21 @@ export const StyledDiscoverItem = glamorous.div({
   },
 });
 
-export const FeedTitle = glamorous.div({
-  width: "100%",
-  textAlign: "center",
-});
+export const FeedTitle = glamorous.div(
+  {
+    width: "100%",
+    textAlign: "center",
+  },
+  ({ length }) => {
+    if (length < 20) {
+      return { fontSize: 18 };
+    } else if (length < 40) {
+      return { fontSize: 16 };
+    } else {
+      return { fontSize: 12 };
+    }
+  }
+);
 
 export const FeedImg = glamorous.img({
   maxHeight: "100%",

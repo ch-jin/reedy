@@ -8,8 +8,8 @@ class Api::FeedsController < ApplicationController
       user_query.gsub(" ", "%")
       user_query = "%" + user_query + "%"
       @feeds = []
-      @feeds.concat(Feed.where("title LIKE ?", user_query))
-      @feeds.concat(Feed.where("url LIKE ?", user_query))
+      @feeds.concat(Feed.where("title ILIKE ?", user_query))
+      @feeds.concat(Feed.where("url ILIKE ?", user_query))
     else
       @feeds = Feed.all.includes(:collections)
     end

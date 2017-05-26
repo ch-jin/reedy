@@ -17,9 +17,10 @@ const DiscoverItem = ({ feed }) => (
           <FeedImg src={feed.image} />
         </FeedImgContainer>
       </DiscoverItemWrapper>
-      <FeedTitle>
-        <h5 dangerouslySetInnerHTML={{ __html: feed.title }} />
-      </FeedTitle>
+      <FeedTitle
+        length={feed.title.length}
+        dangerouslySetInnerHTML={{ __html: feed.title }}
+      />
     </StyledDiscoverItem>
   </Link>
 );

@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import debounce from "lodash/debounce";
 import Discover from "./Discover";
 import { discoverFeeds } from "../../selectors/feed_selectors";
 import {
@@ -16,7 +17,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchAllCollections: () => dispatch(fetchAllCollections()),
   fetchFollowedFeeds: () => dispatch(fetchFollowedFeeds()),
-  fetchDiscoverFeeds: query => dispatch(fetchDiscoverFeeds(query)),
+  fetchDiscoverFeeds: debounce(
+    query => dispatch(fetchDiscoverFeeds(query)),
+    150
+  ),
   resetCurrentFeed: () => dispatch(receiveCurrentFeed(null)),
 });
 
