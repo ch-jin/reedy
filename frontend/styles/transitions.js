@@ -36,6 +36,25 @@ export const enterFade = {
   },
 };
 
+export const centerFlexFade = {
+  atEnter: {
+    opacity: 0,
+  },
+  atLeave: {
+    opacity: spring(0, config.fade),
+  },
+  atActive: {
+    opacity: spring(1, config.fade),
+  },
+  mapStyles(styles) {
+    return {
+      opacity: styles.opacity,
+      display: "flex",
+      justifyContent: "space-around",
+    };
+  },
+};
+
 export const modalFade = {
   atEnter: {
     opacity: 0,
@@ -56,18 +75,6 @@ export const modalFade = {
       position: "fixed",
       opacity: styles.opacity,
     };
-  },
-};
-
-export const halfFade = {
-  atEnter: {
-    opacity: 0.5,
-  },
-  atLeave: {
-    opacity: spring(0.5, config.fade),
-  },
-  atActive: {
-    opacity: spring(1, config.fade),
   },
 };
 
@@ -113,26 +120,10 @@ export const popFadeOut = {
       position: "absolute",
       display: "flex",
       flexWrap: "wrap",
+      width: "100%",
       justifyContent: "space-around",
-      maxWidth: 960,
+      alignItems: "flex-start",
       opacity: styles.opacity,
-      transform: `scale(${styles.scale})`,
-    };
-  },
-};
-
-export const popNoFade = {
-  atEnter: {
-    scale: 0.95,
-  },
-  atLeave: {
-    scale: spring(0.95, config.pop),
-  },
-  atActive: {
-    scale: spring(1, config.pop),
-  },
-  mapStyles(styles) {
-    return {
       transform: `scale(${styles.scale})`,
     };
   },
@@ -151,69 +142,6 @@ export const gentlePop = {
   mapStyles(styles) {
     return {
       transform: `scale(${styles.scale})`,
-    };
-  },
-};
-
-export const popFade = {
-  atEnter: {
-    scale: 0.8,
-    opacity: 0,
-  },
-  atLeave: {
-    scale: spring(0.8, config.pop),
-    opacity: spring(0, config.pop),
-  },
-  atActive: {
-    scale: spring(1, config.pop),
-    opacity: 1,
-  },
-  mapStyles(styles) {
-    return {
-      opacity: styles.opacity,
-      transform: `scale(${styles.scale})`,
-    };
-  },
-};
-
-export const slideLeft = {
-  atEnter: {
-    opacity: 0,
-    offset: 100,
-  },
-  atLeave: {
-    opacity: spring(0, config.fade),
-    offset: spring(-100, config.slide),
-  },
-  atActive: {
-    opacity: spring(1, config.slide),
-    offset: spring(0, config.slide),
-  },
-  mapStyles(styles) {
-    return {
-      opacity: styles.opacity,
-      transform: `translateX(${styles.offset}%)`,
-    };
-  },
-};
-
-export const slideRight = {
-  atEnter: {
-    opacity: 0,
-    offset: -100,
-  },
-  atLeave: {
-    opacity: spring(0, config.fade),
-    offset: spring(100, config.slide),
-  },
-  atActive: {
-    opacity: spring(1, config.slide),
-    offset: spring(0, config.slide),
-  },
-  mapStyles(styles) {
-    return {
-      opacity: styles.opacity,
-      transform: `translateX(${styles.offset}%)`,
     };
   },
 };
@@ -241,34 +169,6 @@ export const articleSlideLeft = {
       cursor: "pointer",
       height: "100vh",
       width: "100vw",
-    };
-  },
-};
-
-export const discoverSlideLeft = {
-  atEnter: {
-    opacity: 0,
-    offset: -1000,
-  },
-  atLeave: {
-    opacity: spring(1, config.fade),
-    offset: spring(1300, config.noWobble),
-  },
-  atActive: {
-    opacity: spring(1, config.fade),
-    offset: spring(0, config.noWobble),
-  },
-  mapStyles(styles) {
-    return {
-      overflow: "hidden",
-      left: styles.offset,
-      // top: 300,
-      // width: 960,
-      position: "relative",
-      // display: "flex",
-      // flexWrap: "wrap",
-      // justifyContent: "space-around",
-      opacity: styles.opacity,
     };
   },
 };

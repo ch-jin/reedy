@@ -160,3 +160,15 @@ export const BigCloseButton = glamorous(SmallCloseButton)({
   width: 20,
   textAlign: "center",
 });
+
+export const PageHeaderIcon = glamorous.i({
+  color: DARKER,
+  marginRight: 25,
+});
+
+export const PageHeader = glamorous.div({
+  color: "#454545",
+  display: "flex",
+  alignItems: "center",
+  fontSize: 50,
+});

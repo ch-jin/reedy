@@ -15,6 +15,7 @@ import ArticleDetailContainer from "../articles/ArticleDetailContainer";
 import FeedHeader from "../feeds/FeedHeader";
 import { initializeComponent } from "../../utils/initialize_util";
 import ErrorPage from "../misc/ErrorPage";
+import { PageHeaderIcon } from "../../styles/theme";
 
 class Subscriptions extends React.Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class Subscriptions extends React.Component {
         <Transition identifier={"subscriptions"} {...enterFade}>
           <SubscribeWrapper>
             <SubscribeHeader>
-              Subscriptions
+              <PageHeaderIcon className="fa fa-list-ul" />Subscriptions
             </SubscribeHeader>
             {this.renderSubArticles()}
             <Route

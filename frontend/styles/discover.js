@@ -44,7 +44,8 @@ export const FeedImgContainer = glamorous.div({
 export const StyledDiscoverWrapper = glamorous.div({
   padding: "105px 0",
   color: "#454545",
-  width: 960,
+  maxWidth: 960,
+  width: "100%",
   display: "flex",
   fontSize: 30,
   flexWrap: "wrap",
@@ -64,6 +65,7 @@ export const DiscoverItemWrapper = glamorous.div({
 
 export const StyledSearchBar = glamorous(StyledSessionInput)({
   fontSize: 20,
+  width: 740,
 });
 
 export const SearchBarContainer = glamorous.div({
@@ -71,16 +73,4 @@ export const SearchBarContainer = glamorous.div({
   display: "flex",
   justifyContent: "center",
   margin: "30px 0",
-});
-
-export const DiscoverHeader = glamorous.div({
-  color: "#454545",
-  display: "flex",
-  alignItems: "center",
-  fontSize: 50,
-});
-
-export const DiscoverIcon = glamorous.i({
-  color: DARKER,
-  marginRight: 10,
 });

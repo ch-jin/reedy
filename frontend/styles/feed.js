@@ -1,5 +1,5 @@
 import glamorous from "glamorous";
-import { SOFT_BOX_SHADOW } from "./theme";
+import { SOFT_BOX_SHADOW, PageHeader } from "./theme";
 
 export const StyledListHeader = glamorous.div({
   display: "flex",
@@ -50,15 +50,11 @@ export const ShortLine = glamorous.div({
   width: "100%",
 });
 
-export const SubscribeHeader = glamorous(StyledFeedWrapper)({
-  fontSize: 24,
-  height: 60,
-  display: "flex",
-  justifyContent: "center",
+export const SubscribeHeader = glamorous(PageHeader)({
+  paddingTop: 50,
+  paddingBottom: 30,
+  width: "100%",
+  textAlign: "center",
   alignItems: "center",
-  padding: 0,
-  position: "relative",
-  top: 20,
-  fontFamily: "Oxygen",
-  fontWeight: 500,
+  justifyContent: "center",
 });

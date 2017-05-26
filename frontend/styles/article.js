@@ -5,6 +5,7 @@ const ARTICLE_ITEM_HEIGHT = 150;
 
 export const StyledArticleListWrapper = glamorous.div({
   maxWidth: 740,
+  paddingTop: 20,
 });
 
 export const StyledArticleItemWrapper = glamorous.div({

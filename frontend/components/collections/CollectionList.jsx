@@ -43,7 +43,7 @@ const CollectionList = props => {
         activePath={pathname}
         path="/subscriptions"
         icon="fa-list-ul"
-        name="All Subscriptions"
+        name="Subscriptions"
       />
       {hasFeeds && renderCollectionItems()}
     </StyledCollectionWrapper>

@@ -1,12 +1,9 @@
 import React from "react";
 import Transition from "../../utils/transition_util";
-import { enterFade, popFadeOut } from "../../styles/transitions";
+import { centerFlexFade, popFadeOut } from "../../styles/transitions";
 
-import {
-  StyledDiscoverWrapper,
-  DiscoverHeader,
-  DiscoverIcon,
-} from "../../styles/discover";
+import { StyledDiscoverWrapper } from "../../styles/discover";
+import { PageHeaderIcon, PageHeader } from "../../styles/theme";
 import DiscoverItem from "./DiscoverItem";
 import DiscoverSearchBar from "./DiscoverSearchBar";
 import { scrollMainContentWrapperToTop } from "../../utils/scroll_util";
@@ -16,18 +13,20 @@ class Discover extends React.Component {
     scrollMainContentWrapperToTop();
     this.props.resetCurrentFeed();
     this.props.fetchDiscoverFeeds("");
+    this.props.fetchFollowedFeeds();
+    this.props.fetchAllCollections();
   }
 
   render() {
     const { loading, feeds, fetchDiscoverFeeds } = this.props;
 
     return (
-      <Transition identifier={"discover-page"} {...enterFade}>
+      <Transition identifier={"discover-page"} {...centerFlexFade}>
         <StyledDiscoverWrapper>
-          <DiscoverHeader>
-            <DiscoverIcon className="fa fa-feed" />
+          <PageHeader>
+            <PageHeaderIcon className="fa fa-feed" />
             Discover
-          </DiscoverHeader>
+          </PageHeader>
           <DiscoverSearchBar fetchDiscoverFeeds={fetchDiscoverFeeds} />
 
           <Transition

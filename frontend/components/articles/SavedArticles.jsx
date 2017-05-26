@@ -11,6 +11,7 @@ import {
   SubscribeWrapper,
   ShortFeedWrapper,
 } from "../../styles/feed";
+import { PageHeaderIcon } from "../../styles/theme";
 
 class SavedArticles extends React.Component {
   componentDidMount() {
@@ -34,7 +35,7 @@ class SavedArticles extends React.Component {
         <Transition identifier="saved-articles" {...enterFade}>
           <SubscribeWrapper>
             <SubscribeHeader>
-              Saved
+              <PageHeaderIcon className="fa fa-bookmark" />Saved
             </SubscribeHeader>
             <ShortFeedWrapper>
               <ArticleList path="/saved" articles={articles} />
