@@ -9,7 +9,7 @@ export const config = {
   slowFade: { stiffness: 200, damping: 15 },
   pop: { stiffness: 360, damping: 25 },
   slide: { stiffness: 180, damping: 21 },
-  slow: { stiffness: 20, damping: 15 },
+  slow: { stiffness: 8, damping: 45 },
 };
 
 export const fade = {
@@ -173,6 +173,29 @@ export const articleSlideLeft = {
       cursor: "pointer",
       height: "100vh",
       width: "100vw",
+    };
+  },
+};
+
+export const articleNavSlideLeft = {
+  atEnter: {
+    opacity: 0.8,
+    offset: -150,
+  },
+  atLeave: {
+    opacity: spring(1, config.fade),
+    offset: spring(-150, config.noWobble),
+  },
+  atActive: {
+    opacity: spring(1, config.fade),
+    offset: spring(0, config.noWobble),
+  },
+  mapStyles(styles) {
+    return {
+      position: "fixed",
+      top: 0,
+      width: "70%",
+      right: styles.offset,
     };
   },
 };

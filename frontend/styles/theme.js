@@ -164,7 +164,7 @@ export const SmallCloseButton = glamorous.i({
 
 export const BigCloseButton = glamorous(SmallCloseButton)({
   fontSize: 18,
-  right: 10,
+  right: 20,
   width: 20,
   textAlign: "center",
 });

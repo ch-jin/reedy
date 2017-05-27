@@ -108,12 +108,6 @@ export const ArticleDetailContent = glamorous.div({
   marginTop: 55,
 });
 
-export const ArticleDetailFixedNav = glamorous(FixedNav)({
-  left: 0,
-  position: "absolute",
-  width: "100%",
-});
-
 export const StyledArticleDetailNav = glamorous.div({
   height: "100%",
   background: "#fff",
@@ -145,7 +139,7 @@ export const DetailNavLeftWrapper = glamorous.div({
   justifyContent: "space-between",
   top: 7,
   width: 100,
-  left: 50,
+  left: 30,
 });
 
 export const DetailNavIcon = glamorous.i(
