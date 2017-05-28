@@ -1,5 +1,4 @@
 import glamorous from "glamorous";
-import { FixedNav } from "./main";
 import { SOFT_BOX_SHADOW, DARKER } from "./theme";
 const ARTICLE_ITEM_HEIGHT = 150;
 

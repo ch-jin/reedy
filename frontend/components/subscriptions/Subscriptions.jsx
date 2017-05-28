@@ -20,6 +20,7 @@ import { PageHeaderIcon } from "../../styles/theme";
 class Subscriptions extends React.Component {
   constructor(props) {
     super(props);
+    this.timeout = [];
     this.state = { initialLoad: true };
     this.renderSubArticles = this.renderSubArticles.bind(this);
   }
@@ -31,6 +32,10 @@ class Subscriptions extends React.Component {
 
   componentWillReceiveProps() {
     this.timeoutSubs();
+  }
+
+  componentWillUnmount() {
+    this.clearTimeout();
   }
 
   render() {
@@ -59,7 +64,7 @@ class Subscriptions extends React.Component {
         <ErrorPage>
           Oops! Looks like you have no subscriptions!
           <br /><br />
-          Click below to add feeds:
+          Click below to browse feeds:
         </ErrorPage>
       );
     }
@@ -85,7 +90,13 @@ class Subscriptions extends React.Component {
   }
 
   timeoutSubs() {
-    setTimeout(() => this.setState({ initialLoad: false }), 1000);
+    this.timeout.push(
+      setTimeout(() => this.setState({ initialLoad: false }), 1000)
+    );
+  }
+
+  clearTimeout() {
+    this.timeout.forEach(timeoutId => clearTimeout(timeoutId));
   }
 }
 

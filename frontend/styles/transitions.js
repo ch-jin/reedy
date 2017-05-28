@@ -104,18 +104,15 @@ export const pop = {
   },
 };
 
-export const popFadeOut = {
+export const feedFadeOut = {
   atEnter: {
     opacity: 0,
-    scale: 0.90,
   },
   atLeave: {
     opacity: spring(0, config.fade),
-    // scale: spring(0, config.slowFade),
   },
   atActive: {
     opacity: spring(1, config.gentle),
-    scale: spring(1, config.gentle),
   },
   mapStyles(styles) {
     return {
@@ -128,7 +125,6 @@ export const popFadeOut = {
       justifyContent: "space-around",
       alignItems: "flex-start",
       opacity: styles.opacity,
-      transform: `scale(${styles.scale})`,
     };
   },
 };

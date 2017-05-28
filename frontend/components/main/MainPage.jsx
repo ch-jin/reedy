@@ -27,6 +27,7 @@ class MainPage extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchFollowedFeeds();
     this.props.fetchAllCollections().then(() => {
       if (hasCollections(this.props.collections)) {
         this.setState({ pathname: "/subscriptions" });

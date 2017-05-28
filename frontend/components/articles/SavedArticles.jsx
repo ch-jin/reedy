@@ -38,7 +38,7 @@ class SavedArticles extends React.Component {
               <PageHeaderIcon className="fa fa-bookmark" />Saved
             </SubscribeHeader>
             <ShortFeedWrapper>
-              <ArticleList path="/saved" articles={articles} />
+              <ArticleList imageOverride path="/saved" articles={articles} />
             </ShortFeedWrapper>
             <Route
               path="/saved/:feedId/articles/:articleId"
@@ -53,6 +53,8 @@ class SavedArticles extends React.Component {
       return (
         <ErrorPage>
           Oops! Looks like you have no saved articles!
+          <br /><br />
+          Click below to browse feeds:
         </ErrorPage>
       );
     }

@@ -3,7 +3,16 @@ import merge from "lodash/merge";
 import { allCollectionFeedIds } from "./collection_selectors";
 import { allArticles } from "./article_selectors";
 
-export const allFeeds = state => values(state.feeds.all);
+export const allFeeds = state => {
+  let feeds = values(state.feeds.all);
+  if (state.feeds.current) {
+    feeds.push(values(state.feeds.current));
+  }
+  if (state.feeds.discover) {
+    feeds = feeds.concat(values(state.feeds.discover));
+  }
+  return feeds;
+};
 
 export const discoverFeeds = state => values(state.feeds.discover);
 
@@ -12,10 +21,10 @@ export const currentFeed = state => state.feeds.current;
 export const currentFeedId = state =>
   state.feeds.current ? state.feeds.current.id : null;
 
-export const feedsBelongingToCollection = (allFeeds, feedIds) => {
-  const feeds = [];
-  feedIds.forEach(feedId => feeds.push(allFeeds[feedId]));
-  return feeds;
+export const feedsBelongingToCollection = (feeds, feedIds) => {
+  const feedsArr = [];
+  feedIds.forEach(feedId => feedsArr.push(feeds[feedId]));
+  return feedsArr;
 };
 
 export const isFeedFollowed = state => {
@@ -39,14 +48,4 @@ export const feedsWithArticles = state => {
 
   Object.keys(feeds).forEach(feedId => feedsArr.push(feeds[feedId]));
   return feedsArr;
-};
-
-export const allFeedsNormalized = state => {
-  if (state.feeds.all || state.feeds.current) {
-    const feeds = {};
-    state.feeds.all && merge(feeds, state.feeds.all);
-    state.feeds.current &&
-      merge(feeds, { [state.feeds.current.id]: state.feeds.current });
-    return feeds;
-  }
 };

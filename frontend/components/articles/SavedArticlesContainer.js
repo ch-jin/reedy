@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import SavedArticles from "./SavedArticles";
-import { allArticles } from "../../selectors/article_selectors";
+import { allSavedArticles } from "../../selectors/article_selectors";
 import { loadingAllStates } from "../../selectors/loading_selectors";
 import {
   fetchSavedArticles,
@@ -13,7 +13,7 @@ import {
 import { fetchAllCollections } from "../../actions/collection_actions";
 
 const mapStateToProps = state => ({
-  articles: allArticles(state),
+  articles: allSavedArticles(state),
   loading: loadingAllStates(state),
 });
 

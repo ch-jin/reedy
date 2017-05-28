@@ -5,6 +5,7 @@ import { toggleArticleModal } from "../../actions/modal_actions";
 import { anyDropdownActive } from "../../selectors/dropdown_selectors";
 import { fetchAllCollections } from "../../actions/collection_actions";
 import { allCollections } from "../../selectors/collection_selectors";
+import { fetchFollowedFeeds } from "../../actions/feed_actions";
 
 import MainPage from "./MainPage";
 
@@ -19,6 +20,7 @@ const mapDispatchToProps = dispatch => ({
   closeAllDropdowns: () => dispatch(closeAllDropdowns()),
   toggleArticleModal: () => dispatch(toggleArticleModal()),
   fetchAllCollections: () => dispatch(fetchAllCollections()),
+  fetchFollowedFeeds: () => dispatch(fetchFollowedFeeds()),
 });
 
 export default withRouter(

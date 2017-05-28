@@ -11,7 +11,7 @@ export const StyledCollectionWrapper = glamorous.div({
 });
 
 export const StyledItemBox = glamorous.div({
-  width: 250,
+  width: "100%",
   boxSizing: "border-box",
   fontSize: "14px",
   flexDirection: "column",
