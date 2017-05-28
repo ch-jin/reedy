@@ -50,11 +50,11 @@ export const centerFlexFade = {
     return {
       position: "absolute",
       left: 66,
+      height: "101%",
       opacity: styles.opacity,
       width: "calc(100% - 132px)",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
     };
   },
 };

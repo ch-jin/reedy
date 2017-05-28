@@ -108,6 +108,14 @@ a {
     padding: 10px;
     word-wrap: break-word;
   }
+  .article-detail-content {
+    a {
+      padding: 10px;
+    }
+    p > a {
+      padding: 0;
+    }
+  }
   span {
     display: block;
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import Transition from "../../utils/transition_util";
-import { discover, feedFadeOut } from "../../styles/transitions";
+import { centerFlexFade, feedFadeOut } from "../../styles/transitions";
 import { StyledDiscoverWrapper } from "../../styles/discover";
 import { PageHeaderIcon, PageHeader } from "../../styles/theme";
 import DiscoverItem from "./DiscoverItem";
@@ -20,7 +20,7 @@ class Discover extends React.Component {
     const { loading, feeds, fetchDiscoverFeeds } = this.props;
 
     return (
-      <Transition identifier={"discover-page"} {...discover}>
+      <Transition identifier={"discover-page"} {...centerFlexFade}>
         <StyledDiscoverWrapper>
           <PageHeader>
             <PageHeaderIcon className="fa fa-feed" />

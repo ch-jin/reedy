@@ -19,18 +19,18 @@ const FeedHeader = ({ feed, followed, notFeed }) => {
     }
   };
 
-  return (
-    <StyledListHeader>
-      <Link className="no-decoration-color" to={`/feeds/${feed.id}/articles`}>
-        <FeedImgContainer>
-          {feed.image && <FeedImg src={feed.image} />}
-        </FeedImgContainer>
-      </Link>
-      {renderTitle()}
-      {!notFeed && <FollowButtonContainer followed={followed} />}
-      <FollowFeedDropdownContainer />
-    </StyledListHeader>
-  );
+  return feed
+    ? <StyledListHeader>
+        <Link className="no-decoration-color" to={`/feeds/${feed.id}/articles`}>
+          <FeedImgContainer>
+            {feed.image && <FeedImg src={feed.image} />}
+          </FeedImgContainer>
+        </Link>
+        {renderTitle()}
+        {!notFeed && <FollowButtonContainer followed={followed} />}
+        <FollowFeedDropdownContainer />
+      </StyledListHeader>
+    : null;
 };
 
 export default FeedHeader;

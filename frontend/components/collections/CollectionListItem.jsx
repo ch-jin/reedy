@@ -50,13 +50,15 @@ class CollectionListItem extends React.Component {
     } else {
       return (
         <StyledCollectionFeedWrapper>
-          {feeds.map(feed => (
-            <CollectionFeedItem
-              active={currentFeedId === feed.id}
-              key={"collection-feed-" + feed.id}
-              feed={feed}
-            />
-          ))}
+          {feeds.map(
+            feed =>
+              feed &&
+              <CollectionFeedItem
+                active={currentFeedId === feed.id}
+                key={"collection-feed-" + feed.id}
+                feed={feed}
+              />
+          )}
         </StyledCollectionFeedWrapper>
       );
     }
