@@ -17,7 +17,7 @@ class Api::FeedsController < ApplicationController
 
   def show
     feed = Feed.find(params[:id])
-    @articles = feed.articles
+    @articles = feed.articles.limit(20);
     render('api/articles/index')
   end
 
