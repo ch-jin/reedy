@@ -48,6 +48,10 @@ class ArticleDetail extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.resetArticle();
+  }
+
   handleClick(e) {
     e.stopPropagation();
   }
@@ -71,7 +75,7 @@ class ArticleDetail extends React.Component {
     const { currentArticle } = this.props;
 
     return (
-      <div>
+      <div className="article-detail-content">
         <h1 dangerouslySetInnerHTML={{ __html: currentArticle.title }} />
         <p>
           {currentArticle.author && `By ${currentArticle.author} - `}

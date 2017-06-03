@@ -4,6 +4,7 @@ import {
   fetchArticle,
   saveArticle,
   unsaveArticle,
+  receiveCurrentArticle,
 } from "../../actions/article_actions";
 import { toggleArticleModal } from "../../actions/modal_actions";
 import ArticleDetail from "./ArticleDetail";
@@ -25,6 +26,7 @@ const mapDispatchToProps = dispatch => ({
   toggleArticleModal: () => dispatch(toggleArticleModal()),
   saveArticle: articleId => dispatch(saveArticle(articleId)),
   unsaveArticle: articleId => dispatch(unsaveArticle(articleId)),
+  resetArticle: () => dispatch(receiveCurrentArticle(null)),
 });
 
 export default withRouter(
