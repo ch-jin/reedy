@@ -18,7 +18,7 @@ feeds = [
   "http://www.independent.co.uk/rss",
   "https://www.kickstarter.com/blog.atom",
   "http://kotaku.com/rss",
-  "http://www.latimes.com/local/rss2.0.xml",
+  # "http://www.latimes.com/local/rss2.0.xml",
   "http://lifehacker.com/rss",
   "http://feeds.macrumors.com/MacRumors-Front",
   "http://www.nytimes.com/services/xml/rss/nyt/US.xml",
@@ -96,7 +96,7 @@ collection6 = Collection.create({ user_id: user1.id, title: 'Food' })
 end
 
 # Tech
-[13, 17, 29, 34].each do |feed_idx|
+[13, 17, 28, 33].each do |feed_idx|
   CollectionFeed.create({
     collection_id: Collection.all[1].id,
     feed_id: Feed.all[feed_idx - 2].id
@@ -104,7 +104,7 @@ end
 end
 
 # Bay Area
-[49, 52, 7].each do |feed_idx|
+[48, 51, 7].each do |feed_idx|
   CollectionFeed.create({
     collection_id: Collection.all[2].id,
     feed_id: Feed.all[feed_idx - 2].id
@@ -112,7 +112,7 @@ end
 end
 
 # Business
-[5, 26].each do |feed_idx|
+[5, 25].each do |feed_idx|
   CollectionFeed.create({
     collection_id: Collection.all[3].id,
     feed_id: Feed.all[feed_idx - 2].id
@@ -120,7 +120,7 @@ end
 end
 
 # Culture
-[41, 64].each do |feed_idx|
+[40, 63].each do |feed_idx|
   CollectionFeed.create({
     collection_id: Collection.all[4].id,
     feed_id: Feed.all[feed_idx - 2].id
@@ -128,7 +128,7 @@ end
 end
 
 # Food
-[47, 51].each do |feed_idx|
+[46, 50].each do |feed_idx|
   CollectionFeed.create({
     collection_id: Collection.all[5].id,
     feed_id: Feed.all[feed_idx - 2].id
