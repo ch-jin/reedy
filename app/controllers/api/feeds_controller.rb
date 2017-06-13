@@ -17,7 +17,7 @@ class Api::FeedsController < ApplicationController
 
   def show
     feed = Feed.find(params[:id])
-    @articles += feed.articles.order('pub_date DESC').limit(20)
+    @articles = feed.articles.order('pub_date DESC').limit(20)
     render('api/articles/index')
   end
 
