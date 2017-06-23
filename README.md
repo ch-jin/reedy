@@ -1,4 +1,7 @@
 # Reedy
+[![Build Status](https://travis-ci.org/jinchen93/reedy.svg?branch=master)](https://travis-ci.org/jinchen93/reedy)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
 
 [Reedy](http://reedy.jinchen.io) is a minimalistic RSS feed reader inspired by [Feedly](https://feedly.com/).
 
