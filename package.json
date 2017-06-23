@@ -8,8 +8,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest --coverage",
-    "test:watch": "jest --watch",
+    "test": "jest --coverage --config=jest.config.json",
+    "test:watch": "jest --coverage --config=jest.config.json --watch",
     "webpack": "webpack -w",
     "start": "node devServer.js",
     "build": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors"
@@ -60,9 +60,14 @@
     "webpack": "^2.5.1"
   },
   "devDependencies": {
+    "enzyme": "^2.9.0",
+    "enzyme-to-json": "^1.5.1",
     "jest": "^20.0.4",
+    "jest-glamor-react": "^1.4.0",
+    "react-dom": "^15.6.1",
     "react-error-overlay": "^1.0.3",
     "react-hot-loader": "^3.0.0-beta.7",
+    "react-test-renderer": "^15.6.1",
     "webpack-dev-middleware": "^1.10.2",
     "webpack-dev-server": "^2.4.5",
     "webpack-hot-middleware": "^2.18.0"

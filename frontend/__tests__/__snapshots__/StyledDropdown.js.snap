@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the component renders with default state  1`] = `
+.css-12cyyv6,
+[data-css-12cyyv6] {
+  background-color: #fff;
+  position: fixed;
+  height: 100px;
+  top: -webkit-calc(55px + 3px);
+  top: -moz-calc(55px + 3px);
+  top: calc(55px + 3px);
+  right: 0;
+  width: 140px;
+  border: 1px solid #dddede;
+  border-radius: 4px;
+  font-family: Oxygen;
+  box-shadow: 0 3px 12px rgba(27,31,35,0.15);
+  display: none;
+}
+
+.css-12cyyv6::before,
+[data-css-12cyyv6]::before {
+  content: close-quote;
+  position: absolute;
+  display: inline-block;
+  top: -16px;
+  right: 9px;
+  left: auto;
+  border: 8px solid transparent;
+  border-bottom-color: #dddede;
+}
+
+.css-12cyyv6::after,
+[data-css-12cyyv6]::after {
+  content: close-quote;
+  border: 7px solid transparent;
+  border-bottom-color: #fff;
+  position: absolute;
+  display: inline-block;
+  top: -14px;
+  right: 10px;
+  left: auto;
+}
+
+<div
+  class="css-12cyyv6"
+/>
+`;
