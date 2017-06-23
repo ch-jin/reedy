@@ -8,10 +8,14 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
     "webpack": "webpack -w",
     "start": "node devServer.js",
     "build": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-node"
   },
   "repository": {
     "type": "git",
