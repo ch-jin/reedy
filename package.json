@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "webpack": "webpack -w",
     "start": "node devServer.js",
     "build": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors"
@@ -56,6 +56,7 @@
     "webpack": "^2.5.1"
   },
   "devDependencies": {
+    "jest": "^20.0.4",
     "react-error-overlay": "^1.0.3",
     "react-hot-loader": "^3.0.0-beta.7",
     "webpack-dev-middleware": "^1.10.2",
