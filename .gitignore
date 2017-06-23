@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+coverage/
 
 # Ignore all logfiles and tempfiles.
 cron.log
@@ -27,5 +28,3 @@ development-blog.md
 
 # Ignore application configuration
 /config/application.yml
-
-coverage/

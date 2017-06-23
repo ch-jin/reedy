@@ -1,6 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the component renders with default state  1`] = `
+exports[`DropdownContent renders with the correct styles 1`] = `
+.css-11efdoa,
+[data-css-11efdoa] {
+  -webkit-justify-content: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+}
+
+<div
+  class="css-11efdoa"
+/>
+`;
+
+exports[`StyledDropdown renders with the correct styles 1`] = `
 .css-12cyyv6,
 [data-css-12cyyv6] {
   background-color: #fff;
