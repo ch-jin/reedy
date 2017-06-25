@@ -17,7 +17,7 @@ class Discover extends React.Component {
   }
 
   render() {
-    const { loading, feeds, fetchDiscoverFeeds } = this.props;
+    const { feeds, fetchDiscoverFeeds } = this.props;
 
     return (
       <Transition identifier={"discover-page"} {...centerFlexFade}>

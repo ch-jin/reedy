@@ -1,5 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Bold renders with the correct styles 1`] = `
+.css-ud99sa,
+[data-css-ud99sa] {
+  font-weight: 500;
+}
+
+<p
+  class="css-ud99sa"
+/>
+`;
+
+exports[`DropdownButton renders with the correct styles 1`] = `
+.css-1jj4dtq,
+[data-css-1jj4dtq] {
+  -webkit-transition: all 100ms;
+  font-family: Roboto;
+  background-color: #fff;
+  border: none;
+  letter-spacing: 0.5px;
+  transition: all 100ms;
+  outline: none;
+  color: #111;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  padding-left: 10px;
+  font-weight: 500;
+  height: 45px;
+}
+
+.css-1jj4dtq:hover,
+[data-css-1jj4dtq]:hover {
+  -webkit-transition: all 100ms;
+  background-color: #00B04D;
+  cursor: pointer;
+  transition: all 100ms;
+  color: #eee;
+}
+
+<button
+  class="css-1jj4dtq"
+/>
+`;
+
 exports[`DropdownContent renders with the correct styles 1`] = `
 .css-11efdoa,
 [data-css-11efdoa] {
@@ -24,6 +68,65 @@ exports[`DropdownContent renders with the correct styles 1`] = `
 
 <div
   class="css-11efdoa"
+/>
+`;
+
+exports[`DropdownEmptyItem renders with the correct styles 1`] = `
+.css-7gti9o,
+[data-css-7gti9o] {
+  -webkit-box-pack: center;
+  -moz-box-sizing: border-box;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-pack: center;
+  box-sizing: border-box;
+  line-height: 1.4;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding-top: 5px;
+  padding-left: 10px;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 14px;
+  height: 50px;
+}
+
+<div
+  class="css-7gti9o"
+/>
+`;
+
+exports[`IndicatorIcons renders with the correct styles 1`] = `
+.css-1wbqymv,
+[data-css-1wbqymv] {
+  font-size: 16px;
+  margin-right: 5px;
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  color: auto;
+}
+
+<i
+  class="css-1wbqymv"
+/>
+`;
+
+exports[`Line renders with the correct styles 1`] = `
+.css-1uqg79o,
+[data-css-1uqg79o] {
+  height: 5px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+<div
+  class="css-1uqg79o"
 />
 `;
 
@@ -71,5 +174,97 @@ exports[`StyledDropdown renders with the correct styles 1`] = `
 
 <div
   class="css-12cyyv6"
+/>
+`;
+
+exports[`StyledFeedDropdown renders with the correct styles 1`] = `
+.css-nbql5k,
+[data-css-nbql5k] {
+  border: 1px solid #dddede;
+  position: fixed;
+  height: auto;
+  top: 70px;
+  right: 10px;
+  background-color: #fff;
+  width: 200px;
+  border-radius: 4px;
+  font-family: Oxygen;
+  box-shadow: 0 3px 12px rgba(27,31,35,0.15);
+  display: none;
+  z-index: 2;
+}
+
+.css-nbql5k::before,
+[data-css-nbql5k]::before {
+  content: close-quote;
+  position: absolute;
+  display: inline-block;
+  top: -16px;
+  right: 9px;
+  left: auto;
+  border: 8px solid transparent;
+  border-bottom-color: #dddede;
+}
+
+.css-nbql5k::after,
+[data-css-nbql5k]::after {
+  content: close-quote;
+  border: 7px solid transparent;
+  border-bottom-color: #fff;
+  position: absolute;
+  display: inline-block;
+  top: -14px;
+  right: 10px;
+  left: auto;
+}
+
+<div
+  class="css-nbql5k"
+/>
+`;
+
+exports[`StyledFeedDropdown renders with the correct styles 2`] = `
+.css-nbql5k,
+[data-css-nbql5k] {
+  border: 1px solid #dddede;
+  position: fixed;
+  height: auto;
+  top: 70px;
+  right: 10px;
+  background-color: #fff;
+  width: 200px;
+  border-radius: 4px;
+  font-family: Oxygen;
+  box-shadow: 0 3px 12px rgba(27,31,35,0.15);
+  display: none;
+  z-index: 2;
+}
+
+.css-nbql5k::before,
+[data-css-nbql5k]::before {
+  content: close-quote;
+  position: absolute;
+  display: inline-block;
+  top: -16px;
+  right: 9px;
+  left: auto;
+  border: 8px solid transparent;
+  border-bottom-color: #dddede;
+}
+
+.css-nbql5k::after,
+[data-css-nbql5k]::after {
+  content: close-quote;
+  border: 7px solid transparent;
+  border-bottom-color: #fff;
+  position: absolute;
+  display: inline-block;
+  top: -14px;
+  right: 10px;
+  left: auto;
+}
+
+<div
+  class="css-nbql5k"
 />
 `;
