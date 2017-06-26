@@ -17,7 +17,7 @@ class Discover extends React.Component {
   }
 
   render() {
-    const { feeds, fetchDiscoverFeeds, loading } = this.props;
+    const { feeds, fetchDiscoverFeeds } = this.props;
 
     return (
       <Transition identifier={"discover-page"} {...centerFlexFade}>
@@ -26,10 +26,7 @@ class Discover extends React.Component {
             <PageHeaderIcon className="fa fa-feed" />
             Discover
           </PageHeader>
-          <DiscoverSearchBar
-            loading={loading}
-            fetchDiscoverFeeds={fetchDiscoverFeeds}
-          />
+          <DiscoverSearchBar fetchDiscoverFeeds={fetchDiscoverFeeds} />
 
           <Transition
             identifier={"feeds-discover" + feeds.length}
