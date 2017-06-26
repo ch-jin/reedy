@@ -1,4 +1,5 @@
 import React from "react";
+import { Spinner } from "../../styles/spinner";
 import { StyledSearchBar, SearchBarContainer } from "../../styles/discover";
 
 class DiscoverSearchBar extends React.Component {
@@ -20,6 +21,7 @@ class DiscoverSearchBar extends React.Component {
   }
 
   render() {
+    const { loading } = this.props;
     return (
       <SearchBarContainer>
         <StyledSearchBar
@@ -29,6 +31,7 @@ class DiscoverSearchBar extends React.Component {
           placeholder="Search by title or URL"
           type="text"
         />
+        {loading && <Spinner />}
       </SearchBarContainer>
     );
   }

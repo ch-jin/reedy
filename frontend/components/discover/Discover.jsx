@@ -17,7 +17,7 @@ class Discover extends React.Component {
   }
 
   render() {
-    const { feeds, fetchDiscoverFeeds } = this.props;
+    const { feeds, fetchDiscoverFeeds, loading } = this.props;
 
     return (
       <Transition identifier={"discover-page"} {...centerFlexFade}>
@@ -26,15 +26,18 @@ class Discover extends React.Component {
             <PageHeaderIcon className="fa fa-feed" />
             Discover
           </PageHeader>
-          <DiscoverSearchBar fetchDiscoverFeeds={fetchDiscoverFeeds} />
+          <DiscoverSearchBar
+            loading={loading}
+            fetchDiscoverFeeds={fetchDiscoverFeeds}
+          />
 
           <Transition
             identifier={"feeds-discover" + feeds.length}
             {...feedFadeOut}
           >
-            {feeds.map(feed => (
+            {feeds.map(feed =>
               <DiscoverItem key={"feed" + feed.id} feed={feed} />
-            ))}
+            )}
           </Transition>
         </StyledDiscoverWrapper>
       </Transition>

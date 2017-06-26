@@ -102,22 +102,6 @@ exports[`DropdownEmptyItem renders with the correct styles 1`] = `
 />
 `;
 
-exports[`IndicatorIcons renders with the correct styles 1`] = `
-.css-1wbqymv,
-[data-css-1wbqymv] {
-  font-size: 16px;
-  margin-right: 5px;
-  position: absolute;
-  right: 10px;
-  top: 30%;
-  color: auto;
-}
-
-<i
-  class="css-1wbqymv"
-/>
-`;
-
 exports[`Line renders with the correct styles 1`] = `
 .css-1uqg79o,
 [data-css-1uqg79o] {
@@ -178,52 +162,6 @@ exports[`StyledDropdown renders with the correct styles 1`] = `
 `;
 
 exports[`StyledFeedDropdown renders with the correct styles 1`] = `
-.css-nbql5k,
-[data-css-nbql5k] {
-  border: 1px solid #dddede;
-  position: fixed;
-  height: auto;
-  top: 70px;
-  right: 10px;
-  background-color: #fff;
-  width: 200px;
-  border-radius: 4px;
-  font-family: Oxygen;
-  box-shadow: 0 3px 12px rgba(27,31,35,0.15);
-  display: none;
-  z-index: 2;
-}
-
-.css-nbql5k::before,
-[data-css-nbql5k]::before {
-  content: close-quote;
-  position: absolute;
-  display: inline-block;
-  top: -16px;
-  right: 9px;
-  left: auto;
-  border: 8px solid transparent;
-  border-bottom-color: #dddede;
-}
-
-.css-nbql5k::after,
-[data-css-nbql5k]::after {
-  content: close-quote;
-  border: 7px solid transparent;
-  border-bottom-color: #fff;
-  position: absolute;
-  display: inline-block;
-  top: -14px;
-  right: 10px;
-  left: auto;
-}
-
-<div
-  class="css-nbql5k"
-/>
-`;
-
-exports[`StyledFeedDropdown renders with the correct styles 2`] = `
 .css-nbql5k,
 [data-css-nbql5k] {
   border: 1px solid #dddede;

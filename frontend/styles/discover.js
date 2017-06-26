@@ -82,7 +82,9 @@ export const StyledSearchBar = glamorous(StyledSessionInput)({
 });
 
 export const SearchBarContainer = glamorous.div({
+  position: "relative",
   width: "100%",
+  maxWidth: 740,
   display: "flex",
   justifyContent: "center",
   margin: "30px 0",
