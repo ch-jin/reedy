@@ -6,7 +6,7 @@ const PADDING = 5;
 
 export const StyledDropdown = glamorous.div(
   {
-    position: "fixed",
+    position: "absolute",
     width: "140px",
     height: DROPDOWN_HEIGHT,
     top: `calc(${NAV_HEIGHT}px + 3px)`,
