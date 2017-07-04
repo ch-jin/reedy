@@ -115,10 +115,10 @@ exports[`Line renders with the correct styles 1`] = `
 `;
 
 exports[`StyledDropdown renders with the correct styles 1`] = `
-.css-12cyyv6,
-[data-css-12cyyv6] {
+.css-1fmeida,
+[data-css-1fmeida] {
   background-color: #fff;
-  position: fixed;
+  position: absolute;
   height: 100px;
   top: -webkit-calc(55px + 3px);
   top: -moz-calc(55px + 3px);
@@ -132,8 +132,8 @@ exports[`StyledDropdown renders with the correct styles 1`] = `
   display: none;
 }
 
-.css-12cyyv6::before,
-[data-css-12cyyv6]::before {
+.css-1fmeida::before,
+[data-css-1fmeida]::before {
   content: close-quote;
   position: absolute;
   display: inline-block;
@@ -144,8 +144,8 @@ exports[`StyledDropdown renders with the correct styles 1`] = `
   border-bottom-color: #dddede;
 }
 
-.css-12cyyv6::after,
-[data-css-12cyyv6]::after {
+.css-1fmeida::after,
+[data-css-1fmeida]::after {
   content: close-quote;
   border: 7px solid transparent;
   border-bottom-color: #fff;
@@ -157,15 +157,15 @@ exports[`StyledDropdown renders with the correct styles 1`] = `
 }
 
 <div
-  class="css-12cyyv6"
+  class="css-1fmeida"
 />
 `;
 
 exports[`StyledFeedDropdown renders with the correct styles 1`] = `
-.css-nbql5k,
-[data-css-nbql5k] {
+.css-1w29tut,
+[data-css-1w29tut] {
   border: 1px solid #dddede;
-  position: fixed;
+  position: absolute;
   height: auto;
   top: 70px;
   right: 10px;
@@ -178,8 +178,8 @@ exports[`StyledFeedDropdown renders with the correct styles 1`] = `
   z-index: 2;
 }
 
-.css-nbql5k::before,
-[data-css-nbql5k]::before {
+.css-1w29tut::before,
+[data-css-1w29tut]::before {
   content: close-quote;
   position: absolute;
   display: inline-block;
@@ -190,8 +190,8 @@ exports[`StyledFeedDropdown renders with the correct styles 1`] = `
   border-bottom-color: #dddede;
 }
 
-.css-nbql5k::after,
-[data-css-nbql5k]::after {
+.css-1w29tut::after,
+[data-css-1w29tut]::after {
   content: close-quote;
   border: 7px solid transparent;
   border-bottom-color: #fff;
@@ -203,6 +203,6 @@ exports[`StyledFeedDropdown renders with the correct styles 1`] = `
 }
 
 <div
-  class="css-nbql5k"
+  class="css-1w29tut"
 />
 `;
