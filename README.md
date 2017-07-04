@@ -3,7 +3,9 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 
-[Reedy](http://reedy.jinchen.io) is a minimalistic RSS feed reader inspired by [Feedly](https://feedly.com/).
+Link - [reedy.cc](http://reedy.cc)
+
+Reedy is a minimalistic RSS feed reader inspired by [Feedly](https://feedly.com/).
 
 This web app uses Ruby on Rails, React, Redux, and PostgreSQL.
 
