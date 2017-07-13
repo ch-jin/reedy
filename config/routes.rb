@@ -19,6 +19,6 @@ Rails.application.routes.draw do
     resources :user_article_saves, only: [:create]
   end
 
-  root to: 'static_pages#root'
-  match "*path", to: 'static_pages#root', via: :all
+  get "*path", to: "static_pages#root"
+  root "static_pages#root"
 end

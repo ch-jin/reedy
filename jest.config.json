@@ -1,10 +1,6 @@
 {
-  "setupFiles": [
-    "<rootDir>/frontend/config/jest/setup-tests.js"
-  ],
+  "setupFiles": ["<rootDir>/frontend/config/jest/setup-tests.js"],
   "setupTestFrameworkScriptFile": "<rootDir>/frontend/config/jest/setup-framework.js",
   "testEnvironment": "jest-environment-jsdom",
-  "snapshotSerializers": [
-    "enzyme-to-json/serializer"
-  ]
+  "snapshotSerializers": ["enzyme-to-json/serializer"]
 }
