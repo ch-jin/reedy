@@ -70,9 +70,10 @@ export const unsaveArticle = articleId => dispatch => {
 
 export const fetchCollectionArticles = collectionId => dispatch => {
   dispatch(fetchingArticles());
-  return ArticleAPIUtil.fetchCollectionArticles(collectionId).then(articles =>
-    dispatch(receiveAllArticles(articles))
-  );
+  return ArticleAPIUtil.fetchCollectionArticles(collectionId).then(articles => {
+    console.log(articles);
+    return dispatch(receiveAllArticles(articles));
+  });
 };
 
 export const fetchSavedArticles = () => dispatch => {

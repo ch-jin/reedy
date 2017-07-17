@@ -61,11 +61,10 @@ class CollectionShowArticles extends React.Component {
             {this.renderCollectionArticles()}
             <Route
               path="/collections/:collectionId/articles/:articleId"
-              render={() => (
+              render={() =>
                 <ArticleDetailContainer
                   redirectToParent={`/collections/${collectionId}/articles`}
-                />
-              )}
+                />}
             />
           </SubscribeWrapper>
         </Transition>
