@@ -1,5 +1,4 @@
 import values from "lodash/values";
-import merge from "lodash/merge";
 import { allCollectionFeedIds } from "./collection_selectors";
 import { allArticles } from "./article_selectors";
 
