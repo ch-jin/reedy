@@ -14,29 +14,31 @@ exports[`Bold renders with the correct styles 1`] = `
 exports[`DropdownButton renders with the correct styles 1`] = `
 .css-1jj4dtq,
 [data-css-1jj4dtq] {
-  -webkit-transition: all 100ms;
   font-family: Roboto;
+  color: #111;
   background-color: #fff;
   border: none;
   letter-spacing: 0.5px;
   transition: all 100ms;
   outline: none;
-  color: #111;
+  height: 45px;
   width: 100%;
   text-align: left;
   font-size: 14px;
   padding-left: 10px;
   font-weight: 500;
-  height: 45px;
+  -webkit-transition: all 100ms;
+  -moz-transition: all 100ms;
 }
 
 .css-1jj4dtq:hover,
 [data-css-1jj4dtq]:hover {
-  -webkit-transition: all 100ms;
   background-color: #00B04D;
   cursor: pointer;
   transition: all 100ms;
   color: #eee;
+  -webkit-transition: all 100ms;
+  -moz-transition: all 100ms;
 }
 
 <button
@@ -47,23 +49,21 @@ exports[`DropdownButton renders with the correct styles 1`] = `
 exports[`DropdownContent renders with the correct styles 1`] = `
 .css-11efdoa,
 [data-css-11efdoa] {
-  -webkit-justify-content: center;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: vertical;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -ms-flex-direction: column;
-  -webkit-flex-direction: column;
+  width: 100%;
   height: 100%;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
 }
 
 <div
@@ -74,16 +74,8 @@ exports[`DropdownContent renders with the correct styles 1`] = `
 exports[`DropdownEmptyItem renders with the correct styles 1`] = `
 .css-7gti9o,
 [data-css-7gti9o] {
-  -webkit-box-pack: center;
-  -moz-box-sizing: border-box;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-pack: center;
-  box-sizing: border-box;
   line-height: 1.4;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -95,6 +87,11 @@ exports[`DropdownEmptyItem renders with the correct styles 1`] = `
   justify-content: center;
   font-size: 14px;
   height: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
 }
 
 <div
@@ -117,14 +114,12 @@ exports[`Line renders with the correct styles 1`] = `
 exports[`StyledDropdown renders with the correct styles 1`] = `
 .css-1fmeida,
 [data-css-1fmeida] {
-  background-color: #fff;
   position: absolute;
+  width: 140px;
   height: 100px;
-  top: -webkit-calc(55px + 3px);
-  top: -moz-calc(55px + 3px);
   top: calc(55px + 3px);
   right: 0;
-  width: 140px;
+  background-color: #fff;
   border: 1px solid #dddede;
   border-radius: 4px;
   font-family: Oxygen;
@@ -164,13 +159,13 @@ exports[`StyledDropdown renders with the correct styles 1`] = `
 exports[`StyledFeedDropdown renders with the correct styles 1`] = `
 .css-1w29tut,
 [data-css-1w29tut] {
-  border: 1px solid #dddede;
   position: absolute;
+  width: 200px;
   height: auto;
   top: 70px;
   right: 10px;
   background-color: #fff;
-  width: 200px;
+  border: 1px solid #dddede;
   border-radius: 4px;
   font-family: Oxygen;
   box-shadow: 0 3px 12px rgba(27,31,35,0.15);
