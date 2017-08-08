@@ -10,41 +10,42 @@ export const config = {
   pop: { stiffness: 360, damping: 25 },
   slide: { stiffness: 180, damping: 21 },
   slow: { stiffness: 8, damping: 45 },
+  noBounce: { stiffness: 300, damping: 40 }
 };
 
 export const fade = {
   atEnter: {
-    opacity: 0,
+    opacity: 0
   },
   atLeave: {
-    opacity: spring(0, config.fade),
+    opacity: spring(0, config.fade)
   },
   atActive: {
-    opacity: spring(1, config.fade),
-  },
+    opacity: spring(1, config.fade)
+  }
 };
 
 export const enterFade = {
   atEnter: {
-    opacity: 0,
+    opacity: 0
   },
   atLeave: {
-    opacity: spring(1, config.fade),
+    opacity: spring(1, config.fade)
   },
   atActive: {
-    opacity: spring(1, config.fade),
-  },
+    opacity: spring(1, config.fade)
+  }
 };
 
 export const centerFlexFade = {
   atEnter: {
-    opacity: 0,
+    opacity: 0
   },
   atLeave: {
-    opacity: spring(0, config.fade),
+    opacity: spring(0, config.fade)
   },
   atActive: {
-    opacity: spring(1, config.fade),
+    opacity: spring(1, config.fade)
   },
   mapStyles(styles) {
     return {
@@ -54,20 +55,20 @@ export const centerFlexFade = {
       opacity: styles.opacity,
       width: "calc(100% - 132px)",
       display: "flex",
-      justifyContent: "center",
+      justifyContent: "center"
     };
-  },
+  }
 };
 
 export const modalFade = {
   atEnter: {
-    opacity: 0,
+    opacity: 0
   },
   atLeave: {
-    opacity: spring(0, config.noWobble),
+    opacity: spring(0, config.noWobble)
   },
   atActive: {
-    opacity: spring(0.5, config.noWobble),
+    opacity: spring(0.5, config.noWobble)
   },
   mapStyles(styles) {
     return {
@@ -77,42 +78,42 @@ export const modalFade = {
       width: "100vw",
       height: "100vh",
       position: "fixed",
-      opacity: styles.opacity,
+      opacity: styles.opacity
     };
-  },
+  }
 };
 
 export const pop = {
   atEnter: {
     opacity: 0,
-    scale: 0.80,
+    scale: 0.80
   },
   atLeave: {
     opacity: spring(0, config.pop),
-    scale: spring(0.80, config.pop),
+    scale: spring(0.80, config.pop)
   },
   atActive: {
     opacity: spring(1, config.pop),
-    scale: spring(1, config.pop),
+    scale: spring(1, config.pop)
   },
   mapStyles(styles) {
     return {
       top: "0px",
       opacity: styles.opacity,
-      transform: `scale(${styles.scale})`,
+      transform: `scale(${styles.scale})`
     };
-  },
+  }
 };
 
 export const feedFadeOut = {
   atEnter: {
-    opacity: 0,
+    opacity: 0
   },
   atLeave: {
-    opacity: spring(0, config.fade),
+    opacity: spring(0, config.fade)
   },
   atActive: {
-    opacity: spring(1, config.gentle),
+    opacity: spring(1, config.gentle)
   },
   mapStyles(styles) {
     return {
@@ -124,40 +125,59 @@ export const feedFadeOut = {
       width: "100%",
       justifyContent: "space-around",
       alignItems: "flex-start",
-      opacity: styles.opacity,
+      opacity: styles.opacity
     };
-  },
+  }
 };
 
 export const gentlePop = {
   atEnter: {
-    scale: 0.95,
+    scale: 0.95
   },
   atLeave: {
-    scale: spring(0.95, config.fade),
+    scale: spring(0.95, config.fade)
   },
   atActive: {
-    scale: spring(1, config.fade),
+    scale: spring(1, config.fade)
   },
   mapStyles(styles) {
     return {
-      transform: `scale(${styles.scale})`,
+      transform: `scale(${styles.scale})`
     };
+  }
+};
+
+export const slideUp = {
+  atEnter: {
+    offset: -60
   },
+  atLeave: {
+    offset: spring(-60, config.noBounce)
+  },
+  atActive: {
+    offset: spring(60, config.noBounce)
+  },
+  mapStyles(styles) {
+    return {
+      left: 0,
+      bottom: styles.offset,
+      position: "absolute"
+    };
+  }
 };
 
 export const articleSlideLeft = {
   atEnter: {
     opacity: 0.8,
-    offset: -150,
+    offset: -150
   },
   atLeave: {
     opacity: spring(1, config.fade),
-    offset: spring(-150, config.noWobble),
+    offset: spring(-150, config.noWobble)
   },
   atActive: {
     opacity: spring(1, config.fade),
-    offset: spring(0, config.noWobble),
+    offset: spring(0, config.noWobble)
   },
   mapStyles(styles) {
     return {
@@ -168,30 +188,30 @@ export const articleSlideLeft = {
       position: "fixed",
       cursor: "pointer",
       height: "100vh",
-      width: "100vw",
+      width: "100vw"
     };
-  },
+  }
 };
 
 export const articleNavSlideLeft = {
   atEnter: {
     opacity: 0.8,
-    offset: -150,
+    offset: -150
   },
   atLeave: {
     opacity: spring(1, config.fade),
-    offset: spring(-150, config.noWobble),
+    offset: spring(-150, config.noWobble)
   },
   atActive: {
     opacity: spring(1, config.fade),
-    offset: spring(0, config.noWobble),
+    offset: spring(0, config.noWobble)
   },
   mapStyles(styles) {
     return {
       position: "fixed",
       top: 0,
       width: "70%",
-      right: styles.offset,
+      right: styles.offset
     };
-  },
+  }
 };

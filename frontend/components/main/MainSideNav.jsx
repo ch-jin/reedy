@@ -1,27 +1,64 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import CollectionListContainer from "../collections/CollectionListContainer";
+import CollectionListContainer
+  from "../collections/CollectionListContainer";
+import Transition from "../../utils/transition_util";
+import { slideUp } from "../../styles/transitions";
 import {
   FixedSideNav,
   SideNavWrapper,
   SideNavContent,
   StyledAddContentButton,
+  AddWrapper,
+  AddItem
 } from "../../styles/main";
 
-const MainSideNav = ({ articleModal }) => (
-  <FixedSideNav articleModal={articleModal}>
-    <SideNavWrapper>
-      <SideNavContent>
-        <CollectionListContainer />
-      </SideNavContent>
+class MainSideNav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { addState: false };
+    this.toggleAddState = this.toggleAddState.bind(this);
+    this.renderAddBar = this.renderAddBar.bind(this);
+  }
 
-      <Link to="/discover">
-        <StyledAddContentButton>
-          <i className="fa fa-plus" /> ADD CONTENT
-        </StyledAddContentButton>
-      </Link>
-    </SideNavWrapper>
-  </FixedSideNav>
-);
+  toggleAddState() {
+    this.setState({ addState: !this.state.addState });
+  }
+
+  renderAddBar() {
+    return (
+      <AddWrapper>
+        <AddItem color={true}>
+          Browse Feeds
+        </AddItem>
+        <AddItem>
+          Add URL
+        </AddItem>
+      </AddWrapper>
+    );
+  }
+
+  render() {
+    const { articleModal } = this.props;
+    return (
+      <FixedSideNav articleModal={articleModal}>
+        <SideNavWrapper>
+          <SideNavContent>
+            <CollectionListContainer />
+          </SideNavContent>
+          <Transition
+            identifier={this.state.addState.toString()}
+            {...slideUp}
+          >
+            {this.state.addState && this.renderAddBar()}
+          </Transition>
+          <StyledAddContentButton onClick={this.toggleAddState}>
+            <i className="fa fa-plus" /> ADD CONTENT
+          </StyledAddContentButton>
+
+        </SideNavWrapper>
+      </FixedSideNav>
+    );
+  }
+}
 
 export default MainSideNav;
