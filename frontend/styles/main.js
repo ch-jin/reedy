@@ -1,4 +1,5 @@
 import glamorous from "glamorous";
+import { BASE } from "./theme";
 
 import {
   NAV_HEIGHT,
@@ -7,7 +8,7 @@ import {
   Button,
   FlexedDivSpaceAround,
   FlexedDivCenter,
-  Img
+  Img,
 } from "./theme";
 
 // -- UPPER NAV --
@@ -15,10 +16,10 @@ export const FixedNav = glamorous.nav(
   {
     position: "fixed",
     width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
-    left: SIDE_NAV_WIDTH
+    left: SIDE_NAV_WIDTH,
   },
   ({ articleModal }) => ({
-    zIndex: articleModal ? 1 : 1
+    zIndex: articleModal ? 1 : 1,
   })
 );
 
@@ -29,14 +30,14 @@ export const StyledMainNavWrapper = glamorous.nav({
   boxSizing: "border-box",
   borderBottom: SHADOW_BORDER,
   top: 0,
-  backgroundColor: "#fff"
+  backgroundColor: "#fff",
 });
 
 export const StyledMainNav = glamorous.nav({
   height: "100%",
   maxWidth: "1280px",
   width: "94%",
-  position: "relative"
+  position: "relative",
 });
 // -----
 
@@ -44,10 +45,10 @@ export const StyledMainNav = glamorous.nav({
 export const FixedSideNav = glamorous.nav(
   {
     position: "fixed",
-    width: SIDE_NAV_WIDTH
+    width: SIDE_NAV_WIDTH,
   },
   ({ articleModal }) => ({
-    zIndex: articleModal ? -2 : 1
+    zIndex: articleModal ? -2 : 1,
   })
 );
 
@@ -60,7 +61,7 @@ export const SideNavWrapper = glamorous.nav({
   top: 0,
   backgroundColor: "#1e262f",
   color: "#e9e9e9",
-  position: "relative"
+  position: "relative",
 });
 
 export const SideNavContent = glamorous.nav({
@@ -68,7 +69,7 @@ export const SideNavContent = glamorous.nav({
   width: "100%",
   display: "flex",
   flexDirection: "column",
-  alignItems: "center"
+  alignItems: "center",
 });
 // -----
 
@@ -77,7 +78,7 @@ export const StyledNavBox = glamorous.div({
   width: SIDE_NAV_WIDTH,
   marginTop: "15px",
   height: "150px",
-  border: "1px solid white"
+  border: "1px solid white",
 });
 // -----
 
@@ -93,23 +94,23 @@ export const StyledAddContentButton = glamorous(Button)({
   fontFamily: "oxygen",
   backgroundColor: "#00B04D",
   ":hover": {
-    backgroundColor: "#019542"
-  }
+    backgroundColor: "#019542",
+  },
 });
 //
 
 export const StyledUserSection = glamorous(FlexedDivSpaceAround)({
   position: "absolute",
-  right: 0
+  right: 0,
 });
 
 export const StyledMainNavHeader = glamorous(FlexedDivCenter)({
   fontFamily: "oxygen",
-  position: "absolute"
+  position: "absolute",
 });
 
 export const UserImg = glamorous(Img)({
-  height: "70%"
+  height: "70%",
 });
 
 export const MainContentWrapper = glamorous.div(
@@ -121,11 +122,11 @@ export const MainContentWrapper = glamorous.div(
     height: "100%",
     width: `calc(100% - ${SIDE_NAV_WIDTH}px)`,
     backgroundColor: "#fafafa",
-    left: SIDE_NAV_WIDTH
+    left: SIDE_NAV_WIDTH,
   },
   props => ({
     overflow: props.modalOpen ? "hidden" : "auto",
-    zIndex: props.modalOpen ? 0 : 1
+    zIndex: props.modalOpen ? 0 : 1,
   })
 );
 
@@ -133,25 +134,54 @@ export const MainNavLogo = glamorous.img({
   top: 10,
   left: 0,
   position: "absolute",
-  height: 35
+  height: 35,
 });
 
 export const AddWrapper = glamorous.div({
-  background: "#fefefe",
-  height: 100,
+  background: "#607D8B",
+  height: 80,
   width: SIDE_NAV_WIDTH,
-  color: "#454545",
   boxSizing: "border-box",
-  fontWeight: 500
+  fontWeight: 500,
 });
 
 export const AddItem = glamorous.div({
+  color: "#eee",
   height: "50%",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   ":hover": {
     cursor: "pointer",
-    background: "#F0F0F0"
-  }
+    background: "#455A64",
+  },
+});
+
+export const InputWrapper = glamorous.div({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100%",
+});
+
+export const StyledURLInput = glamorous.input({
+  height: 30,
+  width: "70%",
+  fontSize: 14,
+  paddingLeft: 5,
+  border: "none",
+});
+
+export const StyledSubmit = glamorous.div({
+  height: 34,
+  width: 34,
+  background: "#455A64",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  fontSize: 16,
+  ":hover": {
+    background: "#2F414A",
+    cursor: "pointer",
+  },
 });

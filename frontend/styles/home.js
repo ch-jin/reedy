@@ -145,8 +145,6 @@ export const Features = glamorous.div({
   margin: "50px auto",
   display: "flex",
   paddingLeft: 15,
-  // alignItems: "space-around",
-  // justifyContent: "space-around",
   fontSize: "30px",
 });
 
@@ -159,7 +157,6 @@ export const StyledFeature = glamorous.div({
   position: "relative",
   marginTop: 70,
   boxSizing: "border-box",
-  // border: "1px solid rgba(255, 0, 0, 0.1)",
 });
 
 export const FeatureIcon = glamorous.i({
@@ -167,7 +164,6 @@ export const FeatureIcon = glamorous.i({
   fontWeight: 100,
   color: DARKER,
   marginBottom: 30,
-  // border: "1px solid rgba(255, 0, 0, 0.1)",
 });
 
 export const FeatureText = glamorous.div({
@@ -224,7 +220,6 @@ export const FooterIcon = glamorous.i({
 });
 
 export const SmallGreaterThan = glamorous.i({
-  // marginTop: 4,
   fontSize: 20,
   color: "rgba(255, 255, 255, 0.3)",
 });
