@@ -11,7 +11,7 @@ import MainPage from "./MainPage";
 
 const mapStateToProps = state => ({
   anyDropdownActive: anyDropdownActive(state),
-  loading: state.loading.loadingSession,
+  loading: state.loading.loadingSession || state.loading.feedLoadOverride,
   articleModal: state.modal.articleModal,
   collections: allCollections(state),
 });

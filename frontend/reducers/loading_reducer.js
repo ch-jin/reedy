@@ -9,6 +9,8 @@ import {
   FETCHING_FEED,
   RECEIVE_ALL_FEEDS,
   RECEIVE_DISCOVER_FEEDS,
+  ADDING_FEED,
+  FEED_ADDED,
 } from "../actions/feed_actions";
 import {
   FETCHING_ARTICLES,
@@ -27,6 +29,7 @@ const _initialState = {
   loadingFeeds: false,
   loadingArticles: false,
   loadingCurrentArticle: false,
+  feedLoadOverride: false,
 };
 
 const loadingReducer = (state = _initialState, { type }) => {
@@ -52,6 +55,10 @@ const loadingReducer = (state = _initialState, { type }) => {
     case RECEIVE_CURRENT_FEED:
     case RECEIVE_ALL_FEEDS:
       return { ...state, loadingFeeds: false };
+    case ADDING_FEED:
+      return { ...state, feedLoadOverride: true };
+    case FEED_ADDED:
+      return { ...state, feedLoadOverride: false };
 
     case FETCHING_ARTICLES:
       return { ...state, loadingArticles: true };
