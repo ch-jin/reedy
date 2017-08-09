@@ -1,5 +1,4 @@
 import glamorous from "glamorous";
-import { BASE } from "./theme";
 
 import {
   NAV_HEIGHT,
@@ -157,7 +156,7 @@ export const AddItem = glamorous.div({
   },
 });
 
-export const InputWrapper = glamorous.div({
+export const InputWrapper = glamorous.form({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",

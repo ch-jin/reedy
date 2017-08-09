@@ -1,6 +1,6 @@
 import React from "react";
 import CollectionListContainer from "../collections/CollectionListContainer";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import Transition from "../../utils/transition_util";
 import { slideUp } from "../../styles/transitions";
 import {
@@ -23,6 +23,7 @@ class MainSideNav extends React.Component {
     this.renderAddBar = this.renderAddBar.bind(this);
     this.toggleFormState = this.toggleFormState.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   toggleAddState() {
@@ -42,6 +43,15 @@ class MainSideNav extends React.Component {
     this.setState({ formInput: e.target.value });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState({ loading: true });
+    this.props.addFeed(this.state.formInput).then(id => {
+      this.setState({ formInput: "" });
+      this.props.history.push(`/feeds/${id}/articles`);
+    });
+  }
+
   renderAddBar() {
     return (
       <AddWrapper>
@@ -56,13 +66,13 @@ class MainSideNav extends React.Component {
   renderAddURL() {
     return (
       <AddWrapper>
-        <InputWrapper>
+        <InputWrapper onSubmit={this.handleSubmit}>
           <StyledURLInput
             placeholder="RSS feed URL"
             value={this.state.formInput}
             onChange={this.handleChange}
           />
-          <StyledSubmit>+</StyledSubmit>
+          <StyledSubmit onClick={this.handleSubmit}>+</StyledSubmit>
         </InputWrapper>
       </AddWrapper>
     );
@@ -91,4 +101,4 @@ class MainSideNav extends React.Component {
   }
 }
 
-export default MainSideNav;
+export default withRouter(MainSideNav);

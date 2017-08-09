@@ -15,3 +15,10 @@ export const fetchFeed = feedId =>
     method: "GET",
     url: `/api/feeds/feed/${feedId}`,
   });
+
+export const addFeed = url =>
+  $.ajax({
+    method: "POST",
+    url: "/api/feeds",
+    data: { feed: { url } },
+  });
