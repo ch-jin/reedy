@@ -23,6 +23,14 @@ class Api::FeedsController < ApplicationController
 
   def create
     url = feed_params[:url]
+
+    existing_feed = Feed.find_by(url: url)
+
+    if existing_feed
+      render json: existing_feed.id
+      return
+    end
+
     raw_feed = Feed.fetch_rss_feed(url)
 
     if Feed.valid_feed?(raw_feed, url)
@@ -30,8 +38,8 @@ class Api::FeedsController < ApplicationController
 
       # Bonus: uniquess for .html, .rss, capitals
       if @feed.save
-        render('api/feeds/feed')
-        Article.add_articles(@feed.id, feed["item"])
+        Article.add_articles(@feed.id, raw_feed["item"])
+        render json: @feed.id
       else
         render json: @feed.errors.full_messages, status: 422
       end
