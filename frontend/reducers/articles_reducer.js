@@ -3,6 +3,7 @@ import {
   RECEIVE_CURRENT_ARTICLE,
   RECEIVE_ARTICLE,
   RESET_ARTICLES,
+  RECEIVE_MORE_ARTICLES,
 } from "../actions/article_actions";
 
 const _initState = {
@@ -32,6 +33,8 @@ const articlesReducer = (state = _initState, action) => {
       };
     case RESET_ARTICLES:
       return _initState;
+    case RECEIVE_MORE_ARTICLES:
+      return { all: { ...state.all, ...action.articles.all } };
     default:
       return state;
   }

@@ -6,6 +6,7 @@ export const FETCHING_ARTICLES = "FETCHING_ARTICLES";
 export const FETCHING_CURRENT_ARTICLE = "FETCHING_CURRENT_ARTICLE";
 export const RECEIVE_ARTICLE = "RECEIVE_ARTICLE";
 export const RESET_ARTICLES = "RESET_ARTICLES";
+export const RECEIVE_MORE_ARTICLES = "RECEIVE_MORE_ARTICLES";
 
 export const receiveAllArticles = articles => ({
   type: RECEIVE_ALL_ARTICLES,
@@ -36,6 +37,11 @@ const fetchingCurrentArticle = () => ({
   type: FETCHING_CURRENT_ARTICLE,
 });
 
+const receiveMoreArticles = articles => ({
+  type: RECEIVE_MORE_ARTICLES,
+  articles,
+});
+
 export const fetchFollowedArticles = () => dispatch => {
   ArticleAPIUtil.fetchFollowedArticles().then(articles =>
     dispatch(receiveAllArticles(articles))
@@ -46,6 +52,12 @@ export const fetchArticlesFromFeed = feedId => dispatch => {
   dispatch(fetchingArticles());
   return ArticleAPIUtil.fetchArticlesFromFeed(feedId).then(articles =>
     dispatch(receiveAllArticles(articles))
+  );
+};
+
+export const fetchMoreArticles = (feedId, offset) => dispatch => {
+  return ArticleAPIUtil.fetchMoreArticles(feedId, offset).then(articles =>
+    dispatch(receiveMoreArticles(articles))
   );
 };
 
