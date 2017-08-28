@@ -1,7 +1,7 @@
 import React from "react";
 import Transition from "../../utils/transition_util";
 import { Route } from "react-router-dom";
-import { enterFade } from "../../styles/transitions";
+import { fade } from "../../styles/transitions";
 import ArticleList from "../articles/ArticleList";
 import { scrollMainContentWrapperToTop } from "../../utils/scroll_util";
 import { StyledFeedWrapper } from "../../styles/feed";
@@ -43,16 +43,15 @@ class Feed extends React.Component {
 
     if (feed) {
       return (
-        <Transition identifier={"feed-show" + feed.id} {...enterFade}>
+        <Transition identifier={"feed-show" + feed.id} {...fade}>
           <StyledFeedWrapper>
             <FeedHeader feed={feed} followed={followed} />
             <ArticleList path="/feeds" articles={articles} />
           </StyledFeedWrapper>
           <Route
             path="/feeds/:feedId/articles/:articleId"
-            render={() => (
-              <ArticleDetailContainer redirectToParent={match.url} />
-            )}
+            render={() =>
+              <ArticleDetailContainer redirectToParent={match.url} />}
           />
         </Transition>
       );
