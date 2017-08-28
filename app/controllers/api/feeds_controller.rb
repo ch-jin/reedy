@@ -17,7 +17,14 @@ class Api::FeedsController < ApplicationController
 
   def show
     feed = Feed.find(params[:id])
-    @articles = feed.articles.order('pub_date DESC').limit(20)
+    offset = params[:offset]
+
+    if offset
+      @articles = feed.articles.order('pub_date DESC').limit(10).offset(offset)
+    else
+      @articles = feed.articles.order('pub_date DESC').limit(10)
+    end
+
     render('api/articles/index')
   end
 
