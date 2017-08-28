@@ -41,3 +41,9 @@ export const fetchSavedArticles = () =>
     method: "GET",
     url: "/api/articles/saved",
   });
+
+export const fetchMoreArticles = (feedId, offset) =>
+  $.ajax({
+    method: "GET",
+    url: `/api/feeds/${feedId}?offset=${offset}`,
+  });
