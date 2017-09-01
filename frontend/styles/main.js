@@ -137,7 +137,7 @@ export const MainNavLogo = glamorous.img({
 });
 
 export const AddWrapper = glamorous.div({
-  background: "#607D8B",
+  background: "white",
   height: 80,
   width: SIDE_NAV_WIDTH,
   boxSizing: "border-box",
@@ -145,14 +145,14 @@ export const AddWrapper = glamorous.div({
 });
 
 export const AddItem = glamorous.div({
-  color: "#eee",
+  color: "#454545",
   height: "50%",
   display: "flex",
-  justifyContent: "center",
   alignItems: "center",
+  paddingLeft: 15,
   ":hover": {
     cursor: "pointer",
-    background: "#455A64",
+    background: "#e7e7e7",
   },
 });
 
@@ -168,7 +168,13 @@ export const StyledURLInput = glamorous.input({
   width: "70%",
   fontSize: 14,
   paddingLeft: 5,
-  border: "none",
+  border: "1px solid #e7e7e7",
+  borderRight: "none",
+  ":focus": {
+    outline: "none",
+    border: "1px solid #455A64",
+    borderRight: "none",
+  },
 });
 
 export const StyledSubmit = glamorous.div({

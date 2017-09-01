@@ -53,29 +53,45 @@ class MainSideNav extends React.Component {
   }
 
   renderAddBar() {
-    return (
-      <AddWrapper>
-        <Link to="/discover" className="no-decoration">
-          <AddItem color={true}>Browse Feeds</AddItem>
-        </Link>
-        <AddItem onClick={this.toggleFormState}>Add URL</AddItem>
-      </AddWrapper>
-    );
+    const { addState, formState } = this.state;
+    if (addState && !formState) {
+      return (
+        <AddWrapper>
+          <Link to="/discover" className="no-decoration">
+            <AddItem color={true}>
+              <i className="fa fa-th" />
+              Browse Feeds
+            </AddItem>
+          </Link>
+          <AddItem onClick={this.toggleFormState}>
+            <i className="fa fa-link" />
+            Add URL
+          </AddItem>
+        </AddWrapper>
+      );
+    } else {
+      return null;
+    }
   }
 
   renderAddURL() {
-    return (
-      <AddWrapper>
-        <InputWrapper onSubmit={this.handleSubmit}>
-          <StyledURLInput
-            placeholder="RSS feed URL"
-            value={this.state.formInput}
-            onChange={this.handleChange}
-          />
-          <StyledSubmit onClick={this.handleSubmit}>+</StyledSubmit>
-        </InputWrapper>
-      </AddWrapper>
-    );
+    const { addState, formState } = this.state;
+    if (addState && formState) {
+      return (
+        <AddWrapper>
+          <InputWrapper onSubmit={this.handleSubmit}>
+            <StyledURLInput
+              placeholder="RSS feed URL"
+              value={this.state.formInput}
+              onChange={this.handleChange}
+            />
+            <StyledSubmit onClick={this.handleSubmit}>+</StyledSubmit>
+          </InputWrapper>
+        </AddWrapper>
+      );
+    } else {
+      return null;
+    }
   }
 
   render() {
@@ -87,10 +103,8 @@ class MainSideNav extends React.Component {
             <CollectionListContainer />
           </SideNavContent>
           <Transition identifier={this.state.addState.toString()} {...slideUp}>
-            {this.state.addState &&
-              !this.state.formState &&
-              this.renderAddBar()}
-            {this.state.addState && this.state.formState && this.renderAddURL()}
+            {this.renderAddBar()}
+            {this.renderAddURL()}
           </Transition>
           <StyledAddContentButton onClick={this.toggleAddState}>
             <i className="fa fa-plus" /> ADD CONTENT
