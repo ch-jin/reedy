@@ -161,3 +161,41 @@ export const DetailNavIcon = glamorous.i(
     border: props.saved ? `1px solid ${DARKER}` : "1px solid #e7e7e7",
   })
 );
+
+export const ArticlePlaceholderItemWrapper = glamorous(
+  StyledArticleItemWrapper
+)({
+  maxWidth: 740,
+  width: "100%",
+  height: "auto",
+  marginBottom: 0,
+});
+
+export const ArticlePlaceholderImg = glamorous.div({
+  height: 90,
+  width: 130,
+  background: "#e7e7e7",
+  padding: 10,
+  marginLeft: 20,
+});
+
+export const ArticlePlaceholderSnippetWrapper = glamorous.div({
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  marginLeft: 25,
+});
+
+export const ArticlePlaceholderTitle = glamorous.div({
+  height: 25,
+  width: "80%",
+  background: "#e7e7e7",
+  marginBottom: 10,
+});
+
+export const ArticlePlaceholderSnippet = glamorous.div({
+  margin: "7.5px 0",
+  height: 12.5,
+  width: "90%",
+  background: "#e7e7e7",
+});
