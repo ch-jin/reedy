@@ -8,14 +8,16 @@ import { scrollMainContentWrapperToTop } from "../../utils/scroll_util";
 import { StyledFeedWrapper } from "../../styles/feed";
 import FeedHeader from "./FeedHeader";
 import ArticleDetailContainer from "../articles/ArticleDetailContainer";
+import ArticlePlaceholder from "../articles/ArticlePlaceholder";
 
-const defaultState = { offset: 0 };
+const defaultState = { offset: 0, endStream: false };
 
 class Feed extends React.Component {
   constructor(props) {
     super(props);
     this.state = defaultState;
     this.handleScroll = debounce(this.handleScroll.bind(this), 200);
+    this.checkEndStream = this.checkEndStream.bind(this);
   }
 
   componentDidMount() {
@@ -44,22 +46,30 @@ class Feed extends React.Component {
     }
   }
 
-  loadNewFeed(nextProps) {
-    scrollMainContentWrapperToTop();
-    this.props.fetchFeed(nextProps.feedId);
-    this.props.fetchArticlesFromFeed(nextProps.feedId);
-    this.setState(defaultState);
-  }
-
   componentWillUpdate(_, nextState) {
     if (nextState.offset !== this.state.offset && nextState.offset !== 0) {
-      this.props.fetchMoreArticles(this.props.feedId, nextState.offset);
+      this.props
+        .fetchMoreArticles(this.props.feedId, nextState.offset)
+        .then(this.checkEndStream);
     }
   }
 
   componentWillUnmount() {
     this.props.resetArticles();
     this.scrollNode.removeEventListener("scroll", this.handleScroll);
+  }
+
+  checkEndStream(res) {
+    if (res.articles.all === undefined) {
+      this.setState({ endStream: true });
+    }
+  }
+
+  loadNewFeed(nextProps) {
+    scrollMainContentWrapperToTop();
+    this.props.fetchFeed(nextProps.feedId);
+    this.props.fetchArticlesFromFeed(nextProps.feedId);
+    this.setState(defaultState);
   }
 
   handleScroll(e) {
@@ -81,11 +91,13 @@ class Feed extends React.Component {
           <StyledFeedWrapper ref={this.bindRef}>
             <FeedHeader feed={feed} followed={followed} />
             <ArticleList path="/feeds" articles={articles} />
+            {!this.state.endStream && articles && <ArticlePlaceholder />}
           </StyledFeedWrapper>
           <Route
             path="/feeds/:feedId/articles/:articleId"
-            render={() =>
-              <ArticleDetailContainer redirectToParent={match.url} />}
+            render={() => (
+              <ArticleDetailContainer redirectToParent={match.url} />
+            )}
           />
         </Transition>
       );
