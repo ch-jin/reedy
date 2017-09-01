@@ -22,22 +22,8 @@ class Feed extends React.Component {
 
   componentDidMount() {
     scrollMainContentWrapperToTop();
-    const {
-      feedId,
-      feeds,
-      fetchFollowedFeeds,
-      fetchArticlesFromFeed,
-      fetchFeed,
-    } = this.props;
-
-    if (!feeds.length) {
-      fetchFollowedFeeds();
-    }
-    fetchFeed(feedId);
-    fetchArticlesFromFeed(feedId);
-
-    this.scrollNode = document.querySelector("#main-content-wrapper");
-    this.scrollNode.addEventListener("scroll", this.handleScroll);
+    this.getFeedsAndArticles();
+    this.bindScrollListener();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -63,6 +49,27 @@ class Feed extends React.Component {
     if (res.articles.all === undefined) {
       this.setState({ endStream: true });
     }
+  }
+
+  bindScrollListener() {
+    this.scrollNode = document.querySelector("#main-content-wrapper");
+    this.scrollNode.addEventListener("scroll", this.handleScroll);
+  }
+
+  getFeedsAndArticles() {
+    const {
+      feedId,
+      feeds,
+      fetchFollowedFeeds,
+      fetchArticlesFromFeed,
+      fetchFeed,
+    } = this.props;
+
+    if (!feeds.length) {
+      fetchFollowedFeeds();
+    }
+    fetchFeed(feedId);
+    fetchArticlesFromFeed(feedId);
   }
 
   loadNewFeed(nextProps) {
