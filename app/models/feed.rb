@@ -39,14 +39,7 @@ class Feed < ApplicationRecord
   end
 
   def self.valid_feed?(raw_feed, url)
-    first_item = raw_feed["item"][0]
-    if first_item != nil
-      puts "VALID FEED".green
-      true
-    else
-      puts "ERROR INVALID FEED: #{url}".red
-      false
-    end
+    raw_feed["item"][0] != nil
   end
 
   def self.construct_feed(url, raw_feed)
