@@ -24,11 +24,9 @@ class Feed < ApplicationRecord
 
 
   def self.fetch_rss_feed(url)
-    puts ""
-    puts ""
-    puts "FETCHING #{url}"
-    puts "STARTING FETCH............"
-
+    # ENV['rss_server_ip'] points to a private PHP server that I personally host
+    # For more information you can take a look at the self hosted option on 
+    # http://fivefilters.org/content-only/
     all_content = HTTParty.get(
       "http://#{ENV['rss_server_ip']}/" +
       "makefulltextfeed.php?" +
@@ -62,9 +60,6 @@ class Feed < ApplicationRecord
   end
 
   def self.update_all_feed_articles
-    puts "______________________________________"
-    puts "#{DateTime.now} UPDATING FEED ARTICLES"
-    puts "______________________________________"
     Feed.all.each do |feed|
       feed.update_feed_articles
     end
