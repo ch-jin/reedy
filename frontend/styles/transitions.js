@@ -10,7 +10,7 @@ export const config = {
   pop: { stiffness: 360, damping: 25 },
   slide: { stiffness: 180, damping: 21 },
   slow: { stiffness: 8, damping: 45 },
-  noBounce: { stiffness: 300, damping: 40 },
+  slideUp: { stiffness: 240, damping: 24 },
 };
 
 export const fade = {
@@ -152,10 +152,10 @@ export const slideUp = {
     offset: -60,
   },
   atLeave: {
-    offset: spring(-60, config.noBounce),
+    offset: spring(-60, config.slideUp),
   },
   atActive: {
-    offset: spring(60, config.noBounce),
+    offset: spring(60, config.slideUp),
   },
   mapStyles(styles) {
     return {
