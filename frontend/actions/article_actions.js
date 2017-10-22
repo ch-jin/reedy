@@ -83,7 +83,6 @@ export const unsaveArticle = articleId => dispatch => {
 export const fetchCollectionArticles = collectionId => dispatch => {
   dispatch(fetchingArticles());
   return ArticleAPIUtil.fetchCollectionArticles(collectionId).then(articles => {
-    console.log(articles);
     return dispatch(receiveAllArticles(articles));
   });
 };
