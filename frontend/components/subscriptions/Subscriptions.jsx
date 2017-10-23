@@ -1,4 +1,5 @@
 import React from "react";
+import cn from "classnames";
 import { Route } from "react-router-dom";
 import Transition from "../../utils/transition_util";
 import { ArticleLoader } from "../../utils/loader_util";
@@ -45,7 +46,7 @@ class Subscriptions extends React.Component {
         <Transition identifier={"subscriptions"} {...enterFade}>
           <SubscribeWrapper>
             <SubscribeHeader>
-              <PageHeaderIcon className="fa fa-list-ul" />Subscriptions
+              <PageHeaderIcon className={cn("fa", "fa-list-ul")} />Subscriptions
             </SubscribeHeader>
             {this.renderSubArticles()}
             <Route
@@ -63,7 +64,8 @@ class Subscriptions extends React.Component {
       return (
         <ErrorPage>
           Oops! Looks like you have no subscriptions!
-          <br /><br />
+          <br />
+          <br />
           Click below to browse feeds:
         </ErrorPage>
       );
